@@ -206,7 +206,13 @@ $f(x)=\left\{\begin{array}{cc}x & -\pi \leq x \leq 0 \\ 0 & 0 \leq x \leq \pi\en
 则存在 $\exists \ \xi_{1}, \xi_{2} \in(a, b)$ 使$f^{\prime}(\xi_{1})=\frac{f(b)-f(a)}{b-a}$，$f^{\prime}\left(\xi_{2}\right)<\frac{f(b)-f(a)}{b-a}$。
 
 \banswer{
-	证明略
+	记 $k=\frac{f(b)-f(a)}{b-a}$。由 Lagrange 中值定理，$\exists\,\xi_{1}\in(a,b)$ 使得 $f'(\xi_{1})=k$。\\
+	令 $g(x)=f(x)-[f(a)+k(x-a)]$，则 $g\in C[a,b]\cap D(a,b)$，$g(a)=g(b)=0$ 且 $g\not\equiv 0$（$f$ 非线性）。
+	若 $\exists\,x_{0}\in(a,b)$ 使 $g(x_{0})>0$，由连续函数最值定理，$g$ 在 $(a,b)$ 内某点 $c$ 取得正最大值，故 $g'(c)=0$。在 $[c,b]$ 上对 $g$ 用 Lagrange 定理：
+	$\exists\,\xi_{2}\in(c,b)$ 使 $g'(\xi_{2})=\frac{g(b)-g(c)}{b-c}=-\frac{g(c)}{b-c}<0$，即 $f'(\xi_{2})<k$。\\
+	若 $\exists\,x_{0}\in(a,b)$ 使 $g(x_{0})<0$，则 $g$ 在 $(a,b)$ 内某点 $c$ 取得负最小值，$g'(c)=0$。在 $[a,c]$ 上对 $g$ 用 Lagrange 定理：
+	$\exists\,\xi_{2}\in(a,c)$ 使 $g'(\xi_{2})=\frac{g(c)-g(a)}{c-a}=\frac{g(c)}{c-a}<0$，亦有 $f'(\xi_{2})<k$。
+	综上得证。
 }
 
 

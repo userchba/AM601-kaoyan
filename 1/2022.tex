@@ -195,11 +195,57 @@ $\lim\limits _{x \rightarrow 1^{+}} \frac{d y}{d x} $和$ \lim\limits _{x \right
 
 \item 
 证明: $u(x, y)=f(x) g(y)$ 成立的充分必要条件是 $u \frac{\partial^{2} u}{\partial x \partial y}=\frac{\partial u}{\partial x} \frac{\partial u}{\partial y}$。
-
-
 \banswer{
-	证明略
+	\textbf{必要性：} 若 $u(x,y)=f(x)g(y)$，则
+	$\frac{\partial u}{\partial x}=f'(x)g(y)$，$\frac{\partial u}{\partial y}=f(x)g'(y)$，
+	$\frac{\partial^{2} u}{\partial x\partial y}=f'(x)g'(y)$。
+	于是 $u\frac{\partial^{2} u}{\partial x\partial y}=f(x)g(y)\cdot f'(x)g'(y)=\frac{\partial u}{\partial x}\frac{\partial u}{\partial y}$。\\[6pt]
+	\textbf{充分性（原命题不成立）：} 即使
+	$u\frac{\partial^{2}u}{\partial x\partial y}=\frac{\partial u}{\partial x}\frac{\partial u}{\partial y}$
+	处处成立，全局也未必有 $u(x,y)=f(x)g(y)$。关键在于乘以 $u$ 的因子化可以抵消零点的干扰。
+
+	\textbf{反例}：取光滑截断函数 $\varphi_-,\varphi_+\in C_c^\infty(\mathbb{R})$，
+	$\operatorname{supp}\varphi_-\subset(-2,-1)$，$\operatorname{supp}\varphi_+\subset(1,2)$，
+	且均不恒为零。令
+	\[
+	u(x,y)=\varphi_-(x)+y\,\varphi_+(x),\qquad (x,y)\in\mathbb{R}^2.
+	\]
+	对任意 $(x,y)$，$u_x=\varphi_-'(x)+y\varphi_+'(x)$，
+	$u_y=\varphi_+(x)$，$u_{xy}=\varphi_+'(x)$。
+	计算 $u\,u_{xy}-u_xu_y=[\varphi_-(x)+y\varphi_+(x)]\varphi_+'(x)-[\varphi_-'(x)+y\varphi_+'(x)]\varphi_+(x)
+	=\varphi_-(x)\varphi_+'(x)-\varphi_-'(x)\varphi_+(x)$。
+	由于 $\varphi_-$ 与 $\varphi_+$ 的支集不相交，对任意 $x$ 至少有一个为零，从而差恒为零，
+	故 PDE 对任意 $(x,y)$ 成立。然而 $u(x,y)$ 不能写成 $f(x)g(y)$：
+	若可分解，则固定 $x_1\in(-2,-1)$ 使 $\varphi_-(x_1)\neq0$，固定 $x_2\in(1,2)$ 使 $\varphi_+(x_2)\neq0$，
+	考虑 $u(x_1,y)=\varphi_-(x_1)$（与 $y$ 无关），而 $u(x_2,y)=y\varphi_+(x_2)$（线性依赖 $y$）；
+	同时要求 $u(x,y)=f(x)g(y)$，则从 $u(x_1,y)$ 得 $g(y)$ 在支撑上为常数，
+	从 $u(x_2,y)$ 却要求 $g(y)$ 非平凡依赖 $y$，矛盾。
+	故原命题的充分性在全局意义下为假，其成立需要额外的非零性假设。
+
+	\textbf{修正定理（非零情形）：} 设 $u$ 在矩形区域
+	$I\times J\subset\mathbb{R}^2$ 上连续可微，且 $u(x,y)\neq0$ 于 $I\times J$。
+	则 $u\,u_{xy}=u_xu_y$ 成立的充要条件是 $u(x,y)=f(x)g(y)$，其中 $f,g$ 为非零可微函数。
+
+	\textbf{修正定理的证明：}
+	由 $u\neq0$ 可作除法。考虑
+	\[
+	\frac{\partial}{\partial y}\!\left(\frac{u_x}{u}\right)
+	=\frac{u\,u_{xy}-u_xu_y}{u^{2}}=0,
+	\]
+	故 $\dfrac{u_x}{u}$ 与 $y$ 无关。于是在 $I\times J$ 上
+	\[
+	\frac{u_x}{u}=A(x),\qquad \forall\,(x,y)\in I\times J.
+	\]
+	对固定的 $y$ 关于 $x$ 积分得
+	$\ln|u(x,y)|=\int_{x_0}^{x} A(t)\,dt + h(y)$，
+	其中 $h(y)$ 为仅依赖于 $y$ 的积分常数。从而
+	\[
+	u(x,y)=\pm e^{\int_{x_0}^{x}A(t)\,dt}\cdot e^{h(y)}\equiv f(x)\,g(y),
+	\]
+	其中 $f(x)=\pm e^{\int_{x_0}^{x}A(t)\,dt}$，$g(y)=e^{h(y)}$，均非零。
 }
+
+
 
 
 \item 
@@ -246,7 +292,11 @@ $\lim\limits _{x \rightarrow 1^{+}} \frac{d y}{d x} $和$ \lim\limits _{x \right
 		\item
 		$f(x)=\sum\limits_{n=1}^{+\infty} \frac{2(-1)^{n+1}}{n} \sin n x$
 		\item 
-		证明略
+		由 (1) 知 $x=\sum\limits_{n=1}^{+\infty}\frac{2(-1)^{n+1}}{n}\sin nx$，$x\in(-\pi,\pi)$。
+		令 $x=\frac{\pi}{2}$，则 $\frac{\pi}{2}=\sum\limits_{n=1}^{+\infty}\frac{2(-1)^{n+1}}{n}\sin\frac{n\pi}{2}$。
+		注意到 $\sin\frac{n\pi}{2}$ 在 $n$ 为偶数时为 $0$，$n=2k+1$ 时 $\sin\frac{(2k+1)\pi}{2}=(-1)^{k}$。
+		故 $\frac{\pi}{2}=\sum\limits_{k=0}^{+\infty}\frac{2(-1)^{2k+2}}{2k+1}(-1)^{k}=2\sum\limits_{k=0}^{+\infty}\frac{(-1)^{k}}{2k+1}$，
+		即 $\sum\limits_{n=0}^{+\infty}\frac{(-1)^{n}}{2n+1}=\frac{\pi}{4}$。
 		
 	\end{enumerate}
 	
@@ -271,12 +321,27 @@ $\lim\limits _{x \rightarrow 1^{+}} \frac{d y}{d x} $和$ \lim\limits _{x \right
 	$ \exists \xi \in(a, b)$，$ \frac{f(\xi)}{g(\xi)}=\frac{f^{\prime \prime}(\xi)}{g^{\prime \prime}(\xi)}$。
 	
 	
-	
 \end{enumerate}
 
 \banswer{
-	证明略
+	\begin{enumerate}
+		\item
+		假设存在 $x_{0}\in(a,b)$ 使 $g(x_{0})=0$。由 $g(a)=g(x_{0})=g(b)=0$，
+		对 $g$ 在 $[a,x_{0}]$ 和 $[x_{0},b]$ 上分别应用 Rolle 定理，
+		存在 $\eta_{1}\in(a,x_{0})$，$\eta_{2}\in(x_{0},b)$ 使 $g'(\eta_{1})=g'(\eta_{2})=0$。
+		再对 $g'$ 在 $[\eta_{1},\eta_{2}]$ 上用 Rolle 定理，
+		存在 $\xi\in(\eta_{1},\eta_{2})\subset(a,b)$ 使 $g''(\xi)=0$，与 $g''(x)\neq0$ 矛盾。
+		故 $\forall x\in(a,b),\,g(x)\neq0$。\\
+		\item
+		令 $\varphi(x)=f(x)g'(x)-f'(x)g(x)$。由 $f(a)=g(a)=0$，$f(b)=g(b)=0$ 知
+		$\varphi(a)=\varphi(b)=0$。由 Rolle 定理，$\exists\,\xi\in(a,b)$ 使 $\varphi'(\xi)=0$。
+		计算 $\varphi'(x)=f'(x)g'(x)+f(x)g''(x)-f''(x)g(x)-f'(x)g'(x)=f(x)g''(x)-f''(x)g(x)$。
+		由 $\varphi'(\xi)=0$ 得 $f(\xi)g''(\xi)=f''(\xi)g(\xi)$。
+		由 (1) 知 $g(\xi)\neq0$，又 $g''(\xi)\neq0$，故
+		$\displaystyle\frac{f(\xi)}{g(\xi)}=\frac{f''(\xi)}{g''(\xi)}$。
+	\end{enumerate}
 }
+
 
 
 
@@ -298,7 +363,23 @@ $\lim\limits _{x \rightarrow 1^{+}} \frac{d y}{d x} $和$ \lim\limits _{x \right
 \end{enumerate}
 
 \banswer{
-	证明略
+	\begin{enumerate}
+		\item
+		$I_{n}+I_{n+1}=\int_{0}^{1}\frac{x^{n}+x^{n+1}}{1+x}\,dx
+		=\int_{0}^{1}\frac{x^{n}(1+x)}{1+x}\,dx
+		=\int_{0}^{1}x^{n}\,dx=\frac{1}{n+1}$，
+		故 $I_{n+1}=-I_{n}+\frac{1}{n+1}$。\\
+		\item
+		$0\leq I_{n}=\int_{0}^{1}\frac{x^{n}}{1+x}\,dx
+		\leq\int_{0}^{1}x^{n}\,dx=\frac{1}{n+1}\to0\;(n\to\infty)$，
+		由夹逼定理 $\lim\limits_{n\to+\infty}I_{n}=0$。\\
+		\item
+		由 (1) 递推得 $I_{n}=(-1)^{n}\bigl(I_{0}-\sum_{k=1}^{n}\frac{(-1)^{k-1}}{k}\bigr)$。
+		其中 $I_{0}=\int_{0}^{1}\frac{1}{1+x}\,dx=\ln2$。
+		令 $n\to\infty$，由 (2) $I_{n}\to0$，得
+		$\displaystyle\ln2-\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k}=0$，
+		即 $\displaystyle\sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{n}=\ln2$。
+	\end{enumerate}
 }
 
 

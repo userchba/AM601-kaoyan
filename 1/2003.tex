@@ -152,9 +152,20 @@ $ \frac{1}{m} \ln 2 $
 \item 
 $ \frac{4}{e} $	
 \item 
-证明略
+\textbf{证} 当 $x>0$ 时，$\displaystyle\ln\!\left(1+\frac{1}{x}\right)=\ln\frac{x+1}{x}=\int_{x}^{x+1}\frac{dt}{t}$。由 $\frac{1}{t}$ 在 $[x,x+1]$ 上严格递减得
+\[
+\frac{1}{x+1}<\int_{x}^{x+1}\frac{dt}{t}<\frac{1}{x}.
+\]
+即 $\frac{1}{x+1}<\ln\!\left(1+\frac{1}{x}\right)<\frac{1}{x}$。乘以 $x$ 得 $\frac{x}{x+1}<x\ln\!\left(1+\frac{1}{x}\right)<1$；乘以 $x+1$ 得 $1<(x+1)\ln\!\left(1+\frac{1}{x}\right)$。取指数即得
+\[
+\left(1+\frac{1}{x}\right)^{x}<e<\left(1+\frac{1}{x}\right)^{x+1}.
+\]
 \item 
-证明略
+\textbf{解} 本题结论不成立。反例：取 $f(x)=e^{-x}-x\;(x\geqslant0)$，则 $f$ 在 $[0,+\infty)$ 上有一阶连续导数，$f(0)=1$，且 $f(x)\leqslant e^{-x}$。但
+\[
+f'(x)=-e^{-x}-1,\qquad -e^{-\xi}=-e^{-\xi},
+\]
+方程 $f'(\xi)=-e^{-\xi}$ 即 $-1=0$，无解。故不存在 $\xi>0$ 满足要求。
 	\end{enumerate}
 	
 	

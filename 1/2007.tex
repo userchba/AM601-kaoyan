@@ -210,9 +210,25 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
 \nynote{三角形三边关系不等式}
 
 \banswer{
-	证明略
+任取 $(x,y)\in D$，记 $\rho=\sqrt{x^2+y^2}$，由三角不等式得
+$\rho-K\le\sqrt{(x-a)^2+(y-b)^2}\le\rho+K$。
+由 $K<r\le\rho\le R$ 知 $\rho-K>0$，故
+\[
+\frac1{\rho+K}\le\frac1{\sqrt{(x-a)^2+(y-b)^2}}\le\frac1{\rho-K}.
+\]
+因此
+\begin{align*}
+\iint_D\frac{d\sigma}{\sqrt{(x-a)^2+(y-b)^2}}
+&\ge\iint_D\frac1{\rho+K}\,d\sigma
+\ge\iint_D\frac1{R+K}\,d\sigma
+=\frac{\pi(R^2-r^2)}{R+K},\\[4pt]
+\iint_D\frac{d\sigma}{\sqrt{(x-a)^2+(y-b)^2}}
+&\le\iint_D\frac1{\rho-K}\,d\sigma
+\le\iint_D\frac1{r-K}\,d\sigma
+=\frac{\pi(R^2-r^2)}{r-K}.
+\end{align*}
+综上，所证不等式成立。
 }
-
 
 
 \item 
@@ -222,7 +238,14 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
 \nynote{2009年十一题的一种特殊情况，令$f(x_0)= \frac{1}{2}$，再用拉格朗日中值定理就可以了。}
 
 \banswer{
-	证明略
+由连续函数的介值定理，存在 $x_0\in(0,1)$ 使得 $f(x_0)=\frac12$。
+在 $[0,x_0]$ 和 $[x_0,1]$ 上分别应用拉格朗日中值定理，存在
+$x_1\in(0,x_0)$，$x_2\in(x_0,1)$ 满足
+\[
+f'(x_1)=\frac{f(x_0)-f(0)}{x_0-0}=\frac{1}{2x_0},\qquad
+f'(x_2)=\frac{f(1)-f(x_0)}{1-x_0}=\frac{1}{2(1-x_0)}.
+\]
+于是 $\displaystyle\frac1{f'(x_1)}+\frac1{f'(x_2)}=2x_0+2(1-x_0)=2$。
 }
 
 
@@ -232,12 +255,28 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
 
 
 \banswer{
-证明略	
+由 $a_n=\frac{u_n v_n}{u_{n+1}}-v_{n+1}$ 得 $u_n v_n-u_{n+1}v_{n+1}=a_n u_{n+1}$。
+因 $\lim a_n=a>0$（或 $+\infty$），令
+\[
+c=\begin{cases}
+a/2, & a\text{ 为有限正数},\\[2pt]
+1,   & a=+\infty .
+\end{cases}
+\]
+存在 $N$ 使 $n\ge N$ 时 $a_n\ge c>0$。
+于是 $u_n v_n-u_{n+1}v_{n+1}=a_n u_{n+1}\ge c\,u_{n+1}>0$，
+$\{u_n v_n\}_{n\ge N}$ 单调递减且有下界 $0$，故收敛。
+对 $m>N$，
+\[
+u_N v_N-u_m v_m=\sum_{k=N}^{m-1}(u_k v_k-u_{k+1}v_{k+1})\ge c\sum_{k=N}^{m-1}u_{k+1}.
+\]
+令 $m\to\infty$，左端趋于有限值 $u_N v_N-\lim u_n v_n<\infty$，
+故 $\sum_{k=N+1}^{\infty}u_k$ 收敛，从而 $\sum_{n=1}^{\infty}u_n$ 收敛。
 }
 
 	
 	
-	
+
 \end{enumerate}
 
 

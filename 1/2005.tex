@@ -295,9 +295,9 @@ $f(u, v)$ 具有二阶连续偏导数, $z=f\left(x y^{2}, \frac{y}{x}\right)$, �
 			%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
 			%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 			\item
-			证明略
+			由 $f(0)=0<1<2=f(1)$ 及 $f$ 在 $[0,1]$ 上连续，根据连续函数的介值定理，存在 $\xi \in(0,1)$ 使得 $f(\xi)=1$。
 			\item 
-			证明略
+			由(1)知存在 $\xi \in(0,1)$ 使 $f(\xi)=1$。在 $[0,\xi]$ 上对 $f$ 应用拉格朗日中值定理，存在 $x_{1} \in(0, \xi)$ 使得 $f^{\prime}(x_{1})=\frac{f(\xi)-f(0)}{\xi-0}=\frac{1}{\xi}$。在 $[\xi, 1]$ 上再应用拉格朗日中值定理，存在 $x_{2} \in(\xi, 1)$ 使得 $f^{\prime}(x_{2})=\frac{f(1)-f(\xi)}{1-\xi}=\frac{1}{1-\xi}$。于是 $\frac{1}{f^{\prime}(x_{1})}+\frac{1}{f^{\prime}(x_{2})}= \xi+(1-\xi)=1$，且 $0<x_{1}<\xi<x_{2}<1$。
 			
 		\end{enumerate}
 		\item 
@@ -310,7 +310,32 @@ $f(u, v)$ 具有二阶连续偏导数, $z=f\left(x y^{2}, \frac{y}{x}\right)$, �
 			\item
 			$ x=\frac{a}{2} $时，$ F(x) $有最小值$ \frac{a^{2}}{4} $
 			\item 
-			证明略
+			题设中 $\int_{0}^{u} x f(x) d x=1$ 的 $u$ 未给出定义，属印刷遗漏；下在 $u \in[0, a]$ 的自然假定下完成证明。\\
+			令 $M=\max_{[0, a]}|f(x)|$。若结论不真，则 $M<\frac{4}{a^{2}}$。\\
+			定义 $h_{u}(x)=\begin{cases}x, & 0 \le x \le u,\\ 0, & u<x \le a.\end{cases}$ 由条件 $\int_{0}^{a} f(x) d x=0$ 及 $\int_{0}^{u} x f(x) d x=1$ 知
+			\[
+			\int_{0}^{a} h_{u}(x) f(x) d x=\int_{0}^{u} x f(x) d x=1.
+			\]
+			对任意常数 $c$ 均有 $\int_{0}^{a}(h_{u}(x)-c) f(x) d x=1-c \int_{0}^{a} f(x) d x=1$。选取适当的 $c$ 使 $\int_{0}^{a}|h_{u}(x)-c| d x$ 取得小值：
+			\begin{itemize}
+				\item 若 $u \le a / 2$，取 $c=0$，则 $\displaystyle\int_{0}^{a}|h_{u}(x)-c| d x=\int_{0}^{u} x d x=\frac{u^{2}}{2} \le \frac{a^{2}}{8}<\frac{a^{2}}{4}$。
+				\item 若 $u \ge a / 2$，取 $c=u-a / 2\;( \ge 0)$，计算得
+				\[
+				\int_{0}^{a}|h_{u}(x)-c| d x
+				=\int_{0}^{u}|x-c| d x+\int_{u}^{a} c d x
+				=c^{2}+\frac{u^{2}}{2}-c u+c(a-u)
+				=\frac{a^{2}}{4}-\frac{(a-u)^{2}}{2} \le \frac{a^{2}}{4}.
+				\]
+			\end{itemize}
+			总之 $\int_{0}^{a}|h_{u}-c| d x \le \frac{a^{2}}{4}$。于是
+			\[
+			1=\left|\int_{0}^{a}(h_{u}-c) f d x\right|
+			\le M \int_{0}^{a}|h_{u}-c| d x
+			\le M \cdot \frac{a^{2}}{4}
+			<\frac{4}{a^{2}} \cdot \frac{a^{2}}{4}=1,
+			\]
+			矛盾。故必存在 $x_{0} \in[0, a]$ 使得 $\left|f\left(x_{0}\right)\right| \geqslant \frac{4}{a^{2}}$。\\[2pt]
+			{\small(注：原题未定义 $u$，严格说来命题不完备。)}
 			
 		\end{enumerate}
 		

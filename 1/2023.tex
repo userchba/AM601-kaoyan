@@ -199,7 +199,52 @@ $
 求证$ u $满足$y \frac{\partial u}{\partial x}+x \frac{\partial u}{\partial y}=0 $的充要条件是$  u(x, y)=f\left(x^2-y^2\right)  $。
 
 \banswer{
-	易证略。
+	\textbf{充分性：} 若 $u(x,y)=f(x^2-y^2)$，令 $t=x^2-y^2$，则
+	$\frac{\partial u}{\partial x}=f'(t)\cdot 2x$，
+	$\frac{\partial u}{\partial y}=f'(t)\cdot(-2y)$，
+	于是 $y\frac{\partial u}{\partial x}+x\frac{\partial u}{\partial y}
+	=2xy f'(t)-2xy f'(t)=0$。\\[6pt]
+	\textbf{必要性（全局不成立）：} 等式 $u(x,y)=f(x^2-y^2)$ 要求 $u$ 在每条双曲线
+	$x^2-y^2=\text{const}$ 上取常值。但双曲线有两支互不连通的连通分支（$x>0$ 与 $x<0$ 区域），
+	在全局上 PDE 允许在两支上取不同值，从而 $u$ 未必可写成单一函数 $f$ 的形式。
+
+	\textbf{反例：} 取 $0\not\equiv\chi\in C_c^\infty\bigl((1,2)\bigr)$ 光滑且非负。
+	定义
+	\[
+	u(x,y)=
+	\begin{cases}
+	\chi(x^2-y^2), & x>0,\\[2pt]
+	2\chi(x^2-y^2), & x<0,\\[2pt]
+	0, & x=0.
+	\end{cases}
+	\]
+	沿每条特征线 $x^2-y^2=t$（$t\in(1,2)$），
+	对 $x>0$ 的分支 $u$ 取 $\chi(t)$，对 $x<0$ 的分支 $u$ 取 $2\chi(t)$，
+	二者不等。在 $x=0$ 上 $x^2-y^2=-y^2\le 0$，而 $\chi$ 的支集在 $(1,2)$，
+	故 $u\equiv0$。直接验证：在 $x>0$ 区域
+	$y u_x+x u_y=2xy\chi'(t)-2xy\chi'(t)=0$；$x<0$ 区域同理；$x=0$ 处
+	$y u_x+x u_y=y u_x$，而 $u$ 在 $x=0$ 附近恒为零（因为 $\chi(t)$ 在 $t\le 0$ 处为零），
+	故偏导也为零。因此 PDE 处处成立，但不存在单一函数 $f$ 满足
+	$u(x,y)=f(x^2-y^2)$（若存在，取 $x^2-y^2=t_0\in(1,2)$，
+	则 $f(t_0)=\chi(t_0)$ 又 $=2\chi(t_0)$，矛盾）。
+
+	\textbf{局部必要性（远离原点）：} 设 $u$ 在区域 $\Omega\subset\mathbb{R}^2\setminus\{(0,0)\}$ 上
+	满足 $y u_x+x u_y=0$，则局部上存在 $f$ 使 $u=f(x^2-y^2)$。
+	\textbf{证明：} 取点 $(x_0,y_0)\in\Omega$。若 $y_0\neq0$，作变量代换
+	\[
+	\xi=x^2-y^2,\qquad \eta=x.
+	\]
+	Jacobian: $\frac{\partial(\xi,\eta)}{\partial(x,y)}=\begin{vmatrix}2x&-2y\\1&0\end{vmatrix}=2y\neq0$，
+	故局部可逆。令 $U(\xi,\eta)=u(x,y)$，则
+	\[
+	y u_x+x u_y = y\bigl(U_\xi\cdot2x+U_\eta\cdot1\bigr)
+	+x\bigl(U_\xi\cdot(-2y)\bigr)
+	=y\,U_\eta.
+	\]
+	由 $y\neq0$ 得 $U_\eta=0$，即 $U$ 与 $\eta$ 无关，$U(\xi,\eta)=f(\xi)$，
+	从而 $u(x,y)=f(x^2-y^2)$。
+	若 $y_0=0$，则必有 $x_0\neq0$（因原点不在 $\Omega$ 中），
+	改取 $\eta=y$，同理得 $u=f(x^2-y^2)$。
 }
 
 
@@ -272,7 +317,19 @@ I=\iint_S x^2 y d y d z+x y^2 d z d x+\left(x^2+2 y^2\right) d x d y
 求证$\exists \xi \in(0,1) $，使得$  f^{\prime \prime}(\xi) \geqslant 8$。
 
 \banswer{
-易证略。	
+	由 $f\in C[0,1]$ 且 $f(0)=f(1)=0$，而 $\min f=-1$，
+	故存在 $c\in(0,1)$ 使 $f(c)=-1$，且 $f'(c)=0$（内部极值必要条件）。
+	在 $x=c$ 处展开 Taylor 公式（Lagrange 余项）：
+	\begin{align*}
+	0=f(0)&=f(c)+f'(c)(0-c)+\frac{f''(\xi_1)}{2}(0-c)^2
+	=-1+\frac{f''(\xi_1)}{2}c^2,\quad \xi_1\in(0,c),\\
+	0=f(1)&=f(c)+f'(c)(1-c)+\frac{f''(\xi_2)}{2}(1-c)^2
+	=-1+\frac{f''(\xi_2)}{2}(1-c)^2,\quad \xi_2\in(c,1).
+	\end{align*}
+	故 $f''(\xi_1)=\frac{2}{c^2}$，$f''(\xi_2)=\frac{2}{(1-c)^2}$。
+	若 $c\le\frac12$，则 $f''(\xi_1)\ge 2/(\frac12)^2=8$；
+	若 $c\ge\frac12$，则 $f''(\xi_2)\ge 2/(\frac12)^2=8$。
+	综上，$\exists\,\xi\in(0,1)$ 使 $f''(\xi)\ge 8$。
 }
 
 
@@ -314,7 +371,36 @@ I=\iint_S x^2 y d y d z+x y^2 d z d x+\left(x^2+2 y^2\right) d x d y
 
 
 \banswer{
-	易证略。
+	\begin{enumerate}
+	\item 令 $L=\lim\limits_{x\to2}\frac{f(2x-2)}{x-2}$。作代换 $u=2x-2$，
+	则 $x-2=\frac{u-2}{2}$，$x\to2$ 时 $u\to2$，
+	故 $L=\lim\limits_{u\to2}\frac{2f(u)}{u-2}$。
+	分母趋于 $0$ 而极限存在有限，故 $f(u)\to0$，
+	由连续性得 $f(2)=0$。又 $f'(x)>0$ 于 $(2,4)$，
+	故 $f$ 在 $(2,4)$ 上严格递增，从而 $\forall\,x\in(2,4)$ 有 $f(x)>f(2)=0$。
+
+	\item 令 $F(x)=\int_2^x f(t)\,dt$，$G(x)=\frac{x^2}{2}$，
+	则 $F'(x)=f(x)$，$G'(x)=x>0$ 于 $(2,4)$。
+	由 Cauchy 中值定理，$\exists\,\xi\in(2,4)$ 使
+	\[
+	\frac{F(4)-F(2)}{G(4)-G(2)}=\frac{F'(\xi)}{G'(\xi)}=\frac{f(\xi)}{\xi}.
+	\]
+	而 $F(4)-F(2)=\int_2^4 f(x)\,dx$，$G(4)-G(2)=8-2=6$，
+	故 $\frac{1}{6}\int_2^4 f\,dx=\frac{f(\xi)}{\xi}$，
+	即 $\displaystyle\frac{6}{\int_2^4 f(x)\,dx}=\frac{\xi}{f(\xi)}$。
+
+	\item 由 (2) 得 $\int_2^4 f(x)\,dx=\frac{6f(\xi)}{\xi}$。
+	在 $[2,\xi]$ 上对 $f$ 应用 Lagrange 中值定理：
+	$\exists\,\eta\in(2,\xi)$ 使 $f(\xi)-f(2)=f'(\eta)(\xi-2)$。
+	由 $f(2)=0$ 得 $f(\xi)=f'(\eta)(\xi-2)$，即 $f'(\eta)=\frac{f(\xi)}{\xi-2}$。
+	于是
+	\[
+	6f'(\eta)=\frac{6f(\xi)}{\xi-2}
+	=\frac{6f(\xi)}{\xi}\cdot\frac{\xi}{\xi-2}
+	=\frac{\xi}{\xi-2}\int_2^4 f(x)\,dx.
+	\]
+	由 $\eta\in(2,\xi)\subset(2,4)$ 且 $\eta<\xi$ 知 $\eta\neq\xi$。
+	\end{enumerate}
 }
 
 

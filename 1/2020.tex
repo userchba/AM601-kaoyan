@@ -215,7 +215,14 @@ $[a, a+2]$ 上至少存在一点 $\theta$, 使得 $f(\theta)=f(\theta+1)$ 。
 
 
 \banswer{
-	证明略
+	令 $g(x)=f(x)-f(x+1)$。由 $f$ 连续知 $g$ 在 $\mathbb{R}$ 上连续。
+	\[
+	g(a)+g(a+1)+g(a+2)=[f(a)-f(a+1)]+[f(a+1)-f(a+2)]+[f(a+2)-f(a+3)]=f(a)-f(a+3).
+	\]
+	因 $f$ 以 $3$ 为周期，$f(a+3)=f(a)$，故 $g(a)+g(a+1)+g(a+2)=0$。
+	若 $g(a),g(a+1),g(a+2)$ 均为零，则任取其一为 $\theta$ 即得结论。
+	否则三者不能同号（否则和不为零），故存在 $p,q\in\{a,a+1,a+2\}$ 使 $g(p)g(q)\leq0$。
+	由连续函数的介值定理，$g$ 在 $p$ 与 $q$ 之间的区间上有零点，该零点落在 $[a,a+2]$ 内，记为 $\theta$，即有 $f(\theta)=f(\theta+1)$。
 }
 
 
@@ -225,7 +232,12 @@ $[a, a+2]$ 上至少存在一点 $\theta$, 使得 $f(\theta)=f(\theta+1)$ 。
 
 
 \banswer{
-	证明略
+	令 $h(x)=f(x)g(x)$，则 $h(a)=f(a)g(a)=0$，$h(b)=f(b)g(b)=0$。
+	由 Rolle 定理，存在 $\eta\in(a,b)$ 使 $h'(\eta)=0$。
+	又 $h'(x)=f'(x)g(x)+f(x)g'(x)$，故 $h'(a)=f'(a)g(a)+f(a)g'(a)=0$。
+	于是 $h'(a)=h'(\eta)=0$ 且 $a<\eta$，对 $h'$ 在 $[a,\eta]$ 上再用 Rolle 定理，
+	存在 $\xi\in(a,\eta)\subset(a,b)$ 使 $h''(\xi)=0$。
+	而 $h''(x)=f''(x)g(x)+2f'(x)g'(x)+f(x)g''(x)$，代入 $\xi$ 即得所证。
 }
 
 
@@ -235,7 +247,15 @@ $[a, a+2]$ 上至少存在一点 $\theta$, 使得 $f(\theta)=f(\theta+1)$ 。
 
 
 \banswer{
-	证明略
+	令 $F(x)=\int_0^x f(t)\,dt$，则 $F(0)=0$，$F(1)=0$，$F(x)\geq0\;(x\in[0,1])$，且 $F'(x)=f(x)$。
+	由分部积分，
+	\[
+	\int_0^1 x f(x)\,dx=\int_0^1 x\,F'(x)\,dx
+	=\bigl[xF(x)\bigr]_0^1-\int_0^1 F(x)\,dx
+	=F(1)-0-\int_0^1 F(x)\,dx
+	=-\int_0^1 F(x)\,dx.
+	\]
+	因 $F(x)\geq0$，故 $\int_0^1 F(x)\,dx\geq0$，从而 $\int_0^1 x f(x)\,dx\leq0$。
 }
 
 
@@ -246,7 +266,16 @@ $[a, a+2]$ 上至少存在一点 $\theta$, 使得 $f(\theta)=f(\theta+1)$ 。
 式 $x^{3}+y^{3}+z^{3} \geq \frac{a \sqrt{3 a}}{3}$ 恒成立。
 
 \banswer{
-	证明略
+	由 Cauchy–Schwarz 不等式，
+	\[
+	(x^3+y^3+z^3)(x+y+z)\geq(x^2+y^2+z^2)^2=a^2,
+	\]
+	故 $x^3+y^3+z^3\geq\dfrac{a^2}{x+y+z}$。
+	再由 Cauchy–Schwarz，$(x+y+z)^2\leq3(x^2+y^2+z^2)=3a$，得 $x+y+z\leq\sqrt{3a}$，
+	从而 $\dfrac{1}{x+y+z}\geq\dfrac{1}{\sqrt{3a}}$。于是
+	\[
+	x^3+y^3+z^3\geq\frac{a^2}{\sqrt{3a}}=\frac{a\sqrt{3a}}{3}.
+	\]
 }
 
 	

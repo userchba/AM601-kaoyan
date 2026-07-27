@@ -133,10 +133,26 @@
 \item 
 (本题满分 10 分)
 设 $f(x)$ 在 $[0,1]$ 上可微, $f(1)=2 \int_{0}^{\frac{1}{2}} x f(x) d x$, 求证:
-存在 $\xi \in(0,1)$, 使得 $\xi f(\xi)+f(\xi)=0$。
+ 存在 $\xi \in(0,1)$, 使得 $\xi f(\xi)+f(\xi)=0$。
 
 \banswer{
-	证明略
+本题印刷结论为 $\xi f(\xi)+f(\xi)=0$，即 $(1+\xi)f(\xi)=0$。该结论一般不成立。
+例如取 $f(x)=1-\frac{9}{11}x$，它在 $[0,1]$ 上恒正且满足条件
+\[
+f(1)=\frac{2}{11},\qquad
+2\int_{0}^{1/2}x f(x)dx
+=2\int_{0}^{1/2}x\Bigl(1-\frac{9}{11}x\Bigr)dx
+=2\Bigl(\frac18-\frac{3}{88}\Bigr)=\frac{2}{11}=f(1),
+\]
+但对任意 $\xi\in(0,1)$ 有 $\xi f(\xi)+f(\xi)=(1+\xi)f(\xi)>0$，不可能为零。
+故原题印刷有误，其本意应为 $\xi f'(\xi)+f(\xi)=0$。下按修正后的结论给出证明。
+
+由积分中值定理，存在 $\eta\in[0,\frac12]$ 使得
+$\int_0^{1/2}x f(x)dx=\frac12\eta f(\eta)$。
+代入条件得 $f(1)=2\cdot\frac12\eta f(\eta)=\eta f(\eta)$。
+令 $F(x)=x f(x)$，则 $F(\eta)=\eta f(\eta)=f(1)$，而 $F(1)=f(1)$，故 $F(\eta)=F(1)$。
+在 $[\eta,1]\subset[0,1]$ 上对 $F$ 应用罗尔定理，存在 $\xi\in(\eta,1)\subset(0,1)$ 使得
+$F'(\xi)=0$，即 $\xi f'(\xi)+f(\xi)=0$。
 }
 
 
@@ -189,7 +205,18 @@ e^{-x} \leqslant f(x) \leqslant 1 \quad(x \geqslant 0)
 
 
 \banswer{
-	证明略
+令 $F(x)=\int_0^x f(t)dt$，则 $F'(x)=f(x)$，原方程化为
+$(1+x)f'(x)+(1+x)f(x)-F(x)=0$。
+两边对 $x$ 求导得 $(1+x)f''(x)+(2+x)f'(x)=0$。
+令 $q(x)=f'(x)$，则 $(1+x)q'+(2+x)q=0$。注意到
+$\bigl((1+x)e^x q(x)\bigr)'=e^x\bigl[(1+x)q'+(2+x)q\bigr]=0$，
+故 $(1+x)e^x q(x)=C$，即 $f'(x)=q(x)=C\frac{e^{-x}}{1+x}$。在原方程中令 $x=0$ 得 $f'(0)+f(0)=0$，故 $f'(0)=-1$，$C=-1$。
+于是 $f'(x)=-\frac{e^{-x}}{1+x}$，且 $f(x)=1-\int_0^x\frac{e^{-t}}{1+t}dt$。
+由 $f'(x)\le0$ 知 $f(x)\le f(0)=1$。又
+\[
+\int_0^x\frac{e^{-t}}{1+t}dt\le\int_0^x e^{-t}dt=1-e^{-x},
+\]
+故 $f(x)\ge1-(1-e^{-x})=e^{-x}$。综上 $e^{-x}\le f(x)\le1$（$x\ge0$）。
 }
 
 

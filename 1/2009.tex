@@ -133,7 +133,11 @@ $y^{2}=x+1$
 设 $f(x)$ 在 $[0,1]$ 上连续, $f(x)>0$, 求证：存在唯一的 $a \in(0,1)$, 使得 $\int_{0}^{a} f(t) d t=\int_{a}^{1} \frac{1}{f(t)} d t$。
 
 \banswer{
-证明略。
+令 $F(x)=\int_0^x f(t)dt-\int_x^1\frac1{f(t)}dt$，$x\in[0,1]$。
+$F$ 连续，且 $F(0)=-\int_0^1\frac1{f(t)}dt<0$，$F(1)=\int_0^1 f(t)dt>0$。
+又 $F'(x)=f(x)+\frac1{f(x)}>0$（$x\in(0,1)$），故 $F$ 严格单调递增。
+由连续函数的介值定理，存在唯一的 $a\in(0,1)$ 使得 $F(a)=0$，
+即 $\int_0^a f(t)dt=\int_a^1\frac1{f(t)}dt$。
 }
 
 

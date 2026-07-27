@@ -240,7 +240,22 @@ $$
 
 
 \banswer{
-	证明略
+令 $M=\max_{[0,1]}|f(x)|$。因 $f$ 连续、$f(0)=f(1)=0$ 且 $f\not\equiv0$，
+存在 $x_0\in(0,1)$ 使 $|f(x_0)|=M>0$。不妨设 $f(x_0)=M$（否则考虑 $-f$）。
+由拉格朗日中值定理，存在 $\xi\in(0,x_0)$，$\eta\in(x_0,1)$ 使得
+\[
+f'(\xi)=\frac{f(x_0)-f(0)}{x_0}=\frac{M}{x_0},\qquad
+f'(\eta)=\frac{f(1)-f(x_0)}{1-x_0}=-\frac{M}{1-x_0}.
+\]
+于是
+\[
+\int_0^1|f''(x)|dx\ge\int_{\xi}^{\eta}|f''(x)|dx
+\ge\Bigl|\int_{\xi}^{\eta}f''(x)dx\Bigr|
+=|f'(\eta)-f'(\xi)|
+=M\Bigl(\frac1{x_0}+\frac1{1-x_0}\Bigr).
+\]
+由 $x_0(1-x_0)\le\frac14$ 得 $\frac1{x_0}+\frac1{1-x_0}=\frac1{x_0(1-x_0)}\ge4$，
+故 $\int_0^1|f''(x)|dx\ge4M$。
 }
 
 
