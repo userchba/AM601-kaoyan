@@ -22,17 +22,101 @@
 	\item 
 	级数 $\sum\limits_{n=0}^{\infty} \frac{1}{2 n+1}\left(\frac{1-2 x}{1+x}\right)^{n}$ 的收敛域为 \tk{$ (0,2] $} 。
 	\item 
-椭球面 $x^{2}+2 y^{2}+z^{2}=1$ 上平行于平面 $x-y+2 z=0$ 的且平面方程为 \tk{$ x-y+2z=\pm \sqrt{\frac{y}{2}} $} 。
+椭球面 $x^{2}+2 y^{2}+z^{2}=1$ 上平行于平面 $x-y+2 z=0$ 的切平面方程为 $x-y+2 z=$ \tk{$ \pm\sqrt{\frac{11}{2}} $} 。
 	
 	
 	\item
-	微分方程 $y^{\prime \prime}+2 y^{\prime}-2 y=4 x e^{x}$ 的通解为 \tk{$ y=-(2x+1)e^{x}+C_{1}e^{-x}+C_{2}e^{2x} $} 。
+	微分方程 $y^{\prime \prime}- y^{\prime}-2 y=4 x e^{x}$ 的通解为 \tk{$ y=-(2x+1)e^{x}+C_{1}e^{-x}+C_{2}e^{2x} $} 。
 	
 	
 \end{enumerate}
 
-\item 	
-选择题 (本题 5 小题，每小题 5 分，满分 25 分)	
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	$\frac13$。令 $t=\tan x$，则
+	\[
+	2\sin^{2}x-1=\frac{2t^{2}}{1+t^{2}}-1=\frac{t^{2}-1}{t^{2}+1},
+	\]
+	故原式 $=\dfrac{\left(\sqrt[3]{t}-1\right)\left(t^{2}+1\right)}{(t-1)(t+1)}$。
+	当 $x\to\frac\pi4$ 时 $t\to1$，而
+	\[
+	\lim_{t\to1}\frac{\sqrt[3]{t}-1}{t-1}=\frac13,\qquad
+	\lim_{t\to1}\frac{t^{2}+1}{t+1}=1 ,
+	\]
+	所以极限为 $\frac13$。
+
+	\item
+	$-\dfrac{1}{2t^{2}\ln t}$。由变限积分求导（注意 $\ln t^{2}=2\ln t$）
+	\[
+	\frac{dx}{dt}=t^{2}\ln t^{2}\cdot2t=4t^{3}\ln t,\qquad
+	\frac{dy}{dt}=-\left(t^{2}\right)^{2}\ln t^{2}\cdot2t=-4t^{5}\ln t ,
+	\]
+	故 $\dfrac{dy}{dx}=-t^{2}$。再对 $x$ 求导一次：
+	\[
+	\frac{d^{2}y}{dx^{2}}
+	=\frac{\frac{d}{dt}\left(-t^{2}\right)}{\frac{dx}{dt}}
+	=\frac{-2t}{4t^{3}\ln t}=-\frac{1}{2t^{2}\ln t}\qquad(t>0,\ t\neq1).
+	\]
+
+	\item
+	$(0,2]$。记 $u=\dfrac{1-2x}{1+x}$。幂级数 $\sum\limits_{n=0}^{\infty}\frac{u^{n}}{2n+1}$
+	的收敛半径为 $1$；$u=-1$ 时是收敛的交错级数，$u=1$ 时是发散的
+	$\sum\frac{1}{2n+1}$，故收敛条件为 $-1\leqslant u<1$。由
+	\[
+	u-1=\frac{-3x}{1+x},\qquad u+1=\frac{2-x}{1+x}
+	\]
+	知 $u<1\iff\dfrac{x}{1+x}>0$，$u\geqslant-1\iff\dfrac{2-x}{1+x}\geqslant0$，
+	两者同时成立当且仅当 $0<x\leqslant2$。
+
+	\item
+	$x-y+2z=\pm\sqrt{\frac{11}{2}}$。设切点为 $\left(x_{0},y_{0},z_{0}\right)$，
+	$F=x^{2}+2y^{2}+z^{2}-1$ 的梯度 $\left(2x_{0},4y_{0},2z_{0}\right)$
+	应与已知平面的法向量 $(1,-1,2)$ 平行，故
+	\[
+	x_{0}=\frac\lambda2,\qquad y_{0}=-\frac\lambda4,\qquad z_{0}=\lambda .
+	\]
+	代入椭球面方程得 $\frac{\lambda^{2}}{4}+\frac{\lambda^{2}}{8}+\lambda^{2}
+	=\frac{11\lambda^{2}}{8}=1$，即 $\lambda=\pm\sqrt{\frac{8}{11}}$。
+	切平面为 $x_{0}x+2y_{0}y+z_{0}z=1$，即 $\frac\lambda2(x-y+2z)=1$，于是
+	\[
+	x-y+2z=\frac{2}{\lambda}=\pm\sqrt{\frac{11}{2}}=\pm\frac{\sqrt{22}}{2}
+	\approx\pm2.3452 .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $x-y+2z=\pm\sqrt{\frac{y}{2}}$，右端竟含变量 $y$，显系 $11$ 的排印之误，
+	今改正为 $\pm\sqrt{\frac{11}{2}}$。已数值校验：上述切点确在椭球面上，
+	且其梯度与 $(1,-1,2)$ 成比例。另外原题面“的且平面方程”应为
+	“的切平面方程”，一并改正。
+	}\par
+
+	\item
+	$y=-(2x+1)e^{x}+C_{1}e^{-x}+C_{2}e^{2x}$。特征方程 $r^{2}-r-2=0$ 的根为
+	$r_{1}=-1$、$r_{2}=2$，故齐次通解为 $C_{1}e^{-x}+C_{2}e^{2x}$。
+	因 $1$ 不是特征根，设特解 $y^{*}=(ax+b)e^{x}$，则
+	\begin{align*}
+	\left(y^{*}\right)^{\prime\prime}-\left(y^{*}\right)^{\prime}-2y^{*}
+	&=(-2ax+a-2b)e^{x}=4xe^{x},
+	\end{align*}
+	比较系数得 $a=-2$、$b=-1$，即 $y^{*}=-(2x+1)e^{x}$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面印作 $y^{\prime\prime}+2y^{\prime}-2y=4xe^{x}$，与所给答案对不上：
+	该方程的特征根为 $-1\pm\sqrt3$，通解应为
+	$(4x-16)e^{x}+C_{1}e^{\left(-1+\sqrt3\right)x}+C_{2}e^{\left(-1-\sqrt3\right)x}$，
+	齐次部分与特解都不吻合。而答案 $-(2x+1)e^{x}+C_{1}e^{-x}+C_{2}e^{2x}$
+	逐项恰好是 $y^{\prime\prime}-y^{\prime}-2y=4xe^{x}$ 的通解（已代入数值验证），
+	故判定题面中的 $+2y^{\prime}$ 系 $-y^{\prime}$ 之误，已据此更正题面。
+	}\par
+\end{enumerate}
+}
+
+\item
+选择题 (本题 5 小题，每小题 5 分，满分 25 分)
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
 	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
@@ -53,7 +137,7 @@
 
 
 \item
-“对任意给定的 $\epsilon>0$, 总存在正整数 $N$, 使得当 $n>N$ 时，就有 $\mid a_{N+1}+a_{N+2}+\cdots+a_{N} \mid<\epsilon $” 是级数 $\sum\limits_{n=1}^{\infty} a_{n}$ 收敛的 \xzanswer{C} 
+“对任意给定的 $\epsilon>0$, 总存在正整数 $N$, 使得当 $n>N$ 时，就有 $\mid a_{N+1}+a_{N+2}+\cdots+a_{n} \mid<\epsilon $” 是级数 $\sum\limits_{n=1}^{\infty} a_{n}$ 收敛的 \xzanswer{C} 
 
 
 \fourchoices
@@ -64,7 +148,7 @@
 
 	
 \item 
-设 $s$ 是柱面 $x^{2}+y^{2}=R^{2}$ 介于平面 $z=0$ 及 $z=R$ 之间， $\iint_{S}\left(x^{2}+z^{2}\right) d S=$ \xzanswer{B} 
+设 $S$ 是柱面 $x^{2}+y^{2}=R^{2}$ 介于平面 $z=0$ 及 $z=R$ 之间的部分, 则 $\iint_{S}\left(x^{2}+z^{2}\right) d S=$ \xzanswer{B}
 
 
 \fourchoices
@@ -99,7 +183,77 @@
 	
 \end{enumerate}
 
-\item 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	\textbf{C}。因 $\arctan\frac1x$ 有界，$x\to0$ 时
+	$|x|^{a}\arctan\frac1x\to0=f(0)$ 当且仅当 $a>0$，这是连续的充要条件。
+	再看差商：$x\to0^{+}$ 时
+	\[
+	\frac{f(x)-f(0)}{x}=x^{a-1}\arctan\frac1x\sim\frac\pi2x^{a-1} ,
+	\]
+	$x\to0^{-}$ 时 $\dfrac{|x|^{a}\arctan(1/x)}{x}=-|x|^{a-1}\arctan\frac1x
+	\sim\frac\pi2|x|^{a-1}$，两侧同型。于是 $a>1$ 时导数存在且为 $0$；
+	$a=1$ 时左右差商都趋于 $\frac\pi2$，仍可导；只有 $0<a<1$ 时差商趋于
+	$+\infty$，连续而不可导。
+
+	\item
+	原卷此处题面缺失（仅存题号），无从作答。
+
+	\item
+	\textbf{C}。记部分和 $S_{n}=\sum\limits_{k=1}^{n}a_{k}$，所述条件即
+	\[
+	\forall\varepsilon>0,\ \exists N,\ \forall n>N:\quad
+	\left|S_{n}-S_{N}\right|<\varepsilon .
+	\]
+	若它成立，则对一切 $m,n>N$ 有
+	$\left|S_{n}-S_{m}\right|\leqslant\left|S_{n}-S_{N}\right|
+	+\left|S_{m}-S_{N}\right|<2\varepsilon$，
+	即 $\{S_{n}\}$ 为 Cauchy 列，级数收敛，故条件充分；
+	反之级数收敛时，由 Cauchy 收敛准则该条件自然成立，故亦必要。
+	所以是充分必要条件。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面末项印作 $a_{N}$，与前面的 $a_{N+1},a_{N+2},\cdots$ 矛盾，
+	应为 $a_{n}$，已改正。
+	}\par
+
+	\item
+	\textbf{B}。取 $x=R\cos\theta$、$y=R\sin\theta$、$0\leqslant z\leqslant R$，
+	则 $dS=R\,d\theta\,dz$，于是
+	\begin{align*}
+	\iint_{S}\left(x^{2}+z^{2}\right)dS
+	&=R\int_{0}^{2\pi}\!\!\int_{0}^{R}
+	\left(R^{2}\cos^{2}\theta+z^{2}\right)dz\,d\theta\\
+	&=R\left(\pi R^{3}+2\pi\cdot\frac{R^{3}}{3}\right)
+	=\frac53\pi R^{4} .
+	\end{align*}
+
+	\item
+	\textbf{A}。在不含原点的单连通区域内
+	\[
+	\frac{-y\,dx+x\,dy}{x^{2}+y^{2}}=d\left(\arctan\frac yx\right)=d\theta
+	\]
+	是全微分（极角的微分）。$L$ 除端点外全在上半平面，
+	故沿 $L$ 极角由 $\theta=\pi$ 连续变到 $\theta=0$，积分值
+	$=\Delta\theta=0-\pi=-\pi$，与 $L$ 的具体形状无关。
+
+	\item
+	\textbf{D}。令 $t=x^{2}$，则 $dx=\dfrac{dt}{2\sqrt t}$，
+	\[
+	\int_{0}^{+\infty}\frac{\sin x^{2}}{x^{p}}\,dx
+	=\frac12\int_{0}^{+\infty}t^{-\frac{p+1}{2}}\sin t\,dt .
+	\]
+	$t\to0^{+}$ 时被积函数 $\sim\frac12t^{\frac{1-p}{2}}$，收敛要求
+	$\frac{1-p}{2}>-1$，即 $p<3$；$t\to+\infty$ 时由 Dirichlet 判别法，
+	需 $t^{-\frac{p+1}{2}}$ 单调趋于 $0$，即 $p>-1$
+	（$p=-1$ 时 $\int^{+\infty}\sin t\,dt$ 发散）。故收敛域为 $-1<p<3$。
+\end{enumerate}
+}
+
+\item
 (本题共 5 小题，每小题 8 分，满分 40 分)
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -116,7 +270,7 @@
 	
 	
 	\item
-	设 $G=\sqrt[n]{(n+1)(n+2) \cdots(n+n)}$, 求 $\lim\limits _{n \rightarrow} \frac{G_{n}}{n}$ 。
+	设 $G_{n}=\sqrt[n]{(n+1)(n+2) \cdots(n+n)}$, 求 $\lim\limits _{n \rightarrow \infty} \frac{G_{n}}{n}$ 。
 	
 	
 	\item
@@ -207,9 +361,36 @@ f'(x)=-e^{-x}-1,\qquad -e^{-\xi}=-e^{-\xi},
 		%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 		\item
 		$ z_{\max}=\frac{81}{64}  \quad ( \frac{ 3 }{ 2 } , \frac{ 3 }{ 4 } )  $， \quad $ z_{\min}=-\frac{256}{27}  \quad ( \frac{ 8 }{ 3 } , \frac{ 4 }{ 3 } ) $
-		\item 
-		$ f(x)= \frac{ 1 }{ 2 } \cos x +Ae^{x}+Be^{-x} $
-		\item 
+		\item
+		令 $u=\frac t2$，则
+		\[
+		\frac14\int_{0}^{2\pi}(2x-t)f\!\left(\frac t2\right)dt
+		=\int_{0}^{\pi}(x-u)f(u)\,du ,
+		\]
+		故 $f(x)=\cos x+Px-Q$，其中
+		$P=\int_{0}^{\pi}f(u)du$、$Q=\int_{0}^{\pi}uf(u)du$ 均为常数。
+		把这一形式代回（用 $\int_{0}^{\pi}\cos u\,du=0$、
+		$\int_{0}^{\pi}u\cos u\,du=-2$）得
+		\[
+		P=\frac{\pi^{2}}{2}P-\pi Q,\qquad
+		Q=-2+\frac{\pi^{3}}{3}P-\frac{\pi^{2}}{2}Q ,
+		\]
+		解出 $P=\dfrac{24\pi}{\pi^{4}+12}$、
+		$Q=\dfrac{12\left(\pi^{2}-2\right)}{\pi^{4}+12}$，所以
+		\[
+		f(x)=\cos x+\frac{24\pi}{\pi^{4}+12}x
+		-\frac{12\left(\pi^{2}-2\right)}{\pi^{4}+12} .
+		\]
+
+		\par\vspace{1mm}\noindent
+		\textbf{注：}{\kaishu
+		原答案作 $f(x)=\frac12\cos x+Ae^{x}+Be^{-x}$，有误。
+		本题积分限 $0$ 到 $2\pi$ 是常数限，$f$ 由等式唯一确定，不含任意常数；
+		带 $Ae^{x}+Be^{-x}$ 的结果属于变上限方程
+		$f(x)=\cos x+\int_{0}^{x}(x-t)f(t)dt$（求导两次给出 $f''-f=-\cos x$）。
+		上面的 $f$ 已用数值积分逐点校验，等式两端完全相符。
+		}\par
+		\item
 		$ V=\frac{2\pi c}{3}(2a^{2}+b^{2}) $
 	\end{enumerate}
 	
@@ -240,7 +421,7 @@ f'(x)=-e^{-x}-1,\qquad -e^{-\xi}=-e^{-\xi},
 	\item
 求 $\operatorname{div} \vec{v}$。
 	\item 
-	求积分 $\iint_{S} \frac{a d y d z+y d z d x+z d x d y}{\left(2 x^{2}+y^{2}+z^{2}\right)^{\frac{3}{2}}}$。
+	求积分 $\iint_{S} \frac{x d y d z+y d z d x+z d x d y}{\left(2 x^{2}+y^{2}+z^{2}\right)^{\frac{3}{2}}}$。
 \end{enumerate}
 	
 	

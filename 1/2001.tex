@@ -40,19 +40,21 @@ $\lim\limits _{x \rightarrow 0} \frac{\sqrt{1+x}+\sqrt{1-x}-2}{x^{2}}=$ \tk{$-\f
 
 \banswer{
 	\begin{enumerate}
+		%\renewcommand{\labelenumi}{\arabic{enumi}.}
 		\item
-		由积分中值定理（或变上限积分的平均值极限）
+		$a^{2}f(a)$。由变上限积分的平均值极限（积分中值定理）
 		\[
-		\lim_{x\to a}\frac{1}{x-a}\int_a^x f(t)\,dt=f(a).
+		\lim_{x\to a}\frac{1}{x-a}\int_a^x f(t)\,dt=f(a),
 		\]
 		又 $x^2\to a^2$，故
 		\[
 		\lim_{x\to a}F(x)
-		=\lim_{x\to a}x^2\frac{\int_a^x f(t)\,dt}{x-a}
-		=\boxed{a^2f(a)}.
+		=\lim_{x\to a}x^2\cdot\frac{\int_a^x f(t)\,dt}{x-a}
+		=a^2f(a).
 		\]
+
 		\item
-		所给直线经过 $Q=(4,-3,0)$，方向向量为
+		$-3x+2y+11z+18=0$。所给直线经过 $Q=(4,-3,0)$，方向向量为
 		$\bm d=(5,2,1)$。设指定点为 $P=(3,1,-1)$，则
 		\[
 		\overrightarrow{QP}=(-1,4,-1),\qquad
@@ -64,42 +66,37 @@ $\lim\limits _{x \rightarrow 0} \frac{\sqrt{1+x}+\sqrt{1-x}-2}{x^{2}}=$ \tk{$-\f
 		\[
 		-3(x-3)+2(y-1)+11(z+1)=0,
 		\]
-		即
-		\[
-		\boxed{-3x+2y+11z+18=0}.
-		\]
+		即 $-3x+2y+11z+18=0$。
+		（校验：$Q=(4,-3,0)$ 与直线上另一点 $(9,-1,1)$ 都满足此式。）
+
 		\item
-		记 $A=\sqrt{1+x}+\sqrt{1-x}$。连续两次有理化可得
-		\[
-		\begin{aligned}
+		$-\frac14$。记 $A=\sqrt{1+x}+\sqrt{1-x}$。连续两次有理化可得
+		\begin{align*}
 		A-2
 		&=\frac{A^2-4}{A+2}
 		=\frac{2\bigl(\sqrt{1-x^2}-1\bigr)}{A+2}\\
 		&=-\frac{2x^2}
 		{(A+2)\bigl(\sqrt{1-x^2}+1\bigr)}.
-		\end{aligned}
-		\]
+		\end{align*}
 		所以
 		\[
 		\lim_{x\to0}\frac{A-2}{x^2}
 		=-\frac{2}{(2+2)(1+1)}
-		=\boxed{-\frac14}.
+		=-\frac14 .
 		\]
+
 		\item
+		$y=e^{-x/2}\left(C_1\cos\frac{\sqrt3x}{2}+C_2\sin\frac{\sqrt3x}{2}\right)$。
 		特征方程为
 		\[
 		r^2+r+1=0,\qquad
-		r_{1,2}=-\frac12\pm\frac{\sqrt3}{2}i.
+		r_{1,2}=-\frac12\pm\frac{\sqrt3}{2}i ,
 		\]
-		因此实通解为
-		\[
-		\boxed{\displaystyle
-		y=e^{-x/2}\left(
-		C_1\cos\frac{\sqrt3x}{2}
-		+C_2\sin\frac{\sqrt3x}{2}\right)}.
-		\]
+		是一对共轭复根 $\alpha\pm\beta i$（$\alpha=-\frac12$，$\beta=\frac{\sqrt3}{2}$），
+		故实通解如上。
+
 		\item
-		令
+		$\dfrac{z^3f_1}{x\left(z^2f_1-xyf_2\right)}$。令
 		\[
 		u=\frac zx,\qquad v=\frac yz,
 		\]
@@ -108,18 +105,17 @@ $\lim\limits _{x \rightarrow 0} \frac{\sqrt{1+x}+\sqrt{1-x}-2}{x^{2}}=$ \tk{$-\f
 		$f(u,v)=0$ 关于 $x$ 求偏导：
 		\[
 		f_1\left(\frac{z_x}{x}-\frac{z}{x^2}\right)
-		f_2\left(-\frac{y z_x}{z^2}\right)=0.
+		+f_2\left(-\frac{y z_x}{z^2}\right)=0.
 		\]
 		整理为
 		\[
 		\left(\frac{f_1}{x}-\frac{yf_2}{z^2}\right)z_x
-		=\frac{zf_1}{x^2}.
+		=\frac{zf_1}{x^2},
 		\]
 		在分母不为零的条件下，
 		\[
-		\boxed{\displaystyle
 		\frac{\partial z}{\partial x}
-		=\frac{z^3f_1}{x\left(z^2f_1-xyf_2\right)}}.
+		=\frac{z^3f_1}{x\left(z^2f_1-xyf_2\right)} .
 		\]
 	\end{enumerate}
 }

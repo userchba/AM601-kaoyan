@@ -41,12 +41,12 @@ $M=\int_{0}^{\frac{\pi}{2}} \frac{\sin ^{2} x}{1+x^{k}} d x, N=\int_{0}^{\frac{\
 
 \fourchoices
 {$M<N$}
-{$M=n$}
+{$M=N$}
 {$M>N$}
 {$M, N$ 的大小关系不确定}
 
 \item 
-设数列 $a_{n}$ 单调减少, 且 $\lim\limits _{n \rightarrow \infty} a_{n}=0$, 令 $S_{n}=\sum\limits_{k=1}^{n} a_{k} $，$ \left\{ S_{n} \right\} $ 是无界数列, 则幂级数 $\sum\limits_{n=1}^{\infty} a_{n}(x-~1)^{n}$ 的收敛域为 \xzanswer{C} 
+设数列 $a_{n}$ 单调减少, 且 $\lim\limits _{n \rightarrow \infty} a_{n}=0$, 令 $S_{n}=\sum\limits_{k=1}^{n} a_{k} $，$ \left\{ S_{n} \right\} $ 是无界数列, 则幂级数 $\sum\limits_{n=1}^{\infty} a_{n}(x-1)^{n}$ 的收敛域为 \xzanswer{C}
 
 \fourchoices
 {$[-1,1]$}
@@ -120,20 +120,144 @@ $M=\int_{0}^{\frac{\pi}{2}} \frac{\sin ^{2} x}{1+x^{k}} d x, N=\int_{0}^{\frac{\
 	\end{enumerate}
 
 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	\textbf{D}。这是算术平均的收敛性（Cauchy 命题）。对 $\varepsilon>0$，
+	先取 $N_1$ 使 $k>N_1$ 时 $\left|a_k-a\right|<\frac{\varepsilon}{2}$，则 $n>N_1$ 时
+	\[
+	\left|\frac1n\sum_{k=1}^{n}a_k-a\right|
+	\leqslant\frac1n\sum_{k=1}^{N_1}\left|a_k-a\right|+\frac{\varepsilon}{2} .
+	\]
+	右端第一项的分子是与 $n$ 无关的定数，故 $n$ 充分大时它 $<\frac{\varepsilon}{2}$。
+	于是极限为 $a$。（条件 $a\geqslant2$ 只是用来排除 B、C。）
 
-\item 	
-(本题满分 10 分)	
+	\item
+	\textbf{C}。通分后用 $x-\sin x\sim\frac{x^3}{6}$、$x^2\sin x\sim x^3$：
+	\[
+	\frac{1}{x\sin x}-\frac{1}{x^2}=\frac{x-\sin x}{x^2\sin x}
+	\sim\frac{x^3/6}{x^3}=\frac16 .
+	\]
+
+	\item
+	\textbf{A}。记 $w(x)=\frac{1}{1+x^k}$，$k$ 为正整数时它在 $\left[0,\frac{\pi}{2}\right]$ 上严格递减。因
+	$\sin^2x-\cos^2x=-\cos2x$，
+	\[
+	M-N=-\int_0^{\pi/2}w(x)\cos2x\,dx .
+	\]
+	把 $\left[\frac{\pi}{4},\frac{\pi}{2}\right]$ 上的部分作代换 $x\mapsto\frac{\pi}{2}-x$ 并与前半段合并：
+	\begin{align*}
+	\int_0^{\pi/2}\!\!w\cos2x\,dx
+	&=\int_0^{\pi/4}\!\!\left[w(x)-w\!\left(\tfrac{\pi}{2}-x\right)\right]\cos2x\,dx>0,
+	\end{align*}
+	因为 $0<x<\frac{\pi}{4}$ 时 $x<\frac{\pi}{2}-x$，故 $w(x)>w\left(\frac{\pi}{2}-x\right)$，且 $\cos2x>0$。
+	所以 $M-N<0$，即 $M<N$。
+
+	\item
+	\textbf{C}。$\left\{a_n\right\}$ 单调减且趋于 $0$，故 $a_n\geqslant0$；
+	$\left\{S_n\right\}$ 无界即 $\sum a_n=+\infty$ 发散。
+	当 $|x-1|<1$ 时由 $0\leqslant a_n\leqslant a_1$ 与几何级数比较知绝对收敛，
+	故收敛半径 $R\geqslant1$；又 $x=2$ 时级数为 $\sum a_n$ 发散，故 $R=1$。
+	端点：$x=2$ 发散；$x=0$ 时级数为 $\sum(-1)^na_n$，由 Leibniz 判别法收敛。
+	故收敛域为 $[0,2)$。
+
+	\item
+	\textbf{D}。逐次求导：
+	\begin{align*}
+	u_x&=\varphi'(x)-\varphi'(x-y)+\phi(x)-\phi(x-y),\\
+	u_y&=\varphi'(x-y)+\phi(x-y).
+	\end{align*}
+	于是
+	$u_{xy}=\varphi''(x-y)+\phi'(x-y)$，而
+	$u_{yy}=-\varphi''(x-y)-\phi'(x-y)$，
+	故 $\frac{\partial^2u}{\partial x\partial y}=-\frac{\partial^2u}{\partial y^2}$。
+	（顺便 $u_{xx}=\varphi''(x)-\varphi''(x-y)+\phi'(x)-\phi'(x-y)$，一般与 $u_{xy}$ 无关，故 A、B 不成立。）
+
+	\item
+	\textbf{A}。由方程得 $f''\left(x_0\right)=2f'\left(x_0\right)-4f\left(x_0\right)=-4f\left(x_0\right)<0$。
+	又 $f'\left(x_0\right)=0$，由二阶导数判别法知 $x_0$ 是极大值点。
+
+	\item
+	\textbf{B}。旋转曲面为 $z=x^2+y^2$，与 $z=4$ 围成
+	$\Omega=\left\{x^2+y^2\leqslant z\leqslant4\right\}$，$\Sigma$ 取外侧。
+	把第一型化为第二型后用高斯公式，
+	\[
+	\operatorname{div}\bm{F}=\frac{\partial}{\partial x}\!\left(\frac{x^2y}{2}+2x-z\right)
+	+\frac{\partial(3y+z)}{\partial y}+\frac{\partial(-xyz)}{\partial z},
+	\]
+	即 $xy+2+3-xy=5$。而
+	$V(\Omega)=\int_0^{2\pi}\!\!d\theta\int_0^2\left(4-r^2\right)r\,dr=8\pi$，
+	故原积分 $=5V=40\pi$。
+
+	\item
+	\textbf{B}。$xe^{-2x}$ 是解 $\Rightarrow$ $-2$ 是至少二重特征根；
+	$e^{x}$ 是解 $\Rightarrow$ $1$ 是特征根；
+	$3x$ 是解 $\Rightarrow$ $0$ 是至少二重特征根。
+	故特征多项式被 $r^2(r-1)(r+2)^2$ 整除，$n\geqslant5$；
+	又 $e^{-x}$ 不是解，$-1$ 不是特征根。取 $n=5$，
+	\[
+	r^2(r-1)(r+2)^2=r^5+3r^4-4r^2 ,
+	\]
+	即 $a_1=3$，$a_2=0$，$a_3=-4$，$a_4=a_5=0$，正是 B。
+	（A 的多项式 $r^6+4r^5+3r^4-4r^3-4r^2=r^2(r-1)(r+1)(r+2)^2$ 含根 $-1$，与题设矛盾。）
+
+	\item
+	\textbf{D}。两直线的方向向量为
+	\begin{align*}
+	\bm{s}_1&=(2,1,-1)\times(1,-2,2)=(0,-5,-5),\\
+	\bm{s}_2&=(0,1,1)\times(2,0,-1)=(-1,2,-2).
+	\end{align*}
+	$\bm{s}_1\cdot\bm{s}_2=0-10+10=0$，故夹角为 $\frac{\pi}{2}$。
+
+	\item
+	\textbf{D}。由 $1-\sin x=\left(\sin\frac{x}{2}-\cos\frac{x}{2}\right)^2$ 得
+	$\sqrt{1-\sin x}=\left|\sin\frac{x}{2}-\cos\frac{x}{2}\right|$，
+	在 $\left[0,\frac{\pi}{2}\right]$ 上取 $\cos\frac{x}{2}-\sin\frac{x}{2}$，
+	在 $\left[\frac{\pi}{2},\pi\right]$ 上取相反数。由
+	$\int\left(\cos\frac{x}{2}-\sin\frac{x}{2}\right)dx=2\sin\frac{x}{2}+2\cos\frac{x}{2}$ 得
+	两段各为 $2\sqrt2-2$，故原式 $=4\left(\sqrt2-1\right)$。
+\end{enumerate}
+}
+
+
+\item
+(本题满分 10 分)
 设 $a \geqslant-12$ 是一个给定的实数, 已知 $x_{1}=a$, 且 $x_{n+1}=\sqrt{12+x_{n}}$, 判断 $\left\{x_{n}\right\}$ 的 极限是否存在; 若存在, 求出 $\left\{x_{n}\right\}$ 的极限。
 
 \banswer{
-	除$ x_{1} $外$ x_{n} \geq 0 $，求大小关系
-\[ 
-\begin{WithArrows}
-	x_{n+1}-x_{n}&=\sqrt{12+x_{n}} -x_{n}\Arrow{相当于} \\
-	&=\sqrt{12+x}-x
-\end{WithArrows} 
-\]	 
-分类讨论$ x_{n}=4 $、$ x_{n}<4 $、$ x_{n}>4 $。极限存在，且为$ 4 $。
+	极限存在，且 $\lim\limits_{n\to\infty}x_n=4$。
+
+	\textbf{数列有意义且从第二项起有界.}
+	由 $a\geqslant-12$ 知 $x_2=\sqrt{12+a}$ 有意义且 $x_2\geqslant0$；
+	归纳可知 $n\geqslant2$ 时 $x_n\geqslant0$，从而 $x_{n+1}=\sqrt{12+x_n}\geqslant\sqrt{12}>3$。
+	故不妨从 $n\geqslant2$ 起讨论，此时 $x_n\geqslant0$。
+
+	\textbf{单调性.}
+	记 $g(x)=\sqrt{12+x}-x\ (x\geqslant0)$。由
+	\[
+	\sqrt{12+x}-x=\frac{12+x-x^2}{\sqrt{12+x}+x}=\frac{-(x-4)(x+3)}{\sqrt{12+x}+x}
+	\]
+	及 $x+3>0$ 知：$0\leqslant x<4$ 时 $g(x)>0$，$x>4$ 时 $g(x)<0$，$x=4$ 时 $g(4)=0$。
+	又 $f(x)=\sqrt{12+x}$ 单调增，且 $x<4\Rightarrow f(x)<f(4)=4$，$x>4\Rightarrow f(x)>4$，
+	即 $4$ 两侧各自是不变区域。于是
+	\begin{itemize}
+	\item 若某个 $x_{n_0}=4$，则以后恒为 $4$；
+	\item 若 $0\leqslant x_{n_0}<4$，则 $\left\{x_n\right\}_{n\geqslant n_0}$ 单调递增且恒 $<4$；
+	\item 若 $x_{n_0}>4$，则 $\left\{x_n\right\}_{n\geqslant n_0}$ 单调递减且恒 $>4$。
+	\end{itemize}
+	三种情形下数列都单调有界，由单调有界定理极限 $L$ 存在。
+
+	\textbf{求极限.}
+	在 $x_{n+1}=\sqrt{12+x_n}$ 中令 $n\to\infty$ 得 $L=\sqrt{12+L}$，
+	即 $L^2-L-12=0$，$(L-4)(L+3)=0$。因 $L\geqslant0$，故 $L=4$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	也可直接用压缩映射：$\left|x_{n+1}-4\right|=\frac{\left|x_n-4\right|}{\sqrt{12+x_n}+4}
+	\leqslant\frac{1}{4+2\sqrt3}\left|x_n-4\right|$（$n\geqslant2$），
+	公比小于 $1$，故 $x_n\to4$，且对一切 $a\geqslant-12$ 成立。
+	}\par
 }
 
 
@@ -147,17 +271,50 @@ $M=\int_{0}^{\frac{\pi}{2}} \frac{\sin ^{2} x}{1+x^{k}} d x, N=\int_{0}^{\frac{\
 \]
 
 \banswer{
-把路径补全为四分之一个半圆，有
-\[ 
-\begin{WithArrows}[ll]
- \text{	原式} &= \iiint _{S} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\\
- &=\int_{0}^{\sqrt{2}} \left[  x(2-x^{2}) +\frac{1}{f(x)} -f(x) \right]  dx  + \int_{0}^{\sqrt{2}} 2f(y)\sqrt{2-y^{2}} dy  \Arrow{将$ y $替换成$ x $可得} \\
-&=\int_{0}^{\sqrt{2}} \left[  x(2-x^{2}) +\frac{1}{f(x)} + f(x) \right]  dx   \\
-&\geq \int_{0}^{\sqrt{2}}x(2-x^{2}) + \pi   \\
-	&\geq 1+ \pi
-\end{WithArrows} 
-\]	
+	记 $P=y\left(f(x)-\frac{1}{f(x)}\right)$，$Q=x^2y+2xf(y)$。
+	$L$ 是圆 $x^2+y^2=2$ 第一象限的弧，由 $A\left(\sqrt2,0\right)$ 逆时针到 $B\left(0,\sqrt2\right)$。
 
+	\textbf{补线成闭路.}
+	添 $L_1:B\to O$（沿 $y$ 轴，$x\equiv0$，$dx=0$）与 $L_2:O\to A$（沿 $x$ 轴，$y\equiv0$，$dy=0$），
+	则 $C=L+L_1+L_2$ 是四分之一圆盘 $D$ 的正向边界。而
+	\[
+	\int_{L_1}P\,dx+Q\,dy=\int_{L_1}\left(0+0\right)dy=0 ,\qquad
+	\int_{L_2}=\int_{L_2}0\cdot dx=0 ,
+	\]
+	（$L_1$ 上 $x=0$ 故 $Q=0$；$L_2$ 上 $y=0$ 故 $P=0$）。所以 $\int_L=\oint_C$。
+
+	\textbf{用格林公式.}
+	$\frac{\partial Q}{\partial x}=2xy+2f(y)$，$\frac{\partial P}{\partial y}=f(x)-\frac{1}{f(x)}$，故
+	\[
+	\int_L=\iint\limits_{D}\left[2xy+2f(y)-f(x)+\frac{1}{f(x)}\right]dxdy .
+	\]
+	把 $D$ 写成 $0\leqslant x\leqslant\sqrt2$，$0\leqslant y\leqslant\sqrt{2-x^2}$。先算第一项：
+	\[
+	\iint\limits_{D}2xy\,dxdy=\int_0^{\sqrt2}\!x\left(2-x^2\right)dx
+	=\left[x^2-\frac{x^4}{4}\right]_0^{\sqrt2}=1 .
+	\]
+	后三项中只含一个变量，对另一变量积分给出弦长 $\sqrt{2-x^2}$；把
+	$\iint 2f(y)\,dxdy$ 中的哑变量 $y$ 换写成 $x$，得
+	\begin{align*}
+	&\iint\limits_{D}\left[2f(y)-f(x)+\frac{1}{f(x)}\right]dxdy\\
+	&\qquad=\int_0^{\sqrt2}\left[f(x)+\frac{1}{f(x)}\right]\sqrt{2-x^2}\,dx .
+	\end{align*}
+
+	\textbf{放缩.}
+	$f>0$ 故 $f(x)+\frac{1}{f(x)}\geqslant2$，而
+	$\int_0^{\sqrt2}\sqrt{2-x^2}\,dx=\frac{\pi}{4}\cdot\left(\sqrt2\right)^2=\frac{\pi}{2}$
+	（四分之一圆面积）。于是
+	\[
+	\int_L P\,dx+Q\,dy\geqslant1+2\times\frac{\pi}{2}=1+\pi .
+	\]
+	等号当且仅当 $f\equiv1$ 时成立。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案在化二重积分时漏掉了 $\frac{1}{f}-f$ 一项所带的弦长因子 $\sqrt{2-x^2}$，
+	并把 $2f(y)\sqrt{2-y^2}$ 的因子一并丢失，推导有误（结论仍然正确）。
+	取 $f\equiv1$ 数值计算，曲线积分恰为 $1+\pi\approx4.1416$，与上式吻合。
+	}\par
 }
 
 
@@ -169,7 +326,33 @@ $M=\int_{0}^{\frac{\pi}{2}} \frac{\sin ^{2} x}{1+x^{k}} d x, N=\int_{0}^{\frac{\
 \]
 
 \banswer{
-	$ x^{2}+ e^{x}\sin(xy) +y^{3}=C $
+	记
+	\begin{align*}
+	P&=2x+e^{x}\sin(xy)+ye^{x}\cos(xy),\\
+	Q&=xe^{x}\cos(xy)+3y^2 .
+	\end{align*}
+
+	\textbf{验全微分.}
+	\begin{align*}
+	\frac{\partial P}{\partial y}&=xe^{x}\cos(xy)+e^{x}\cos(xy)-xye^{x}\sin(xy),\\
+	\frac{\partial Q}{\partial x}&=e^{x}\cos(xy)+xe^{x}\cos(xy)-xye^{x}\sin(xy) .
+	\end{align*}
+	两者相等，故 $P\,dx+Q\,dy$ 是全微分，存在 $u(x,y)$ 使 $du=P\,dx+Q\,dy$。
+
+	\textbf{求原函数.}
+	由 $\frac{\partial u}{\partial y}=Q$ 且注意
+	$\frac{\partial}{\partial y}\left[e^{x}\sin(xy)\right]=xe^{x}\cos(xy)$，积分得
+	\[
+	u=e^{x}\sin(xy)+y^3+\varphi(x) .
+	\]
+	再对 $x$ 求偏导并与 $P$ 比较：
+	\[
+	e^{x}\sin(xy)+ye^{x}\cos(xy)+\varphi'(x)=P\ \Longrightarrow\ \varphi'(x)=2x ,
+	\]
+	故 $\varphi(x)=x^2$（常数并入通解）。所以通解为
+	\[
+	x^2+e^{x}\sin(xy)+y^3=C .
+	\]
 }
 
 
@@ -178,20 +361,76 @@ $M=\int_{0}^{\frac{\pi}{2}} \frac{\sin ^{2} x}{1+x^{k}} d x, N=\int_{0}^{\frac{\
 将函数 $f(x)=1-x^{2} \ (0 \leqslant x \leqslant \pi)$ 展开成余弦级数，并求 $\sum\limits_{n=1}^{\infty} \frac{(-1)^{n+1}}{n^{2}}$。
 
 \banswer{
-\[ 
-f(x)=1-\frac{\pi^{2}}{3} + 4 \sum\limits_{n=1}^{\infty} \cos (nx)
- \]
-利用$ f(0) $可得$ \sum\limits_{n=1}^{\infty} \frac{(-1)^{n+1}}{n^{2}}=\frac{\pi^{2}}{12}$
+	\textbf{作偶延拓.}
+	把 $f$ 偶延拓到 $[-\pi,\pi]$ 再作 $2\pi$ 周期延拓，则 $b_n=0$，只有余弦项。
+
+	\textbf{定系数.}
+	\[
+	a_0=\frac{2}{\pi}\int_0^{\pi}\left(1-x^2\right)dx
+	=\frac{2}{\pi}\left(\pi-\frac{\pi^3}{3}\right)=2-\frac{2\pi^2}{3}.
+	\]
+	又由分部积分 $\int_0^{\pi}x^2\cos nx\,dx=\frac{2\pi(-1)^n}{n^2}$，而 $\int_0^\pi\cos nx\,dx=0$，故
+	\[
+	a_n=\frac{2}{\pi}\int_0^{\pi}\left(1-x^2\right)\cos nx\,dx
+	=-\frac{4(-1)^{n}}{n^2}=\frac{4(-1)^{n+1}}{n^2}.
+	\]
+	由于延拓后的函数连续且分段光滑，由 Dirichlet 定理，对 $0\leqslant x\leqslant\pi$
+	\[
+	1-x^2=1-\frac{\pi^2}{3}+4\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}\cos nx .
+	\]
+
+	\textbf{求级数和.}
+	取 $x=0$：左端为 $1$，$\cos0=1$，故
+	\[
+	1=1-\frac{\pi^2}{3}+4\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}
+	\ \Longrightarrow\
+	\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}=\frac{\pi^2}{12}.
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案把余弦级数写作 $1-\frac{\pi^2}{3}+4\sum\cos nx$，漏掉了系数
+	$\frac{(-1)^{n+1}}{n^2}$，该级数处处发散，显然有误；正确系数为
+	$a_n=\frac{4(-1)^{n+1}}{n^2}$（符号计算与数值求和均已证实，例如取 $x=2$
+	时部分和收敛于 $1-2^2=-3$）。所求级数和 $\frac{\pi^2}{12}$ 则无误。
+	}\par
 }
 
 \newpage
 \item 	
 (本题满分 10 分)	
-已知 $2 \mu+e^{\mu}=x y$, 求 $\frac{\partial^{2} u}{\partial x \partial y}$。
+已知 $2 u+e^{u}=x y$, 求 $\frac{\partial^{2} u}{\partial x \partial y}$。
 
 
 \banswer{
-	$\frac{\partial^{2} u}{\partial x \partial y}=\frac{1}{ \left(2+e^{u}\right) } + \frac{x y}{\left(2+e^{u}\right)^{3}} \cdot e^{u}$
+	方程 $2u+e^{u}=xy$ 隐式确定 $u=u(x,y)$。
+
+	\textbf{一阶偏导.}
+	两端分别对 $x$、$y$ 求偏导：
+	\[
+	\left(2+e^{u}\right)u_x=y ,\qquad \left(2+e^{u}\right)u_y=x ,
+	\]
+	注意 $2+e^{u}>0$，故
+	\[
+	u_x=\frac{y}{2+e^{u}} ,\qquad u_y=\frac{x}{2+e^{u}} .
+	\]
+
+	\textbf{二阶混合偏导.}
+	把 $u_x$ 再对 $y$ 求导：
+	\begin{align*}
+	\frac{\partial^2u}{\partial x\partial y}
+	&=\frac{1}{2+e^{u}}-\frac{y\,e^{u}}{\left(2+e^{u}\right)^{2}}u_y\\
+	&=\frac{1}{2+e^{u}}-\frac{xy\,e^{u}}{\left(2+e^{u}\right)^{3}} .
+	\end{align*}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案第二项作 $+\frac{xy\,e^{u}}{\left(2+e^{u}\right)^{3}}$，符号有误：
+	对 $\frac{y}{2+e^{u}}$ 求导时分母的导数带负号。
+	取 $x=1.7$、$y=2.3$ 数值求解 $2u+e^{u}=xy$ 并作二阶差商，得
+	$u_{xy}\approx0.120182$，与本式的 $0.1201825$ 一致，
+	而原式给出 $0.348176$，不符。此外原题面把 $u$ 误排为 $\mu$，已一并改正。
+	}\par
 }
 
 
@@ -214,17 +453,25 @@ f(x)=1-\frac{\pi^{2}}{3} + 4 \sum\limits_{n=1}^{\infty} \cos (nx)
 	\begin{enumerate}
 		%\renewcommand{\labelenumi}{\arabic{enumi}.}
 		% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
-		%设定全局标号series=example	%引用全局变量resume=example
-		%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
-		%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 		\item
-		例：$ e^{-x} $导数的极限存在，$ \sin x $导数的极限不存在
-		\item 
-		证明略。设极限存在为$ A $，$ A $可为正，也可为负，分情况讨论，再利用$ \epsilon - \delta $语言推出矛盾即可证。
-		
+		取 $f(x)=\sin x$。它在 $(0,+\infty)$ 上可微且 $|f|\leqslant1$ 有界，
+		但 $f'(x)=\cos x$ 在 $x\to+\infty$ 时在 $[-1,1]$ 间反复振荡：
+		取 $x_k=2k\pi\to+\infty$ 得 $f'\to1$，取 $y_k=(2k+1)\pi\to+\infty$ 得 $f'\to-1$，
+		故 $\lim\limits_{x\to+\infty}f'(x)$ 不存在。
+
+		（再如 $f(x)=\sin x^2$ 也有界可微，而 $f'(x)=2x\cos x^2$ 甚至无界。）
+
+		\item
+		设 $\lim\limits_{x\to+\infty}f'(x)=A$，并设 $|f(x)|\leqslant M$。
+		反证：若 $A\neq0$，不妨设 $A>0$（$A<0$ 时对 $-f$ 讨论）。
+		取 $\varepsilon=\frac{A}{2}$，则存在 $X>0$，使 $x>X$ 时 $f'(x)>\frac{A}{2}$。
+		对任意 $x>X$，在 $[X,x]$ 上用 Lagrange 中值定理：存在 $\xi\in(X,x)$ 使
+		\[
+		f(x)-f(X)=f'(\xi)(x-X)>\frac{A}{2}(x-X).
+		\]
+		令 $x\to+\infty$，右端 $\to+\infty$，故 $f(x)\to+\infty$，与 $|f|\leqslant M$ 有界矛盾。
+		所以 $A=0$，即 $\lim\limits_{x\to+\infty}f'(x)=0$。
 	\end{enumerate}
-	
-	
 }
 
 
@@ -236,10 +483,27 @@ $f(x)$ 在 $[0,2]$ 上是单调减少的连续函数，证明:
 \]
 
 \banswer{
-	证明略。这里证明的方法有很多。例如：$ \int_{0}^{2} f(x)(1-x)dx $ \\
-	①考虑$ 1-x $的对称性，将积分区间分为$ (0,1) $和$ (1,2) $\\
-	②直接变量替换$ t=x-1 $，再用定积分定义即可\\
-	③构造函数$ F(x)=\frac{a+x}{2}\int_{a}^{x} f(x)dx - \int_{a}^{x}xf(x)dx $，证明$ \int_{a}^{b} xf(x) \leq \frac{a+b}{2} \int_{a}^{b} f(x) dx $
+	只需证 $I=\int_0^2(1-x)f(x)\,dx\geqslant0$。
+
+	\textbf{解法一（按 $x=1$ 分段放缩）.}
+	在 $[0,1]$ 上 $1-x\geqslant0$ 且 $f(x)\geqslant f(1)$，故
+	$(1-x)f(x)\geqslant(1-x)f(1)$；
+	在 $[1,2]$ 上 $1-x\leqslant0$ 且 $f(x)\leqslant f(1)$，故同样
+	$(1-x)f(x)\geqslant(1-x)f(1)$。两段合起来在 $[0,2]$ 上恒有
+	$(1-x)f(x)\geqslant(1-x)f(1)$，积分得
+	\[
+	I\geqslant f(1)\int_0^2(1-x)dx=f(1)\left[x-\frac{x^2}{2}\right]_0^2=0 .
+	\]
+
+	\textbf{解法二（对称化）.}
+	作代换 $x\mapsto2-x$ 得 $I=\int_0^2(x-1)f(2-x)\,dx$，与原式相加：
+	\[
+	2I=\int_0^2(1-x)\left[f(x)-f(2-x)\right]dx .
+	\]
+	被积式中 $1-x$ 与 $f(x)-f(2-x)$ 同号（$x<1$ 时前者 $>0$，且 $x<2-x$ 故后者 $\geqslant0$；
+	$x>1$ 时两者都反号），故 $2I\geqslant0$。
+
+	两法均给出 $\int_0^2xf(x)dx\leqslant\int_0^2f(x)dx$。
 }
 
 
@@ -248,9 +512,33 @@ $f(x)$ 在 $[0,2]$ 上是单调减少的连续函数，证明:
 已知 $0 \leqslant a, b \leqslant 1$, 且 $a+b=1$, 证明：对任意实数 $x, y$ 有 $e^{a x+b y} \leq a e^{x}+b e^{y}$。
 
 \banswer{
-	证明略。证明方法也有多种，例如：\\
-	①利用$ e^{x} $在$ x_{0} $处的二阶展开式，取$ x_{0}=ax+by $\\
-	②用二元函数先求无条件极值得到驻点线$ y=x $，再以此求条件极值
+	\textbf{解法一（Taylor 展开）.}
+	记 $x_0=ax+by$。对任意实数 $t$，在 $x_0$ 处展开并取 Lagrange 余项：存在 $\xi$ 介于 $t$ 与 $x_0$ 之间，
+	\[
+	e^{t}=e^{x_0}+e^{x_0}\left(t-x_0\right)+\frac{e^{\xi}}{2}\left(t-x_0\right)^2
+	\geqslant e^{x_0}+e^{x_0}\left(t-x_0\right),
+	\]
+	因为 $e^{\xi}>0$。分别取 $t=x$ 与 $t=y$，再乘以 $a\geqslant0$、$b\geqslant0$ 相加，注意 $a+b=1$：
+	\begin{align*}
+	ae^{x}+be^{y}&\geqslant e^{x_0}+e^{x_0}\left(ax+by-x_0\right)\\
+	&=e^{x_0}=e^{ax+by} .
+	\end{align*}
+
+	\textbf{解法二（化为一元函数）.}
+	固定 $x,y$，以 $b\in[0,1]$ 为自变量（$a=1-b$），令
+	\[
+	\varphi(b)=(1-b)e^{x}+be^{y}-e^{(1-b)x+by},
+	\]
+	则 $\varphi(0)=\varphi(1)=0$，且
+	$\varphi''(b)=-(y-x)^2e^{ax+by}\leqslant0$，故 $\varphi$ 在 $[0,1]$ 上是凹函数。
+	凹函数的图像不低于连接两端点的弦，而此处的弦恰是 $y=0$，
+	故 $\varphi(b)\geqslant0$，即所证不等式成立。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	本质上就是 $e^{x}$ 的凸性（$\left(e^{x}\right)''>0$）给出的 Jensen 不等式；
+	等号成立当且仅当 $x=y$ 或 $ab=0$。
+	}\par
 }
 
 
@@ -259,12 +547,31 @@ $f(x)$ 在 $[0,2]$ 上是单调减少的连续函数，证明:
 设函数 $f(x)$ 在 $[0, \pi]$ 上连续, 且 $\int_{0}^{\pi} f(x) d x=0, \int_{0}^{\pi} f(x) \cos x d x=0$ 。 证明: 在 $(0, \pi)$ 内至少存在两个不同的点 $\xi_{1}, \xi_{2}$, 使得 $f\left(\xi_{1}\right)=f\left(\xi_{2}\right)=0$。
 
 \banswer{
-	证明略。\\
-	可构造函数
-	\[ 
-	F(x)=\int_{0}^{x} f(t)dt
-	 \]
-	再找到$ F(x) $异于$ 0 $、$ \pi $的一个零点。
+	令 $F(x)=\int_0^{x}f(t)\,dt$，则 $F\in C^1[0,\pi]$，$F'=f$，且由题设
+	\[
+	F(0)=0 ,\qquad F(\pi)=\int_0^{\pi}f(x)\,dx=0 .
+	\]
+
+	\textbf{第一步：再找一个零点.}
+	对第二个条件分部积分：
+	\begin{align*}
+	0=\int_0^{\pi}f(x)\cos x\,dx
+	&=\Big[F(x)\cos x\Big]_0^{\pi}+\int_0^{\pi}F(x)\sin x\,dx\\
+	&=0+\int_0^{\pi}F(x)\sin x\,dx ,
+	\end{align*}
+	故 $\int_0^{\pi}F(x)\sin x\,dx=0$。
+	若 $F$ 在 $(0,\pi)$ 内无零点，由连续性它在 $(0,\pi)$ 上保持同号；
+	而 $\sin x>0$ 于 $(0,\pi)$，于是 $F\sin x$ 亦保持同号且不恒为零，
+	其积分不可能为 $0$，矛盾。故存在 $x_0\in(0,\pi)$ 使 $F\left(x_0\right)=0$。
+
+	\textbf{第二步：两次 Rolle 定理.}
+	$F$ 在 $\left[0,x_0\right]$、$\left[x_0,\pi\right]$ 上都连续、内部可导，且两端点值都为 $0$。
+	由 Rolle 定理，存在
+	\[
+	\xi_1\in\left(0,x_0\right),\qquad \xi_2\in\left(x_0,\pi\right),
+	\]
+	使 $F'\left(\xi_1\right)=F'\left(\xi_2\right)=0$，即 $f\left(\xi_1\right)=f\left(\xi_2\right)=0$。
+	又 $\xi_1<x_0<\xi_2$，两点互异且都在 $(0,\pi)$ 内，证毕。
 }
 
 
@@ -277,36 +584,46 @@ $f(x)$ 在 $[0,2]$ 上是单调减少的连续函数，证明:
 
 
 \banswer{
-	证明略。
-	\[ 
-	\lim\limits _{t \rightarrow+\infty} \int_{0}^{1} t e^{-t^{2} x^{2}} f(x) d x= \int_{0}^{t} e^{-u^{2}} f(\frac{u}{t}) du
-	 \]
-	证明方法有多种，例如：\\
-①最暴力：
-\[ 
-\lim_{t \rightarrow \infty } \int_{0}^{t} e^{-u^{2}} f(\frac{u}{t}) du =\int_{0}^{\infty} e^{-u^{2}} f(0) du  = f(0) \int_{0}^{\infty} e^{-u^{2}}  du 
- \]
-这里的做法还需要证明一系列的加强条件，详情参见数学分析广义积分部分。\\
-②巧妙束缚住应用中值定理时点的范围\\
-$ 
-\begin{WithArrows}[ll]
-	\lim\limits_{t \rightarrow \infty } \int_{0}^{t} e^{-u^{2}} f(\frac{u}{t}) du &=\lim\limits_{t \rightarrow \infty }  \left(  \int_{0}^{\sqrt{t}} e^{-u^{2}} f(\frac{u}{t}) du +\int_{\sqrt{t}}^{t} e^{-u^{2}} f(\frac{u}{t}) du \right) \Arrow{$ \epsilon \in (0,\frac{1}{\sqrt{t}}) $} \\
-	&=\lim\limits_{t \rightarrow \infty }  \left( f(\epsilon)  \int_{0}^{\sqrt{t}} e^{-u^{2}}  du +\int_{\sqrt{t}}^{t} e^{-u^{2}} f(\frac{u}{t}) du \right)  \Arrow{$ f(\frac{u}{t})   $整体自变量的范围是\\ $ (\frac{1}{\sqrt{t}},1) $，$ f(x) $在其上有界} \\
-	&=f(0) \frac{\sqrt{\pi}}{2} + \lim\limits_{t \rightarrow \infty } M \int_{\sqrt{t}}^{t} e^{-u^{2}}  du\\
-	&=f(0) \frac{\sqrt{\pi}}{2}
-\end{WithArrows} 
- $
-\\
-\\
-③构造函数$ F(t)=\int_{0}^{t} e^{-u^{2}} f(\frac{u}{t}) du $，通过
-\[ 
-F(\infty) -F(0) =\int_{0}^{\infty} F ^{\prime} (t) dt
- \]
-在积分中交换顺序可证。\\
-④凑$ \delta(x) $函数。
-\begin{note}
-	方法③存在问题，不做变量替换时，求得结果为零。方法④存在问题，差一个常数。需要严格的数学分析，后期再议。
-\end{note}
+	\textbf{换元.}
+	令 $u=tx$（$t>0$），则 $dx=\frac{du}{t}$，
+	\[
+	I(t)=\int_0^1te^{-t^2x^2}f(x)\,dx=\int_0^{t}e^{-u^2}f\!\left(\frac{u}{t}\right)du .
+	\]
+
+	\textbf{拆项.}
+	记 $J=\int_0^{\infty}e^{-u^2}du=\frac{\sqrt\pi}{2}$，则
+	\begin{align*}
+	I(t)-f(0)J=&\int_0^{t}e^{-u^2}\left[f\!\left(\tfrac{u}{t}\right)-f(0)\right]du\\
+	&-f(0)\int_t^{\infty}e^{-u^2}du .
+	\end{align*}
+
+	\textbf{估计.}
+	设 $M=\max\limits_{[0,1]}|f|$。任给 $\varepsilon>0$，由 $f$ 在 $0$ 处连续，
+	存在 $\delta\in(0,1)$ 使 $0\leqslant s\leqslant\delta$ 时 $|f(s)-f(0)|<\varepsilon$。
+	把第一个积分按 $u\leqslant\delta t$ 与 $u>\delta t$ 分段（此时 $\frac{u}{t}\leqslant\delta$ 与 $>\delta$）：
+	\begin{align*}
+	\left|\int_0^{\delta t}\right|&\leqslant\varepsilon\int_0^{\infty}e^{-u^2}du=\varepsilon J,\\
+	\left|\int_{\delta t}^{t}\right|&\leqslant2M\int_{\delta t}^{\infty}e^{-u^2}du .
+	\end{align*}
+	因 $\int_0^{\infty}e^{-u^2}du$ 收敛，当 $t\to+\infty$ 时
+	$\int_{\delta t}^{\infty}e^{-u^2}du\to0$，$\int_t^{\infty}e^{-u^2}du\to0$。
+	故存在 $T$，使 $t>T$ 时后两项之和 $<\varepsilon$，于是
+	\[
+	\left|I(t)-f(0)\frac{\sqrt\pi}{2}\right|<\left(J+1\right)\varepsilon .
+	\]
+	由 $\varepsilon$ 的任意性得
+	\[
+	\lim_{t\to+\infty}\int_0^1te^{-t^2x^2}f(x)\,dx=\frac{\sqrt\pi}{2}f(0).
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案列出的四种思路中，“①”直接把极限搬进积分号而未作论证，
+	“②”对 $\int_0^{\sqrt t}$ 用积分中值定理时所得的中值点未必趋于 $0$，
+	“③④”按原笔记自述也不成立。上面的 $\varepsilon$ 分段估计是严格的：
+	关键在于把 $f\left(\frac ut\right)-f(0)$ 的“小”区域 $\frac ut\leqslant\delta$
+	与“尾巴”区域分开，前者用连续性，后者用 $e^{-u^2}$ 的可积性。
+	}\par
 }
 	
 	

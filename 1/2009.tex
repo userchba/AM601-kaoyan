@@ -15,7 +15,7 @@
 		%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
 		%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 		\item
-		设 $y=\sqrt[4]{x \sqrt[3]{e^{x} \sqrt{\sin \frac{1}{x}}}}$, 则 $\frac{d y}{d x}=$  \tk{$y\left(\frac{1}{4 x}+\frac{1}{12}-\frac{1}{24} \cdot \frac{1}{x^{2}} \cdot \tan \frac{1}{x}\right)$} 。
+		设 $y=\sqrt[4]{x \sqrt[3]{e^{x} \sqrt{\sin \frac{1}{x}}}}$, 则 $\frac{d y}{d x}=$  \tk{$y\left(\frac{1}{4 x}+\frac{1}{12}-\frac{1}{24} \cdot \frac{1}{x^{2}} \cdot \cot \frac{1}{x}\right)$} 。
         \nynote{对数求导法，这里我算的好几次都是$y\left(\frac{1}{4 x}+\frac{1}{12}-\frac{1}{24} \cdot \frac{1}{x^{2}} \cdot \cot \frac{1}{x}\right)$，不知是否答案有误。}
 		\item  
 设 $z=\frac{1}{x} f(x y)+y g(x+y)$, 其中 $f, g$ 具有二阶连续导数, 则 $\frac{\partial^{2} z}{\partial x^{2}}=$  \tk{$\frac{2}{x^{3}} f(x y)-\frac{2 y}{x^{2}} f^{\prime}(x y)+$ $\frac{y^{2}}{x} f^{\prime \prime}(x y)+y g^{\prime \prime}(x+y)$}  。
@@ -28,9 +28,6 @@
 
 \item
 过点 $P(-1,0,4)$ 且与平面 $3 x-4 y+z+10=0$ 平行， 又与直线 $L: \frac{x+1}{1}=$ $\frac{y-3}{1}=\frac{z}{2}$ 相交的直线方程为:  \tk{$\frac{x+1}{16}=\frac{y}{19}=\frac{z-4}{28}$}  。
-\begin{note}
-	可能有问题，后期重算
-\end{note}
 \nynote{
     在L上取一点$Q(x,y,z)$，有$\mathbf{QP}$与平面法向量垂直，可解出$Q$点，即得直线方程，
     这里我算的是$\frac{x+1}{8}=\frac{y}{17}=\frac{z-4}{4}$。
@@ -45,8 +42,97 @@ $y^{2}=x+1$
 	
 		
 	\end{enumerate}
-	
-\item 
+
+
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
+	\item
+	取对数再求导。
+	\[
+	\ln y=\frac{1}{4}\ln x+\frac{1}{12}x+\frac{1}{24}\ln\sin\frac1x ,
+	\]
+	两端对 $x$ 求导，注意 $\left(\frac1x\right)'=-\frac1{x^{2}}$：
+	\[
+	\frac{y'}{y}=\frac{1}{4x}+\frac{1}{12}
+	+\frac{1}{24}\cdot\frac{\cos\frac1x}{\sin\frac1x}\cdot\left(-\frac{1}{x^{2}}\right),
+	\]
+	故
+	\[
+	\frac{dy}{dx}=y\left(\frac{1}{4x}+\frac{1}{12}
+	-\frac{1}{24}\cdot\frac{1}{x^{2}}\cot\frac1x\right).
+	\]
+
+	\item
+	$z=\frac1xf(xy)+yg(x+y)$ 对 $x$ 求一次导：
+	\[
+	\frac{\partial z}{\partial x}=-\frac{1}{x^{2}}f(xy)+\frac{y}{x}f'(xy)+yg'(x+y) ;
+	\]
+	再求一次（乘积法则，链式因子仍为 $y$ 与 $1$）：
+	\begin{align*}
+	\frac{\partial^{2}z}{\partial x^{2}}
+	&=\frac{2}{x^{3}}f(xy)-\frac{y}{x^{2}}f'(xy)-\frac{y}{x^{2}}f'(xy)\\
+	&\quad+\frac{y^{2}}{x}f''(xy)+yg''(x+y)\\
+	&=\frac{2}{x^{3}}f(xy)-\frac{2y}{x^{2}}f'(xy)
+	+\frac{y^{2}}{x}f''(xy)+yg''(x+y).
+	\end{align*}
+
+	\item
+	先部分分式：$\frac{1}{x^{2}-2x-3}=\frac{1}{(x-3)(x+1)}
+	=\frac14\left(\frac{1}{x-3}-\frac{1}{x+1}\right)$。再分别展开
+	\[
+	\frac{1}{x-3}=-\frac13\cdot\frac{1}{1-\frac x3}=-\frac13\sum_{n=0}^{\infty}\left(\frac x3\right)^{n},
+	\qquad
+	\frac{1}{x+1}=\sum_{n=0}^{\infty}(-1)^{n}x^{n} .
+	\]
+	故
+	\[
+	f(x)=-\frac{1}{12}\sum_{n=0}^{\infty}\left(\frac x3\right)^{n}
+	-\frac14\sum_{n=0}^{\infty}(-1)^{n}x^{n},
+	\]
+	两个级数分别在 $|x|<3$、$|x|<1$ 内收敛，故展开式对 $|x|<1$ 成立。
+
+	\item
+	设所求直线与 $L$ 交于 $Q$。把 $L$ 写成参数式 $Q=(-1+t,\ 3+t,\ 2t)$，则
+	$\vv{PQ}=(t,\ 3+t,\ 2t-4)$。直线与平面平行等价于 $\vv{PQ}$ 垂直于法向量
+	$\bm{n}=(3,-4,1)$：
+	\[
+	3t-4(3+t)+(2t-4)=t-16=0\quad\Longrightarrow\quad t=16 .
+	\]
+	于是方向向量 $\vv{PQ}=(16,19,28)$，所求直线为
+	\[
+	\frac{x+1}{16}=\frac{y}{19}=\frac{z-4}{28} .
+	\]
+	（校验：$(16,19,28)\cdot(3,-4,1)=48-76+28=0$；又 $P$ 不在平面上
+	（$3(-1)-0+4+10=11\neq0$），故确为“平行”而非“含于”。）
+
+	\item
+	注意 $\left(yy'\right)'=\left(y'\right)^{2}+yy''=0$，故 $yy'\equiv C$。
+	由初值 $y(0)=1$、$y'(0)=\frac12$ 得 $C=\frac12$，即
+	$\left(y^{2}\right)'=2yy'=1$，积分得 $y^{2}=x+C'$；
+	再由 $y(0)=1$ 得 $C'=1$，故
+	\[
+	y^{2}=x+1,\qquad y=\sqrt{x+1} .
+	\]
+\end{enumerate}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	第 (1) 小题原答案作 $\tan\frac1x$，有误：
+	$\left(\ln\sin u\right)'=\cot u$，故应为 $\cot\frac1x$。
+	以 $x=0.7$ 数值求导得 $\frac{y'}{y}=0.428300$，而含 $\cot$ 的表达式给出 $0.428300$、
+	含 $\tan$ 的给出 $-0.153371$，确认原答案有误。
+
+	第 (4) 小题原有“可能有问题，后期重算”的批注，现已复核：答案
+	$\frac{x+1}{16}=\frac{y}{19}=\frac{z-4}{28}$ 正确。
+	旁注中提出的 $\frac{x+1}{8}=\frac{y}{17}=\frac{z-4}{4}$ 虽与 $L$ 相交，
+	但 $(8,17,4)\cdot(3,-4,1)=-40\neq0$，并不平行于所给平面，故不合题意。
+	}\par
+}
+
+
+\item
 选择题 (本题满分 30 分，每小题 6 分)
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -117,14 +203,95 @@ $y^{2}=x+1$
 \end{enumerate}
 
 
-\item 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
+	\item
+	\textbf{D}。分子分母同趋于 $0$，连用两次洛必达法则：
+	\[
+	\lim_{x\to2}\frac{\int_{x}^{2}e^{-u^{2}}du}{2(x-2)}
+	=\lim_{x\to2}\frac{-e^{-x^{2}}}{2}=-\frac{1}{2e^{4}} .
+	\]
+	（第一次求导用变限积分求导，注意外层被积函数在 $t=x$ 处的值是 $\int_x^2e^{-u^2}du$。）
+
+	\item
+	\textbf{C}。令 $u=\sqrt{1-x}$，则 $x=1-u^{2}$，$dx=-2u\,du$，积分限 $x:0\to1$ 对应 $u:1\to0$，
+	\[
+	\int_{0}^{1}e^{\sqrt{1-x}}dx=2\int_{0}^{1}ue^{u}du
+	=2\left[ue^{u}-e^{u}\right]_{0}^{1}=2 .
+	\]
+
+	\item
+	\textbf{B}。$f''>0$ 说明 $f'$ 严格递增，$f$ 是凸函数。对 $x>0$，
+	由拉格朗日中值定理存在 $\xi\in(0,x)$ 使 $f(x)-f(0)=f'(\xi)x$，
+	而 $f'(0)<f'(\xi)<f'(x)$，故
+	\[
+	f'(0)x<f(x)-f(0)<f'(x)x .
+	\]
+
+	\item
+	\textbf{B}。作平移 $Y=y+1$，则 $L$ 变为 $(x,Y)$ 平面上以原点为心、$\sqrt2$ 为半径的圆，且
+	\[
+	x\,dy-y\,dx=\left(x\,dY-Y\,dx\right)+dx .
+	\]
+	第一部分是标准的 $\oint\frac{x\,dY-Y\,dx}{x^{2}+Y^{2}}=2\pi$；
+	第二部分 $\oint\frac{dx}{x^{2}+Y^{2}}=\frac12\oint dx=0$（沿闭曲线且分母恒为 $2$）。
+	故原积分 $=2\pi$。
+
+	\item
+	\textbf{C}。$\Sigma:\ z=x^{2}+y^{2}$ 取下侧，$d\bm{S}=\left(z_x,z_y,-1\right)dxdy$，
+	即 $dydz\to2x\,dxdy$、$dzdx\to2y\,dxdy$、$dxdy\to-dxdy$。投影区域 $D:\ x^{2}+y^{2}\leqslant1$，
+	\begin{align*}
+	I&=\iint\limits_{D}\left[2y^{4}-\left(y+x^{2}+y^{2}\right)\right]dxdy\\
+	&=\frac{\pi}{4}-0-\frac{\pi}{2}=-\frac{\pi}{4} ,
+	\end{align*}
+	其中用了 $\iint_Dy^{4}=\frac{\pi}{8}$、$\iint_Dy=0$、$\iint_D\left(x^{2}+y^{2}\right)=\frac{\pi}{2}$。
+
+	也可补顶面 $\Sigma_{1}:\ z=1,\ x^{2}+y^{2}\leqslant1$ 取上侧用高斯公式：
+	$\operatorname{div}=3y^{2}+1$，
+	\[
+	\iiint_{\Omega}\left(3y^{2}+1\right)dV=\frac{\pi}{4}+\frac{\pi}{2}=\frac{3\pi}{4},
+	\]
+	而 $\iint_{\Sigma_{1}}=\iint_{D}(y+1)dxdy=\pi$（顶面上 $dzdx=0$），
+	故 $I=\frac{3\pi}{4}-\pi=-\frac{\pi}{4}$。
+\end{enumerate}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	第 (5) 小题旁注称两种方法都算得 $-\frac{\pi}{2}$（选 A），实为计算疏漏：
+	上面两种方法均给出 $-\frac{\pi}{4}$，二重积分数值计算也给出 $-0.785398=-\frac{\pi}{4}$。
+	常见的错误是漏掉 $2y^{4}$ 这一项（它来自 $y^{3}dzdx$），
+	或在高斯公式中漏掉 $3y^2$ 对应的 $\frac{\pi}{4}$。原答案 C 正确。
+	}\par
+}
+
+
+\item
 (本题满分 10 分)
 设 $\lim\limits _{x \rightarrow \infty}\left(\frac{x-a}{x+a}\right)^{x}=\int_{a}^{+\infty} x e^{-2 x} d x$, 求 $a$ 的值。
 
 
 
 \banswer{
-	$a=\frac{3}{2}$
+	\textbf{左端.}
+	\[
+	\left(\frac{x-a}{x+a}\right)^{x}=\left(1-\frac{2a}{x+a}\right)^{x}
+	=\left[\left(1-\frac{2a}{x+a}\right)^{-\frac{x+a}{2a}}\right]^{-\frac{2ax}{x+a}} ,
+	\]
+	当 $x\to\infty$ 时中括号内 $\to e$，指数 $\to-2a$，故左端极限为 $e^{-2a}$。
+
+	\textbf{右端.} 分部积分（$a$ 为任意实数，积分收敛）：
+	\begin{align*}
+	\int_{a}^{+\infty}\!xe^{-2x}dx
+	&=\left[-\frac x2e^{-2x}\right]_{a}^{+\infty}+\frac12\int_{a}^{+\infty}\!e^{-2x}dx\\
+	&=\frac a2e^{-2a}+\frac14e^{-2a}=\frac{2a+1}{4}e^{-2a} .
+	\end{align*}
+
+	\textbf{解方程.} 两端相等，约去 $e^{-2a}>0$：
+	\[
+	\frac{2a+1}{4}=1\quad\Longrightarrow\quad a=\frac{3}{2} .
+	\]
 }
 
 
@@ -147,14 +314,38 @@ $F$ 连续，且 $F(0)=-\int_0^1\frac1{f(t)}dt<0$，$F(1)=\int_0^1 f(t)dt>0$。
 由直线 $x=0, y=8$ 及抛物线 $y=x^{2}$ 围成一个曲边三角形, 在曲边 $y=x^{2}$ 上求一点 $M(X, Y)$, 使得在该点处的切线与直线 $x=0, y=8$ 所围成的三角形面积最小。
 
 \banswer{
-根据对称性，只需要算$ 0<x<2\sqrt{2} $一边即可。
-\[ 
-S_{\triangle}=\frac{16}{a} + \frac{1}{4} a^{3} +4a
- \]
- $ a^{2}=\frac{8}{3} $时取得极小值。
+	由 $y=x^{2}$ 关于 $y$ 轴的对称性，只需讨论 $a>0$ 一侧（对应曲边三角形
+	$0\leqslant x\leqslant2\sqrt2$），另一侧取相反数即可。
 
- $M$坐标为$( \frac{2\sqrt 6}{3}, \frac{8}{3})$或$( -\frac{2\sqrt 6}{3}, \frac{8}{3})$，
- $S_{min} = \frac{64\sqrt{6}}{9}$。
+	\textbf{写出三角形的面积.} 设切点 $M\left(a,a^{2}\right)$，切线
+	\[
+	y=2a(x-a)+a^{2}=2ax-a^{2} .
+	\]
+	它与 $x=0$ 交于 $\left(0,-a^{2}\right)$，与 $y=8$ 交于
+	$\left(\frac{8+a^{2}}{2a},8\right)$；再与 $x=0,\ y=8$ 的交点 $(0,8)$ 一起
+	构成一个直角三角形，两直角边长分别为 $8+a^{2}$ 与 $\frac{8+a^{2}}{2a}$。故
+	\[
+	S(a)=\frac{\left(8+a^{2}\right)^{2}}{4a}
+	=\frac{16}{a}+4a+\frac{a^{3}}{4} .
+	\]
+
+	\textbf{求极小.}
+	\[
+	S'(a)=-\frac{16}{a^{2}}+4+\frac{3a^{2}}{4}=0
+	\ \Longrightarrow\ 3a^{4}+16a^{2}-64=0 ,
+	\]
+	记 $w=a^{2}>0$ 得 $3w^{2}+16w-64=0$，正根 $w=\frac83$，即
+	\[
+	a=\sqrt{\frac83}=\frac{2\sqrt6}{3}\approx1.633\in\left(0,2\sqrt2\right).
+	\]
+	$S'$ 在此处由负变正，故为极小值点，也是 $(0,+\infty)$ 上的最小值点。
+
+	\textbf{结论.} $M$ 的坐标为
+	$\left(\frac{2\sqrt6}{3},\frac83\right)$ 或 $\left(-\frac{2\sqrt6}{3},\frac83\right)$，
+	\[
+	S_{\min}=\frac{\left(8+\frac83\right)^{2}}{4\cdot\frac{2\sqrt6}{3}}
+	=\frac{64\sqrt6}{9}\approx17.42 .
+	\]
 }
 
 
@@ -165,11 +356,51 @@ S_{\triangle}=\frac{16}{a} + \frac{1}{4} a^{3} +4a
 
 \nynote{该题在2007年重复出现}
 \banswer{
-	$f(x)= \cos x - \sin x$。注意，这里会遇到$ f ^{\prime} (x) + f(-x)=0 $这个微分方程，解决方案有两种：①利用上一步条件得到$ f(-x) $的表达式；②利用变量替换$ t=-x $，此时有
-	\[ 
-	-\frac{d}{dt} f(-t)+f(t)=0
-	 \]
-相当于$ -\frac{d}{dx} f(-x)+f(x)=0 $。再利用最初的方程得到$ f ^{\prime\prime}(x)+f(x)=0  $，可解。
+	\textbf{化去卷积.} 在 $\int_{0}^{x}tf(t-x)dt$ 中令 $u=t-x$，得
+	\[
+	\int_{0}^{x}\!tf(t-x)dt=\int_{-x}^{0}\!(u+x)f(u)du
+	=\int_{-x}^{0}\!uf(u)du+x\int_{-x}^{0}\!f(u)du .
+	\]
+	于是原方程成为
+	\[
+	x=\int_{0}^{x}\!f(t)dt+\int_{-x}^{0}\!uf(u)du+x\int_{-x}^{0}\!f(u)du .
+	\]
+
+	\textbf{第一次求导.} 注意 $\frac{d}{dx}\int_{-x}^{0}g(u)du=g(-x)$，故
+	\[
+	1=f(x)-xf(-x)+\int_{-x}^{0}\!f(u)du+xf(-x) ,
+	\]
+	含 $xf(-x)$ 的两项相消，得关系式
+	\[
+	f(x)+\int_{-x}^{0}\!f(u)du=1 .
+	\]
+	令 $x=0$ 得 $f(0)=1$。
+
+	\textbf{第二次求导.} 对上式求导得
+	\[
+	f'(x)+f(-x)=0 ,
+	\]
+	令 $x=0$ 得 $f'(0)=-f(0)=-1$。再对上式求导一次：
+	\[
+	f''(x)-f'(-x)=0 ,
+	\]
+	而在 $f'(x)=-f(-x)$ 中以 $-x$ 代 $x$ 得 $f'(-x)=-f(x)$，代入即
+	\[
+	f''(x)+f(x)=0 .
+	\]
+
+	\textbf{解方程.} 通解 $f=A\cos x+B\sin x$；由 $f(0)=1$、$f'(0)=-1$ 得 $A=1,\ B=-1$，
+	\[
+	f(x)=\cos x-\sin x .
+	\]
+	（代回原方程，两端之差恒为 $0$，已用符号计算验证。）
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	关键一步是从 $f'(x)+f(-x)=0$ 里消去 $f(-x)$。除上面的“以 $-x$ 代 $x$”外，
+	也可直接由关系式 $f(x)+\int_{-x}^{0}f=1$ 解出 $\int_{-x}^{0}f$ 再求导，效果相同。
+	本题与 2007 年真题重复。
+	}\par
 }
 
 
@@ -179,7 +410,34 @@ S_{\triangle}=\frac{16}{a} + \frac{1}{4} a^{3} +4a
 
 
 \banswer{
-	证明略。设$ u=x+\frac{z}{y}, v=y+\frac{z}{x} $，求导后利用系数行列式为零可证。
+	记 $u=x+\dfrac{z}{y}$，$v=y+\dfrac{z}{x}$，则 $F(u,v)=0$。
+	两端分别对 $x$、$y$ 求偏导（$z=z(x,y)$）：
+	\begin{align*}
+	F_u\left(1+\frac{z_x}{y}\right)+F_v\left(\frac{z_x}{x}-\frac{z}{x^{2}}\right)&=0,\\
+	F_u\left(\frac{z_y}{y}-\frac{z}{y^{2}}\right)+F_v\left(1+\frac{z_y}{x}\right)&=0 .
+	\end{align*}
+
+	\textbf{解出偏导.} 记 $A=\dfrac{F_u}{y}+\dfrac{F_v}{x}=\dfrac{xF_u+yF_v}{xy}$（设 $A\neq0$），
+	整理上两式得
+	\[
+	z_xA=\frac{zF_v}{x^{2}}-F_u,\qquad
+	z_yA=\frac{zF_u}{y^{2}}-F_v .
+	\]
+
+	\textbf{组合.} 于是
+	\begin{align*}
+	x\frac{\partial z}{\partial x}+y\frac{\partial z}{\partial y}
+	&=\frac{z\left(\frac{F_v}{x}+\frac{F_u}{y}\right)-\left(xF_u+yF_v\right)}{A}\\
+	&=z-\frac{xF_u+yF_v}{A}=z-xy ,
+	\end{align*}
+	最后一步用了 $\dfrac{xF_u+yF_v}{A}=xy$。证毕。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	推导中要求 $xy\neq0$ 且 $A=\frac{xF_u+yF_v}{xy}\neq0$，
+	后者正是隐函数定理成立（$z$ 可解出且可微）的条件。
+	本题与 2023 年选择题第 (8) 小题实质相同。
+	}\par
 }
 
 
@@ -191,7 +449,28 @@ S_{\triangle}=\frac{16}{a} + \frac{1}{4} a^{3} +4a
 
 
 \banswer{
-	$y^{\prime \prime}-y^{\prime}-2 y=(1-2 x) e^{x}$
+	\textbf{提取齐次解.} 非齐次方程两解之差是齐次方程的解：
+	\[
+	y_{1}-y_{3}=e^{-x},\qquad y_{1}-y_{2}=e^{2x}-e^{-x} ,
+	\]
+	故 $e^{-x}$ 与 $e^{2x}$ 都是齐次方程的解，且线性无关。
+
+	\textbf{定齐次方程.} 特征根为 $-1$ 与 $2$，特征方程
+	$(r+1)(r-2)=r^{2}-r-2=0$，即齐次方程为 $y''-y'-2y=0$。
+
+	\textbf{定右端.} 三个解的公共部分 $y^{*}=xe^{x}$ 是非齐次方程的一个特解。
+	由 $y^{*\prime}=(1+x)e^{x}$、$y^{*\prime\prime}=(2+x)e^{x}$ 得
+	\begin{align*}
+	y^{*\prime\prime}-y^{*\prime}-2y^{*}
+	&=\left[(2+x)-(1+x)-2x\right]e^{x}\\
+	&=(1-2x)e^{x} .
+	\end{align*}
+
+	\textbf{结论.}
+	\[
+	y''-y'-2y=(1-2x)e^{x} .
+	\]
+	（把 $y_1,y_2,y_3$ 逐一代入，残差均为 $0$，已用符号计算验证。）
 }
 
 
@@ -202,11 +481,47 @@ S_{\triangle}=\frac{16}{a} + \frac{1}{4} a^{3} +4a
 
 \nynote{若代入1求解，则要注意$x=1$是一个跳跃间断点，傅里叶展开式在此处的值应该是$\frac{1}{2}$。}
 \banswer{
-在$ (-1,1) $上展开得：
-\[ 
-f(x)= \frac{1}{4} +\sum\limits_{n=1}^{\infty}  \frac{1}{n^{2}\pi^{2}}[ (-1)^{n}-1 ]  \cos n \pi x+\sum\limits_{n=1}^{\infty} \frac{1}{n \pi} (-1)^{n+1} \sin n \pi x
- \]
-利用$f(0)$，有$\sum\limits_{n=0}^{\infty} \frac{1}{(2 n+1)^{2}}=\frac{\pi^{2}}{8}$
+	\textbf{先写出一个周期.} 周期为 $2$，取 $(-1,1)$ 作基本区间。
+	当 $-1<x<0$ 时 $x+2\in(1,2)$，故 $f(x)=f(x+2)=0$；当 $0\leqslant x\leqslant1$ 时 $f(x)=x$。
+	于是半周期 $l=1$，
+	\[
+	f(x)\sim\frac{a_{0}}{2}+\sum_{n=1}^{\infty}\left(a_{n}\cos n\pi x+b_{n}\sin n\pi x\right).
+	\]
+
+	\textbf{算系数.} 由 $f$ 在 $(-1,0)$ 上为零，所有积分只剩 $\int_0^1$：
+	\[
+	a_{0}=\int_{-1}^{1}\!f\,dx=\int_{0}^{1}\!x\,dx=\frac12,\qquad \frac{a_0}{2}=\frac14 ;
+	\]
+	分部积分得
+	\begin{align*}
+	a_{n}&=\int_{0}^{1}\!x\cos n\pi x\,dx=\frac{(-1)^{n}-1}{n^{2}\pi^{2}},\\
+	b_{n}&=\int_{0}^{1}\!x\sin n\pi x\,dx=\frac{(-1)^{n+1}}{n\pi} .
+	\end{align*}
+	故
+	\[
+	f(x)=\frac14+\sum_{n=1}^{\infty}\frac{(-1)^{n}-1}{n^{2}\pi^{2}}\cos n\pi x
+	+\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n\pi}\sin n\pi x .
+	\]
+	该式在 $f$ 的连续点处成立，在跳跃点处收敛到左右极限的平均值。
+
+	\textbf{求级数和.} $x=0$ 是连续点（左右极限都是 $0$，且 $f(0)=0$），代入：
+	\[
+	0=\frac14+\sum_{n=1}^{\infty}\frac{(-1)^{n}-1}{n^{2}\pi^{2}} .
+	\]
+	求和中只有奇数 $n$ 有贡献，且贡献为 $-\frac{2}{n^{2}\pi^{2}}$，故
+	\[
+	\frac14=\frac{2}{\pi^{2}}\sum_{n=0}^{\infty}\frac{1}{(2n+1)^{2}}
+	\ \Longrightarrow\
+	\sum_{n=0}^{\infty}\frac{1}{(2n+1)^{2}}=\frac{\pi^{2}}{8} .
+	\]
+	（数值：$\sum_{n<2\times10^{6}}=1.2337004$，$\frac{\pi^{2}}{8}=1.2337006$。）
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	若改用 $x=1$ 代入，须注意 $x=1$ 是跳跃间断点（$f(1^{-})=1$，$f(1^{+})=0$），
+	级数在该点收敛到 $\frac{1+0}{2}=\frac12$ 而不是 $f(1)=1$；
+	这样得到 $\frac12=\frac14+\frac{2}{\pi^{2}}\sum\frac{1}{(2n+1)^{2}}$，结论相同。
+	}\par
 }
 
 
@@ -216,7 +531,30 @@ f(x)= \frac{1}{4} +\sum\limits_{n=1}^{\infty}  \frac{1}{n^{2}\pi^{2}}[ (-1)^{n}-
 设 $f(x)$ 连续, 令 $F(t)=\iint\limits_{x^{2}+y^{2} \leqslant t^{2}} f\left(x^{2}+y^{2}\right) d x d y$ $(t \geqslant 0)$ 。 求 $F^{\prime \prime}(0)$ 。
 
 \banswer{
-	$F^{\prime \prime}(0)=2 \pi f(0)$
+	\textbf{化为单积分.} 用极坐标，
+	\[
+	F(t)=\int_{0}^{2\pi}\!\!d\theta\int_{0}^{t}\!f\left(r^{2}\right)r\,dr
+	=2\pi\int_{0}^{t}\!f\left(r^{2}\right)r\,dr
+	=\pi\int_{0}^{t^{2}}\!f(u)du ,
+	\]
+	最后一步作了代换 $u=r^{2}$。
+
+	\textbf{一阶导.} 由 $f$ 连续及变限积分求导，
+	\[
+	F'(t)=\pi f\left(t^{2}\right)\cdot2t=2\pi tf\left(t^{2}\right),\qquad F'(0)=0 .
+	\]
+
+	\textbf{二阶导.} $f$ 只假设连续，不能再对 $F'$ 求导，须回到定义（$t\geqslant0$，故为右导数）：
+	\[
+	F''(0)=\lim_{t\to0^{+}}\frac{F'(t)-F'(0)}{t}
+	=\lim_{t\to0^{+}}\frac{2\pi tf\left(t^{2}\right)}{t}=2\pi f(0) .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	这里不可以直接写 $F''(t)=2\pi f\left(t^2\right)+4\pi t^{2}f'\left(t^{2}\right)$，
+	因为题设只给了 $f$ 连续，$f'$ 未必存在；用导数定义才是稳妥的做法。
+	}\par
 }
 
 
@@ -228,7 +566,27 @@ f(x)= \frac{1}{4} +\sum\limits_{n=1}^{\infty}  \frac{1}{n^{2}\pi^{2}}[ (-1)^{n}-
  \]
 
 \banswer{
-	证明略。由于$ 0 \leq \frac{a}{a+b} \leq 1 $，可令$ f(\epsilon)=\frac{a}{a+b} $，运用拉格朗日中值定理可证。
+	\textbf{取分点.} 因 $a,b>0$，有 $0<\dfrac{a}{a+b}<1$，即
+	$f(0)=0<\dfrac{a}{a+b}<1=f(1)$。由 $f$ 在 $[0,1]$ 上连续及介值定理，存在 $c\in(0,1)$ 使
+	\[
+	f(c)=\frac{a}{a+b} .
+	\]
+
+	\textbf{两次拉格朗日中值定理.} 分别在 $[0,c]$ 与 $[c,1]$ 上用中值定理：存在
+	$\xi\in(0,c)$、$\eta\in(c,1)$ 使
+	\begin{align*}
+	f'(\xi)&=\frac{f(c)-f(0)}{c-0}=\frac{a}{(a+b)c},\\
+	f'(\eta)&=\frac{f(1)-f(c)}{1-c}=\frac{b}{(a+b)(1-c)} .
+	\end{align*}
+	两者都是正数，特别地不为零，倒数有意义。
+
+	\textbf{合成.}
+	\begin{align*}
+	\frac{a}{f'(\xi)}+\frac{b}{f'(\eta)}
+	&=a\cdot\frac{(a+b)c}{a}+b\cdot\frac{(a+b)(1-c)}{b}\\
+	&=(a+b)c+(a+b)(1-c)=a+b .
+	\end{align*}
+	又 $\xi<c<\eta$，故 $\xi\neq\eta$，命题得证。
 }
 	
 

@@ -42,25 +42,25 @@
 
 \banswer{
 	\begin{enumerate}
+		%\renewcommand{\labelenumi}{\arabic{enumi}.}
 		\item
-		反复使用二倍角公式 $\sin t=2\sin(t/2)\cos(t/2)$，
+		$\sin1$。反复使用二倍角公式 $\sin t=2\sin(t/2)\cos(t/2)$，
 		可得
 		\[
 		\sin1
 		=2^n\sin\frac1{2^n}
-		\prod_{k=1}^{n}\cos\frac1{2^k}.
+		\prod_{k=1}^{n}\cos\frac1{2^k},
 		\]
 		因此
 		\[
 		\prod_{k=1}^{n}\cos\frac1{2^k}
 		=\frac{\sin1}{2^n\sin(1/2^n)}.
 		\]
-		由于 $2^n\sin(1/2^n)\to1$，所求极限为
-		\[
-		\boxed{\sin1}.
-		\]
+		由于 $2^n\sin(1/2^n)\to1$，所求极限为 $\sin1$。
+
 		\item
-		令 $u=\sin x$，则 $du=\cos x\,dx$。于是
+		$\sin x-\ln\left(1+e^{\sin x}\right)+C$。令 $u=\sin x$，则
+		$du=\cos x\,dx$，于是
 		\[
 		\int\frac{\cos x\,dx}{1+e^{\sin x}}
 		=\int\frac{du}{1+e^u}.
@@ -71,50 +71,40 @@
 		=1-\frac{e^u}{1+e^u}
 		=\frac1{1+e^u},
 		\]
-		故原积分为
-		\[
-		\boxed{\sin x-\ln\left(1+e^{\sin x}\right)+C}.
-		\]
+		回代 $u=\sin x$ 即得原积分。
+
 		\item
+		$dz=-\frac{y+z}{x+y}\,dx-\frac{x+z}{x+y}\,dy$。
 		对隐式方程 $yz+zx+xy=1$ 取全微分：
 		\[
-		(z+y)\,dx+(z+x)\,dy+(x+y)\,dz=0.
+		(z+y)\,dx+(z+x)\,dy+(x+y)\,dz=0,
 		\]
-		当 $x+y\ne0$ 时解出
-		\[
-		\boxed{\displaystyle
-		dz=-\frac{y+z}{x+y}\,dx-\frac{x+z}{x+y}\,dy}.
-		\]
+		当 $x+y\ne0$ 时即解出上式。
+
 		\item
-		令 $t=1/x$，则 $x=1/t$、$dx=-dt/t^2$，从而
+		$0<p<2$。令 $t=1/x$，则 $x=1/t$、$dx=-dt/t^2$，从而
 		\[
-		\int_0^\infty\frac{\sin(1/x)}{x^p}\,dx
-		=\int_0^\infty t^{p-2}\sin t\,dt.
+		\int_0^{+\infty}\frac{\sin(1/x)}{x^p}\,dx
+		=\int_0^{+\infty}t^{p-2}\sin t\,dt.
 		\]
-		在 $t\to0$ 时，$\sin t\sim t$，被积函数等价于
-		$t^{p-1}$，故要求 $p>0$。在 $t\to\infty$ 时，
+		在 $t\to0^{+}$ 时 $\sin t\sim t$，被积函数等价于
+		$t^{p-1}$，故要求 $p>0$；在 $t\to+\infty$ 时，
 		由 Dirichlet 判别法，$t^{p-2}\sin t$ 的积分收敛需要
-		$p-2<0$，即 $p<2$。所以收敛域为
-		\[
-		\boxed{0<p<2}.
-		\]
-		进一步说，$0<p<1$ 时绝对收敛，
+		$p-2<0$，即 $p<2$（$p=2$ 时 $\int^{+\infty}\sin t\,dt$ 发散）。
+		所以收敛域为 $0<p<2$；进一步，$0<p<1$ 时绝对收敛，
 		$1\leqslant p<2$ 时条件收敛。
+
 		\item
-		齐次方程的特征方程为
+		$y=(C_1+C_2x)e^{-2x}+\frac19e^x$。齐次方程的特征方程为
 		\[
 		r^2+4r+4=(r+2)^2=0,
 		\]
-		故 $y_h=(C_1+C_2x)e^{-2x}$。对非齐次项设
-		$y_p=Ae^x$，代入得
+		有二重根 $-2$，故 $y_h=(C_1+C_2x)e^{-2x}$。
+		因 $1$ 不是特征根，对非齐次项设 $y^{*}=Ae^x$，代入得
 		\[
 		(A+4A+4A)e^x=e^x,
 		\]
-		所以 $A=1/9$。通解为
-		\[
-		\boxed{\displaystyle
-		y=(C_1+C_2x)e^{-2x}+\frac19e^x}.
-		\]
+		所以 $A=\frac19$。
 	\end{enumerate}
 }
 
@@ -194,81 +184,62 @@
 
 \banswer{
 	\begin{enumerate}
+		%\renewcommand{\labelenumi}{\arabic{enumi}.}
 		\item
-		记分段函数为 $\varphi(x)$。可导必先连续，因此
+		\textbf{B}。记分段函数为 $\varphi(x)$。可导必先连续，因此
 		\[
-		b=\varphi(0)=\lim_{x\to0+}x^2\cos\frac1x=0.
+		b=\varphi(0)=\lim_{x\to0^{+}}x^2\cos\frac1x=0.
 		\]
 		左导数为 $a$，而右导数为
 		\[
-		\lim_{x\to0+}
+		\lim_{x\to0^{+}}
 		\frac{x^2\cos(1/x)-0}{x}
-		=\lim_{x\to0+}x\cos\frac1x=0.
+		=\lim_{x\to0^{+}}x\cos\frac1x=0,
 		\]
-		左右导数相等要求 $a=0$，故选
-		\[
-		\boxed{\mathrm B}.
-		\]
+		左右导数相等要求 $a=0$。故 $a=0$、$b=0$。
+
 		\item
-		$f$ 在 $0$ 处二阶可导，因而连续。由
-		$\lim_{x\to0}f(x)/x=1$ 先得 $f(0)=0$，再得
+		\textbf{A}。$f$ 在 $0$ 处二阶可导，因而连续。由
+		$\lim\limits_{x\to0}f(x)/x=1$ 先得 $f(0)=0$，再得
 		\[
 		f'(0)=\lim_{x\to0}\frac{f(x)-f(0)}x=1.
 		\]
 		由于 $f''(x)>0$，$f$ 严格凸，其图像除切点外严格位于
-		任一切线之上。$x=0$ 处的切线为
+		任一切线之上。而 $x=0$ 处的切线为
 		\[
-		y=f(0)+f'(0)x=x.
+		y=f(0)+f'(0)x=x,
 		\]
-		所以对 $x\in(-L,0)\cup(0,L)$ 均有 $f(x)>x$，故选
-		\[
-		\boxed{\mathrm A}.
-		\]
+		所以对 $x\in(-L,0)\cup(0,L)$ 均有 $f(x)>x$。
+
 		\item
-		在平面 $x+y+z=0$ 内取一组标准正交基
+		\textbf{B}。$L$ 是半径为 $a$ 的大圆，弧长 $2\pi a$。在 $L$ 上由
+		$x+y+z=0$ 得
 		\[
-		\bm e_1=\frac1{\sqrt2}(1,-1,0),\qquad
-		\bm e_2=\frac1{\sqrt6}(1,1,-2).
+		0=(x+y+z)^{2}=a^{2}+2(xy+yz+zx),
 		\]
-		圆周 $L$ 可参数化为
+		即 $xy+yz+zx=-\frac{a^{2}}{2}$。于是
+		\begin{align*}
+		x^{2}y^{2}+y^{2}z^{2}+z^{2}x^{2}
+		&=(xy+yz+zx)^{2}-2xyz(x+y+z)=\frac{a^{4}}{4},\\
+		x^{4}+y^{4}+z^{4}
+		&=\left(x^{2}+y^{2}+z^{2}\right)^{2}
+		-2\left(x^{2}y^{2}+y^{2}z^{2}+z^{2}x^{2}\right)\\
+		&=a^{4}-\frac{a^{4}}{2}=\frac{a^{4}}{2}.
+		\end{align*}
+		两式右端在 $L$ 上都是常数，而 $x,y,z$ 的地位完全对称，故
 		\[
-		\begin{cases}
-		x=a\left(\dfrac{\cos t}{\sqrt2}
-		+\dfrac{\sin t}{\sqrt6}\right),\\[1mm]
-		y=a\left(-\dfrac{\cos t}{\sqrt2}
-		+\dfrac{\sin t}{\sqrt6}\right),\\[1mm]
-		z=-\dfrac{2a}{\sqrt6}\sin t,
-		\end{cases}
-		\quad 0\leqslant t\leqslant2\pi,
-		\qquad dL=a\,dt.
+		\int_Lx^4\,dL=\frac{a^{4}}{6}\cdot2\pi a=\frac{\pi a^5}{3},\qquad
+		\int_Ly^2z^2\,dL=\frac{a^{4}}{12}\cdot2\pi a=\frac{\pi a^5}{6},
 		\]
-		利用
-		\[
-		\int_0^{2\pi}\sin^4t\,dt
-		=\int_0^{2\pi}\cos^4t\,dt=\frac{3\pi}{4},
-		\quad
-		\int_0^{2\pi}\sin^2t\cos^2t\,dt=\frac{\pi}{4},
-		\]
-		以及奇次混合项积分为零，可算得
-		\[
-		\int_Lx^4\,dL=\frac{\pi a^5}{3},\qquad
-		\int_Ly^2z^2\,dL=\frac{\pi a^5}{6}.
-		\]
-		因此
-		\[
-		\int_L(x^4+2y^2z^2)\,dL
-		=\frac{2\pi a^5}{3},
-		\]
-		故选 $\boxed{\mathrm B}$。
+		因此 $\int_L\left(x^4+2y^2z^2\right)dL=\frac{2\pi a^5}{3}$
+		（已用参数化数值积分核对）。
+
 		\item
-		逐项判断：
-		\[
-		e^{1/n}-1\sim\frac1n,
-		\]
-		故 A 发散；B 由 Dirichlet 判别法条件收敛，但
+		\textbf{C}。逐项判断：由 $e^{1/n}-1\sim\frac1n$ 知 A 发散；
+		B 由 Dirichlet 判别法收敛，但
 		\[
 		\sum\frac{|\sin n|}{n}
-		\geqslant\sum\frac{\sin^2n}{n}
+		\geqslant\sum\frac{\sin^2n}{n},
 		\]
 		且后者利用 $\sin^2n=(1-\cos2n)/2$ 可知发散，所以
 		B 不绝对收敛。对 C，
@@ -276,25 +247,16 @@
 		0<\frac1{e^{\sqrt n}+1}<e^{-\sqrt n},
 		\]
 		而 $\sum e^{-\sqrt n}$ 收敛，故 C 绝对收敛。D 的通项
-		绝对值趋于 $1/2$，不满足通项趋零的必要条件。故选
-		\[
-		\boxed{\mathrm C}.
-		\]
+		绝对值趋于 $\frac12$，不满足通项趋零的必要条件。
+
 		\item
-		在 $[-\pi,\pi]$ 上对等式两边积分。所有余弦项的积分
+		\textbf{A}。在 $[-\pi,\pi]$ 上对等式两边积分，所有余弦项的积分
 		均为零，因此
 		\[
 		2\pi a+\int_{-\pi}^{\pi}|x|\,dx
-		=\int_{-\pi}^{\pi}\pi\,dx.
+		=\int_{-\pi}^{\pi}\pi\,dx,
 		\]
-		即
-		\[
-		2\pi a+\pi^2=2\pi^2,
-		\]
-		从而 $a=\pi/2$，故选
-		\[
-		\boxed{\mathrm A}.
-		\]
+		即 $2\pi a+\pi^2=2\pi^2$，从而 $a=\frac\pi2$。
 	\end{enumerate}
 }
 

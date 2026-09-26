@@ -72,7 +72,7 @@
 {$e^{2}$}
 
 \item 
-二重积分 $\int_{0}^{+\infty} \int_{0}^{+\infty} x^{2} e^{-2\left(x^{2}+y^{2}\right)^{2}} d x d y=$ \xzanswer{D} 
+二重积分 $\int_{0}^{+\infty} \int_{0}^{+\infty} x^{2} e^{-2\left(x^{2}+y^{2}\right)^{2}} d x d y=$ \xzanswer{B} 
 
 
 \fourchoices
@@ -126,6 +126,100 @@ $ \lim\limits _{(x, y) \rightarrow(0,0)} \frac{|x y|}{\sqrt[4]{x^{6}+y^{18} }}= 
 	
 \end{enumerate}
 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
+	\item
+	\textbf{A}。因 $\left|\sin x^{2}\right|\leqslant1$，而 $h$ 在 $[-1,1]$ 上恰好就是 $h(u)=u$
+	（端点 $h(\pm1)=\pm1$ 也相符），故
+	\[
+	g(x)=h\left(\sin x^{2}\right)=\sin x^{2} .
+	\]
+	它有界（$|g|\leqslant1$）且任意阶可导，故选“有界可微函数”。
+
+	\item
+	\textbf{B}。由复合函数求导法则，
+	\[
+	f^{\prime}(x)=1000\left(x+\frac{1}{x}\right)^{999}\left(1-\frac{1}{x^{2}}\right).
+	\]
+	（注意外层指数降为 $999$，内层导数是 $1-\frac{1}{x^{2}}$。）
+
+	\item
+	\textbf{C}。$\frac{\cos x+\sin x}{\cos x-\sin x}=\frac{1+\tan x}{1-\tan x}$，取对数后
+	\[
+	\frac{\ln(1+\tan x)-\ln(1-\tan x)}{x}\sim\frac{\tan x+\tan x}{x}\longrightarrow2 ,
+	\]
+	故原极限为 $e^{2}$。
+
+	\item
+	\textbf{D}。$L_1$ 是两平面的交线，方向
+	\[
+	\bm{s}_1=(1,2,0)\times\left(0,1,\tfrac12\right)=\left(1,-\tfrac12,1\right)\parallel(2,-1,2),
+	\]
+	$\left|(2,-1,2)\right|=3$；$L_2$ 的方向 $\bm{s}_2=(-1,-2,2)$，$\left|\bm{s}_2\right|=3$。故
+	\[
+	\cos\alpha=\frac{\left|\bm{s}_1\cdot\bm{s}_2\right|}{\left|\bm{s}_1\right|\left|\bm{s}_2\right|}
+	=\frac{|-2+2+4|}{9}=\frac{4}{9} .
+	\]
+
+	\item
+	\textbf{A}。取对数化为定积分：
+	\[
+	\ln\frac{\sqrt[n]{n!}}{n}=\frac{1}{n}\sum_{k=1}^{n}\ln\frac{k}{n}
+	\longrightarrow\int_0^1\ln x\,dx=-1 ,
+	\]
+	故所求极限为 $e^{-1}$。
+
+	\item
+	\textbf{B}。化极坐标 $x=\rho\cos\theta$、$y=\rho\sin\theta$，
+	$\theta\in\left[0,\frac{\pi}{2}\right]$、$\rho\in[0,+\infty)$：
+	\begin{align*}
+	I&=\int_0^{\pi/2}\!\cos^{2}\theta\,d\theta\int_0^{+\infty}\!\rho^{3}e^{-2\rho^{4}}d\rho\\
+	&=\frac{\pi}{4}\cdot\frac{1}{4}\int_0^{+\infty}\!e^{-2s}ds
+	=\frac{\pi}{4}\cdot\frac{1}{8}=\frac{\pi}{32}
+	\end{align*}
+	（末步令 $s=\rho^{4}$，$ds=4\rho^{3}d\rho$）。
+
+	\item
+	\textbf{D}。沿 $y=x$ 趋于原点：
+	$\frac{x^{2}}{\left(x^{6}+x^{18}\right)^{1/4}}\sim|x|^{1/2}\to0$；
+	沿 $x=y^{3}$ 趋于原点（此时 $x^{6}=y^{18}$）：
+	\[
+	\frac{\left|y^{4}\right|}{\left(2y^{18}\right)^{1/4}}
+	=\frac{1}{2^{1/4}|y|^{1/2}}\longrightarrow+\infty .
+	\]
+	两条路径的结果一个有限一个无穷，故重极限不存在（也谈不上等于 $\infty$）。
+
+	\item
+	\textbf{A}。这是 Bernoulli 方程：两端除以 $y^{2}$，令 $v=y^{-1}$（$v^{\prime}=-y^{-2}y^{\prime}$），
+	方程化为线性方程 $v^{\prime}-v=-x$，通解 $v=Ce^{x}+x+1$。
+	由 $y^{*}(1)=\frac{1}{e+2}$ 得 $v(1)=e+2$，即 $Ce+2=e+2$，故 $C=1$；
+	再由 $v(0)=\frac{1}{\alpha}=C+1=2$ 得 $\alpha=\frac{1}{2}$。
+
+	\item
+	\textbf{C}。拆成两个指数级数：
+	\[
+	\sum_{n=0}^{\infty}\frac{2^{n}(n+1)}{n!}
+	=\sum_{n\geqslant1}\frac{2^{n}}{(n-1)!}+\sum_{n\geqslant0}\frac{2^{n}}{n!}
+	=2e^{2}+e^{2}=3e^{2} .
+	\]
+
+	\item
+	\textbf{A}。令 $t=x^{2}$（$x>0$ 故 $x=\sqrt t$），则 $f^{\prime}(t)=\frac{1}{\sqrt t}$，
+	积分得 $f(t)=2\sqrt{t}+C$，即 $f(x)=2\sqrt{x}+C$。
+\end{enumerate}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	第 (6) 题原答案作 D（$\frac{\pi}{8}$），有误，正确值为 $\frac{\pi}{32}$，即 B；
+	数值积分给出 $0.0981748=\frac{\pi}{32}$。
+	顺带一提，即使把指数读作 $-2\left(x^{2}+y^{2}\right)$，由于
+	$\int_0^{+\infty}\rho^{3}e^{-2\rho^{2}}d\rho$ 同样等于 $\frac18$，结果仍是 $\frac{\pi}{32}$。
+	}\par
+}
+
+
 	
 
 
@@ -138,7 +232,36 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 证明: $\lim\limits _{n \rightarrow \infty} y_{n}$ 存在, 并求这个极限。
 
 \banswer{
-	证明略。单调递增，有界，$\lim \limits_{n \rightarrow \infty} y_{n}=x+\sqrt{x^{2}-1}$
+	设 $x>1$，记 $L=x+\sqrt{x^{2}-1}$，它是方程 $y=2x-\frac1y$
+	（即 $y^{2}-2xy+1=0$）的较大根，另一根为 $x-\sqrt{x^{2}-1}=\frac{1}{L}$。
+
+	\textbf{有下界.} 用归纳法证 $y_n>L$。
+	首先 $y_1=2x>x+\sqrt{x^{2}-1}=L$（因 $x>\sqrt{x^{2}-1}$）。
+	若 $y_n>L>0$，则
+	\[
+	y_{n+1}=2x-\frac{1}{y_n}>2x-\frac{1}{L}
+	=2x-\left(x-\sqrt{x^{2}-1}\right)=L .
+	\]
+
+	\textbf{单调减少.} 由
+	\[
+	y_{n+1}-y_n=\frac{1}{y_{n-1}}-\frac{1}{y_n}=\frac{y_n-y_{n-1}}{y_ny_{n-1}}
+	\]
+	及 $y_n>L>0$ 知相邻两差同号；而 $y_2-y_1=-\frac{1}{2x}<0$，故 $\left\{y_n\right\}$ 严格递减。
+
+	\textbf{求极限.} 单调递减且有下界，故 $A=\lim\limits_{n\to\infty}y_n$ 存在且 $A\geqslant L>0$。
+	在 $y_{n+1}=2x-\frac{1}{y_n}$ 中令 $n\to\infty$ 得 $A^{2}-2xA+1=0$，
+	两根为 $x\pm\sqrt{x^{2}-1}$；由 $A\geqslant L$ 取较大根：
+	\[
+	\lim_{n \rightarrow \infty} y_{n}=x+\sqrt{x^{2}-1} .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案称“单调递增，有界”，方向说反了，应为单调递减且有下界；极限值本身无误。
+	取 $x=2.3$ 逐项计算得 $y_n=4.6,\ 4.3826,\ 4.3718,\ 4.37123,\cdots$，
+	确为递减且收敛到 $x+\sqrt{x^{2}-1}=4.371232$。
+	}\par
 }
 
 
@@ -148,7 +271,20 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 
 
 \banswer{
-	变量代换，$ V=8 $
+	作线性变换
+	\[
+	u=x+y+z,\qquad v=2x-y+2z,\qquad w=x-y-z ,
+	\]
+	则六个平面恰为 $u=\pm1$、$v=\pm2$、$w=\pm3$，$\Omega$ 变成长方体
+	$|u|\leqslant1$、$|v|\leqslant2$、$|w|\leqslant3$，其体积为 $2\times4\times6=48$。又
+	\[
+	\frac{\partial(u,v,w)}{\partial(x,y,z)}
+	=\begin{vmatrix}1&1&1\\2&-1&2\\1&-1&-1\end{vmatrix}=6\neq0 ,
+	\]
+	故 $dxdydz=\frac{1}{6}\,du\,dv\,dw$，从而
+	\[
+	V=\iiint_\Omega dxdydz=\frac{48}{6}=8 .
+	\]
 }
 
 
@@ -158,7 +294,45 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 
 
 \banswer{
-	$f(x)=\frac{2}{\pi} \sum\limits_{n=1}^{\infty} (-1)^{n}\left[\frac{1}{(2 n+1)^{2}}-\frac{1}{(2 n-1)^{2}}\right] \sin 2 n x $，端点处收敛于$ 0 $，其它点处收敛于$ f(x) $
+	区间 $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ 的半周期 $l=\frac{\pi}{2}$，
+	而 $f(x)=x\cos x$ 为奇函数，故只含正弦项，基频 $\frac{n\pi}{l}=2n$：
+	\[
+	b_n=\frac{2}{l}\int_0^{l}f(x)\sin\frac{n\pi x}{l}\,dx
+	=\frac{4}{\pi}\int_0^{\pi/2}x\cos x\sin 2nx\,dx .
+	\]
+
+	\textbf{算 $b_n$.} 积化和差
+	$\cos x\sin2nx=\frac12\left[\sin(2n+1)x+\sin(2n-1)x\right]$；
+	而对奇数 $k$（此时 $\cos\frac{k\pi}{2}=0$）
+	\[
+	\int_0^{\pi/2}x\sin kx\,dx
+	=\left[-\frac{x\cos kx}{k}\right]_0^{\pi/2}+\frac{1}{k^{2}}\left[\sin kx\right]_0^{\pi/2}
+	=\frac{\sin\frac{k\pi}{2}}{k^{2}} .
+	\]
+	取 $k=2n+1$ 得 $\frac{(-1)^{n}}{(2n+1)^{2}}$，取 $k=2n-1$ 得 $\frac{(-1)^{n-1}}{(2n-1)^{2}}$，故
+	\[
+	b_n=\frac{2(-1)^{n}}{\pi}\left[\frac{1}{(2n+1)^{2}}-\frac{1}{(2n-1)^{2}}\right].
+	\]
+
+	\textbf{结果.}
+	\[
+	f(x)=\frac{2}{\pi} \sum\limits_{n=1}^{\infty} (-1)^{n}\left[\frac{1}{(2 n+1)^{2}}-\frac{1}{(2 n-1)^{2}}\right] \sin 2 n x ,
+	\]
+	通分后也可写成
+	\[
+	x\cos x=\frac{16}{\pi}\sum_{n=1}^{\infty}
+	\frac{(-1)^{n-1}n}{\left(4n^{2}-1\right)^{2}}\sin 2nx .
+	\]
+
+	\textbf{收敛性.} $f$ 分段光滑，且 $f\left(\pm\frac{\pi}{2}\right)=\pm\frac{\pi}{2}\cos\frac{\pi}{2}=0$，
+	故以 $\pi$ 为周期的奇延拓处处连续，级数在整个 $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ 上
+	收敛于 $f(x)$（端点处两边都是 $0$）。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	数值校验：取 $x=\frac{\pi}{4}$，级数部分和为 $0.5554$，
+	而 $\frac{\pi}{4}\cos\frac{\pi}{4}=\frac{\sqrt2\,\pi}{8}=0.5554$。
+	}\par
 }
 
 
@@ -168,7 +342,27 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 
 
 \banswer{
-变量代换，$ S= \frac{7}{6}  $
+	四条边界分别是 $\frac{y^{2}}{x}=1,3$ 与 $\frac{y}{x}=1,2$（$D$ 落在第一象限），故作代换
+	\[
+	u=\frac{y^{2}}{x}\in[1,3],\qquad v=\frac{y}{x}\in[1,2] .
+	\]
+	反解得 $y=\frac{u}{v}$、$x=\frac{u}{v^{2}}$，于是
+	\[
+	\frac{\partial(x,y)}{\partial(u,v)}
+	=\begin{vmatrix}\dfrac{1}{v^{2}}&-\dfrac{2u}{v^{3}}\\[6pt]
+	\dfrac{1}{v}&-\dfrac{u}{v^{2}}\end{vmatrix}
+	=\frac{u}{v^{4}}\;(>0) .
+	\]
+	故
+	\[
+	S=\int_1^{3}\!\!\int_1^{2}\frac{u}{v^{4}}\,dv\,du
+	=\left(\int_1^{3}u\,du\right)\left(\int_1^{2}\frac{dv}{v^{4}}\right)
+	=4\times\frac{7}{24}=\frac{7}{6} .
+	\]
+	（$D$ 的四个顶点是 $\left(\frac14,\frac12\right)$、$(1,1)$、
+	$\left(\frac34,\frac32\right)$、$(3,3)$。也可直接按 $y$ 积分，
+	横向宽度为 $\min\left(y^{2},y\right)-\max\left(\frac{y^{2}}{3},\frac{y}{2}\right)$，
+	数值计算同样得 $\frac76$。）
 }
 
 
@@ -179,7 +373,22 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 由拉格朗日中值公式有: $e^{x}-1=x e^{x \theta(x)}, \theta(x) \in(0,1)$ 。证明: $\lim\limits _{x \rightarrow 0} \theta(x)=\frac{1}{2}$。
 
 \banswer{
-	证明略。解出$ \theta(x) $后求极限
+	由 $e^{x}-1=xe^{x\theta(x)}$（$x\neq0$）可解出 $\theta(x)$：
+	\[
+	e^{x\theta(x)}=\frac{e^{x}-1}{x}
+	\quad\Longrightarrow\quad
+	\theta(x)=\frac{1}{x}\ln\frac{e^{x}-1}{x} .
+	\]
+	（$x\to0$ 时 $\frac{e^{x}-1}{x}\to1>0$，故 $|x|$ 充分小时对数有意义。）
+
+	由 Taylor 展开
+	\[
+	\frac{e^{x}-1}{x}=1+\frac{x}{2}+\frac{x^{2}}{6}+o\left(x^{2}\right),
+	\]
+	再用 $\ln(1+u)=u+o(u)$ 得 $\ln\frac{e^{x}-1}{x}=\frac{x}{2}+o(x)$，从而
+	\[
+	\lim_{x\to0}\theta(x)=\lim_{x\to0}\frac{\frac{x}{2}+o(x)}{x}=\frac{1}{2} .
+	\]
 }
 
 
@@ -190,7 +399,25 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 
 
 \banswer{
-	$y=C_{1} e^{2 t}+C_{2} e^{-t}+\left(\frac{10}{9} t-\frac{1}{6} t^{2}\right) e^{2 t}$	
+	\textbf{齐次通解.} 特征方程 $r^{2}-r-2=0$ 的根为 $r=2,-1$，故
+	$y_h=C_1e^{2t}+C_2e^{-t}$。
+
+	\textbf{求特解.} 右端 $(3-t)e^{2t}$ 中 $\lambda=2$ 是单特征根，设
+	$y^{*}=t(at+b)e^{2t}=\left(at^{2}+bt\right)e^{2t}$，则
+	\begin{align*}
+	y^{*\prime}&=\left[2at^{2}+(2a+2b)t+b\right]e^{2t},\\
+	y^{*\prime\prime}&=\left[4at^{2}+(8a+4b)t+(2a+4b)\right]e^{2t}.
+	\end{align*}
+	代入左端，$t^{2}$ 的系数自动抵消，余下
+	\[
+	y^{*\prime\prime}-y^{*\prime}-2y^{*}=\left[6at+(2a+3b)\right]e^{2t} .
+	\]
+	与 $(3-t)e^{2t}$ 比较得 $6a=-1$、$2a+3b=3$，即 $a=-\frac16$、$b=\frac{10}{9}$。
+
+	\textbf{通解.}
+	\[
+	y=C_{1} e^{2 t}+C_{2} e^{-t}+\left(\frac{10}{9} t-\frac{1}{6} t^{2}\right) e^{2 t} .
+	\]
 }
 
 
@@ -199,7 +426,29 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 计算曲线积分 $I=\oint_{L} \frac{x d y-y d x}{x^{2}+2 y^{2}}$, 其中 $L$ 是以点 $(1,1),(-1,0),(0,-1)$ 为顶点的三 角形，取逆时针方向。
 
 \banswer{
-	$ I=\sqrt{2} \pi $
+	记 $P=\frac{-y}{x^{2}+2y^{2}}$、$Q=\frac{x}{x^{2}+2y^{2}}$。除原点外
+	\[
+	\frac{\partial Q}{\partial x}=\frac{2y^{2}-x^{2}}{\left(x^{2}+2y^{2}\right)^{2}}
+	=\frac{\partial P}{\partial y} .
+	\]
+	三条边所在直线为 $x+y+1=0$、$x-2y+1=0$、$2x-y-1=0$；
+	把原点与对面顶点分别代入，符号都相同，故原点在三角形内部，不能直接用格林公式。
+
+	\textbf{挖点.} 取充分小的 $\varepsilon>0$，作椭圆
+	$C_\varepsilon:\ x^{2}+2y^{2}=\varepsilon^{2}$（逆时针）。
+	在 $L$ 与 $C_\varepsilon$ 所夹的区域内 $Q_x=P_y$，由格林公式得
+	$\oint_L=\oint_{C_\varepsilon}$。
+
+	\textbf{在椭圆上计算.} 取 $x=\varepsilon\cos t$、$y=\frac{\varepsilon}{\sqrt2}\sin t$，则
+	\[
+	x\,dy-y\,dx=\frac{\varepsilon^{2}}{\sqrt2}\left(\cos^{2}t+\sin^{2}t\right)dt
+	=\frac{\varepsilon^{2}}{\sqrt2}\,dt ,
+	\]
+	而分母恒为 $\varepsilon^{2}$，故
+	\[
+	I=\int_0^{2\pi}\frac{dt}{\sqrt2}=\frac{2\pi}{\sqrt2}=\sqrt{2}\,\pi .
+	\]
+	（沿三角形三边直接数值积分得 $4.44288=\sqrt2\pi$，与此相符。）
 }
 
 
@@ -208,7 +457,23 @@ y_{1}(x)=2 x, y_{n+1}(x)=2 x-\frac{1}{y_{n}(x)}
 计算曲面积分 $\iint_{S} z d S$, 其中 $S$ 为区域 $\sqrt{x^{2}+y^{2}} \leqslant z \leqslant 1$ 的边界。
 
 \banswer{
-$ \pi + \frac{2\sqrt{2}}{3} \pi $
+	$S$ 由两块组成：锥侧面 $S_1:\ z=\sqrt{x^{2}+y^{2}}\ (0\leqslant z\leqslant1)$
+	与顶面 $S_2:\ z=1,\ x^{2}+y^{2}\leqslant1$，二者在 $xOy$ 面上的投影都是
+	$D:\ x^{2}+y^{2}\leqslant1$。
+
+	\textbf{锥侧面.} 由 $z_x=\frac{x}{\sqrt{x^{2}+y^{2}}}$、$z_y=\frac{y}{\sqrt{x^{2}+y^{2}}}$ 得
+	$dS=\sqrt{1+z_x^{2}+z_y^{2}}\,dxdy=\sqrt2\,dxdy$，故
+	\begin{align*}
+	\iint_{S_1}z\,dS&=\sqrt2\iint_D\sqrt{x^{2}+y^{2}}\,dxdy\\
+	&=\sqrt2\int_0^{2\pi}\!\!d\theta\int_0^1 r^{2}dr=\frac{2\sqrt2}{3}\pi .
+	\end{align*}
+
+	\textbf{顶面.} $z\equiv1$、$dS=dxdy$，故 $\iint_{S_2}z\,dS=|D|=\pi$。
+
+	\textbf{合计.}
+	\[
+	\iint_{S} z\,dS=\pi + \frac{2\sqrt{2}}{3} \pi\approx6.104 .
+	\]
 }
 
 
@@ -220,11 +485,24 @@ $ \pi + \frac{2\sqrt{2}}{3} \pi $
 \]
 
 \banswer{
-	证明略。柯西不等式的积分形式，可以将积分化成和式，利用柯西不等式来证。也可以构造函数
-	\[ 
-	F(x)= \int_{a}^{x} f^{2}(t) d t \int_{a}^{x} g^{2}(t) d t -\left(\int_{a}^{x} f(t) g(t) d t\right)^{2} 
-	 \]
-	还可以利用$ \left[  f(x)g(y) -f(y)g(x) \right]^{2} \geq 0 $，展开后对$ x $、$ y $积分可证。
+	\textbf{解法一（判别式法）.} 记
+	\[
+	A=\int_a^{b}f^{2}dx,\qquad B=\int_a^{b}fg\,dx,\qquad C=\int_a^{b}g^{2}dx .
+	\]
+	对任意实数 $\lambda$，
+	\[
+	0\leqslant\int_a^{b}\left[\lambda f(x)+g(x)\right]^{2}dx=A\lambda^{2}+2B\lambda+C .
+	\]
+	若 $A=0$，则 $f^{2}$ 连续非负而积分为零，故 $f\equiv0$，于是 $B=0$，结论显然。
+	若 $A>0$，则该二次三项式对一切 $\lambda$ 非负，判别式 $4B^{2}-4AC\leqslant0$，
+	即 $B^{2}\leqslant AC$，这正是所证。
+
+	\textbf{解法二（对称化）.} 由 $\left[f(x)g(y)-f(y)g(x)\right]^{2}\geqslant0$ 展开，
+	再对 $(x,y)$ 在 $[a,b]\times[a,b]$ 上积分，得
+	\[
+	2\int_a^{b}\!f^{2}dx\int_a^{b}\!g^{2}dx-2\left(\int_a^{b}\!fg\,dx\right)^{2}\geqslant0 ,
+	\]
+	同样得到结论。等号成立当且仅当 $f$ 与 $g$ 线性相关。
 }
 
 
@@ -237,12 +515,45 @@ $ \pi + \frac{2\sqrt{2}}{3} \pi $
 
 
 \banswer{
-	证明略。利用$ F(x)=\int_{0}^{x} |f(t)|dt $的导数$ F ^{\prime} (t)=|f(t)| $
-	\[ 
-	\int_{0}^{1}\left|f(x) f^{\prime}(x)\right| d x = \int_{0}^{1}\left| \int_{0}^{x} f ^{\prime} (t)dt \cdot f^{\prime}(x)\right| d x \leq \int_{0}^{1} \int_{0}^{x}  \left| f ^{\prime} (t)dt \right| \cdot \left| f^{\prime}(x)\right| d x 
-	 \]
-	并且需注意$ 	\left| f(t) \right| ^{2}  =2f(t)\cdot f ^{\prime} (t)  \neq 2 | f(t) | \cdot | f ^{\prime} (t) |  $
-}	
+	令
+	\[
+	G(x)=\int_0^{x}\left|f^{\prime}(t)\right|dt,\qquad
+	H(x)=\int_x^{2}\left|f^{\prime}(t)\right|dt ,
+	\]
+	并记 $A=G(1)=\int_0^{1}\left|f^{\prime}\right|dt$、$B=H(1)=\int_1^{2}\left|f^{\prime}\right|dt$。
+
+	\textbf{第一步：估计 $|f|$.} 由 $f(0)=f(2)=0$ 与 Newton--Leibniz 公式，
+	\[
+	|f(x)|=\left|\int_0^{x}f^{\prime}\right|\leqslant G(x),\qquad
+	|f(x)|=\left|\int_x^{2}f^{\prime}\right|\leqslant H(x) .
+	\]
+
+	\textbf{第二步：分段积分.} 在 $[0,1]$ 上用前一个估计、在 $[1,2]$ 上用后一个，
+	注意 $G^{\prime}=\left|f^{\prime}\right|$、$H^{\prime}=-\left|f^{\prime}\right|$：
+	\begin{align*}
+	\int_0^{2}\left|ff^{\prime}\right|dx
+	&\leqslant\int_0^{1}G\,G^{\prime}dx-\int_1^{2}H\,H^{\prime}dx\\
+	&=\frac{G(1)^{2}}{2}+\frac{H(1)^{2}}{2}=\frac{A^{2}+B^{2}}{2} .
+	\end{align*}
+
+	\textbf{第三步：用 Cauchy 不等式.} 由
+	$\left(\int_0^{1}\left|f^{\prime}\right|\cdot1\,dx\right)^{2}
+	\leqslant\int_0^{1}\left|f^{\prime}\right|^{2}dx\cdot\int_0^{1}1^{2}dx$ 得
+	$A^{2}\leqslant\int_0^{1}\left|f^{\prime}\right|^{2}dx$；同理
+	$B^{2}\leqslant\int_1^{2}\left|f^{\prime}\right|^{2}dx$。合并即得
+	\[
+	\int_{0}^{2}\left|f(x) f^{\prime}(x)\right| d x
+	\leqslant \frac{1}{2} \int_{0}^{2}\left|f^{\prime}(x)\right|^{2} d x .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	分点取在中点 $x=1$ 是关键：正因 $[0,1]$、$[1,2]$ 的长度都是 $1$，
+	Cauchy 不等式里的因子 $\int1^{2}dx$ 才等于 $1$，常数 $\frac12$ 由此而来。
+	另外 $\left(f^{2}\right)^{\prime}=2ff^{\prime}$ 而非
+	$2|f|\left|f^{\prime}\right|$，不能对 $|f|$ 直接分部积分。
+	}\par
+}
 	
 \end{enumerate}
 

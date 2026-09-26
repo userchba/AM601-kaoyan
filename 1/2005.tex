@@ -34,12 +34,63 @@
 		
 		
 		\item
-		微分方程 $y^{\prime}+\frac{1}{x}=1$ 的通解为 \tk{$ y=x(c+ \ln |x|) $} 。
+		微分方程 $y^{\prime}-\frac{y}{x}=1$ 的通解为 \tk{$ y=x(C+ \ln |x|) $} 。
 		
 		
 	\end{enumerate}
-	
-\item 
+
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	$6$。凑成导数定义的形式：
+	\begin{align*}
+	\lim_{x\to0}\frac{f\left(x_{0}\right)-f\left(x_{0}-2x\right)}{x}
+	&=2\lim_{x\to0}\frac{f\left(x_{0}-2x\right)-f\left(x_{0}\right)}{-2x}\\
+	&=2f^{\prime}\left(x_{0}\right)=6 .
+	\end{align*}
+
+	\item
+	$\left(2x^{2}-1\right)e^{x^{2}}+C$。由 $e^{x^{2}}$ 是 $f$ 的一个原函数得
+	$f(x)=\left(e^{x^{2}}\right)^{\prime}=2xe^{x^{2}}$，且 $\int f(x)dx=e^{x^{2}}+C$。分部积分：
+	\begin{align*}
+	\int xf^{\prime}(x)dx&=xf(x)-\int f(x)dx\\
+	&=2x^{2}e^{x^{2}}-e^{x^{2}}+C=\left(2x^{2}-1\right)e^{x^{2}}+C .
+	\end{align*}
+
+	\item
+	$2\sqrt{14}$。最大方向微商（方向导数）的值等于梯度的模。
+	$\operatorname{grad}u=(2x,4y,6z)$，在 $(1,1,-1)$ 处为 $(2,4,-6)$，故最大值为
+	\[
+	\left|\operatorname{grad}u\right|=\sqrt{2^{2}+4^{2}+(-6)^{2}}=\sqrt{56}=2\sqrt{14} ,
+	\]
+	方向为 $(1,2,-3)$ 的单位向量方向。
+
+	\item
+	$\sqrt{3}$。令 $t=x^{2}$，级数化为 $\sum\limits_{n=1}^{\infty}\frac{t^{n}}{2^{n}+3^{n}}$。由
+	\[
+	\sqrt[n]{\frac{1}{2^{n}+3^{n}}}=\frac{1}{3}\sqrt[n]{\frac{1}{1+(2/3)^{n}}}\longrightarrow\frac13
+	\]
+	知它关于 $t$ 的收敛半径为 $3$，即 $x^{2}<3$。故原级数当 $|x|<\sqrt3$ 时收敛、
+	$|x|>\sqrt3$ 时发散，收敛半径 $R=\sqrt3$。
+
+	\item
+	$y=x(C+\ln|x|)$。这是一阶线性方程 $y^{\prime}-\frac1xy=1$，取积分因子 $\frac1x$，得
+	\[
+	\left(\frac{y}{x}\right)^{\prime}=\frac{xy^{\prime}-y}{x^{2}}=\frac1x ,
+	\]
+	积分得 $\frac{y}{x}=\ln|x|+C$，即 $y=x(C+\ln|x|)$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面印作 $y^{\prime}+\frac1x=1$，其中根本不含未知函数 $y$，
+	直接积分只得 $y=x-\ln|x|+C$，与所给答案 $y=x(C+\ln|x|)$ 不符。
+	由答案反推，原方程应为 $y^{\prime}-\frac{y}{x}=1$（已代入验证满足），故据此更正题面。
+	}\par
+\end{enumerate}
+}
+
+\item
 单项选择题 (本题共 5 小题，每小题 5 分，满分 25 分)
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -102,8 +153,85 @@
 	
 \end{enumerate}
 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	\textbf{C}。因 $f(0)=0$，$f$ 在 $x=0$ 可导 $\iff$ 双侧极限
+	$\lim\limits_{u\to0}\frac{f(u)}{u}$ 存在。
+	对 C，令 $u=\ln(1+t)$，当 $t$ 在 $0$ 的两侧变动时 $u$ 与 $t$ 同号且同样取遍 $0$ 的两侧，
+	又 $\frac{u}{t}\to1$，于是
+	\[
+	\frac{f(\ln(1+t))}{t}=\frac{f(u)}{u}\cdot\frac{u}{t} ,
+	\]
+	其极限存在与 $\lim\limits_{u\to0}\frac{f(u)}{u}$ 存在互为充要，故 C 是充要条件。
+	A 中 $t^{2}\to0^{+}$，只刻画右导数；B 中 $t-\sin t\sim\frac{t^{3}}{6}>0$，
+	且 $\frac{t-\sin t}{t^{2}}\to0$，取 $f(x)=|x|$ 时 A、B 的极限都存在而 $f$ 不可导，
+	故 A、B 必要而不充分。
+	D 中若 $f$ 可导且 $f^{\prime}(0)\neq0$（如 $f(x)=x$），
+	则 $\frac{f(2t)-f(t)}{t^{2}}\sim\frac{f^{\prime}(0)}{t}\to\infty$，极限不存在，故 D 连必要性也不具备。
+
+	\item
+	\textbf{A}。令 $F=x^{2}+y^{2}-\frac{z^{2}}{4}-1$，则
+	$\operatorname{grad}F=\left(2x,2y,-\frac z2\right)$，在 $(1,1,2)$ 处为 $(2,2,-1)$，
+	即法线 $L$ 过 $(1,1,2)$、方向 $\bm{s}=(2,2,-1)$。
+	因 $\bm{s}\cdot(1,1,4)=2+2-4=0$，而 $1+1+4\times2=10\neq1$ 说明 $(1,1,2)\notin\pi$，
+	故 $L$ 平行于 $\pi$（不在 $\pi$ 内）。
+	又 $L$ 上的点为 $(1+2s,1+2s,2-s)$，$L_{1}$ 上的点为 $(1+2u,2+u,1)$；
+	由 $2-s=1$ 得 $s=1$，对应点 $(3,3,1)$，而 $u=1$ 时 $L_{1}$ 上的点也是 $(3,3,1)$，
+	故 $L$ 与 $L_{1}$ 相交。选 A。
+
+	\item
+	\textbf{D}。柱面 $x^{2}+y^{2}=R^{2}$ 的侧面上每点的法向量都与 $z$ 轴垂直，
+	即方向余弦 $\cos\gamma\equiv0$，于是
+	\[
+	\iint_{S}\left(x^{2}+y^{2}\right)dxdy=\iint_{S}\left(x^{2}+y^{2}\right)\cos\gamma\,dS=0 .
+	\]
+	（等价地：该曲面在 $xOy$ 面上的投影是一条曲线，面积为零。）
+
+	\item
+	\textbf{B}。记 $b_{n}=\sqrt[n]{n}$。当 $n\geqslant3$ 时 $\{b_{n}\}$ 单调下降且
+	$1<b_{n}\leqslant\sqrt[3]{3}$，即单调有界。由阿贝尔判别法
+	（$\sum a_{n}$ 收敛且 $\{b_{n}\}$ 单调有界 $\Longrightarrow\sum a_{n}b_{n}$ 收敛）
+	知 $\sum\sqrt[n]{n}\,a_{n}$ 收敛。
+	C 不真：取 $a_{n}=\frac{(-1)^{n}}{\sqrt n}$（由莱布尼茨判别法 $\sum a_{n}$ 收敛），则
+	$\sum\frac{(-1)^{n}}{\sqrt n}a_{n}=\sum\frac1n$ 发散。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	本题题面有缺陷。其一，选项 A 与题设条件逐字相同（都是“级数 $\sum a_{n}$ 收敛”），
+	显系印刷脱字，按通行版本应为 $\sum\left|a_{n}\right|$（或 $\sum a_{n}^{2}$）收敛。
+	其二，选项 D 中 $\left\{\frac1n\right\}$ 同样单调有界，
+	由与 B 完全相同的阿贝尔判别法，$\sum\frac{a_{n}}{n}$ 也必收敛
+	（数值校验：取 $a_{n}=\frac{(-1)^{n}}{\sqrt n}$ 时部分和稳定于 $-0.76515$），
+	故按印出的题面 D 亦为真命题，正确选项不唯一。此处仍按标准答案取 B。
+	}\par
+
+	\item
+	\textbf{C}。以 $2L$ 为周期延拓后，$x=-\frac L2$ 与 $x=-\frac L2+2L=\frac{3L}{2}$ 是同一点，
+	而 $\frac{3L}{2}\in(0,2L)$ 是 $f$ 的连续点（延拓后的间断点只在 $x=2kL$ 处），
+	由狄利克雷收敛定理，级数在该点收敛于
+	\[
+	f\!\left(\frac{3L}{2}\right)=\frac{3L}{2}-L=\frac{L}{2} .
+	\]
+	也可直接算系数：对 $f(x)=x-L$ 有 $a_{n}=0$、$b_{n}=-\frac{2L}{n\pi}$，故级数为
+	$-\frac{2L}{\pi}\sum\limits_{n=1}^{\infty}\frac{1}{n}\sin\frac{n\pi x}{L}$，在 $x=-\frac L2$ 处为
+	\[
+	\frac{2L}{\pi}\left(1-\frac13+\frac15-\cdots\right)=\frac{2L}{\pi}\cdot\frac{\pi}{4}=\frac{L}{2} .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	易错之处是把 $-\frac L2$ 直接代入表达式 $x-L$ 得 $-\frac{3L}{2}$（选项 B），
+	或误认为 $-\frac L2$ 是间断点而取跳跃平均值。
+	实际上 $f$ 只定义在 $[0,2L]$ 上，$-\frac L2$ 处的值由周期延拓给出，
+	且该点是连续点，故收敛于 $\frac L2$。
+	}\par
+\end{enumerate}
+}
+
 \newpage
-\item 
+\item
 (5 小题，每小题 8 分，满分 40 分)
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -152,7 +280,7 @@ $f(u, v)$ 具有二阶连续偏导数, $z=f\left(x y^{2}, \frac{y}{x}\right)$, �
 		$ \frac{\pi}{18} $
 		\item 
 		$\frac{\partial z}{\partial x}=y^{2} \frac{\partial f}{\partial u}-\frac{y}{x^{2}} \frac{\partial f}{\partial v}$，
-		$\frac{\partial^{2} z}{\partial x \partial y}=2 y \frac{\partial f}{\partial u}-\frac{1}{x^{2}} \frac{\partial t}{\partial v}+2 x y^{3} \frac{\partial^{2} f}{\partial u^{2}}-\frac{y^{2}}{x} \frac{\partial^{2} f}{\partial u \partial v}-\frac{y}{x^{3}} \frac{\partial^{2} f}{\partial v^{2}}$
+		$\frac{\partial^{2} z}{\partial x \partial y}=2 y \frac{\partial f}{\partial u}-\frac{1}{x^{2}} \frac{\partial f}{\partial v}+2 x y^{3} \frac{\partial^{2} f}{\partial u^{2}}-\frac{y^{2}}{x} \frac{\partial^{2} f}{\partial u \partial v}-\frac{y}{x^{3}} \frac{\partial^{2} f}{\partial v^{2}}$
 		\item 
 	$=\frac{1}{2}(\sin 1+\cos 1-1)$
 	
@@ -171,7 +299,7 @@ $f(u, v)$ 具有二阶连续偏导数, $z=f\left(x y^{2}, \frac{y}{x}\right)$, �
 	%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
 	%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 	\item
-设 $f(x)$ 具有二阶连续导数, $f(x)=1, f^{\prime}(0)=1$, 且曲线积分 $\int_{L}\left(e^{x} \sin y+2 y f^{\prime}(x)+2 x y\right) d x+\left(f^{\prime}(x)+f(x)+2 x+e^{x} \cos y\right) d y$ 与路径无关。
+设 $f(x)$ 具有二阶连续导数, $f(0)=1, f^{\prime}(0)=1$, 且曲线积分 $\int_{L}\left(e^{x} \sin y+2 y f^{\prime}(x)+2 x y\right) d x+\left(f^{\prime}(x)+f(x)+2 x+e^{x} \cos y\right) d y$ 与路径无关。
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
 	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
@@ -189,7 +317,8 @@ $f(u, v)$ 具有二阶连续偏导数, $z=f\left(x y^{2}, \frac{y}{x}\right)$, �
 \end{enumerate}
 
 \item 
-将函数 $y=\arctan x-\frac{1}{2} \ln \left(1+x^{2}\right)$ 在 $x=0$ 处展成泰勒级数, 并求收敛域及$ \sum\limits_{n=0}^{\infty} \frac{(-1)^{n}}{(2 n+1)(2 n+2)} $。
+将函数 $y=x \arctan x-\frac{1}{2} \ln \left(1+x^{2}\right)$ 在 $x=0$ 处展成泰勒级数,
+\\并求收敛域及 $ \sum\limits_{n=0}^{\infty} \frac{(-1)^{n}}{(2 n+1)(2 n+2)} $。
 	
 \item 
 将函数 $f(x)=\left\{\begin{array}{ll}\pi & -\pi \leqslant x \leqslant 0 \\ \pi-x & 0 \leqslant x \leqslant \pi\end{array}\right.$展开成傅里叶级数 (说明收敛情况)，并求$\sum\limits_{n=1}^{\infty} \frac{1}{(2 n-1)^{2}}$。
@@ -221,7 +350,18 @@ $f(u, v)$ 具有二阶连续偏导数, $z=f\left(x y^{2}, \frac{y}{x}\right)$, �
 		\end{enumerate}
 		\item 
 		$y(x)=\sum\limits_{n=0}^{\infty} \frac{(-1)^{n} x^{2 n+2}}{(2 n+1)(2 n+2)}$，收敛域为$ |x| \leq 1 $，$ \sum\limits_{n=0}^{\infty} \frac{(-1)^{n}}{(2 n+1)(2 n+2)} =\frac{\pi}{4}- \frac{ 1 }{ 2 } \ln 2$
-		
+
+		\par\vspace{1mm}\noindent
+		\textbf{注：}{\kaishu
+		原题面印作 $y=\arctan x-\frac12\ln\left(1+x^{2}\right)$，脱落了首项的因子 $x$。
+		事实上 $\left[x\arctan x-\frac12\ln\left(1+x^{2}\right)\right]^{\prime}=\arctan x$，
+		逐项积分 $\arctan x=\sum\limits_{n=0}^{\infty}\frac{(-1)^{n}x^{2n+1}}{2n+1}$ 才得到上列答案；
+		而 $\arctan x-\frac12\ln\left(1+x^{2}\right)$ 的展开式是
+		$\sum\limits_{n=0}^{\infty}(-1)^{n}\left[\frac{x^{2n+1}}{2n+1}-\frac{x^{2n+2}}{2n+2}\right]$，
+		与答案不符（如 $x=0.5$ 时前者为 $0.3521$、后者为 $0.1203$）。故已据答案更正题面。
+		两式在 $x=1$ 处恰好同值，这正是所求数项级数之和 $\frac{\pi}{4}-\frac12\ln2$。
+		}\par
+
 		\item 
 		$ f(x)=\frac{3}{4} \pi+\sum\limits_{n=1}^{\infty}\left[\frac{1-(-1)^{n}}{n^{2} \pi} \cos n x+\frac{(-1)^{n}}{n} \sin n x\right] \quad(-\pi<x<\pi)$，在$ x=\pm \pi $处，级数收敛于$ \frac{\pi}{2} $，$\sum\limits_{n=1}^{\infty} \frac{1}{(2 n-1)^{2}}=\frac{\pi^{2}}{8}$
 		

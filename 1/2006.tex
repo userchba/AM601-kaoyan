@@ -11,7 +11,24 @@
 求 $\lim\limits _{x \rightarrow \infty}\left(\frac{x+1}{x-1}\right)^{x}$。
 
 \banswer{
-	$e^{2}$
+	把底数化成 $1+\frac{1}{t}$ 的形式：
+	\[
+	\frac{x+1}{x-1}=1+\frac{2}{x-1},
+	\]
+	令 $t=\frac{x-1}{2}$，$x\to\infty$ 时 $t\to\infty$，于是
+	\[
+	\left(\frac{x+1}{x-1}\right)^{x}
+	=\left[\left(1+\frac1t\right)^{t}\right]^{\frac{2x}{x-1}} .
+	\]
+	因 $\left(1+\frac1t\right)^{t}\to e$，而指数 $\frac{2x}{x-1}\to2$，故
+	\[
+	\lim_{x\to\infty}\left(\frac{x+1}{x-1}\right)^{x}=e^{2}.
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	也可取对数：$x\ln\left(1+\frac{2}{x-1}\right)\sim x\cdot\frac{2}{x-1}\to2$，故原式 $=e^{2}$。
+	}\par
 }
 	
 
@@ -21,7 +38,24 @@
 	
 
 \banswer{
-	$ a=1,b=0 $
+	\textbf{定 $b$.} 可导必连续，故先由 $x=1$ 处连续定 $b$：
+	\[
+	\lim_{x\to1^{-}}f(x)=\sin0=0=f(1),\qquad
+	\lim_{x\to1^{+}}f(x)=\ln1+b=b,
+	\]
+	三者相等给出 $b=0$。
+
+	\textbf{定 $a$.} 此时 $f(1)=0$，按定义算左、右导数：
+	\begin{align*}
+	f_{-}^{\prime}(1)&=\lim_{x\to1^{-}}\frac{\sin a(x-1)}{x-1}=a,\\
+	f_{+}^{\prime}(1)&=\lim_{x\to1^{+}}\frac{\ln x}{x-1}=1,
+	\end{align*}
+	后者用了 $\ln x=\ln\left(1+(x-1)\right)\sim x-1$。$f$ 在 $x=1$ 可导要求二者相等，故 $a=1$。
+
+	综上
+	\[
+	a=1,\qquad b=0 .
+	\]
 }
 
 
@@ -30,17 +64,58 @@
 求 $y=(x-1)\left(\frac{(1-2 x) \ln x}{1+x^{2}}\right)^{\frac{1}{3}}$ 的导数。
 
 \banswer{
-	$y^{\prime}=\left[\frac{1}{x-1}+\frac{1}{3}\left(\frac{2}{2 x-1}+\frac{1}{x \ln x}-\frac{2 x}{1+x^{2}}\right)\right] y$
+	幂、积、商混杂，用对数求导法。两端取绝对值后取对数：
+	\begin{align*}
+	\ln|y|=\ln|x-1|+\frac13\Bigl(&\ln|1-2x|+\ln|\ln x|\\
+	&-\ln\left(1+x^{2}\right)\Bigr).
+	\end{align*}
+	两端对 $x$ 求导：
+	\begin{align*}
+	\frac{y^{\prime}}{y}
+	&=\frac{1}{x-1}+\frac13\left(\frac{-2}{1-2x}+\frac{1}{x\ln x}-\frac{2x}{1+x^{2}}\right)\\
+	&=\frac{1}{x-1}+\frac13\left(\frac{2}{2x-1}+\frac{1}{x\ln x}-\frac{2x}{1+x^{2}}\right).
+	\end{align*}
+	于是
+	\[
+	y^{\prime}=\left[\frac{1}{x-1}+\frac13\left(\frac{2}{2x-1}+\frac{1}{x\ln x}-\frac{2x}{1+x^{2}}\right)\right]y ,
+	\]
+	其中 $y=(x-1)\left(\dfrac{(1-2x)\ln x}{1+x^{2}}\right)^{\frac13}$，
+	适用范围为 $x>0$、$x\neq1$ 且 $x\neq\frac12$。
 }
 
 	
 
 \item
 (本题满分 10 分)	
-设 $z=f(u)$, 方程 $u=q(u)+\int_{y}^{x} p(t) d t$ 确定 $u$ 是 $x, y$ 的函数, 其中 $f(u), q(u)$ 可 微, $p(t)$ 连续, 且 $q(u) \neq 1$, 求 $p(y) \frac{\partial z}{\partial x}+p(x) \frac{\partial z}{\partial y}$。
+设 $z=f(u)$, 方程 $u=q(u)+\int_{y}^{x} p(t) d t$ 确定 $u$ 是 $x, y$ 的函数, 其中 $f(u), q(u)$ 可 微, $p(t)$ 连续, 且 $q^{\prime}(u) \neq 1$, 求 $p(y) \frac{\partial z}{\partial x}+p(x) \frac{\partial z}{\partial y}$。
 
 \banswer{
-	$p(y) \frac{\partial z}{\partial x}+p(x) \frac{\partial z}{\partial y}= 0 $
+	\textbf{求 $u$ 的偏导.} 由变上、下限积分的求导法则
+	$\frac{\partial}{\partial x}\int_{y}^{x}p=p(x)$、$\frac{\partial}{\partial y}\int_{y}^{x}p=-p(y)$，
+	把 $u=q(u)+\int_{y}^{x}p(t)dt$ 两端分别对 $x$、$y$ 求偏导：
+	\[
+	\frac{\partial u}{\partial x}=q^{\prime}(u)\frac{\partial u}{\partial x}+p(x),\qquad
+	\frac{\partial u}{\partial y}=q^{\prime}(u)\frac{\partial u}{\partial y}-p(y).
+	\]
+	由 $q^{\prime}(u)\neq1$ 可解出
+	\[
+	\frac{\partial u}{\partial x}=\frac{p(x)}{1-q^{\prime}(u)},\qquad
+	\frac{\partial u}{\partial y}=\frac{-p(y)}{1-q^{\prime}(u)} .
+	\]
+
+	\textbf{代入.} 由 $z=f(u)$ 得 $\frac{\partial z}{\partial x}=f^{\prime}(u)\frac{\partial u}{\partial x}$，
+	$\frac{\partial z}{\partial y}=f^{\prime}(u)\frac{\partial u}{\partial y}$，于是
+	\begin{align*}
+	p(y)\frac{\partial z}{\partial x}+p(x)\frac{\partial z}{\partial y}
+	&=\frac{f^{\prime}(u)}{1-q^{\prime}(u)}\bigl[p(y)p(x)-p(x)p(y)\bigr]\\
+	&=0 .
+	\end{align*}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面条件印作“$q(u)\neq1$”，这与隐函数是否存在无关；由上面的推导可见真正需要的是
+	$q^{\prime}(u)\neq1$，已据此改正。
+	}\par
 }
 	
 
@@ -78,13 +153,42 @@
 		%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
 		%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 		\item
-		$ A=0 $
-		\item 
-		$F^{\prime}(x)$ 在 $x=0$ 处连续
-		
+		$x\to0$ 时分子、分母同趋于零，由洛必达法则
+		\[
+		\lim_{x\to0}\frac{\int_{0}^{x}tf(t)dt}{x^{2}}
+		=\lim_{x\to0}\frac{xf(x)}{2x}=\frac{f(0)}{2}=0 .
+		\]
+		要使 $F$ 在 $x=0$ 连续，必须 $A=F(0)=0$。
+
+		\item
+		设 $f$ 在 $x=0$ 可导。由 $f(t)=f^{\prime}(0)t+o(t)$ 得
+		\[
+		\int_{0}^{x}tf(t)dt=\frac{f^{\prime}(0)}{3}x^{3}+o\left(x^{3}\right),
+		\]
+		于是按定义
+		\[
+		F^{\prime}(0)=\lim_{x\to0}\frac{F(x)-0}{x}
+		=\lim_{x\to0}\frac{\int_{0}^{x}tf(t)dt}{x^{3}}=\frac{f^{\prime}(0)}{3}.
+		\]
+		而 $x\neq0$ 时由商的求导法则
+		\[
+		F^{\prime}(x)=\frac{f(x)}{x}-\frac{2}{x^{3}}\int_{0}^{x}tf(t)dt ,
+		\]
+		两项分别趋于 $f^{\prime}(0)$ 与 $\frac{2f^{\prime}(0)}{3}$，故
+		\[
+		\lim_{x\to0}F^{\prime}(x)=f^{\prime}(0)-\frac{2f^{\prime}(0)}{3}
+		=\frac{f^{\prime}(0)}{3}=F^{\prime}(0),
+		\]
+		即 $F^{\prime}(x)$ 在 $x=0$ 处连续。
+
 	\end{enumerate}
-	
-	
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	第 (2) 问必须假定 $f$ 在 $x=0$ 可导，否则结论不成立：取 $f(x)=\sqrt{|x|}$，它连续且 $f(0)=0$，
+	但 $x>0$ 时 $\int_{0}^{x}tf(t)dt=\frac25x^{5/2}$，$\frac{F(x)-F(0)}{x}=\frac25x^{-1/2}\to+\infty$，
+	$F^{\prime}(0)$ 根本不存在。原题面漏写了这一条件。
+	}\par
 }
 
 	
@@ -94,7 +198,20 @@
 设 $f(x)$ 满足方程 $\int \sqrt{x} f(x) d x=\frac{1}{\sqrt{x}}+\int x^{\frac{3}{2}} \sin x d x+C$, 求 $\int f(x) d x$。
 
 \banswer{
-	$\frac{1}{2} x^{-1}-x \cos x+\sin x+\mathrm{C}$
+	\textbf{先求 $f$.} 两端对 $x$ 求导，注意 $\left(\int g\right)^{\prime}=g$：
+	\[
+	\sqrt{x}\,f(x)=\left(x^{-\frac12}\right)^{\prime}+x^{\frac32}\sin x
+	=-\frac12x^{-\frac32}+x^{\frac32}\sin x ,
+	\]
+	两端除以 $\sqrt{x}$ 得
+	\[
+	f(x)=-\frac12x^{-2}+x\sin x\qquad(x>0).
+	\]
+
+	\textbf{再求积分.} 其中 $\int x\sin x\,dx=-x\cos x+\sin x$（分部积分），故
+	\[
+	\int f(x)dx=\frac{1}{2}x^{-1}-x\cos x+\sin x+C .
+	\]
 }
 
 
@@ -106,7 +223,25 @@
 	
 
 \banswer{
-	$\frac{4}{e}$
+	\textbf{先求 $f$.} 令 $t=\ln x$，即 $x=e^{t}$（$t$ 取遍 $\mathbb{R}$），代入 $f(\ln x)=x^{-1/2}$ 得
+	\[
+	f(t)=e^{-\frac t2},\qquad t\in(-\infty,+\infty).
+	\]
+
+	\textbf{再算定积分.} 分部积分：
+	\begin{align*}
+	\int_{-2}^{2}xf^{\prime}(x)dx
+	&=\bigl[xf(x)\bigr]_{-2}^{2}-\int_{-2}^{2}f(x)dx\\
+	&=\left(2e^{-1}+2e\right)-\int_{-2}^{2}e^{-\frac x2}dx .
+	\end{align*}
+	而
+	\[
+	\int_{-2}^{2}e^{-\frac x2}dx=\left[-2e^{-\frac x2}\right]_{-2}^{2}=2e-\frac2e ,
+	\]
+	故
+	\[
+	\int_{-2}^{2}xf^{\prime}(x)dx=2e+\frac2e-2e+\frac2e=\frac{4}{e}.
+	\]
 }
 
 
@@ -116,7 +251,18 @@
 求经过原点且垂直于平面 $\pi_{1}: x+2 y+3 z-2=0$ 及 $\pi_{2}: 6 x-y-5 z+23=0$ 的平面方程。
 
 \banswer{
-	$-7 x+23 y-13 z=0$
+	所求平面与 $\pi_{1}$、$\pi_{2}$ 都垂直，故其法向量 $\bm{n}$ 与
+	$\bm{n}_{1}=(1,2,3)$、$\bm{n}_{2}=(6,-1,-5)$ 都垂直，可取
+	\[
+	\bm{n}=\bm{n}_{1}\times\bm{n}_{2}
+	=\begin{vmatrix}\bm{i}&\bm{j}&\bm{k}\\1&2&3\\6&-1&-5\end{vmatrix}
+	=(-7,\ 23,\ -13).
+	\]
+	又平面过原点，故所求平面方程为
+	\[
+	-7x+23y-13z=0,\qquad\text{即}\quad 7x-23y+13z=0 .
+	\]
+	（验证：$\bm{n}\cdot\bm{n}_{1}=-7+46-39=0$，$\bm{n}\cdot\bm{n}_{2}=-42-23+65=0$。）
 }
 
 	
@@ -124,21 +270,75 @@
 
 \item
 (本题满分 10 分)	
-将函数 $f(x)=\ln \left(\frac{x}{1-x}\right)$ 展开成 $x-1$ 的幂级数。
+将函数 $f(x)=\ln \left(\frac{x}{1+x}\right)$ 展开成 $x-1$ 的幂级数。
 
 
 \banswer{
-	$f(x)=\sum\limits_{n=1}^{\infty}(-1)^{n-1} \frac{(x-1)^{n}}{n}-\sum\limits_{n=1}^{\infty}(-1)^{n-1} \frac{(x-1)^{n}}{n \cdot 2^{n}} x^{n-1}-\ln 2$
+	$f(x)=\ln x-\ln(1+x)$，令 $u=x-1$，分别展开两项。
+
+	\textbf{第一项.} $\ln x=\ln(1+u)$，由标准展开
+	\[
+	\ln(1+u)=\sum_{n=1}^{\infty}(-1)^{n-1}\frac{u^{n}}{n},\qquad -1<u\leqslant1 .
+	\]
+
+	\textbf{第二项.} $1+x=2+u=2\left(1+\frac u2\right)$，故
+	\[
+	\ln(1+x)=\ln2+\sum_{n=1}^{\infty}(-1)^{n-1}\frac{u^{n}}{n\cdot2^{n}},\qquad -2<u\leqslant2 .
+	\]
+
+	\textbf{相减.} 两式相减得
+	\begin{align*}
+	f(x)=&\sum_{n=1}^{\infty}(-1)^{n-1}\frac{(x-1)^{n}}{n}\\
+	&-\sum_{n=1}^{\infty}(-1)^{n-1}\frac{(x-1)^{n}}{n\cdot2^{n}}-\ln2 ,
+	\end{align*}
+	合并同次项即
+	\[
+	f(x)=-\ln2+\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}\left(1-\frac{1}{2^{n}}\right)(x-1)^{n} .
+	\]
+	收敛范围取两者交集 $-1<x-1\leqslant1$，即 $0<x\leqslant2$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面印作 $f(x)=\ln\frac{x}{1-x}$，但 $\ln(1-x)$ 在 $x=1$ 处是 $\ln0$，根本无法展开成 $x-1$ 的幂级数；
+	应为 $\ln\frac{x}{1+x}$——原有答案中的 $\ln2$ 与 $2^{n}$ 正是按此式得出的，已据此改正。
+	原答案第二个和式中多出的因子 $x^{n-1}$ 系笔误（是下一题的式子串入），一并删去。
+	数值检验：$x=1.4$ 时级数前若干项之和为 $-0.53899650$，与 $\ln\frac{1.4}{2.4}=-0.53899650$ 相符。
+	}\par
 }
 
 
 
 \item
 (本题满分 10 分)	
-求级数 $\sum\limits_{n=1}^{\infty} \frac{1}{n 2^{n}} x^{n-1}$ 的核函数。
+求级数 $\sum\limits_{n=1}^{\infty} \frac{1}{n 2^{n}} x^{n-1}$ 的和函数。
 
 \banswer{
-收敛区间为 $[-2,2]$, 令 $S_{n}=\sum\limits_{n=1}^{\infty} \frac{1}{n 2^{n}} x^{n-1}$，$T_{n}=\sum\limits_{n=1}^{\infty} \frac{1}{n 2^{n}} x^{n}$。$S_{n} \frac{1}{x} T_{n}=[\ln 2-\ln (2 - x)]$
+	\textbf{收敛域.} 由比值法
+	\[
+	\left|\frac{x^{n}/\left[(n+1)2^{n+1}\right]}{x^{n-1}/\left(n2^{n}\right)}\right|
+	=\frac{n}{n+1}\cdot\frac{|x|}{2}\longrightarrow\frac{|x|}{2},
+	\]
+	故 $|x|<2$ 时绝对收敛，$|x|>2$ 时发散。端点处：$x=2$ 时级数为 $\sum\frac{1}{2n}$，发散；
+	$x=-2$ 时为 $\sum\frac{(-1)^{n-1}}{2n}$，由莱布尼茨判别法收敛。故收敛域为 $[-2,2)$。
+
+	\textbf{和函数.} 设 $T(x)=\sum\limits_{n=1}^{\infty}\frac{x^{n}}{n2^{n}}=\sum\limits_{n=1}^{\infty}\frac1n\left(\frac x2\right)^{n}$。
+	由 $\sum\limits_{n=1}^{\infty}\frac{t^{n}}{n}=-\ln(1-t)$（$-1\leqslant t<1$），取 $t=\frac x2$ 得
+	\[
+	T(x)=-\ln\left(1-\frac x2\right)=\ln2-\ln(2-x).
+	\]
+	而所求和函数 $S(x)=\frac{1}{x}T(x)$（$x\neq0$），即
+	\[
+	S(x)=\frac{\ln2-\ln(2-x)}{x}=\frac1x\ln\frac{2}{2-x},
+	\]
+	$x\in[-2,0)\cup(0,2)$；在 $x=0$ 处级数只剩首项，$S(0)=\frac12$，恰是上式的极限，
+	故 $S$ 在整个 $[-2,2)$ 上连续。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案称收敛区间为 $[-2,2]$，有误：$x=2$ 时通项为 $\frac{1}{2n}$，级数发散，右端点取不到，
+	正确的收敛域是 $[-2,2)$。数值检验：$x=-1.5$ 时部分和 $0.37307719$，
+	与 $\frac{\ln2-\ln3.5}{-1.5}=0.37307719$ 相符。
+	}\par
 }
 	
 
@@ -148,7 +348,42 @@
 计算 $I=\int_{L} \frac{(x-y) d x+(x+y) d y}{x^{2}+y^{2}}$, 其中 $L$ 是抛物线 $y=2 x^{2}-1$ 从点 $A(-1,1)$ 到 点 $B(1,1)$ 的一段。
 
 \banswer{
-	$I=\frac{3 \pi}{2}$
+	\textbf{把被积表达式拆成全微分.}
+	\[
+	\frac{(x-y)dx+(x+y)dy}{x^{2}+y^{2}}
+	=\frac{xdx+ydy}{x^{2}+y^{2}}+\frac{xdy-ydx}{x^{2}+y^{2}},
+	\]
+	其中
+	\[
+	\frac{xdx+ydy}{x^{2}+y^{2}}=d\left(\frac12\ln\left(x^{2}+y^{2}\right)\right),\qquad
+	\frac{xdy-ydx}{x^{2}+y^{2}}=d\theta ,
+	\]
+	$\theta$ 是沿 $L$ 连续选取的极角。于是
+	\[
+	I=\left[\frac12\ln\left(x^{2}+y^{2}\right)\right]_{A}^{B}+\Delta\theta .
+	\]
+
+	\textbf{第一项.} $A(-1,1)$ 与 $B(1,1)$ 到原点距离相同（$x^{2}+y^{2}=2$），故这一项为 $0$。
+
+	\textbf{第二项.} 在 $L$ 上 $y=2x^{2}-1$，$dy=4xdx$，故
+	\[
+	d\theta=\frac{x\cdot4x-\left(2x^{2}-1\right)}{x^{2}+y^{2}}dx
+	=\frac{2x^{2}+1}{x^{2}+\left(2x^{2}-1\right)^{2}}dx>0 ,
+	\]
+	即 $x$ 从 $-1$ 增到 $1$ 时极角严格单调增加（$L$ 不过原点）。起点 $A$ 处 $\theta=\frac{3\pi}{4}$，
+	沿途依次经过 $\left(-\frac12,-\frac12\right)$、$(0,-1)$、$\left(\frac12,-\frac12\right)$，
+	对应 $\theta=\frac{5\pi}{4},\frac{3\pi}{2},\frac{7\pi}{4}$，终点 $B$ 处 $\theta=\frac{9\pi}{4}$。故
+	\[
+	\Delta\theta=\frac{9\pi}{4}-\frac{3\pi}{4}=\frac{3\pi}{2},\qquad
+	I=\frac{3\pi}{2}.
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	虽然 $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$，但原点是奇点，
+	且它落在 $L$ 与线段 $BA$ 所围区域之内，故不能直接断定积分与路径无关。
+	数值积分给出 $I\approx4.712389$，正是 $\frac{3\pi}{2}$。
+	}\par
 }
 
 
@@ -157,7 +392,33 @@
 设曲线积分 $\int_{L}\left(f^{\prime}(x)+2 f(x)+e^{x}\right) y d x+f^{\prime}(x) d y$ 与路径无关，且 $f(0)=0, f^{\prime}(0)=1$, 计算 $I=\int_{(0,0)}^{(1,1)}\left(f^{\prime}(x)+2 f(x)+e^{x}\right) y d x+f^{\prime}(x) d y$。
 
 \banswer{
-	$I=\frac{4}{3} e^{2}+\frac{1}{6 e}-\frac{1}{2} e$
+	\textbf{定 $f$.} 记 $P=\left(f^{\prime}(x)+2f(x)+e^{x}\right)y$，$Q=f^{\prime}(x)$。
+	曲线积分与路径无关当且仅当 $\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}$，即
+	\[
+	f^{\prime}(x)+2f(x)+e^{x}=f^{\prime\prime}(x),
+	\]
+	也就是 $f^{\prime\prime}-f^{\prime}-2f=e^{x}$。特征方程 $r^{2}-r-2=0$ 的根为 $2,-1$；
+	设特解 $f^{*}=Ae^{x}$，代入得 $-2A=1$，$A=-\frac12$。故
+	\[
+	f(x)=C_{1}e^{2x}+C_{2}e^{-x}-\frac12e^{x}.
+	\]
+	由 $f(0)=0$、$f^{\prime}(0)=1$ 得
+	$C_{1}+C_{2}=\frac12$、$2C_{1}-C_{2}=\frac32$，解得 $C_{1}=\frac23$、$C_{2}=-\frac16$，
+	\[
+	f(x)=\frac23e^{2x}-\frac16e^{-x}-\frac12e^{x}.
+	\]
+
+	\textbf{求 $I$.} 由 $Q=f^{\prime}(x)$ 猜势函数 $u=yf^{\prime}(x)$，验证
+	$u_{y}=f^{\prime}(x)=Q$、$u_{x}=yf^{\prime\prime}(x)=P$，故
+	\[
+	I=u(1,1)-u(0,0)=f^{\prime}(1) .
+	\]
+	而 $f^{\prime}(x)=\frac43e^{2x}+\frac16e^{-x}-\frac12e^{x}$，所以
+	\[
+	I=\frac43e^{2}+\frac{1}{6e}-\frac{e}{2}\approx8.5542 .
+	\]
+	（沿折线 $(0,0)\to(1,0)\to(1,1)$ 直接算也得同值：前一段 $y=0$ 使 $P=0$、$dy=0$，
+	后一段积分为 $\int_{0}^{1}f^{\prime}(1)dy=f^{\prime}(1)$。）
 }
 
 
@@ -186,7 +447,35 @@
 (本题满分 10 分)	
 设 $f(x)$ 为可导且周期为 2 的函数，满足 $f(1+x)+2 f(1-x)=2 x+\sin ^{2} x$, 求曲 线 $y=f(x)$ 在 $x=3$ 处的切线斜率。
 \banswer{
-	$ f(x) $在$ x=3 $处的切线方程为$y=-2 x$
+	\textbf{解出 $f$.} 在 $f(1+x)+2f(1-x)=2x+\sin^{2}x$ 中以 $-x$ 代 $x$：
+	\[
+	f(1-x)+2f(1+x)=-2x+\sin^{2}x .
+	\]
+	把后式乘 $2$ 再减去前式，消去 $f(1-x)$：
+	\[
+	3f(1+x)=-6x+\sin^{2}x,\qquad
+	f(1+x)=-2x+\frac{\sin^{2}x}{3}.
+	\]
+	令 $t=1+x$ 得
+	\[
+	f(t)=-2(t-1)+\frac{\sin^{2}(t-1)}{3},\qquad
+	f^{\prime}(t)=-2+\frac{\sin\left(2(t-1)\right)}{3}.
+	\]
+
+	\textbf{用周期性.} $f$ 以 $2$ 为周期，故 $f^{\prime}$ 也以 $2$ 为周期，
+	\[
+	f^{\prime}(3)=f^{\prime}(1)=-2+\frac{\sin0}{3}=-2 .
+	\]
+	即 $y=f(x)$ 在 $x=3$ 处的切线斜率为 $-2$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	本题只问斜率。若要写出切线方程：由 $f(3)=f(1)=0$ 知切点为 $(3,0)$，切线是
+	$y=-2(x-3)$，即 $y=-2x+6$；原答案写成 $y=-2x$，有误。
+	另外，“$f$ 以 $2$ 为周期”与该函数方程对一切 $x$ 成立本是矛盾的（以 $x+2$ 代 $x$ 会得到
+	$\sin^{2}x=4+\sin^{2}(x+2)$），标准处理是先由函数方程定出 $f$ 在 $t=1$ 附近的表达式，
+	再用周期性把 $x=3$ 平移回 $x=1$。
+	}\par
 }
 	
 
@@ -199,7 +488,31 @@
 \end{figure}
 
 \banswer{
-张角$\tan \alpha=\frac{a x}{(a+b-h)(b-h)+x^{2}}$，当$x=\sqrt{(a+b-h)(b-h)} $时，$\tan  \alpha $ 取极大值
+	\textbf{把张角写成 $x$ 的函数.} 设观赏者站在离基底 $x$ 米处，眼睛高 $h$ 米。
+	塑像顶、底相对于眼睛所在水平面的高度分别是 $a+b-h$ 与 $b-h$，由 $h<b$ 知二者皆为正。
+	记视线到塑像顶、底的仰角为 $\beta$、$\gamma$，则
+	\[
+	\tan\beta=\frac{a+b-h}{x},\qquad \tan\gamma=\frac{b-h}{x},
+	\]
+	张角 $\alpha=\beta-\gamma\in\left(0,\frac{\pi}{2}\right)$，于是
+	\[
+	\tan\alpha=\frac{\tan\beta-\tan\gamma}{1+\tan\beta\tan\gamma}
+	=\frac{ax}{x^{2}+(a+b-h)(b-h)} .
+	\]
+
+	\textbf{求最大值.} 记 $K=(a+b-h)(b-h)>0$。因 $\tan$ 在 $\left(0,\frac\pi2\right)$ 上递增，
+	极大化 $\alpha$ 等价于极大化
+	\[
+	\tan\alpha=\frac{a}{x+\dfrac{K}{x}} .
+	\]
+	由均值不等式 $x+\frac Kx\geqslant2\sqrt K$，等号当且仅当 $x=\sqrt K$ 时成立。故当
+	\[
+	x=\sqrt{(a+b-h)(b-h)}
+	\]
+	时张角最大，最大张角为
+	\[
+	\alpha_{\max}=\arctan\frac{a}{2\sqrt{(a+b-h)(b-h)}} .
+	\]
 }
 	
 

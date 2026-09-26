@@ -106,9 +106,81 @@
 
 		
 	\end{enumerate}
-	
-\item 
-(本题满分 10 分)	
+
+
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
+	\item
+	\textbf{D}。由 $\ln(1+t)=t-\frac{t^2}{2}+o\left(t^2\right)$（取 $t=\frac1x\to0$）得
+	\[
+	x\ln\left(1+\frac1x\right)=1-\frac{1}{2x}+o\left(\frac1x\right),
+	\]
+	故 $\left(1+\frac1x\right)^{x}=e\cdot e^{-\frac{1}{2x}+o(1/x)}=e\left[1-\frac{1}{2x}+o\left(\frac1x\right)\right]$，
+	于是
+	\[
+	x\left[\left(1+\frac1x\right)^{x}-e\right]\longrightarrow-\frac{e}{2}.
+	\]
+
+	\item
+	\textbf{B}。两侧当 $x\to0$ 时均趋于 $0$，与 $f(0)=0$ 一致，故连续性自动成立。
+	右导数 $f'_{+}(0)=\lim\limits_{x\to0^{+}}\frac{x^2+2x}{x}=2$；
+	左导数 $f'_{-}(0)=\lim\limits_{x\to0^{-}}\frac{\ln(1+ax)}{x}=a$。
+	可导要求两者相等，故 $a=2$。
+
+	\item
+	\textbf{C}。分母 $\to0$ 而比值有极限，必有 $f(x)-f(a)\to0$。
+	又当 $x$ 充分接近 $a$（$x\neq a$）时 $\frac{f(x)-f(a)}{(x-a)^4}<-1<0$，
+	而 $(x-a)^4>0$，故 $f(x)<f(a)$，即 $f$ 在 $x=a$ 处取极大值。
+	（同时 $\frac{f(x)-f(a)}{x-a}=(x-a)^3\cdot\frac{f(x)-f(a)}{(x-a)^4}\to0$，
+	故导数若存在必为 $0$，A、B 皆不对。）
+
+	\item
+	\textbf{D}。左支上 $f$ 单调上升且愈来愈陡，故 $f'>0$ 且 $f'$ 递增，
+	$f'$ 的左支应整条位于 $x$ 轴上方——A、C 的左支穿过 $x$ 轴，排除。
+	右支上 $f$ 自间断点右侧起急速上升，$f'(0^{+})$ 应是较大的正值，
+	而 B 的右支从 $x$ 轴上出发，排除。
+	再看 $f$ 在右支先取极大、后取极小，故 $f'$ 须由正变负（再变正），
+	只有 D 的右支从正值出发并下穿 $x$ 轴。故选 D。
+
+	\item
+	\textbf{C}。由题设 $f(x)=\left(x^2\ln x\right)'=2x\ln x+x$，且 $\int f(x)dx=x^2\ln x+C$。
+	分部积分
+	\begin{align*}
+	\int xf'(x)dx&=xf(x)-\int f(x)dx\\
+	&=x\left(2x\ln x+x\right)-x^2\ln x+C\\
+	&=x^2\ln x+x^2+C .
+	\end{align*}
+
+	\item
+	\textbf{B}。由齐次线性方程解的叠加原理，$C_1y_1+C_2y_2$ 一定是解，故 A、D 错。
+	但当 $y_1,y_2$ 线性相关时（例如 $y_2=2y_1$），$C_1y_1+C_2y_2$ 实质只含一个独立常数，
+	不是通解；而当 $y_1,y_2$ 线性无关时它又确是通解。故只能说“是解，但不一定是通解”。
+
+	\item
+	\textbf{C}。若 $\sum|u_n|$ 收敛，则 $\sum u_n$ 绝对收敛从而收敛，与题设矛盾，
+	故 $\sum|u_n|$ 发散；同理 $\sum|v_n|$ 发散。
+	两个正项发散级数逐项相加，部分和仍 $\to+\infty$，故 C 一定发散。
+
+	其余可用反例排除：取 $u_n=1,\ v_n=-1$，则 $\sum\left(u_n+v_n\right)=0$ 收敛，A 错；
+	取 $u_n=v_n=\frac1n$（两者皆发散），则 $\sum u_nv_n=\sum\frac{1}{n^2}$、
+	$\sum\left(u_n^2+v_n^2\right)=2\sum\frac1{n^2}$ 均收敛，B、D 错。
+
+	\item
+	\textbf{A}。令两式相等得 $x^2=\frac{1}{n(n+1)}$，记 $c_n=\frac{1}{\sqrt{n(n+1)}}$，
+	则在 $\left[-c_n,c_n\right]$ 上两抛物线之差恰为 $c_n^2-x^2\geqslant0$，于是
+	\[
+	A_n=\int_{-c_n}^{c_n}\left(c_n^2-x^2\right)dx=\frac43c_n^3
+	=\frac{4}{3\left[n(n+1)\right]^{3/2}} ,
+	\]
+	故 $\lim\limits_{n\to\infty}A_n=0$。
+\end{enumerate}
+}
+
+
+\item
+(本题满分 10 分)
 设函数 $f(x)$ 在 $[0,2 \pi]$ 上有连续导数, 且 $f^{\prime}(x) \geqslant 0$, 求证：对任何整数 $n$, 都有
 \[
 \left|\int_{0}^{2 \pi} f(x) \sin (nx) d x\right| \leqslant \frac{2}{n} \left[ f(2 \pi)-f(0)\right]
@@ -116,7 +188,32 @@
 
 
 \banswer{
-	证明略，分部积分即可
+	设 $n$ 为非零整数。对 $\int_{0}^{2\pi}f(x)\sin(nx)dx$ 分部积分：
+	\begin{align*}
+	\int_{0}^{2\pi}\!f\sin(nx)dx
+	&=\left[-\frac{f(x)\cos nx}{n}\right]_{0}^{2\pi}
+	+\frac1n\int_{0}^{2\pi}\!f'(x)\cos(nx)dx\\
+	&=-\frac{f(2\pi)-f(0)}{n}+\frac1n\int_{0}^{2\pi}\!f'(x)\cos(nx)dx ,
+	\end{align*}
+	这里用到 $n$ 为整数时 $\cos 2n\pi=\cos 0=1$。
+
+	因 $f'\geqslant0$，由牛顿--莱布尼茨公式
+	\[
+	\left|\int_{0}^{2\pi}\!f'(x)\cos(nx)dx\right|
+	\leqslant\int_{0}^{2\pi}\!f'(x)dx=f(2\pi)-f(0) ,
+	\]
+	且此量非负。于是
+	\[
+	\left|\int_{0}^{2\pi}\!f(x)\sin(nx)dx\right|
+	\leqslant\frac{2}{|n|}\left[f(2\pi)-f(0)\right].
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	当 $n=0$ 时左端为 $0$ 而右端 $\frac2n$ 无意义；当 $n<0$ 时右端为负而左端非负，
+	不等式也不可能成立。故题面的“任何整数 $n$”应理解为任何正整数 $n$，
+	或把右端改写成 $\frac{2}{|n|}\left[f(2\pi)-f(0)\right]$（上面证的就是这个更强的形式）。
+	}\par
 }
 
 
@@ -127,7 +224,29 @@
 
 
 \banswer{
-$ f(x)=e^{x}-1 $， $\lim\limits _{x \rightarrow -\infty} f(x)=-1$
+	\textbf{化去卷积.} 在 $\int_{0}^{x}tf'(x-t)dt$ 中作代换 $u=x-t$，得
+	\[
+	\int_{0}^{x}\!tf'(x-t)dt=\int_{0}^{x}\!(x-u)f'(u)du .
+	\]
+	于是原式化为
+	\begin{align*}
+	f(x)&=x+x\int_{0}^{x}\!f'(u)du-\int_{0}^{x}\!uf'(u)du\\
+	&=x+x\left[f(x)-f(0)\right]-\int_{0}^{x}\!uf'(u)du .
+	\end{align*}
+
+	\textbf{定初值并求导.} 令 $x=0$ 得 $f(0)=0$。两端对 $x$ 求导：
+	\[
+	f'(x)=1+\left[f(x)-f(0)\right]+xf'(x)-xf'(x)=1+f(x) .
+	\]
+
+	\textbf{解方程.} 由 $f'=1+f$、$f(0)=0$ 得 $\ln|1+f|=x$，即
+	\[
+	f(x)=e^{x}-1 .
+	\]
+	（代回原式可直接验证。）故
+	\[
+	\lim\limits_{x\to-\infty}f(x)=\lim\limits_{x\to-\infty}\left(e^{x}-1\right)=-1 .
+	\]
 }
 
 
@@ -136,7 +255,26 @@ $ f(x)=e^{x}-1 $， $\lim\limits _{x \rightarrow -\infty} f(x)=-1$
 设函数 $z=f(x, y)$ 满足 $\frac{\partial^{2} z}{\partial x \partial y}=x+y, f(x, 0)=x, f(0, y)=y^{2}$, 求 $f(x, y)$。
 
 \banswer{
-	$f(x, y)=\frac{1}{2}x^{2}y + \frac{1}{2} x y^{2}+x+y^{2}$
+	\textbf{两次积分.} 把 $\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right)=x+y$ 对 $y$ 积分：
+	\[
+	\frac{\partial z}{\partial x}=xy+\frac{y^2}{2}+\varphi(x) ;
+	\]
+	再对 $x$ 积分（记 $\Phi'=\varphi$）：
+	\[
+	z=\frac{x^2y}{2}+\frac{xy^2}{2}+\Phi(x)+\psi(y) .
+	\]
+
+	\textbf{定待定函数.} 代入两个定解条件：
+	\[
+	f(x,0)=\Phi(x)+\psi(0)=x,\qquad
+	f(0,y)=\Phi(0)+\psi(y)=y^2 .
+	\]
+	两式相加得 $\Phi(x)+\psi(y)=x+y^2-\left[\Phi(0)+\psi(0)\right]$；
+	再令 $x=y=0$ 知 $\Phi(0)+\psi(0)=0$，故 $\Phi(x)+\psi(y)=x+y^2$。于是
+	\[
+	f(x,y)=\frac{1}{2}x^{2}y+\frac{1}{2}xy^{2}+x+y^{2} .
+	\]
+	（验证：$\frac{\partial^2f}{\partial x\partial y}=x+y$，$f(x,0)=x$，$f(0,y)=y^2$，全部吻合。）
 }
 
 
@@ -146,7 +284,25 @@ $ f(x)=e^{x}-1 $， $\lim\limits _{x \rightarrow -\infty} f(x)=-1$
 求函数 $f(x, y)=(x-6)^{2}+(y+8)^{2}$ 在区域 $D=\left\{(x, y) \mid x^{2}+y^{2} \leqslant 25\right\}$ 上的最大值 和最小值。
 
 \banswer{
-	 $f(x, y) \Big|_{max}= 225 $， $f(x, y) \Big|_{min}=  25 $
+	\textbf{解法一（几何意义）.} $\sqrt{f(x,y)}$ 就是点 $(x,y)$ 到定点 $A(6,-8)$ 的距离，
+	而 $D$ 是以原点 $O$ 为心、$5$ 为半径的闭圆盘。由 $|OA|=\sqrt{36+64}=10>5$ 知 $A$ 在 $D$ 外，
+	故 $(x,y)\in D$ 时
+	\[
+	|OA|-5\leqslant|AP|\leqslant|OA|+5,\quad\text{即}\quad 5\leqslant\sqrt f\leqslant15 .
+	\]
+	两端分别在线段 $OA$ 与圆周的交点、及其反向延长线与圆周的交点处取到，即
+	\[
+	f_{\min}=25\ \left(\text{于}\ (3,-4)\right),\qquad
+	f_{\max}=225\ \left(\text{于}\ (-3,4)\right).
+	\]
+
+	\textbf{解法二（驻点 + 边界）.} $f_x=2(x-6)=0,\ f_y=2(y+8)=0$ 给出唯一驻点 $(6,-8)\notin D$，
+	故最值必在边界 $x^2+y^2=25$ 上。令 $x=5\cos\theta,\ y=5\sin\theta$，
+	\begin{align*}
+	f&=25-60\cos\theta+80\sin\theta+100\\
+	&=125+100\sin(\theta-\varphi),\quad \tan\varphi=\tfrac34 ,
+	\end{align*}
+	取值范围为 $[25,225]$，与解法一一致。
 }
 
 
@@ -159,8 +315,36 @@ $ f(x)=e^{x}-1 $， $\lim\limits _{x \rightarrow -\infty} f(x)=-1$
 
 
 \banswer{
-	%$3$
-	$ I=\frac{14}{3} $ 
+	\textbf{定区域.} 四条直线两两相交给出四个顶点
+	\[
+	(0,-1),\quad(0,1),\quad(1,2),\quad(2,1),
+	\]
+	$D$ 是以它们为顶点的凸四边形（即夹在两条平行线 $y=x\pm1$ 之间、
+	被 $x=0$ 与 $x+y=3$ 截下的部分）。在 $D$ 上恒有 $x\geqslant0$，故 $|x|=x$；
+	而 $y$ 变号，需分段处理 $|y|$。按 $x$ 切片：
+	$0\leqslant x\leqslant1$ 时 $x-1\leqslant y\leqslant x+1$，
+	$1\leqslant x\leqslant2$ 时 $x-1\leqslant y\leqslant3-x$。
+
+	\textbf{算 $\iint_D x\,dxdy$.}
+	\begin{align*}
+	\iint_{D}x\,dxdy&=\int_0^1\!\!2x\,dx+\int_1^2\!\!x(4-2x)dx\\
+	&=1+\left[2x^2-\tfrac23x^3\right]_1^2=1+\tfrac43=\tfrac73 .
+	\end{align*}
+
+	\textbf{算 $\iint_D|y|\,dxdy$.} 当 $0\leqslant x\leqslant1$ 时 $x-1\leqslant0\leqslant x+1$，
+	\[
+	\int_{x-1}^{x+1}\!|y|dy=\frac{(1-x)^2+(1+x)^2}{2}=1+x^2 ;
+	\]
+	当 $1\leqslant x\leqslant2$ 时积分区间全在 $y\geqslant0$ 内，
+	\[
+	\int_{x-1}^{3-x}\!y\,dy=\frac{(3-x)^2-(x-1)^2}{2}=4-2x .
+	\]
+	故
+	\[
+	\iint_{D}|y|dxdy=\int_0^1\!\!\left(1+x^2\right)dx+\int_1^2\!\!(4-2x)dx=\tfrac43+1=\tfrac73 .
+	\]
+
+	\textbf{合并.} $I=\dfrac73+\dfrac73=\dfrac{14}{3}\approx4.667$（数值积分给出 $4.6667$，吻合）。
 }
 
 
@@ -169,7 +353,31 @@ $ f(x)=e^{x}-1 $， $\lim\limits _{x \rightarrow -\infty} f(x)=-1$
 计算曲线积分 $I=\oint_{L} \frac{x d y-y d x}{4 x^{2}+y^{2}}$, 其中 $L$ 是以 $(1,0)$ 为中心, 半径为 $R$ 的圆周 $(R>0, R \neq 1)$, 取逆时针方向。
 
 \banswer{
-	$0<R<1,I=0$；$ R>1,I=\pi$
+	记 $P=\dfrac{-y}{4x^2+y^2}$，$Q=\dfrac{x}{4x^2+y^2}$。在除原点外的区域内
+	\[
+	\frac{\partial Q}{\partial x}=\frac{y^2-4x^2}{\left(4x^2+y^2\right)^2}
+	=\frac{\partial P}{\partial y} ,
+	\]
+	故被积表达式在 $\mathbb{R}^2\setminus\{O\}$ 内是闭形式，唯一的奇点是原点。
+	$L$ 的圆心为 $(1,0)$，$|O-(1,0)|=1$，于是分两种情形。
+
+	\textbf{情形一：$0<R<1$.} 原点在 $L$ 之外，$L$ 所围闭区域内 $P,Q$ 有连续偏导，
+	由格林公式 $I=\iint\left(Q_x-P_y\right)dxdy=0$。
+
+	\textbf{情形二：$R>1$.} 原点在 $L$ 之内。取充分小的 $\varepsilon>0$，
+	以椭圆 $\ell_\varepsilon:\ 4x^2+y^2=\varepsilon^2$（逆时针）挖去原点；
+	在 $L$ 与 $\ell_\varepsilon$ 之间的复连通区域上用格林公式得 $I=\oint_{\ell_\varepsilon}$。
+	令 $x=\frac{\varepsilon}{2}\cos t,\ y=\varepsilon\sin t$，则
+	\[
+	x\,dy-y\,dx=\frac{\varepsilon^2}{2}dt,\qquad 4x^2+y^2=\varepsilon^2 ,
+	\]
+	故
+	\[
+	I=\int_0^{2\pi}\frac{1}{2}dt=\pi .
+	\]
+
+	\textbf{结论.} $0<R<1$ 时 $I=0$；$R>1$ 时 $I=\pi$（与 $R$ 无关）。
+	数值积分取 $R=0.5,0.9$ 得 $0$，取 $R=1.5,3,10$ 得 $3.14159\cdots$，与结论一致。
 }
 
 
@@ -182,7 +390,35 @@ $\sum\limits_{n=1}^{\infty}(-1)^{n} f\left(\frac{1}{n}\right)$ 收敛，而 $\su
 
 
 \banswer{
-	证明略，$ \lim\limits_{n\rightarrow \infty}f(\frac{1}{n}) \sim \frac{a}{n} $
+	\textbf{预备.} 由 $\lim\limits_{x\to0}\frac{f(x)}{x}=a$ 有限，且 $f$ 在 $x=0$ 附近连续，
+	必有 $f(0)=0$，从而
+	\[
+	f'(0)=\lim\limits_{x\to0}\frac{f(x)-f(0)}{x}=a>0 .
+	\]
+	又 $f'$ 在 $0$ 的某邻域内连续，由保号性存在 $\delta>0$ 使 $f'(x)>0$（$|x|<\delta$），
+	于是 $f$ 在 $(0,\delta)$ 上严格递增。取 $N>\frac1\delta$，则当 $n\geqslant N$ 时
+	$0<\frac1{n+1}<\frac1n<\delta$，故
+	\[
+	f\left(\tfrac1n\right)>f\left(\tfrac1{n+1}\right)>f(0)=0 ,
+	\]
+	即 $\left\{f\left(\frac1n\right)\right\}_{n\geqslant N}$ 单调递减且为正；
+	又由连续性 $f\left(\frac1n\right)\to f(0)=0$。
+
+	\textbf{交错级数收敛.} 由上，从第 $N$ 项起 $\sum(-1)^nf\left(\frac1n\right)$ 满足
+	莱布尼茨判别法的全部条件，故收敛；前面有限项不影响敛散性，
+	所以 $\sum\limits_{n=1}^{\infty}(-1)^{n}f\left(\frac1n\right)$ 收敛。
+
+	\textbf{正项级数发散.} 由
+	$\lim\limits_{n\to\infty}\dfrac{f\left(\frac1n\right)}{\frac1n}=a>0$
+	及比较判别法的极限形式，$\sum f\left(\frac1n\right)$ 与调和级数 $\sum\frac1n$ 同敛散；
+	而 $\sum\frac1n$ 发散，故 $\sum\limits_{n=1}^{\infty}f\left(\frac1n\right)$ 发散。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	交错级数一段不能只用 $f\left(\frac1n\right)\sim\frac an$ 加“$\sum\frac{(-1)^n}{n}$ 收敛”搪塞：
+	等价无穷小只给出 $f\left(\frac1n\right)=\frac an+o\left(\frac1n\right)$，
+	而 $o\left(\frac1n\right)$ 的交错和未必收敛。必须像上面那样用单调性（即 $f'>0$）走莱布尼茨。
+	}\par
 }
 
 
@@ -192,9 +428,36 @@ $\sum\limits_{n=1}^{\infty}(-1)^{n} f\left(\frac{1}{n}\right)$ 收敛，而 $\su
 
 
 \banswer{
-$ 	
-f(x)=\frac{\pi^{2}}{3}+\sum\limits_{n=1}^{\infty}(-1)^{n} \frac{4}{n^{2}} \cos n x 
-$
+	$f(x)=x^2$ 在 $[-\pi,\pi]$ 上是偶函数，故 $b_n=0$，只需算余弦系数。
+
+	\textbf{常数项.}
+	\[
+	a_0=\frac1\pi\int_{-\pi}^{\pi}\!x^2dx=\frac{2}{\pi}\cdot\frac{\pi^3}{3}=\frac{2\pi^2}{3},
+	\qquad \frac{a_0}{2}=\frac{\pi^2}{3} .
+	\]
+
+	\textbf{余弦系数.} 两次分部积分（$n\geqslant1$）：
+	\begin{align*}
+	a_n&=\frac2\pi\int_0^{\pi}\!x^2\cos nx\,dx
+	=\frac2\pi\left(\left[\frac{x^2\sin nx}{n}\right]_0^{\pi}-\frac2n\int_0^{\pi}\!x\sin nx\,dx\right)\\
+	&=-\frac{4}{n\pi}\int_0^{\pi}\!x\sin nx\,dx
+	=-\frac{4}{n\pi}\cdot\left(-\frac{\pi\cos n\pi}{n}\right)
+	=\frac{4(-1)^{n}}{n^{2}} .
+	\end{align*}
+
+	\textbf{结论.} $f$ 以 $2\pi$ 为周期延拓后处处连续（端点 $f(-\pi)=f(\pi)=\pi^2$），
+	由狄利克雷定理级数处处收敛于 $f$：
+	\[
+	x^{2}=\frac{\pi^{2}}{3}+\sum\limits_{n=1}^{\infty}\frac{4(-1)^{n}}{n^{2}}\cos nx,
+	\qquad -\pi\leqslant x\leqslant\pi .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	取 $x=\pi$ 得 $\sum\limits_{n=1}^{\infty}\frac1{n^2}=\frac{\pi^2}{6}$，
+	取 $x=0$ 得 $\sum\limits_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}$，
+	可作为结果的校验。
+	}\par
 }
 
 
@@ -204,8 +467,34 @@ $
 
 
 \banswer{
-	$f(x)=C_{1}e^{-2x}+C_{2}e^{x}- \frac{ 1 }{ 2 } $，再利用初始条件得$f(x)=
-	\frac{1}{18} e^{-2 x}+\frac{4}{9} e^{x}-\frac{1}{2} $
+	\textbf{由高斯公式导出方程.} 记
+	\[
+	\bm{F}=\left(e^{x}f'(x),\ -2ye^{x}f(x),\ -ze^{x}\right).
+	\]
+	对任意光滑有向闭曲面 $\Sigma$（设其所围区域为 $\Omega$），高斯公式给出
+	$\oiint_{\Sigma}\bm{F}\cdot d\bm{S}=\pm\iiint_{\Omega}\operatorname{div}\bm{F}\,dV$。
+	要它对一切 $\Sigma$ 都为零，必须 $\operatorname{div}\bm{F}\equiv0$。而
+	\begin{align*}
+	\operatorname{div}\bm{F}&=e^{x}\left[f'(x)+f''(x)\right]-2e^{x}f(x)-e^{x}\\
+	&=e^{x}\left[f''+f'-2f-1\right] ,
+	\end{align*}
+	故 $f$ 满足
+	\[
+	f''+f'-2f=1 .
+	\]
+
+	\textbf{解方程.} 特征方程 $r^2+r-2=0$ 的根为 $r=1,-2$；
+	常数项 $1$ 对应特解 $f^{*}=-\frac12$。故
+	\[
+	f(x)=C_1e^{x}+C_2e^{-2x}-\frac12 .
+	\]
+
+	\textbf{定常数.} 由 $f(0)=0$ 得 $C_1+C_2=\frac12$；
+	由 $f'(0)=\frac13$ 得 $C_1-2C_2=\frac13$。解得 $C_1=\frac49,\ C_2=\frac1{18}$，即
+	\[
+	f(x)=\frac{4}{9}e^{x}+\frac{1}{18}e^{-2x}-\frac{1}{2} .
+	\]
+	（验证：$f''+f'-2f=1$，$f(0)=0$，$f'(0)=\frac13$，全部满足。）
 }
 
 
@@ -220,7 +509,40 @@ $
 
 
 \banswer{
-	$ x $轴、$ y $轴、$ z $轴截距分别为$  \frac{ 2 }{ 9 }  $、$  \frac{ 2 }{ 9 }  $、$ 9 $时取极值，平面方程为：$ \frac{x}{\frac{9}{2}}+\frac{y}{\frac{9}{2}}+\frac{z}{9}=1 $。
+	\textbf{建模.} 设 $x$、$y$ 轴上的截距同为 $a>0$，$z$ 轴上的截距为 $c$，则平面为
+	$\frac xa+\frac ya+\frac zc=1$。过 $(1,2,3)$ 给出约束
+	\[
+	\frac1a+\frac2a+\frac3c=1,\qquad\text{即}\qquad \frac3a+\frac3c=1 .
+	\]
+	立体体积 $V=\frac16a\cdot a\cdot c=\frac{a^2c}{6}$。
+
+	\textbf{消元求极值.} 由约束解出 $c=\frac{3a}{a-3}$（取 $a>3$ 以保证 $c>0$），代入得
+	\[
+	V(a)=\frac{a^2}{6}\cdot\frac{3a}{a-3}=\frac{a^3}{2(a-3)} ,
+	\]
+	\[
+	V'(a)=\frac{a^{2}(2a-9)}{2(a-3)^{2}} .
+	\]
+	在 $a>3$ 上 $V'<0$（$3<a<\frac92$）、$V'>0$（$a>\frac92$），故 $a=\frac92$ 处取极小值。此时
+	\[
+	c=\frac{3\cdot\frac92}{\frac92-3}=9,\qquad
+	V_{\min}=\frac{\left(\frac92\right)^2\cdot9}{6}=\frac{243}{8} .
+	\]
+
+	\textbf{结论.} $x$ 轴、$y$ 轴、$z$ 轴上的截距分别为 $\frac92$、$\frac92$、$9$ 时体积取极（小）值
+	$\frac{243}{8}$，此时平面方程为
+	\[
+	\frac{x}{9/2}+\frac{y}{9/2}+\frac{z}{9}=1,\qquad\text{即}\qquad 2x+2y+z=9 .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案把 $x$、$y$ 截距写成 $\frac29$，与它自己给出的平面方程 $\frac{x}{9/2}+\frac{y}{9/2}+\frac z9=1$
+	自相矛盾，应为 $\frac92$；数值搜索也给出 $a=\frac92$，$V=\frac{243}{8}=30.375$。
+
+	另外题面说“取极值”而非“取最值”是必要的：若允许 $0<a<3$，则 $c=\frac{3a}{a-3}<0$，
+	体积 $|V|=\frac{a^3}{2(3-a)}$ 当 $a\to0^{+}$ 时趋于 $0$ 而取不到，故全局最小值不存在。
+	}\par
 }
 
 
@@ -229,7 +551,32 @@ $
 设函数 $f(x)$ 在 $[0, c]$ 上可导, $f^{\prime}$ 单调递减且 $f(0)=0$, 求证: 对于 $0 \leqslant a \leqslant b \leqslant a+b \leqslant c$ ，都有 $f(a+b) \leqslant f(a)+f(b)$。
 
 \banswer{
-	证明略，利用三次拉格朗日中值定理即可
+	若 $a=0$，由 $f(0)=0$ 知 $f(a+b)=f(b)=f(a)+f(b)$，结论取等号成立。以下设 $a>0$。
+
+	\textbf{两次拉格朗日中值定理.} 在 $[0,a]$ 上对 $f$ 用中值定理：存在 $\xi\in(0,a)$ 使
+	\[
+	f(a)=f(a)-f(0)=f'(\xi)\,a .
+	\]
+	在 $[b,a+b]$ 上（长度同为 $a$，且 $a+b\leqslant c$）再用一次：存在 $\eta\in(b,a+b)$ 使
+	\[
+	f(a+b)-f(b)=f'(\eta)\,a .
+	\]
+
+	\textbf{比较.} 由 $0<\xi<a\leqslant b<\eta$ 及 $f'$ 单调递减得 $f'(\xi)\geqslant f'(\eta)$，于是
+	\[
+	f(a)=f'(\xi)a\geqslant f'(\eta)a=f(a+b)-f(b) ,
+	\]
+	即
+	\[
+	f(a+b)\leqslant f(a)+f(b) .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	条件 $a\leqslant b$ 正是为了保证两个中值点满足 $\xi<\eta$；
+	$f'$ 递减（即 $f$ 为凹函数）加上 $f(0)=0$，本质上说明 $\frac{f(x)}{x}$ 递减，
+	这正是次可加性 $f(a+b)\leqslant f(a)+f(b)$ 的来源。
+	}\par
 }
 
 

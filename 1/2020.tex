@@ -36,7 +36,7 @@
 
 		
 \item 
-极限$\lim\limits _{x \rightarrow \frac{\pi}{2}}(\sin x)^{\frac{1}{1-\sin x}}$的值为 \xzanswer{D}
+极限$\lim\limits _{x \rightarrow \frac{\pi}{2}}(\sin x)^{\frac{1}{1-\sin x}}$的值为 \xzanswer{A}
 
 
 
@@ -120,13 +120,110 @@
 	\end{enumerate}
 
 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
+	\item
+	\textbf{B}。记 $S_n=\sum\limits_{k=1}^{n}\frac{2k}{n^2+k-1}$。由 $n^2\leqslant n^2+k-1\leqslant n^2+n-1$
+	及 $\sum\limits_{k=1}^{n}2k=n(n+1)$ 得
+	\[
+	\frac{n(n+1)}{n^2+n-1}\leqslant S_n\leqslant\frac{n(n+1)}{n^2} .
+	\]
+	两端当 $n\to\infty$ 时均趋于 $1$，由夹逼准则 $S_n\to1$。
 
-\item 
+	\item
+	\textbf{A}。因 $F(a)=f(a)\cdot0=0$，故
+	\[
+	\frac{F(x)-F(a)}{x-a}=f(x)\cdot\frac{|x-a|}{x-a} .
+	\]
+	由 $f$ 在 $x=a$ 连续，上式右极限为 $f(a)$、左极限为 $-f(a)$；
+	二者相等当且仅当 $f(a)=0$。故 $f(a)=0$ 是 $F$ 在 $x=a$ 可导的充要条件。
+
+	\item
+	\textbf{A}。因 $\sin x\leqslant1$，令 $u=1-\sin x$，则 $x\to\frac{\pi}{2}$ 时 $u\to0^{+}$，于是
+	\[
+	(\sin x)^{\frac{1}{1-\sin x}}=(1-u)^{\frac1u}\longrightarrow e^{-1} .
+	\]
+
+	\item
+	\textbf{D}。由题设 $\lim\limits_{x\to0}\frac{f(1)-f(1-x)}{x}=-2$，
+	而该式即 $\lim\limits_{x\to0}\frac{f(1-x)-f(1)}{-x}=f^{\prime}(1)$，故 $f^{\prime}(1)=-2$。
+	$f$ 以 $4$ 为周期，对 $f(x+4)=f(x)$ 两端求导知 $f^{\prime}$ 也以 $4$ 为周期，
+	故所求斜率 $f^{\prime}(5)=f^{\prime}(1)=-2$。
+
+	\item
+	\textbf{D}。投影向量为
+	\[
+	\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|^{2}}\,\vec{a}
+	=\frac{0+2+4}{9}(1,2,2)=\left(\frac23,\frac43,\frac43\right).
+	\]
+	（选项 C 只是 $\vec{a}$ 方向上的单位向量之误，A 把投影方向取成了 $\vec{b}$。）
+
+	\item
+	\textbf{C}。C 即 $f(x,y)-f(0,0)=o\left(\sqrt{x^2+y^2}\right)$，
+	按定义 $f$ 在 $(0,0)$ 可微（且全微分为 $0$），故充分。
+	A 只给出连续性；B 只说明两个偏导数为 $0$（例如 $f=\sqrt{|xy|}$ 满足 B 却不可微）；
+	D 只涉及偏导数沿两条坐标轴方向的极限，也推不出可微。
+
+	\item
+	\textbf{B}。裂项
+	\[
+	\frac{1}{n(n+1)(n+2)}=\frac12\left[\frac{1}{n(n+1)}-\frac{1}{(n+1)(n+2)}\right],
+	\]
+	部分和 $S_N=\frac12\left[\frac12-\frac{1}{(N+1)(N+2)}\right]\to\frac14$。
+
+	\item
+	\textbf{A}。由 $x+y+z=e^{xy}$ 直接解出 $z=e^{xy}-x-y$，于是
+	$z_x=ye^{xy}-1$，$z_{xx}=y^2e^{xy}$；由对称性 $z_{yy}=x^2e^{xy}$。故
+	$z_{xx}+z_{yy}=\left(x^2+y^2\right)e^{xy}$。
+
+	\item
+	\textbf{B}。递推式 $na_n=\left(\frac23-n+1\right)a_{n-1}$ 给出
+	$a_n=\frac{\frac53-n}{n}a_{n-1}$，故
+	\[
+	\left|\frac{a_n}{a_{n-1}}\right|=\frac{\left|n-\frac53\right|}{n}\longrightarrow1 ,
+	\]
+	由比值法收敛半径 $R=1$。
+
+	\item
+	\textbf{C}。C 中 $x\to1^{+}$ 时 $\ln x\sim x-1$，故 $\frac{1}{x^4\ln x}\sim\frac{1}{x-1}$，
+	瑕积分发散。
+	A 中 $\frac{x^6}{1+e^x}\leqslant x^6e^{-x}$，收敛；
+	B 中令 $x=t^2$ 得 $\int_0^{+\infty}\frac{2\,dt}{1+t^2}=\pi$，收敛；
+	D 中 $\frac{2\sin^2x}{1+x^2}\leqslant\frac{2}{1+x^2}$，收敛。
+\end{enumerate}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	第 (3) 题原答案作 D（$+\infty$），有误。底数 $\sin x\to1^{-}$、指数 $\to+\infty$，
+	是 $1^{\infty}$ 型而非 $+\infty$ 型；取 $x=\frac{\pi}{2}-10^{-4}$ 数值计算得 $0.367879$，
+	正是 $e^{-1}$。正确答案为 A。
+	}\par
+}
+
+
+\item
 （本题满分10分）
 已知 $\lim\limits _{x \rightarrow 0} f(x)$ 存在,而 $\lim\limits _{x \rightarrow 0} f^{\prime}(x)$ 不存在,并且 $\lim\limits _{x \rightarrow 0} \frac{\sqrt[3]{1+x f(x)}-1}{\sin x}=3$，求 $\lim\limits _{x \rightarrow 0} f(x)$。
 
 \banswer{
-$\lim\limits _{x \rightarrow 0} f(x)=9$	
+	设 $\lim\limits_{x\to0}f(x)=A$（题设该极限存在），则 $xf(x)\to0$。
+	由等价无穷小 $\sqrt[3]{1+u}-1\sim\frac{u}{3}\ (u\to0)$ 与 $\sin x\sim x$ 得
+	\[
+	\frac{\sqrt[3]{1+xf(x)}-1}{\sin x}\sim\frac{\frac13\,xf(x)}{x}=\frac{f(x)}{3}
+	\longrightarrow\frac{A}{3} .
+	\]
+	由题设该极限为 $3$，故 $\frac{A}{3}=3$，即
+	\[
+	\lim_{x\to0}f(x)=9 .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	题中“$\lim\limits_{x\to0}f^{\prime}(x)$ 不存在”只是提醒不能用洛必达法则，
+	上面的等价无穷小替换并不需要 $f$ 可导。
+	}\par
 }
 
 
@@ -135,7 +232,26 @@ $\lim\limits _{x \rightarrow 0} f(x)=9$
 两平面均通过点 $A(-2,1,-1)$, 其中一个平面通过 $x$ 轴, 另一个平面通过直线 $\frac{x-1}{2}=\frac{y+1}{1}=\frac{z}{-1}$ ，求两平面夹角的余弦。
 
 \banswer{
-	$\cos \theta=\frac{2 \sqrt{6}}{5}$
+	\textbf{定过 $x$ 轴的平面 $\pi_1$.} 过 $x$ 轴的平面不含 $x$ 项且过原点，方程形如 $By+Cz=0$。
+	代入 $A(-2,1,-1)$ 得 $B-C=0$，取 $B=C=1$，即
+	\[
+	\pi_1:\ y+z=0,\qquad \bm{n}_1=(0,1,1).
+	\]
+
+	\textbf{定过已知直线的平面 $\pi_2$.} 该直线过点 $M(1,-1,0)$，方向向量 $\bm{s}=(2,1,-1)$；
+	又 $\overrightarrow{MA}=(-3,2,-1)$，故 $\pi_2$ 的法向量
+	\[
+	\bm{n}_2=\bm{s}\times\overrightarrow{MA}
+	=\begin{vmatrix}\bm{i}&\bm{j}&\bm{k}\\2&1&-1\\-3&2&-1\end{vmatrix}
+	=(1,5,7).
+	\]
+
+	\textbf{求夹角.} $\bm{n}_1\cdot\bm{n}_2=0+5+7=12$，$\left|\bm{n}_1\right|=\sqrt2$，
+	$\left|\bm{n}_2\right|=\sqrt{1+25+49}=5\sqrt3$，故
+	\[
+	\cos\theta=\frac{\left|\bm{n}_1\cdot\bm{n}_2\right|}{\left|\bm{n}_1\right|\left|\bm{n}_2\right|}
+	=\frac{12}{5\sqrt6}=\frac{2\sqrt6}{5}\approx0.9798 .
+	\]
 }
 
 
@@ -145,7 +261,42 @@ $\lim\limits _{x \rightarrow 0} f(x)=9$
 设函数 $y=f(x)$ 由 $\left\{\begin{array}{c}x^{x}+t x-t^{2}=0, \\ \arctan (t y)=\ln \left(1+t^{2} y^{2}\right)\end{array}\right.$确定，求 $\frac{d y}{d x}$ 。
 
 \banswer{
-	$ \frac{dy}{dx}=\frac{t+x^{x}(1+\ln x)}{2 t^{2}(x-2 t)} $
+	方程组以 $t$ 为参数确定 $x=x(t)$、$y=y(t)$，故 $\frac{dy}{dx}=\dfrac{dy/dt}{dx/dt}$。
+
+	\textbf{由第一式定 $\frac{dx}{dt}$.} 注意 $\left(x^{x}\right)^{\prime}_x=x^{x}(1+\ln x)$，
+	对 $x^{x}+tx-t^{2}=0$ 关于 $t$ 求导：
+	\[
+	\left[x^{x}(1+\ln x)+t\right]\frac{dx}{dt}+x-2t=0
+	\;\Longrightarrow\;
+	\frac{dx}{dt}=\frac{2t-x}{x^{x}(1+\ln x)+t} .
+	\]
+
+	\textbf{由第二式定 $\frac{dy}{dt}$.} 记 $w=ty$，第二式即 $\arctan w=\ln\left(1+w^{2}\right)$，
+	两端对 $t$ 求导得
+	\[
+	\frac{w^{\prime}}{1+w^{2}}=\frac{2w\,w^{\prime}}{1+w^{2}}
+	\;\Longrightarrow\;
+	w^{\prime}(1-2w)=0 .
+	\]
+	若 $1-2w\neq0$ 则 $w^{\prime}=0$；若 $1-2w=0$ 则 $w\equiv\frac12$ 为常数，仍有 $w^{\prime}=0$。
+	总之 $(ty)^{\prime}=y+t\frac{dy}{dt}=0$，即 $\frac{dy}{dt}=-\frac{y}{t}$。
+
+	\textbf{合成.}
+	\[
+	\frac{dy}{dx}=-\frac{y}{t}\cdot\frac{x^{x}(1+\ln x)+t}{2t-x}
+	=\frac{y\left[t+x^{x}(1+\ln x)\right]}{t(x-2t)} .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $\frac{t+x^{x}(1+\ln x)}{2t^{2}(x-2t)}$，相当于在上式中取 $y=\frac{1}{2t}$，
+	即把推导中必须讨论的分支 $1-2ty=0$ 当成了解，有误：
+	$\arctan\frac12=0.4636\neq\ln\frac54=0.2231$，$ty=\frac12$ 并不满足第二式。
+	另外由 $(ty)^{\prime}=0$ 知 $ty\equiv C$ 为常数，$C$ 由 $\arctan C=\ln\left(1+C^{2}\right)$ 定出，
+	只有 $C=0$（此时 $y\equiv0$，$\frac{dy}{dx}=0$）与 $C\approx1.1720$ 两支；
+	若要写成只含 $x$、$t$ 的式子，应为
+	$\frac{dy}{dx}=\frac{C\left[t+x^{x}(1+\ln x)\right]}{t^{2}(x-2t)}$。
+	}\par
 }
 
 
@@ -156,7 +307,44 @@ $\lim\limits _{x \rightarrow 0} f(x)=9$
 
 
 \banswer{
-待定？$f(x)=1+C_{2} e^{x}+\frac{1}{2} \frac{1}{x^{2}+y^{2}+z^{2}}-\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}}$	
+	记 $\rho=\sqrt{x^{2}+y^{2}+z^{2}}$，则 $r=\ln\rho$、$\rho=e^{r}$，$u$ 是球对称函数。
+
+	\textbf{化简 Laplace 算子.} 对球对称函数
+	$\Delta u=\frac{1}{\rho^{2}}\frac{\partial}{\partial\rho}\left(\rho^{2}\frac{\partial u}{\partial\rho}\right)$。
+	由 $\frac{\partial u}{\partial\rho}=f^{\prime}(r)\frac{dr}{d\rho}=\frac{f^{\prime}(r)}{\rho}$
+	得 $\rho^{2}u_\rho=\rho f^{\prime}(r)$，再对 $\rho$ 求导得
+	$f^{\prime}(r)+\rho f^{\prime\prime}(r)\frac{1}{\rho}=f^{\prime}(r)+f^{\prime\prime}(r)$，故
+	\[
+	\Delta u=\frac{f^{\prime\prime}(r)+f^{\prime}(r)}{\rho^{2}}
+	=\frac{f^{\prime\prime}(r)+f^{\prime}(r)}{e^{2r}} .
+	\]
+
+	\textbf{解常微分方程.} 题设右端 $\left(x^{2}+y^{2}+z^{2}\right)^{-3/2}=\rho^{-3}=e^{-3r}$，故
+	\[
+	f^{\prime\prime}(r)+f^{\prime}(r)=e^{-r} .
+	\]
+	特征方程 $\lambda^{2}+\lambda=0$ 的根为 $0$ 与 $-1$，齐次解为 $C_1+C_2e^{-r}$。
+	因 $-1$ 是单根，设特解 $f^{*}=Are^{-r}$，代入左端得 $-Ae^{-r}$，故 $A=-1$。于是
+	\[
+	f(r)=C_1+C_2e^{-r}-re^{-r},
+	\]
+	把自变量改记为 $x$ 即 $f(x)=C_1+\left(C_2-x\right)e^{-x}$。
+
+	\textbf{回代检验.} 此时 $u=C_1+\frac{C_2}{\rho}-\frac{\ln\rho}{\rho}$。
+	直接计算 $\Delta\left(\frac1\rho\right)=0$，而
+	\[
+	\Delta\left(-\frac{\ln\rho}{\rho}\right)
+	=g^{\prime\prime}(\rho)+\frac{2}{\rho}g^{\prime}(\rho)=\frac{1}{\rho^{3}},
+	\qquad g(\rho)=-\frac{\ln\rho}{\rho},
+	\]
+	与题设方程右端一致。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $f(x)=1+C_2e^{x}+\frac12\frac{1}{x^2+y^2+z^2}-\frac{1}{\sqrt{x^2+y^2+z^2}}$，
+	有误：$f$ 是一元函数，右端不应出现 $x,y,z$；指数应为 $e^{-x}$；
+	而 $\frac{1}{2\rho^{2}}$ 一项并不调和，也不是所需的特解。
+	}\par
 }
 
 
@@ -183,11 +371,41 @@ $D$ 绕 $x$ 轴旋转一周所得旋转体的体积。
 		%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
 		%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 		\item
-		$ S_{D}=\frac{3}{20} $
-		\item 
-		$ V_{D} =0.11\pi $ （保留二位小数）
-		
+		\textbf{求切线并定出 $D$.} $y^{\prime}=3x^{2}+2$，在 $(1,3)$ 处斜率为 $5$，切线为
+		$y=3+5(x-1)=5x-2$，它与 $x$ 轴交于 $\left(\frac25,0\right)$。
+		由 $x^{3}+2x=5x-2\iff(x-1)^{2}(x+2)=0$ 知切线与曲线除切点 $(1,3)$ 外只在 $x=-2$ 处相交，
+		故第一象限内的区域 $D$ 是以 $(0,0)$、$\left(\frac25,0\right)$、$(1,3)$ 为顶点的曲边三角形：
+		上边界为曲线，右下边界为切线，下边界为 $x$ 轴。
+
+		\textbf{求面积（曲线下面积减去三角形面积）.}
+		\begin{align*}
+		S_D&=\int_0^1\left(x^{3}+2x\right)dx-\frac12\left(1-\frac25\right)\cdot3\\
+		&=\left(\frac14+1\right)-\frac{9}{10}=\frac54-\frac{9}{10}=\frac{7}{20}=0.35 .
+		\end{align*}
+
+		\item
+		绕 $x$ 轴旋转用垫圈法：$0\leqslant x\leqslant\frac25$ 时上、下边界为 $x^{3}+2x$ 与 $0$；
+		$\frac25\leqslant x\leqslant1$ 时为 $x^{3}+2x$ 与 $5x-2$。二者可合写为
+		\[
+		V_D=\pi\int_0^1\left(x^{3}+2x\right)^{2}dx-\pi\int_{2/5}^{1}(5x-2)^{2}dx .
+		\]
+		其中
+		\begin{align*}
+		\int_0^1\left(x^{6}+4x^{4}+4x^{2}\right)dx&=\frac17+\frac45+\frac43=\frac{239}{105},\\
+		\int_{2/5}^{1}(5x-2)^{2}dx&=\left[\frac{(5x-2)^{3}}{15}\right]_{2/5}^{1}=\frac{27}{15}=\frac95 .
+		\end{align*}
+		故
+		\[
+		V_D=\pi\left(\frac{239}{105}-\frac{189}{105}\right)=\frac{10}{21}\pi\approx0.48\pi .
+		\]
+
 	\end{enumerate}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $S_D=\frac{3}{20}$、$V_D=0.11\pi$，均有误；
+	正确值为 $S_D=\frac{7}{20}$、$V_D=\frac{10}{21}\pi\approx0.48\pi$，数值积分亦予证实。
+	}\par
 }
 
 
@@ -202,7 +420,29 @@ I=\iint_{S} x d y d z+2 y^{4} d x d z+3 z^{6} d x d y
 其中 $S$ 是椭球面： $x^{2}+4 y^{2}+9 z^{2}=1$ 。
 
 \banswer{
-	$ I=\frac{2}{9} \pi $
+	$S$ 是闭曲面，取外侧（题面未注明侧，按惯例取外侧）；记 $\Omega$ 为椭球体
+	$x^{2}+4y^{2}+9z^{2}\leqslant1$。注意 $dxdz=-dzdx$，先把积分化为标准记法
+	\[
+	I=\iint_S x\,dydz-2y^{4}\,dzdx+3z^{6}\,dxdy .
+	\]
+	由高斯公式
+	\begin{align*}
+	I&=\iiint_\Omega\left[\frac{\partial x}{\partial x}
+	-\frac{\partial\left(2y^{4}\right)}{\partial y}
+	+\frac{\partial\left(3z^{6}\right)}{\partial z}\right]dV\\
+	&=\iiint_\Omega\left(1-8y^{3}+18z^{5}\right)dV .
+	\end{align*}
+	$\Omega$ 关于 $zOx$ 面对称而 $y^{3}$ 关于 $y$ 为奇函数，故 $\iiint_\Omega y^{3}dV=0$；
+	同理 $\iiint_\Omega z^{5}dV=0$。于是 $I$ 就是 $\Omega$ 的体积：
+	\[
+	I=\frac43\pi abc=\frac43\pi\cdot1\cdot\frac12\cdot\frac13=\frac{2}{9}\pi .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	由于 $8y^{3}$、$18z^{5}$ 的积分都为零，把题面的 $dxdz$ 读作 $dzdx$ 并不改变结果，
+	仍为 $\frac29\pi$。
+	}\par
 }
 
 
@@ -216,9 +456,11 @@ $[a, a+2]$ 上至少存在一点 $\theta$, 使得 $f(\theta)=f(\theta+1)$ 。
 
 \banswer{
 	令 $g(x)=f(x)-f(x+1)$。由 $f$ 连续知 $g$ 在 $\mathbb{R}$ 上连续。
-	\[
-	g(a)+g(a+1)+g(a+2)=[f(a)-f(a+1)]+[f(a+1)-f(a+2)]+[f(a+2)-f(a+3)]=f(a)-f(a+3).
-	\]
+	\begin{align*}
+	&g(a)+g(a+1)+g(a+2)\\
+	&\quad=[f(a)-f(a+1)]+[f(a+1)-f(a+2)]+[f(a+2)-f(a+3)]\\
+	&\quad=f(a)-f(a+3).
+	\end{align*}
 	因 $f$ 以 $3$ 为周期，$f(a+3)=f(a)$，故 $g(a)+g(a+1)+g(a+2)=0$。
 	若 $g(a),g(a+1),g(a+2)$ 均为零，则任取其一为 $\theta$ 即得结论。
 	否则三者不能同号（否则和不为零），故存在 $p,q\in\{a,a+1,a+2\}$ 使 $g(p)g(q)\leq0$。
@@ -249,12 +491,11 @@ $[a, a+2]$ 上至少存在一点 $\theta$, 使得 $f(\theta)=f(\theta+1)$ 。
 \banswer{
 	令 $F(x)=\int_0^x f(t)\,dt$，则 $F(0)=0$，$F(1)=0$，$F(x)\geq0\;(x\in[0,1])$，且 $F'(x)=f(x)$。
 	由分部积分，
-	\[
-	\int_0^1 x f(x)\,dx=\int_0^1 x\,F'(x)\,dx
-	=\bigl[xF(x)\bigr]_0^1-\int_0^1 F(x)\,dx
-	=F(1)-0-\int_0^1 F(x)\,dx
-	=-\int_0^1 F(x)\,dx.
-	\]
+	\begin{align*}
+	\int_0^1 x f(x)\,dx&=\int_0^1 x\,F'(x)\,dx
+	=\bigl[xF(x)\bigr]_0^1-\int_0^1 F(x)\,dx\\
+	&=F(1)-\int_0^1 F(x)\,dx=-\int_0^1 F(x)\,dx.
+	\end{align*}
 	因 $F(x)\geq0$，故 $\int_0^1 F(x)\,dx\geq0$，从而 $\int_0^1 x f(x)\,dx\leq0$。
 }
 

@@ -38,6 +38,56 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
 
 \end{enumerate}
 
+
+\banswer{
+\begin{enumerate}
+	\item
+	$\tan x-\sin x=\sin x\cdot\frac{1-\cos x}{\cos x}\sim x\cdot\frac{x^{2}}{2}=\frac{x^{3}}{2}$，
+	而 $\ln\left(1+x^{3}\right)\sim x^{3}$，故
+	\[
+	\lim_{x\to0}\frac{\tan x-\sin x}{\ln\left(1+x^{3}\right)}=\frac12 .
+	\]
+
+	\item
+	记 $h(t)=f(t,t)$，则 $h(0)=f(0,0)=0$，且由链式法则
+	$h^{\prime}(0)=f_{x}^{\prime}(0,0)+f_{y}^{\prime}(0,0)=m+n$。
+	又 $\phi(t)=f\left(t,h(t)\right)$，故
+	\begin{align*}
+	\phi^{\prime}(0)&=f_{x}^{\prime}\left(0,h(0)\right)+f_{y}^{\prime}\left(0,h(0)\right)h^{\prime}(0)\\
+	&=m+n(m+n)=m+mn+n^{2}.
+	\end{align*}
+
+	\item
+	令 $u=\sqrt[3]{x+2}$，则 $x=u^{3}-2$，$dx=3u^{2}du$，
+	\begin{align*}
+	\int\frac{3u^{2}}{1+u}du&=3\int\left(u-1+\frac{1}{1+u}\right)du\\
+	&=\frac32u^{2}-3u+3\ln\abs{1+u}+C .
+	\end{align*}
+	回代 $u=\sqrt[3]{x+2}$ 即得所填结果。
+
+	\item
+	这是伯努利方程。两端除以 $x^{2}y^{2}$，令 $u=y^{-1}$（$u^{\prime}=-y^{-2}y^{\prime}$）得
+	\[
+	u^{\prime}-\frac{u}{x}=-\frac{1}{x^{2}},
+	\quad\text{即}\quad
+	\left(\frac ux\right)^{\prime}=-\frac{1}{x^{3}} .
+	\]
+	积分得 $\frac ux=\frac{1}{2x^{2}}+C$，即 $\frac1y=\frac{1}{2x}+Cx$，
+	$y=\frac{2x}{1+2Cx^{2}}$。代入 $y(1)=2$ 得 $C=0$，故所求解为 $y=2x$
+	（这是满足初值条件的特解）。
+
+	\item
+	在球面上 $\left(x^{2}+y^{2}+z^{2}\right)^{3/2}=a^{3}$；外法向单位向量为 $\frac1a(x,y,z)$，故
+	\[
+	x\cos\alpha+y\cos\beta+z\cos\gamma=\frac{x^{2}+y^{2}+z^{2}}{a}=a .
+	\]
+	于是被积函数恒为 $\frac{a}{a^{3}}=\frac{1}{a^{2}}$，
+	\[
+	\iint_{\Sigma}\frac{dS}{a^{2}}=\frac{1}{a^{2}}\cdot4\pi a^{2}=4\pi .
+	\]
+\end{enumerate}
+}
+
 \item 
 选择题 (本题满分 30 分，每小题 6 分)
 \begin{enumerate}
@@ -107,14 +157,67 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
 {$\frac{4}{\pi}$}
 
 
-	
+
 \end{enumerate}
 
 
+\banswer{
+\begin{enumerate}
+	\item
+	\textbf{B}。$x\to1$ 时 $\sin(x-1)\to0$，而连续性要求极限等于 $f(1)=2\neq0$，
+	故分母必须同时趋于零，即 $e^{0}-a=0$，$a=1$。此时
+	$\frac{\sin(x-1)}{e^{x-1}-1}\to1$，于是
+	\[
+	\lim_{x\to1}f(x)=1\cdot\left(\frac11-b\right)=1-b=2 ,
+	\]
+	得 $b=-1$。
 
-\item 
+	\item
+	\textbf{C}。记 $F=f\cdot g$。由 $f(x_{0})=g(x_{0})=0$ 得
+	$F^{\prime}(x_{0})=f^{\prime}(x_{0})g(x_{0})+f(x_{0})g^{\prime}(x_{0})=0$，故 $x_{0}$ 是驻点。又
+	\[
+	F^{\prime\prime}(x_{0})=f^{\prime\prime}g+2f^{\prime}g^{\prime}+fg^{\prime\prime}\Big|_{x_{0}}
+	=2f^{\prime}(x_{0})g^{\prime}(x_{0})>0 ,
+	\]
+	由二阶导判别法，$x_{0}$ 是 $F$ 的极小值点。
+
+	\item
+	\textbf{D}。令 $u=a-x$，则
+	$\int_{-c}^{c}f(a-x)dx=\int_{a-c}^{a+c}f(u)du$。
+	条件 $f(x)=f(2a-x)$ 说明 $f$ 的图形关于直线 $x=a$ 对称，故
+	$\int_{a-c}^{a}f=\int_{a}^{a+c}f$，从而
+	\[
+	\int_{a-c}^{a+c}f(u)du=2\int_{a-c}^{a}f(u)du=2\int_{0}^{c}f(a-x)dx .
+	\]
+	（选项 (A) 用同样的代换化简后是 $2\int_{0}^{c}f(x)dx$，一般与之不等。）
+
+	\item
+	\textbf{D}。$L$ 的单位方向向量为 $\bm{s}=\frac{1}{\sqrt3}(1,1,1)$，$P_{1}$ 在 $L$ 上的垂足是
+	\[
+	Q=\left(\overrightarrow{OP_{1}}\cdot\bm{s}\right)\bm{s}
+	=\frac{-2+3+1}{3}(1,1,1)=\left(\frac23,\frac23,\frac23\right).
+	\]
+	$Q$ 是 $P_{1}P_{2}$ 的中点，故
+	\[
+	P_{2}=2Q-P_{1}=\left(\frac{10}{3},-\frac53,\frac13\right).
+	\]
+
+	\item
+	\textbf{A}。$a_{2n}=\frac1\pi\int_{-\pi}^{\pi}f(x)\cos2nx\,dx$。
+	对 $\int_{-\pi}^{0}$ 作代换 $x=t-\pi$（$t\in[0,\pi]$）：由 $f(x+\pi)=-f(x)$ 知 $f(t-\pi)=-f(t)$，
+	又 $\cos2n(t-\pi)=\cos2nt$，故
+	\[
+	\int_{-\pi}^{0}f(x)\cos2nx\,dx=-\int_{0}^{\pi}f(t)\cos2nt\,dt ,
+	\]
+	它与 $\int_{0}^{\pi}f(x)\cos2nx\,dx$ 恰好相消，所以 $a_{2n}=0$。
+\end{enumerate}
+}
+
+
+
+\item
 (本题满分 10 分)
-已知 $f(x)$ 在 $(-\infty,+\infty)$ 内有二阶连续导数,且 $f(0)=0$, 又 
+已知 $f(x)$ 在 $(-\infty,+\infty)$ 内有二阶连续导数,且 $f(0)=0$, 又
 \[ 
 \varphi(x)=\left\{\begin{aligned}&f^{\prime}(0) && x=0 \\ 
 	&\frac{e^{x}}{x} f(x) && x \neq 0\end{aligned}\right.
@@ -123,13 +226,45 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
 
 \nynote{$\varphi(0)$处的导数要用定义另外求。}
 \banswer{
+	\textbf{$x\neq0$ 处.} 直接用商的求导法则：
+	\begin{align*}
+	\varphi^{\prime}(x)&=\left(\frac{e^{x}f(x)}{x}\right)^{\prime}\\
+	&=\frac{xe^{x}f(x)+xe^{x}f^{\prime}(x)-e^{x}f(x)}{x^{2}} .
+	\end{align*}
+
+	\textbf{$x=0$ 处.} 这里 $\varphi$ 是分段定义的，必须按导数定义求。
+	由 $f(0)=0$ 及带皮亚诺余项的泰勒公式
+	\[
+	f(x)=f^{\prime}(0)x+\frac{f^{\prime\prime}(0)}{2}x^{2}+o\left(x^{2}\right),\qquad
+	e^{x}=1+x+o(x),
+	\]
+	相乘得
+	\[
+	e^{x}f(x)=f^{\prime}(0)x+\left(f^{\prime}(0)+\frac{f^{\prime\prime}(0)}{2}\right)x^{2}+o\left(x^{2}\right).
+	\]
+	于是
+	\begin{align*}
+	\varphi^{\prime}(0)&=\lim_{x\to0}\frac{\varphi(x)-\varphi(0)}{x}
+	=\lim_{x\to0}\frac{e^{x}f(x)-xf^{\prime}(0)}{x^{2}}\\
+	&=f^{\prime}(0)+\frac{f^{\prime\prime}(0)}{2} .
+	\end{align*}
+
+	综上
     \begin{equation*}
         \varphi^{\prime}(x)=
         \begin{cases}
-            f^\prime (0) + f^{\prime\prime} (0),\qquad &x = 0\\
-            \frac{x e^{x} f(x)+x e^{x} f^{\prime}(x)-e^{x} f(x)}{x^{2}},\qquad &x\neq 0\\
+            f^{\prime}(0)+\dfrac{f^{\prime\prime}(0)}{2},\qquad &x = 0,\\[8pt]
+            \dfrac{x e^{x} f(x)+x e^{x} f^{\prime}(x)-e^{x} f(x)}{x^{2}},\qquad &x\neq 0 .\\
         \end{cases}
     \end{equation*}
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $\varphi^{\prime}(0)=f^{\prime}(0)+f^{\prime\prime}(0)$，有误：二阶项应带系数 $\frac12$。
+	反例：取 $f(x)=x^{2}$，此时 $\varphi(x)\equiv xe^{x}$，$\varphi^{\prime}(0)=1$；
+	而 $f^{\prime}(0)+f^{\prime\prime}(0)=2$，$f^{\prime}(0)+\frac12f^{\prime\prime}(0)=1$。
+	数值差商也给出 $1$。
+	}\par
 }
 
 
@@ -143,7 +278,38 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
     解方程，套每步求导之前的等式可定$C_1$、$C_2$。
 }
 \banswer{
-	$f(x)= \cos x - \sin x$
+	\textbf{化简方程.} 在 $\int_{0}^{x}tf(t-x)dt$ 中令 $u=t-x$，则 $t=u+x$、$dt=du$，
+	$u$ 由 $-x$ 变到 $0$，
+	\[
+	\int_{0}^{x}tf(t-x)dt=\int_{-x}^{0}(u+x)f(u)du .
+	\]
+	于是原方程成为
+	\[
+	x=\int_{0}^{x}f(t)dt+\int_{-x}^{0}uf(u)du+x\int_{-x}^{0}f(u)du .
+	\]
+	两端对 $x$ 求导（注意 $\frac{d}{dx}\int_{-x}^{0}g(u)du=g(-x)$）：
+	\[
+	1=f(x)-xf(-x)+\int_{-x}^{0}f(u)du+xf(-x),
+	\]
+	含 $xf(-x)$ 的两项相消，得
+	\[
+	f(x)+\int_{-x}^{0}f(u)du=1 .\qquad(\ast)
+	\]
+
+	\textbf{解出 $f$.} 在 $(\ast)$ 中令 $x=0$ 得 $f(0)=1$。对 $(\ast)$ 求导得
+	\[
+	f^{\prime}(x)+f(-x)=0 ,
+	\]
+	令 $x=0$ 得 $f^{\prime}(0)=-1$。再求导一次得 $f^{\prime\prime}(x)=f^{\prime}(-x)$；
+	而在 $f^{\prime}(x)=-f(-x)$ 中以 $-x$ 代 $x$ 得 $f^{\prime}(-x)=-f(x)$，故
+	\[
+	f^{\prime\prime}(x)+f(x)=0 .
+	\]
+	其通解为 $f(x)=A\cos x+B\sin x$；由 $f(0)=1$、$f^{\prime}(0)=-1$ 得 $A=1$、$B=-1$，
+	\[
+	f(x)=\cos x-\sin x .
+	\]
+	（代回验证：$f^{\prime}(x)=-\sin x-\cos x=-f(-x)$，且 $f(0)=1$，$(\ast)$ 及原方程均成立。）
 }
 
 
@@ -155,19 +321,87 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
     展开偏导数，令$t=xyz$可得$f'(t) + 3tf''(t) = 0$，解方程。
 }
 \banswer{
-	$f(x y z)=\frac{3}{2}(x y z)^{\frac{2}{3}}$
+	\textbf{展开三阶混合偏导.} 记 $t=xyz$，$u=f(t)$。逐次求偏导：
+	\begin{align*}
+	\frac{\partial u}{\partial z}&=xy\,f^{\prime}(t),\\
+	\frac{\partial^{2}u}{\partial y\partial z}&=x^{2}yz\,f^{\prime\prime}(t)+x\,f^{\prime}(t),\\
+	\frac{\partial^{3}u}{\partial x\partial y\partial z}
+	&=x^{2}y^{2}z^{2}f^{\prime\prime\prime}(t)+3t\,f^{\prime\prime}(t)+f^{\prime}(t).
+	\end{align*}
+	与题设 $\frac{\partial^{3}u}{\partial x\partial y\partial z}=x^{2}y^{2}z^{2}f^{\prime\prime\prime}(xyz)$ 比较，得
+	\[
+	3t\,f^{\prime\prime}(t)+f^{\prime}(t)=0 .
+	\]
+
+	\textbf{解常微分方程.} 当 $t>0$ 时 $\frac{f^{\prime\prime}}{f^{\prime}}=-\frac{1}{3t}$，
+	积分得 $\ln\abs{f^{\prime}}=-\frac13\ln t+\text{const}$，即 $f^{\prime}(t)=Ct^{-\frac13}$。
+	由 $f^{\prime}(1)=1$ 得 $C=1$，故 $f^{\prime}(t)=t^{-\frac13}$，
+	\[
+	f(t)=\frac32t^{\frac23}+D .
+	\]
+	再由 $f(0)=0$ 得 $D=0$。所以
+	\[
+	u=f(xyz)=\frac32(xyz)^{\frac23}.
+	\]
 }
 
 
 
 \item 
 (本题满分 10 分)
-设 $L$ 是分段光滑的简单闭曲线,且点 $(2,0),(-2,0)$ 均在闭曲线 $L$ 所围成区域的内部, 计算曲线积分 $I=\oint_{L}\left[\frac{y}{(2-x)^{2}+y^{2}}+\frac{y}{(2+x)^{2}+y^{2}}\right] d x+\left[\frac{2-x}{(2-x)^{2}+y^{2}}+\frac{2+x}{(2+x)^{2}+y^{2}}\right] d y$, 其中 $L$ 取正向。
+设 $L$ 是分段光滑的简单闭曲线,且点 $(2,0),(-2,0)$ 均在闭曲线 $L$ 所围成区域的内部, 计算曲线积分 $I=\oint_{L}\left[\frac{y}{(2-x)^{2}+y^{2}}+\frac{y}{(2+x)^{2}+y^{2}}\right] d x+\left[\frac{2-x}{(2-x)^{2}+y^{2}}-\frac{2+x}{(2+x)^{2}+y^{2}}\right] d y$, 其中 $L$ 取正向。
 
 \nynote{见西安交通大学出版社《高等数学典型题》\textbf{10-45}，积分里面是全微分，挖洞，斯托克斯公式。}
 
 \banswer{
-	$I=-4 \pi$
+	\textbf{拆成两项.} 记
+	\[
+	\omega_{1}=\frac{y\,dx+(2-x)dy}{(2-x)^{2}+y^{2}},\qquad
+	\omega_{2}=\frac{y\,dx-(2+x)dy}{(2+x)^{2}+y^{2}},
+	\]
+	则 $I=\oint_{L}\omega_{1}+\oint_{L}\omega_{2}$。直接验算可知：
+	$\omega_{1}$ 在除 $(2,0)$ 外处处满足 $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$，
+	$\omega_{2}$ 在除 $(-2,0)$ 外亦然。
+
+	\textbf{挖洞.} 取充分小的 $\varepsilon>0$，作正向小圆
+	\[
+	C_{1}:(x-2)^{2}+y^{2}=\varepsilon^{2},\qquad
+	C_{2}:(x+2)^{2}+y^{2}=\varepsilon^{2},
+	\]
+	使它们互不相交且都含于 $L$ 内部。在 $L$ 与 $C_{1}\cup C_{2}$ 所夹的区域上
+	被积表达式是全微分，由格林公式
+	\[
+	\oint_{L}=\oint_{C_{1}}+\oint_{C_{2}} .
+	\]
+
+	\textbf{逐个计算.} $\omega_{2}$ 的奇点 $(-2,0)$ 在 $C_{1}$ 之外，故 $\oint_{C_{1}}\omega_{2}=0$；
+	同理 $\oint_{C_{2}}\omega_{1}=0$。在 $C_{1}$ 上分母恒为 $\varepsilon^{2}$，用格林公式
+	\begin{align*}
+	\oint_{C_{1}}\omega_{1}
+	&=\frac{1}{\varepsilon^{2}}\oint_{C_{1}}y\,dx+(2-x)dy\\
+	&=\frac{1}{\varepsilon^{2}}\iint_{D_{1}}(-1-1)\,d\sigma=-2\pi .
+	\end{align*}
+	同样地，在 $C_{2}$ 上
+	\begin{align*}
+	\oint_{C_{2}}\omega_{2}
+	&=\frac{1}{\varepsilon^{2}}\oint_{C_{2}}y\,dx-(2+x)dy\\
+	&=\frac{1}{\varepsilon^{2}}\iint_{D_{2}}(-1-1)\,d\sigma=-2\pi .
+	\end{align*}
+	故
+	\[
+	I=-2\pi-2\pi=-4\pi .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面 $dy$ 前第二项印作 $+\frac{2+x}{(2+x)^{2}+y^{2}}$。如此则该项不满足
+	$\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$，积分值随 $L$ 而变（取
+	$L$ 为椭圆、圆、其它闭曲线分别得 $-7.854$、$-6.283$、$-7.015$ 等），题目无确定答案；
+	应为 $-\frac{2+x}{(2+x)^{2}+y^{2}}$，已据此改正。
+	改正后对上述三条曲线数值积分均得 $-12.566371=-4\pi$，与原有答案一致。
+	另外 $\omega_{1}=d\arctan\frac{y}{2-x}$、$\omega_{2}=-d\arctan\frac{y}{2+x}$，
+	从辐角变化看也各贡献 $-2\pi$。
+	}\par
 }
 
 
@@ -182,7 +416,33 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
     先解齐次，再带上特解就可以了。
 }
 \banswer{
-    $y=C_{1}+\left(C_{2}+C_{3} \ln x\right) x^{2}-\frac{1}{36}x^{-1}$
+	\textbf{求特解.} 设 $y=ax^{-1}$，则 $y^{\prime}=-ax^{-2}$、$y^{\prime\prime}=2ax^{-3}$、
+	$y^{\prime\prime\prime}=-6ax^{-4}$，代入左端：
+	\begin{align*}
+	&4x^{4}\left(-6ax^{-4}\right)-4x^{3}\left(2ax^{-3}\right)+4x^{2}\left(-ax^{-2}\right)\\
+	&\qquad=-24a-8a-4a=-36a .
+	\end{align*}
+	令 $-36a=1$ 得 $a=-\frac{1}{36}$，即特解 $y^{*}=-\frac{1}{36}x^{-1}$。
+
+	\textbf{求齐次通解.} 齐次方程两端除以 $4x^{2}$（设 $x>0$）：
+	\[
+	x^{2}y^{\prime\prime\prime}-xy^{\prime\prime}+y^{\prime}=0 .
+	\]
+	令 $p=y^{\prime}$，得二阶欧拉方程 $x^{2}p^{\prime\prime}-xp^{\prime}+p=0$，
+	其特征方程 $r(r-1)-r+1=(r-1)^{2}=0$ 有二重根 $r=1$，故
+	\[
+	p=\left(A+B\ln x\right)x .
+	\]
+	再积分（用 $\int x\ln x\,dx=\frac{x^{2}}{2}\ln x-\frac{x^{2}}{4}$）得
+	\[
+	y=\int p\,dx=C_{1}+\left(C_{2}+C_{3}\ln x\right)x^{2} .
+	\]
+
+	\textbf{通解.} 齐次通解加特解：
+	\[
+	y=C_{1}+\left(C_{2}+C_{3}\ln x\right)x^{2}-\frac{1}{36}x^{-1}.
+	\]
+	（代回原方程逐项验证，余项恰为 $1$。）
 }
 
 
@@ -194,8 +454,29 @@ $\lim\limits _{x \rightarrow 0} \frac{\tan x-\sin x}{\ln \left(1+x^{3}\right)}$ 
 \nynote{可设切线为$ \frac{x}{a} + \frac{y}{b} = 1$，$a$、$b$为截距，借$\Delta=0$利用基本不等式求解。}
 
 \banswer{
-    $(\sqrt 2, \frac{\sqrt 2}{2})$,\quad
-    $S_{min} = 2-\frac{\pi}{2}$
+	\textbf{写出面积.} 椭圆在第一象限的点可设为 $P\left(2\cos\theta,\sin\theta\right)$，
+	$\theta\in\left(0,\frac\pi2\right)$，该点处的切线为
+	\[
+	\frac{x\cos\theta}{2}+y\sin\theta=1 ,
+	\]
+	它在两坐标轴上的截距分别为 $a=\frac{2}{\cos\theta}$、$b=\frac{1}{\sin\theta}$，
+	与两轴围成的直角三角形面积
+	\[
+	S_{\triangle}=\frac{ab}{2}=\frac{1}{\sin\theta\cos\theta}=\frac{2}{\sin2\theta}.
+	\]
+	所求图形即该三角形挖去四分之一椭圆，而后者的面积
+	$\frac{\pi\cdot2\cdot1}{4}=\frac{\pi}{2}$ 是常数，故
+	\[
+	S(\theta)=\frac{2}{\sin2\theta}-\frac{\pi}{2}.
+	\]
+
+	\textbf{求最小值.} $0<\sin2\theta\leqslant1$，等号当且仅当 $\theta=\frac\pi4$ 时成立，
+	此时 $S$ 最小。故所求点与最小面积为
+	\[
+	P\left(\sqrt2,\ \frac{\sqrt2}{2}\right),\qquad
+	S_{\min}=2-\frac{\pi}{2}\approx0.4292 .
+	\]
+	（数值极小化也给出 $\theta=0.785398=\frac\pi4$、$S=0.429204$。）
 }
 
 

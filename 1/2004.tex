@@ -38,9 +38,57 @@
 		
 		
 	\end{enumerate}
-	
-\item 
-单项选择题 (本题共 5 题，每小题 5，满分 25 分)	
+
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	$1$。记 $S_{n}=\sum\limits_{k=1}^{n}\sin\frac1k$。当 $k\geqslant1$ 时 $0<\frac1k\leqslant1<\frac{\pi}{2}$，
+	故 $0<\sin\frac1k\leqslant\sin1<1$，从而
+	\[
+	\sin1\leqslant S_{n}\leqslant n\sin1\leqslant n ,
+	\]
+	于是 $(\sin1)^{\frac1n}\leqslant\sqrt[n]{S_{n}}\leqslant n^{\frac1n}$。
+	因 $(\sin1)^{1/n}\to1$、$n^{1/n}\to1$，由夹逼准则知原极限为 $1$。
+
+	\item
+	$-\frac{\epsilon\sin y}{(1-\epsilon\cos y)^{3}}$。对 $y-\epsilon\sin y=x$ 两端关于 $x$ 求导得
+	$(1-\epsilon\cos y)\frac{dy}{dx}=1$；因 $\epsilon\in(0,1)$ 有 $1-\epsilon\cos y>0$，故
+	$\frac{dy}{dx}=\frac{1}{1-\epsilon\cos y}$。再对 $x$ 求导：
+	\begin{align*}
+	\frac{d^{2}y}{dx^{2}}&=-\frac{1}{(1-\epsilon\cos y)^{2}}\cdot\epsilon\sin y\cdot\frac{dy}{dx}\\
+	&=-\frac{\epsilon\sin y}{(1-\epsilon\cos y)^{3}} .
+	\end{align*}
+
+	\item
+	$1<\alpha<3$。被积函数非负，两个端点都要考察。
+	$x\to0^{+}$ 时 $\ln\left(1+x^{2}\right)\sim x^{2}$，被积函数 $\sim x^{2-\alpha}$，
+	故 $\int_{0}^{1}$ 收敛当且仅当 $2-\alpha>-1$，即 $\alpha<3$；
+	$x\to+\infty$ 时 $\ln\left(1+x^{2}\right)\sim2\ln x$，被积函数 $\sim\frac{2\ln x}{x^{\alpha}}$，
+	故 $\int_{1}^{+\infty}$ 收敛当且仅当 $\alpha>1$。两者同时成立即得收敛域 $1<\alpha<3$。
+
+	\item
+	$x-y+2z=\frac{\pi}{2}$。由 $z=\arctan\frac{y}{x}$ 得
+	\[
+	z_{x}=\frac{-y}{x^{2}+y^{2}},\qquad z_{y}=\frac{x}{x^{2}+y^{2}} ,
+	\]
+	在 $(1,1)$ 处 $z_{x}=-\frac12$，$z_{y}=\frac12$。故切平面为
+	$z-\frac{\pi}{4}=-\frac12(x-1)+\frac12(y-1)$，整理得 $x-y+2z=\frac{\pi}{2}$。
+
+	\item
+	$y=\frac{1}{10}(\cos x-3\sin x)+C_{1}e^{x}+C_{2}e^{2x}$。
+	特征方程 $r^{2}-3r+2=0$ 的根为 $r_{1}=1$、$r_{2}=2$，齐次通解为 $C_{1}e^{x}+C_{2}e^{2x}$。
+	因 $\pm i$ 不是特征根，设特解 $y^{*}=A\cos x+B\sin x$，代入原方程得
+	\[
+	(A-3B)\cos x+(3A+B)\sin x=\cos x ,
+	\]
+	故 $A-3B=1$，$3A+B=0$，解得 $A=\frac{1}{10}$，$B=-\frac{3}{10}$，
+	即 $y^{*}=\frac{1}{10}(\cos x-3\sin x)$。
+\end{enumerate}
+}
+
+\item
+单项选择题 (本题共 5 题，每小题 5，满分 25 分)
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
 	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
@@ -48,7 +96,7 @@
 	%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
 	%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 	\item
-设 $S$ 为球面 $x^{2}+y^{2}+z^{2}=R^{2}$ 外侧，则 $\oiint_{S} x^{2} d y d z+y^{2} d z d x+z d x d y=$ \xzanswer{A} 
+设 $S$ 为球面 $x^{2}+y^{2}+z^{2}=R^{2}$ 外侧，则 $\oiint_{S} x^{2} d y d z+y^{2} d z d x+z^{2} d x d y=$ \xzanswer{A}
 
 	
 \fourchoices
@@ -72,7 +120,7 @@
 
 \item 
 给定严格递增数列 $\left\{A_{n}\right\}$, 且 $A_{1}=a, \lim\limits _{n \rightarrow \infty} A_{n}=+\infty$, 函数 $f(x)$ 在 $[a,+\infty)$ 上连
-续且非负，则积分 $\int_{a}^{+\infty} f(x) d x$ 收敛是级数 $\sum\limits_{n=1}^{\infty} \int_{A_{n}}^{A_{n+1}} d x$ 收敛的 \xzanswer{C} 
+续且非负，则积分 $\int_{a}^{+\infty} f(x) d x$ 收敛是级数 $\sum\limits_{n=1}^{\infty} \int_{A_{n}}^{A_{n+1}} f(x) d x$ 收敛的 \xzanswer{C}
 
 
 
@@ -87,10 +135,10 @@
 
 
 \fourchoices
-{$0<\leqslant 1$}
+{$0<p \leqslant 1$}
 {$p>1$}
 {$\frac{1}{3}<p \leqslant 1$}
-{$\frac{1}{2}<p<\leqslant 1$}
+{$\frac{1}{2}<p \leqslant 1$}
 
 
 \item 
@@ -107,8 +155,93 @@
 \end{enumerate}
 
 
-\item 
-(本题共 5 题，每小题 8 分，满分 40 分)	
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	\textbf{A}。记 $\Omega$ 为球体 $x^{2}+y^{2}+z^{2}\leqslant R^{2}$。$S$ 取外侧即 $\Omega$ 的正向边界，
+	由高斯公式
+	\begin{align*}
+	\oiint_{S}x^{2}dydz+y^{2}dzdx+z^{2}dxdy
+	&=\iiint_{\Omega}(2x+2y+2z)\,dV\\
+	&=0 ,
+	\end{align*}
+	因为 $\Omega$ 关于三个坐标平面都对称，而 $x$、$y$、$z$ 分别关于相应变量为奇函数。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面第三项印作 $z\,dxdy$。若按此读，由高斯公式得
+	$\iiint_{\Omega}(2x+2y+1)dV=\frac43\pi R^{3}$，并不在四个选项之中；
+	而四个选项的量阶均为 $R^{4}$，与被积三项全为二次时一致，
+	可见应为 $z^{2}dxdy$，已据此更正题面。
+	}\par
+
+	\item
+	\textbf{C}。函数在 $\mathbb{R}$ 上连续，无铅直渐近线。
+	$x\to+\infty$ 时 $\sqrt{x^{2}+1}-x=\frac{1}{\sqrt{x^{2}+1}+x}\to0$，故 $y\to-1$，
+	得水平渐近线 $y=-1$。
+	$x\to-\infty$ 时 $\sqrt{x^{2}+1}=-x\sqrt{1+\frac{1}{x^{2}}}=-x-\frac{1}{2x}+o\!\left(\frac1x\right)$，
+	故
+	\[
+	y=-2x-1-\frac{1}{2x}+o\!\left(\frac1x\right) ,
+	\]
+	得斜渐近线 $y=-2x-1$。共 $2$ 条。
+
+	\item
+	\textbf{C}。因 $f\geqslant0$，令 $F(X)=\int_{a}^{X}f(x)dx$，则 $F$ 单调不减。级数的部分和
+	\[
+	\sum_{n=1}^{N}\int_{A_{n}}^{A_{n+1}}f(x)dx=\int_{A_{1}}^{A_{N+1}}f(x)dx=F\left(A_{N+1}\right) .
+	\]
+	若积分收敛，则 $F$ 有极限，部分和收敛，故为充分条件；
+	反之若部分和收敛，因 $A_{N}\uparrow+\infty$ 且 $F$ 单调不减有界，
+	故 $\lim\limits_{X\to+\infty}F(X)$ 存在，积分收敛，故也是必要条件。二者等价。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面级数印作 $\sum\limits_{n=1}^{\infty}\int_{A_{n}}^{A_{n+1}}dx$，该式恒等于
+	$\lim\limits_{N\to\infty}A_{N+1}-a=+\infty$ 必定发散，题即无意义；
+	显系漏印被积函数 $f(x)$，已补上。
+	}\par
+
+	\item
+	\textbf{D}。记 $u_{n}=\ln\left[1+\frac{(-1)^{n}}{n^{p}}\right]$。由
+	$\ln(1+t)=t-\frac{t^{2}}{2}+O\left(t^{3}\right)$ 得
+	\[
+	u_{n}=\frac{(-1)^{n}}{n^{p}}-\frac{1}{2n^{2p}}+O\left(n^{-3p}\right) .
+	\]
+	其中 $\sum\frac{(-1)^{n}}{n^{p}}$ 对一切 $p>0$ 收敛（莱布尼茨），
+	而 $\sum\frac{1}{2n^{2p}}$ 收敛当且仅当 $2p>1$。故级数收敛当且仅当 $p>\frac12$。
+	又 $\left|u_{n}\right|\sim\frac{1}{n^{p}}$，故绝对收敛当且仅当 $p>1$。
+	所以条件收敛当且仅当 $\frac12<p\leqslant1$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面选项 A 印作 “$0<\leqslant1$”、选项 D 印作 “$\frac12<p<\leqslant1$”，
+	均漏字或衍字，已分别更正为 $0<p\leqslant1$ 与 $\frac12<p\leqslant1$。
+	}\par
+
+	\item
+	\textbf{D}。沿坐标轴 $f(x,0)=x^{2}\sin\frac{1}{x^{2}}$，故
+	\[
+	f_{x}(0,0)=\lim_{x\to0}\frac{x^{2}\sin\frac{1}{x^{2}}}{x}=\lim_{x\to0}x\sin\frac{1}{x^{2}}=0 ,
+	\]
+	同理 $f_{y}(0,0)=0$。记 $\rho=\sqrt{x^{2}+y^{2}}$，则
+	\[
+	\frac{f(x,y)-f(0,0)-0\cdot x-0\cdot y}{\rho}=\rho\sin\frac{1}{\rho^{2}}\longrightarrow0 ,
+	\]
+	故 $f$ 在 $(0,0)$ 处可微。但当 $(x,y)\neq(0,0)$ 时
+	\[
+	f_{x}=2x\sin\frac{1}{\rho^{2}}-\frac{2x}{\rho^{2}}\cos\frac{1}{\rho^{2}} ,
+	\]
+	沿 $y=0$ 有 $f_{x}(x,0)=2x\sin\frac{1}{x^{2}}-\frac{2}{x}\cos\frac{1}{x^{2}}$，
+	当 $x\to0$ 时无界振荡（例如取 $x_{k}=\frac{1}{\sqrt{2k\pi}}$ 得 $-2\sqrt{2k\pi}\to-\infty$），
+	故 $f_{x}$ 在 $(0,0)$ 处不连续，$f_{y}$ 同理。即可微而偏导数不连续。
+\end{enumerate}
+}
+
+
+\item
+(本题共 5 题，每小题 8 分，满分 40 分)
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
 	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
@@ -190,7 +323,7 @@ $\varphi(0)=0$，且 $\varphi'(t)=p\bigl[(1+t)^{\,p-1}-t^{\,p-1}\bigr]>0\;(t>0)$
 	
 	
 	\item
-	求 $k$ 的取值范围, 使得方程 $\frac{k}{r}+x^{2}=1$ 有唯一正根。
+	求 $k$ 的取值范围, 使得方程 $\frac{k}{x}+x^{2}=1$ 有唯一正根。
 	
 	
 	
@@ -243,25 +376,76 @@ $\varphi(0)=0$，且 $\varphi'(t)=p\bigl[(1+t)^{\,p-1}-t^{\,p-1}\bigr]>0\;(t>0)$
 	
 \end{enumerate}
 
+\banswer{
 \begin{enumerate}
 	%\renewcommand{\labelenumi}{\arabic{enumi}.}
-	% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
-	%设定全局标号series=example	%引用全局变量resume=example
-	%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
-	%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 	\item
-	$ f(x) $可展开为
-\[ 
-	\begin{aligned}
-	f(x)&=\frac{\pi}{4}(\pi-1)+\sum\limits_{n=1}^{\infty}\left\{-\frac{\pi-1}{n^{2} \pi}\left[\left(1-(-1)^{n}\right] \cos n x+\frac{\pi+1}{n}(-1)^{n+1} \sin n x\right\}\right. \\
-	&=\left\{\begin{array}{ll}x, & -\pi<x \leqslant 0 \\ \pi x, & 0 \leqslant x<\pi \\ \frac{\pi(\pi-1)}{2},  & x=\pm \pi\end{array}\right.
-\end{aligned}
- \]
-利用$ x=0 $的值有$\sum\limits_{n=1}^{\infty} \frac{1}{n^{2}}=\frac{\pi^{2}}{8}$	
-	
-\item 
-$ \lambda= \frac{ 1 }{ 2 }  $，通解为$ \frac{\sqrt{x^{2}+y^{2}}}{y} =C $
+	$f(x)$ 可展开为
+	\begin{align*}
+	f(x)=\frac{\pi}{4}(\pi-1)+\sum_{n=1}^{\infty}\Bigl\{
+	&-\frac{\pi-1}{n^{2}\pi}\left[1-(-1)^{n}\right]\cos nx\\
+	&+\frac{\pi+1}{n}(-1)^{n+1}\sin nx\Bigr\} ,
+	\end{align*}
+	其和函数为
+	\[
+	\left\{\begin{array}{ll}
+	x, & -\pi<x\leqslant0\\
+	\pi x, & 0\leqslant x<\pi\\
+	\frac{\pi(\pi-1)}{2}, & x=\pm\pi
+	\end{array}\right.
+	\]
+	$f$ 在 $x=0$ 处左右极限都是 $0$，故级数在该点收敛于 $0$，于是
+	\[
+	\frac{\pi(\pi-1)}{4}=\frac{\pi-1}{\pi}\sum_{n=1}^{\infty}\frac{1-(-1)^{n}}{n^{2}}
+	=\frac{2(\pi-1)}{\pi}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^{2}} ,
+	\]
+	即 $\sum\limits_{k=1}^{\infty}\frac{1}{(2k-1)^{2}}=\frac{\pi^{2}}{8}$。再由
+	$\sum\limits_{n=1}^{\infty}\frac{1}{n^{2}}
+	=\sum\limits_{k=1}^{\infty}\frac{1}{(2k-1)^{2}}+\frac14\sum\limits_{n=1}^{\infty}\frac{1}{n^{2}}$
+	解得
+	\[
+	\sum_{n=1}^{\infty}\frac{1}{n^{2}}=\frac43\cdot\frac{\pi^{2}}{8}=\frac{\pi^{2}}{6} .
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $\sum\limits_{n=1}^{\infty}\frac{1}{n^{2}}=\frac{\pi^{2}}{8}$，有误。
+	由 $x=0$ 直接得到的是奇数项之和 $\frac{\pi^{2}}{8}\approx1.2337$，
+	全体之和应为 $\frac{\pi^{2}}{6}\approx1.6449$（数值求和验证相符）。
+	另原式中该因子处多写了一层左圆括号、致使左右定界符不配对，
+	已改正为 $\left[1-(-1)^{n}\right]$。
+	}\par
+
+	\item
+	$\lambda=-\frac12$，通解为 $\frac{\sqrt{x^{2}+y^{2}}}{y}=C$。
+	记 $P=\frac{x}{y}\left(x^{2}+y^{2}\right)^{\lambda}$，
+	$Q=-\frac{x^{2}}{y^{2}}\left(x^{2}+y^{2}\right)^{\lambda}$，则
+	\begin{align*}
+	\frac{\partial P}{\partial y}&=-\frac{x}{y^{2}}\left(x^{2}+y^{2}\right)^{\lambda}
+	+2\lambda x\left(x^{2}+y^{2}\right)^{\lambda-1},\\
+	\frac{\partial Q}{\partial x}&=-\frac{2x}{y^{2}}\left(x^{2}+y^{2}\right)^{\lambda}
+	-\frac{2\lambda x^{3}}{y^{2}}\left(x^{2}+y^{2}\right)^{\lambda-1} .
+	\end{align*}
+	令二者相等，两端除以 $x\left(x^{2}+y^{2}\right)^{\lambda-1}$ 再乘 $y^{2}$，得
+	\[
+	-\left(x^{2}+y^{2}\right)+2\lambda y^{2}=-2\left(x^{2}+y^{2}\right)-2\lambda x^{2} ,
+	\]
+	即 $(1+2\lambda)\left(x^{2}+y^{2}\right)=0$，故 $\lambda=-\frac12$。此时
+	\[
+	P\,dx+Q\,dy=d\!\left(\frac{\sqrt{x^{2}+y^{2}}}{y}\right) ,
+	\]
+	（可沿 $D$ 内折线作曲线积分求得原函数），所以通解为 $\frac{\sqrt{x^{2}+y^{2}}}{y}=C$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $\lambda=\frac12$，有误。取 $\lambda=\frac12$ 时
+	$\frac{\partial P}{\partial y}\neq\frac{\partial Q}{\partial x}$（数值校验：在 $(1.3,2.1)$ 处二者分别为
+	$-0.2017$ 与 $-1.6578$），并非全微分方程；取 $\lambda=-\frac12$ 时二者相等。
+	且原答案给出的通解 $\frac{\sqrt{x^{2}+y^{2}}}{y}=C$ 正对应 $\lambda=-\frac12$，
+	与其自身所写的 $\lambda$ 并不自洽。
+	}\par
 \end{enumerate}
+}
 
 
 	

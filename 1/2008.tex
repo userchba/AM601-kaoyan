@@ -20,7 +20,7 @@
 
 
 \item
-设 $y=y(x)$ 是二阶线性常系数非齐次微分方程 $y^{\prime \prime}+2 y^{\prime}+y=e^{3 x}$ 满足条件 $y(0)=0$
+设 $y=y(x)$ 是二阶线性常系数非齐次微分方程 $y^{\prime \prime}+2 y^{\prime}+y=e^{3 x}$ 满足条件 $y(0)=y^{\prime}(0)=0$
 的解，且 $y=y(x)$ 有连续的二阶导数，则 $\lim\limits _{x \rightarrow 0} \frac{\ln \left(1+x^{2}\right)}{y(x)}=$ \tk{$ 2 $} 。
 
 
@@ -39,6 +39,54 @@
 	
 	
 \end{enumerate}
+
+
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	$\frac12$。用夹逼准则。由 $n^{2}+1\leqslant n^{2}+k\leqslant n^{2}+n\ (1\leqslant k\leqslant n)$ 及
+	$\sum\limits_{k=1}^{n}k=\frac{n(n+1)}{2}$ 得
+	\[
+	\frac{n(n+1)}{2\left(n^{2}+n\right)}\leqslant\sum_{k=1}^{n}\frac{k}{n^{2}+k}
+	\leqslant\frac{n(n+1)}{2\left(n^{2}+1\right)} .
+	\]
+	左端恒等于 $\frac12$，右端 $\to\frac12$，故极限为 $\frac12$。
+
+	\item
+	$2$。由 $y(0)=y^{\prime}(0)=0$ 及方程得
+	$y^{\prime\prime}(0)=e^{0}-2y^{\prime}(0)-y(0)=1$，故 Taylor 展开
+	$y(x)=\frac{y^{\prime\prime}(0)}{2}x^{2}+o\left(x^{2}\right)=\frac{x^{2}}{2}+o\left(x^{2}\right)$。
+	又 $\ln\left(1+x^{2}\right)\sim x^{2}$，所以极限 $=\dfrac{x^{2}}{x^{2}/2}=2$。
+
+	\item
+	$\pm4$。记 $A=\int_0^2f(x)dx$（常数）。由 $f^{\prime}(x)A=8$ 知
+	$f^{\prime}(x)=\frac{8}{A}$ 为常数，结合 $f(0)=0$ 得 $f(x)=\frac{8}{A}x$。代回
+	\[
+	A=\int_0^2\frac{8}{A}x\,dx=\frac{8}{A}\cdot2=\frac{16}{A}
+	\quad\Longrightarrow\quad A^{2}=16,\quad A=\pm4 .
+	\]
+
+	\item
+	$1$。两次分部积分：
+	\[
+	\int_0^{\pi}f^{\prime\prime}\sin x\,dx
+	=\bigl[f^{\prime}\sin x\bigr]_0^{\pi}-\int_0^{\pi}f^{\prime}\cos x\,dx
+	=-\bigl[f\cos x\bigr]_0^{\pi}-\int_0^{\pi}f\sin x\,dx .
+	\]
+	故 $\int_0^{\pi}\left(f+f^{\prime\prime}\right)\sin x\,dx=-\bigl[f\cos x\bigr]_0^{\pi}
+	=f(\pi)+f(0)$。由 $f(\pi)+f(0)=3$、$f(\pi)=2$ 得 $f(0)=1$。
+
+	\item
+	$y=-\frac34x+1$。过 $(0,1)$ 的直线设为 $f(x)=kx+1$，则
+	\[
+	I(k)=\int_0^2\left[x^{2}-(kx+1)^{2}\right]dx
+	=\frac83\left(1-k^{2}\right)-4k-2 .
+	\]
+	由 $I^{\prime}(k)=-\frac{16}{3}k-4=0$ 得 $k=-\frac34$；
+	又 $I^{\prime\prime}(k)=-\frac{16}{3}<0$，故为最大值点，所求直线为 $y=-\frac34x+1$。
+\end{enumerate}
+}
 
 \item 
 单选题 (本题满分 30 分，每小题 6 分)
@@ -112,12 +160,69 @@
 \end{enumerate}
 
 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	\textbf{B}。沿坐标轴 $f(x,0)\equiv0$、$f(0,y)\equiv0$，故
+	$f_x(0,0)=f_y(0,0)=0$，两个偏导数都存在。
+	但沿 $y=kx$ 趋于原点时 $f=\frac{kx^2}{(1+k^2)x^2}=\frac{k}{1+k^2}$ 与 $k$ 有关
+	（取 $k=1$ 得 $\frac12$，取 $k=0$ 得 $0$），故重极限不存在，$f$ 在 $(0,0)$ 不连续。
+
+	\item
+	\textbf{A}。由链式法则 $u^{\prime}(1)=f^{\prime}\bigl(g(1)\bigr)\cdot g^{\prime}(1)$。
+	由图：$g$ 在 $[0,2]$ 上是从 $(0,6)$ 到 $(2,0)$ 的线段，故 $g(1)=3$，$g^{\prime}(1)=-3$；
+	$f$ 在 $[2,8]$ 上是从 $(2,4)$ 出发、斜率为 $-\frac14$ 的线段，而 $g(1)=3\in(2,8)$，
+	故 $f^{\prime}(3)=-\frac14$。于是
+	\[
+	u^{\prime}(1)=\left(-\frac14\right)\times(-3)=\frac34 .
+	\]
+
+	\item
+	\textbf{C}。令 $\varphi(x)=xe^{-x}$，则 $\varphi^{\prime}(x)=(1-x)e^{-x}$，
+	故 $\varphi$ 在 $(-\infty,1)$ 上递增、在 $(1,+\infty)$ 上递减，最大值
+	$\varphi(1)=\frac1e$。又 $x\to-\infty$ 时 $\varphi\to-\infty$，
+	$x\to+\infty$ 时 $\varphi\to0^{+}$。
+	因 $0<\frac{1}{2e}<\frac1e$，水平线 $y=\frac{1}{2e}$ 与两支单调曲线各交一次，
+	故实根恰有 $2$ 个。
+
+	\item
+	\textbf{B}。$L_1$ 的方向为 $\bm{s}_1=(0,1,1)$，$L_2$ 的方向为 $\bm{s}_2=(1,2,1)$。
+	平面与两者都平行，故法向量
+	\[
+	\bm{n}=\bm{s}_1\times\bm{s}_2=
+	\begin{vmatrix}\bm{i}&\bm{j}&\bm{k}\\0&1&1\\1&2&1\end{vmatrix}=(-1,\ 1,\ -1).
+	\]
+	又平面过原点，故方程为 $-x+y-z=0$，即 $x-y+z=0$。
+
+	\item
+	\textbf{C}。$x^2$ 是偶函数，其在 $[-\pi,\pi]$ 上的余弦展开为
+	\[
+	x^{2}=\frac{\pi^{2}}{3}+\sum_{n=1}^{\infty}\frac{4(-1)^{n}}{n^{2}}\cos nx ,
+	\]
+	其中 $n\geqslant1$ 时
+	$\frac{2}{\pi}\int_0^{\pi}x^{2}\cos nx\,dx=\frac{2}{\pi}\cdot\frac{2\pi(-1)^{n}}{n^{2}}
+	=\frac{4(-1)^{n}}{n^{2}}$。
+	题中把常数项也记作 $a_0$，故对 $n\geqslant1$ 有 $a_n=\frac{4(-1)^{n}}{n^{2}}$，于是
+	$a_2=\frac{4}{4}=1$。
+\end{enumerate}
+}
+
+
 
 \item 
 (本题满分 10 分)
 求 $\int_{-1}^{2}\left(|x|+2 x^{2}\right) d x$。
 \banswer{
-	$\frac{17}{2}$
+	按 $|x|$ 的定义分段积分：
+	\[
+	\int_{-1}^{2}|x|\,dx=\int_{-1}^{0}(-x)\,dx+\int_{0}^{2}x\,dx
+	=\frac12+2=\frac52 ,
+	\]
+	\[
+	\int_{-1}^{2}2x^{2}\,dx=2\left[\frac{x^{3}}{3}\right]_{-1}^{2}=2\left(\frac83+\frac13\right)=6 .
+	\]
+	故原积分 $=\frac52+6=\frac{17}{2}$。
 }
 
 
@@ -126,7 +231,18 @@
 设曲线 $y=x^{2}$ 和直线 $y=t(0<t<1)$ 分别于 $x=0, x=1$ 所围成的面积之和为 $S(t)$, 试判断 $S(t)$ 是否存在最小值, 若存在, 求出其最小值点。
 
 \banswer{
-	$S(t)_{\min }=\frac{1}{4}$
+	直线 $y=t$ 与抛物线 $y=x^{2}$ 在 $x=\sqrt{t}\in(0,1)$ 处相交，故面积之和为
+	\begin{align*}
+	S(t)&=\int_0^{\sqrt t}\left(t-x^{2}\right)dx+\int_{\sqrt t}^{1}\left(x^{2}-t\right)dx\\
+	&=\frac23t^{3/2}+\left(\frac13-t+\frac23t^{3/2}\right)
+	=\frac43t^{3/2}-t+\frac13 .
+	\end{align*}
+	求导，$S^{\prime}(t)=2\sqrt{t}-1$，在 $(0,1)$ 内唯一零点 $t=\frac14$；
+	且 $t<\frac14$ 时 $S^{\prime}<0$，$t>\frac14$ 时 $S^{\prime}>0$，故 $t=\frac14$ 是最小值点。
+	\[
+	S\left(\tfrac14\right)=\frac43\cdot\frac18-\frac14+\frac13=\frac16-\frac14+\frac13=\frac14 .
+	\]
+	所以 $S(t)$ 存在最小值，最小值点为 $t=\frac14$，且 $S(t)_{\min }=\frac{1}{4}$。
 }
 
 
@@ -162,7 +278,24 @@ $F'(\xi)=0$，即 $\xi f'(\xi)+f(\xi)=0$。
 
 
 \banswer{
-	令 $\sqrt{x^{2}+y^{2}}=e^{t}$，得$u(t)=\frac{1}{25} e^{5 t}+C_{1} t+C_{2}$
+	记 $r=\sqrt{x^{2}+y^{2}}$，$t=\ln r$，则 $u=f(t)$ 只与 $r$ 有关。
+	极坐标下径向函数的 Laplace 算子为
+	$\Delta u=u_{rr}+\frac1r u_r$，而
+	\[
+	u_r=\frac{f^{\prime}(t)}{r},\qquad
+	u_{rr}=\frac{f^{\prime\prime}(t)-f^{\prime}(t)}{r^{2}} ,
+	\]
+	故
+	\[
+	\Delta u=\frac{f^{\prime\prime}-f^{\prime}}{r^{2}}+\frac{f^{\prime}}{r^{2}}
+	=\frac{f^{\prime\prime}(t)}{r^{2}} .
+	\]
+	代入条件 $\Delta u=r^{3}$ 得 $f^{\prime\prime}(t)=r^{5}=e^{5t}$。连续积分两次：
+	\[
+	f^{\prime}(t)=\frac{e^{5t}}{5}+C_{1},\qquad
+	f(t)=\frac{1}{25} e^{5 t}+C_{1} t+C_{2} .
+	\]
+	即 $f(t)=\frac{1}{25}e^{5t}+C_1t+C_2$（$C_1,C_2$ 为任意常数）。
 }
 
 
@@ -172,7 +305,16 @@ $F'(\xi)=0$，即 $\xi f'(\xi)+f(\xi)=0$。
 计算二重积分 $I=\iint_{D} \sqrt{1-y^{2}} d x d y$, 其中 $D$ 为 $x^{2}+y^{2}=1(y>0)$ 与 $y=|x|$ 围成区域。
 
 \banswer{
-	$2-\sqrt{2}$
+	$D$ 是单位圆内、位于两直线 $y=x$ 与 $y=-x$ 上方的区域（即 $\theta\in\left[\frac\pi4,\frac{3\pi}{4}\right]$ 的扇形）。
+	按 $y$ 先积 $x$：当 $0\leqslant y\leqslant\frac{1}{\sqrt2}$ 时 $-y\leqslant x\leqslant y$，
+	当 $\frac{1}{\sqrt2}\leqslant y\leqslant1$ 时 $-\sqrt{1-y^{2}}\leqslant x\leqslant\sqrt{1-y^{2}}$。故
+	\begin{align*}
+	I&=\int_0^{1/\sqrt2}\sqrt{1-y^{2}}\cdot2y\,dy+\int_{1/\sqrt2}^{1}\sqrt{1-y^{2}}\cdot2\sqrt{1-y^{2}}\,dy\\
+	&=\left[-\frac23\left(1-y^{2}\right)^{3/2}\right]_0^{1/\sqrt2}+2\left[y-\frac{y^{3}}{3}\right]_{1/\sqrt2}^{1}\\
+	&=\left(\frac23-\frac{\sqrt2}{6}\right)+\left(\frac43-\frac{5\sqrt2}{6}\right)
+	=2-\sqrt{2} .
+	\end{align*}
+	（数值校验：$2-\sqrt2\approx0.5858$，与数值积分一致。）
 }
 
 
@@ -182,7 +324,33 @@ $F'(\xi)=0$，即 $\xi f'(\xi)+f(\xi)=0$。
 求微分方程 $y^{\prime}+y=y^{2}(\cos x-\sin x)$ 的通解。
 
 \banswer{
-	$u(x)=-\sin x e^{x}+C$
+	这是 $n=2$ 的 Bernoulli 方程。两端同除 $y^{2}$（$y\not\equiv0$）：
+	\[
+	y^{-2}y^{\prime}+y^{-1}=\cos x-\sin x .
+	\]
+	令 $u=y^{-1}$，则 $u^{\prime}=-y^{-2}y^{\prime}$，方程化为一阶线性方程
+	\[
+	-u^{\prime}+u=\cos x-\sin x,\qquad\text{即}\qquad u^{\prime}-u=\sin x-\cos x .
+	\]
+	取积分因子 $e^{-x}$，得 $\left(ue^{-x}\right)^{\prime}=e^{-x}(\sin x-\cos x)$。
+	注意到 $\left(-e^{-x}\sin x\right)^{\prime}=e^{-x}(\sin x-\cos x)$，故
+	\[
+	ue^{-x}=-e^{-x}\sin x+C\quad\Longrightarrow\quad u=-\sin x+Ce^{x} .
+	\]
+	回代 $u=\frac1y$，得通解
+	\[
+	\frac{1}{y}=Ce^{x}-\sin x,\qquad\text{即}\qquad y=\frac{1}{Ce^{x}-\sin x} ,
+	\]
+	另有奇解 $y\equiv0$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案写作 $u(x)=-\sin x\,e^{x}+C$，有误（把 $Ce^{x}$ 误作 $e^{x}\sin x$），
+	且只给出 $u$ 而未回代成 $y$。正确结果为 $\frac1y=Ce^{x}-\sin x$；
+	代入原方程验证：由 $w=Ce^{x}-\sin x$、$y=\frac1w$ 得
+	$y^{\prime}+y=\frac{-w^{\prime}+w}{w^{2}}=\frac{\cos x-\sin x}{w^{2}}=y^{2}(\cos x-\sin x)$，
+	恒等成立（数值校验亦相符）。
+	}\par
 }
 
 
@@ -192,7 +360,21 @@ $F'(\xi)=0$，即 $\xi f'(\xi)+f(\xi)=0$。
 求级数 $\sum\limits_{n=1}^{\infty}(-1)^{n-1} n(n+1) x^{n}$ 在收敛区间 $(-1,1)$ 内的核函数 $S(x)$, 并求数项级数 $\sum\limits_{n=1}^{\infty}(-1)^{n-1} \frac{n(n+1)}{3^{n}}$ 的和。
 
 \banswer{
-	$ S(x) =\frac{2 x}{(1+x)^{3}}$，$\sum_{n=1}^{\infty}(-1)^{n-1} n(n+1)\left(\frac{1}{3}\right)^{n}=\frac{9}{32}$
+	先求辅助和。在 $|t|<1$ 内由 $\sum\limits_{n=0}^{\infty}t^{n}=\frac{1}{1-t}$ 逐项求导两次得
+	$\sum\limits_{n=1}^{\infty}n(n+1)t^{n-1}=\frac{2}{(1-t)^{3}}$，故
+	\[
+	\sum_{n=1}^{\infty}n(n+1)t^{n}=\frac{2t}{(1-t)^{3}} .
+	\]
+	把 $t=-x$ 代入，并注意 $(-1)^{n-1}=-(-1)^{n}$：
+	\begin{align*}
+	S(x)&=\sum_{n=1}^{\infty}(-1)^{n-1}n(n+1)x^{n}=-\sum_{n=1}^{\infty}n(n+1)(-x)^{n}\\
+	&=-\frac{-2x}{(1+x)^{3}}=\frac{2 x}{(1+x)^{3}} ,\qquad x\in(-1,1).
+	\end{align*}
+	再取 $x=\frac13\in(-1,1)$：
+	\[
+	\sum_{n=1}^{\infty}(-1)^{n-1} n(n+1)\left(\frac{1}{3}\right)^{n}
+	=S\!\left(\frac13\right)=\frac{2/3}{\left(4/3\right)^{3}}=\frac23\cdot\frac{27}{64}=\frac{9}{32} .
+	\]
 }
 
 
@@ -231,7 +413,41 @@ $\bigl((1+x)e^x q(x)\bigr)'=e^x\bigl[(1+x)q'+(2+x)q\bigr]=0$，
 
 
 \banswer{
-$g(x)=C_{1} e^{x}+C_{2} e^{-x}+\frac{1}{2} x e^{x}$，$f(x)=g^{\prime}(x)=C_{1} e^{x}-C_{2} e^{-x}+\frac{1}{2}\left(x e^{x}+e^{x}\right)$	
+	曲线积分沿\emph{任一}简单闭曲线都为零，等价于被积表达式为全微分，即 $\frac{\partial Q}{\partial x}=\frac{\partial P}{\partial y}$。记
+	\[
+	P=y^{2}f(x)+2ye^{x}+2yg(x),\qquad Q=2yg(x)+2f(x) ,
+	\]
+	则
+	\[
+	\frac{\partial P}{\partial y}=2yf(x)+2e^{x}+2g(x),\qquad
+	\frac{\partial Q}{\partial x}=2yg^{\prime}(x)+2f^{\prime}(x) .
+	\]
+	两式对一切 $x,y$ 相等，比较 $y$ 的系数与常数项，得方程组
+	\[
+	f(x)=g^{\prime}(x),\qquad f^{\prime}(x)=e^{x}+g(x) .
+	\]
+	消去 $f$ 得 $g^{\prime\prime}-g=e^{x}$。齐次解为 $C_{1}e^{x}+C_{2}e^{-x}$；
+	因 $1$ 是特征根，特解取 $Axe^{x}$，代入得 $2Ae^{x}=e^{x}$，$A=\frac12$。故
+	\[
+	g(x)=C_{1} e^{x}+C_{2} e^{-x}+\frac{1}{2} x e^{x},\qquad
+	f(x)=g^{\prime}(x)=C_{1} e^{x}-C_{2} e^{-x}+\frac{1}{2}\left(x e^{x}+e^{x}\right).
+	\]
+	最后用 $f(0)=g(0)=0$ 定常数：
+	\[
+	g(0)=C_{1}+C_{2}=0,\qquad f(0)=C_{1}-C_{2}+\frac12=0
+	\quad\Longrightarrow\quad C_{1}=-\frac14,\ C_{2}=\frac14 .
+	\]
+	所以
+	\[
+	g(x)=\frac{1}{2}xe^{x}+\frac{1}{4}\left(e^{-x}-e^{x}\right),\qquad
+	f(x)=\frac{1}{2}xe^{x}+\frac{1}{4}\left(e^{x}-e^{-x}\right).
+	\]
+	（校验：$f=g^{\prime}$ 且 $f^{\prime}-g=e^{x}$ 均成立，$f(0)=g(0)=0$。）
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案只给到含 $C_1,C_2$ 的通解，未按题目要求用 $f(0)=g(0)=0$ 定出常数。
+	}\par
 }
 
 	

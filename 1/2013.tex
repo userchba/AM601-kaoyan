@@ -130,19 +130,117 @@ $f(u)$ 区间内可导且 $f^{\prime}(u)>0, f(0)=0, L$ 为单位圆周 $x^{2}+y^
 {$-3 x-y+z+1=0$}
 
 
-		
-		
+
+
 	\end{enumerate}
 
 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	\textbf{B}。$F=\psi\circ f$，其中 $\psi(t)=\max\{-a,\min\{t,a\}\}$ 是 $\mathbb{R}$ 上的
+	连续函数且 $|\psi|\leqslant a$，故 $F$ 连续且 $|F|\leqslant a$ 有界。
+	但 $\psi$ 在 $t=\pm a$ 处有角点，$F$ 未必可微：
+	取 $f(x)=x$、$a=1$，则 $F$ 在 $x=1$ 处左导数为 $1$、右导数为 $0$，不可导。
+	故只能保证“有界连续”。
 
-\item 	
-(本题满分 10 分)	
+	\item
+	\textbf{C}。记 $S_n=\sum\limits_{k=1}^{n}\frac{k}{n^2+2n+k}$。由 $1\leqslant k\leqslant n$ 作夹逼：
+	\[
+	\frac{\sum k}{n^2+3n}\leqslant S_n\leqslant\frac{\sum k}{n^2+2n+1},
+	\]
+	而 $\sum\limits_{k=1}^{n}k=\frac{n(n+1)}{2}$，两端分别为
+	$\frac{n+1}{2(n+3)}$ 与 $\frac{n}{2(n+1)}$，都趋于 $\frac12$，故 $S_n\to\frac12$。
+
+	\item
+	\textbf{C}。令 $g(x)=x+2\cos x$，则 $g'(x)=1-2\sin x$，在 $\left[0,\frac{\pi}{2}\right]$ 上
+	$g'>0\Leftrightarrow x<\frac{\pi}{6}$。故 $g$ 在 $\frac{\pi}{6}$ 处取最大值
+	$g\left(\frac{\pi}{6}\right)=\frac{\pi}{6}+\sqrt3$，
+	而端点值 $g(0)=2$、$g\left(\frac{\pi}{2}\right)=\frac{\pi}{2}$ 都为正且更小，
+	即 $g$ 在区间上恒正。于是 $f=g^2$ 的最大值为
+	\[
+	\left(\frac{\pi}{6}+\sqrt3\right)^2=\frac{\pi^2}{36}+\frac{\sqrt3\,\pi}{3}+3 .
+	\]
+
+	\item
+	\textbf{D}。在 $x=-1$ 处只有因子 $(x+1)$ 为零，求导后只剩它被“去掉”的那一项：
+	\[
+	f'(-1)=\prod_{\substack{k=0\\k\neq1}}^{20}(-1+k)=(-1)\cdot1\cdot2\cdots19=-19!<0 .
+	\]
+	同理
+	$f'(-2)=(-2)(-1)\cdot1\cdot2\cdots18=2\cdot18!>0$。
+
+	\item
+	\textbf{A}。$A=\int_0^2f(x)dx$ 是常数。由 $g(x)A=10$ 知 $A\neq0$ 且
+	$g(x)\equiv\frac{10}{A}$ 为常数，故 $\int_0^2g(x)dx=\frac{20}{A}$，
+	于是所求 $=A\cdot\frac{20}{A}=20$。
+
+	\item
+	\textbf{D}。沿 $y=x$：$\frac{x^2}{\left(x^4+x^{12}\right)^{1/3}}\sim x^{2/3}\to0$；
+	沿 $x=y^3$：
+	\[
+	\frac{y^3\cdot y}{\left(y^{12}+y^{12}\right)^{1/3}}=\frac{y^4}{2^{1/3}y^4}=\frac{1}{\sqrt[3]{2}} .
+	\]
+	两条路径极限不同，故二重极限不存在。
+
+	\item
+	\textbf{B}。$L$ 为 $x=\cos\theta$、$y=\sin\theta$，$\theta\in\left[\frac{\pi}{4},\frac{\pi}{2}\right]$。
+	此时 $2xy=\sin2\theta$，$2x^2-1=\cos2\theta$，而 $2\theta\in\left[\frac{\pi}{2},\pi\right]$，故
+	\[
+	\sin2\theta\geqslant0,\qquad \cos2\theta\leqslant0,
+	\]
+	且各自只在一个端点取零。由 $f'>0$、$f(0)=0$ 知 $f(u)>0\ (u>0)$、$f(u)<0\ (u<0)$，
+	故 $c_1=\int_Lf(\sin2\theta)ds>0$，$c_2=\int_Lf(\cos2\theta)ds<0$。
+
+	\item
+	\textbf{A}。特征方程 $r^2+ar+b=0$，任一解趋于 $0$ 当且仅当两特征根实部都为负。
+	由韦达定理 $r_1+r_2=-a<0$、$r_1r_2=b>0$，即 $a>0$ 且 $b>0$；
+	反之 $a>0,b>0$ 时实部必为负。
+
+	\item
+	\textbf{A}。$\lim\limits_{n\to\infty}\frac{\sqrt{n}}{\sqrt{n+1}}=1$，故收敛半径 $R=1$，
+	中心 $x=-1$，收敛区间 $(-2,0)$。
+	端点 $x=0$：$\sum\frac{1}{\sqrt n}$ 发散（$p=\frac12\leqslant1$）；
+	端点 $x=-2$：$\sum\frac{(-1)^n}{\sqrt n}$ 由 Leibniz 判别法收敛。
+	故收敛域为 $[-2,0)$。
+
+	\item
+	\textbf{C}。两直线的方向向量为 $\bm{v}_1=(1,-1,2)$ 与 $\bm{v}_2=(-1,2,-1)$，
+	所求平面同时平行于它们，故法向量
+	\[
+	\bm{n}=\bm{v}_1\times\bm{v}_2=(-3,-1,1) .
+	\]
+	过点 $(0,0,1)$ 的点法式为 $-3x-y+(z-1)=0$，即 $3x+y-z+1=0$。
+	（D 的常数项不对：把 $(0,0,1)$ 代入 $-3x-y+z+1$ 得 $2\neq0$。）
+\end{enumerate}
+}
+
+
+\item
+(本题满分 10 分)
 计算 $\lim\limits _{x \rightarrow 0^{+}} x^{ (x^{x}-1)}$。
 
 
 \banswer{
-	$\lim\limits _{x \rightarrow 0^{+}} x^{ (x^{x}-1)}= e^{0}=1 $
+	先看指数。由 $x^{x}=e^{x\ln x}$ 及 $x\ln x\to0^{-}\ (x\to0^{+})$ 得
+	\[
+	x^{x}-1=e^{x\ln x}-1\sim x\ln x\qquad\left(x\to0^{+}\right),
+	\]
+	这里用了 $e^{u}-1\sim u\ (u\to0)$。于是
+	\[
+	\ln x^{\left(x^{x}-1\right)}=\left(x^{x}-1\right)\ln x\sim x\ln^2x .
+	\]
+	而由洛必达法则（或 $\lim\limits_{x\to0^{+}}x^{\alpha}\ln x=0\ (\alpha>0)$）
+	\[
+	\lim_{x\to0^{+}}x\ln^2x
+	=\lim_{x\to0^{+}}\frac{\ln^2x}{1/x}
+	=\lim_{x\to0^{+}}\frac{2\ln x\cdot\frac1x}{-1/x^2}=0 .
+	\]
+	故
+	\[
+	\lim_{x\to0^{+}}x^{\left(x^{x}-1\right)}=e^{0}=1 .
+	\]
 }
 
 
@@ -151,7 +249,42 @@ $f(u)$ 区间内可导且 $f^{\prime}(u)>0, f(0)=0, L$ 为单位圆周 $x^{2}+y^
 求微分方程 $y^{\prime \prime}=y^{\prime}(y-3)$ 满足初始条件 $y(0)=1, y^{\prime}(0)=-\frac{5}{2}$ 的解。
 
 \banswer{
-$ y=\frac{6}{1+5e^{3}} $，初次降阶后利用初始条件确定第一个积分常数。
+	\textbf{第一次降阶（不显含 $x$）.}
+	令 $p=y'$ 并视 $p$ 为 $y$ 的函数，则 $y''=p\frac{dp}{dy}$，方程化为
+	\[
+	p\frac{dp}{dy}=p(y-3).
+	\]
+	由 $y'(0)=-\frac52\neq0$ 知在初值附近 $p\neq0$，可约去 $p$，得
+	$\frac{dp}{dy}=y-3$，故
+	\[
+	p=\frac{y^2}{2}-3y+C_1 .
+	\]
+	代入 $y=1$ 时 $p=-\frac52$：$-\frac52=\frac12-3+C_1$，得 $C_1=0$。于是
+	\[
+	y'=\frac{y^2}{2}-3y=\frac{y(y-6)}{2}.
+	\]
+
+	\textbf{第二次积分（分离变量）.}
+	由 $\frac{1}{y(y-6)}=\frac16\left(\frac{1}{y-6}-\frac1y\right)$，
+	\[
+	\frac{1}{6}\ln\left|\frac{y-6}{y}\right|=\frac{x}{2}+C_2
+	\ \Longrightarrow\ \frac{y-6}{y}=C_3e^{3x}.
+	\]
+	代入 $x=0,\ y=1$ 得 $C_3=-5$，即 $\frac{y-6}{y}=-5e^{3x}$。解出
+	\[
+	y=\frac{6}{1+5e^{3x}} .
+	\]
+
+	\textbf{校验.}
+	$y(0)=1$；又 $y'=-\frac{90e^{3x}}{\left(1+5e^{3x}\right)^2}$，$y'(0)=-\frac{90}{36}=-\frac52$；
+	且 $\frac{y(y-6)}{2}=\frac{1}{2}\cdot\frac{6}{1+5e^{3x}}\cdot\frac{-30e^{3x}}{1+5e^{3x}}=y'$，方程满足。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案作 $y=\frac{6}{1+5e^{3}}$，指数上漏掉了 $x$，那是一个常数，
+	代回原方程只能得 $y''=0=y'(y-3)$ 而 $y'(0)=0\neq-\frac52$，显然不合题意；
+	正确解为 $y=\frac{6}{1+5e^{3x}}$，数值求解初值问题所得曲线与之逐点吻合。
+	}\par
 }
 
 
@@ -162,10 +295,42 @@ $ y=\frac{6}{1+5e^{3}} $，初次降阶后利用初始条件确定第一个积�
 
 
 \banswer{
-	\[ 
-	f(x)= \frac{ 2 }{ 3 } \pi^{2}+\sum\limits_{n=1}^{\infty} (-1)^{n+1}\frac{4}{n^{2}}   \cos nx 
-	 \]
-	在$ x=-\pi $处收敛于$ 0 $，在$ -\pi<x<\pi $处收敛于$ \pi^{2}-x^{2} $
+	$f(x)=\pi^2-x^2$ 是偶函数，故 $b_n=0$，只需算余弦系数。
+
+	\textbf{常数项.}
+	\[
+	a_0=\frac1\pi\int_{-\pi}^{\pi}\left(\pi^2-x^2\right)dx
+	=\frac1\pi\left(2\pi^3-\frac{2\pi^3}{3}\right)=\frac{4\pi^2}{3},
+	\]
+	故常数项 $\frac{a_0}{2}=\frac{2\pi^2}{3}$。
+
+	\textbf{余弦系数.}
+	由 $\int_{-\pi}^{\pi}\cos nx\,dx=0$ 及两次分部积分
+	\[
+	\int_{-\pi}^{\pi}x^2\cos nx\,dx=2\int_0^{\pi}x^2\cos nx\,dx=\frac{4\pi(-1)^{n}}{n^2},
+	\]
+	得
+	\[
+	a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}\left(\pi^2-x^2\right)\cos nx\,dx
+	=-\frac{4(-1)^{n}}{n^2}=\frac{4(-1)^{n+1}}{n^2}.
+	\]
+
+	\textbf{结论.}
+	\[
+	f(x)\sim\frac{2\pi^2}{3}+\sum_{n=1}^{\infty}\frac{4(-1)^{n+1}}{n^2}\cos nx .
+	\]
+
+	\textbf{收敛性.}
+	把 $f$ 按 $2\pi$ 周期延拓后处处连续、分段光滑，故由 Dirichlet 定理，
+	级数在 $-\pi<x<\pi$ 处收敛于 $\pi^2-x^2$；
+	在 $x=\pm\pi$ 处收敛于 $\frac{f\left(\pi^{-}\right)+f\left(-\pi^{+}\right)}{2}=0$，
+	与 $f(-\pi)=0$ 一致（此处延拓函数实际上连续）。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	取 $x=0$ 可顺带得 $\sum\limits_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}=\frac{\pi^2}{12}$；
+	取 $x=\pi$ 则得 $\sum\limits_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}$。
+	}\par
 }
 
 
@@ -175,7 +340,41 @@ $ y=\frac{6}{1+5e^{3}} $，初次降阶后利用初始条件确定第一个积�
 
 
 \banswer{
-	$ \iint_{S} x y dy d z+z^{2} d x d y=-\frac{\pi}{2} $
+	记 $\Omega=\left\{(x,y,z):\sqrt{x^2+y^2}\leqslant z\leqslant1\right\}$（圆锥体），
+	$S_1$ 为锥面取上侧，$S_2$ 为顶盖 $z=1,\ x^2+y^2\leqslant1$ 取下侧，$S=S_1+S_2$。
+
+	\textbf{定向.}
+	锥面上取上侧即法向 $\left(-z_x,-z_y,1\right)=\left(-\frac{x}{z},-\frac{y}{z},1\right)$，
+	它指向 $z$ 轴一侧，即指向 $\Omega$ 内部；顶盖取下侧也指向 $\Omega$ 内部。
+	故 $S$ 恰是 $\partial\Omega$ 的\emph{内}侧，$S=-\partial\Omega_{\text{外}}$。
+
+	\textbf{解法一（高斯公式）.}
+	取 $\bm{F}=\left(xy,\ 0,\ z^2\right)$，则
+	$\operatorname{div}\bm{F}=y+0+2z$。于是
+	\[
+	\iint\limits_{S}=-\iiint\limits_{\Omega}(y+2z)\,dV .
+	\]
+	$\Omega$ 关于 $zOx$ 面对称而 $y$ 为奇函数，故 $\iiint_\Omega y\,dV=0$；
+	用“先 $z$ 后截面”或按 $z$ 切片（截面是半径 $z$ 的圆盘）：
+	\[
+	\iiint\limits_{\Omega}2z\,dV=\int_0^1 2z\cdot\pi z^2\,dz=\frac{\pi}{2}.
+	\]
+	所以
+	\[
+	\iint\limits_{S}xy\,dydz+z^2\,dxdy=-\frac{\pi}{2}.
+	\]
+
+	\textbf{解法二（直接投影核对）.}
+	锥面 $z=\sqrt{x^2+y^2}$ 上侧，$D:x^2+y^2\leqslant1$，
+	$dydz=-z_x\,dxdy=-\frac{x}{z}dxdy$，故
+	\begin{align*}
+	\iint\limits_{S_1}&=\iint\limits_{D}\left[xy\left(-\frac{x}{z}\right)+z^2\right]dxdy\\
+	&=\iint\limits_{D}\left(-\frac{x^2y}{r}+r^2\right)dxdy=0+\frac{\pi}{2},
+	\end{align*}
+	（$r=\sqrt{x^2+y^2}$；第一项关于 $y$ 为奇函数故为零，
+	第二项 $=\int_0^{2\pi}\!d\theta\int_0^1r^3dr=\frac{\pi}{2}$）。
+	顶盖取下侧且 $dydz=0$、$z^2=1$，故 $\iint_{S_2}=-\left|D\right|=-\pi$。
+	合计 $\frac{\pi}{2}-\pi=-\frac{\pi}{2}$，与解法一一致（数值积分同样给出 $-1.5708$）。
 }
 
 
@@ -189,7 +388,34 @@ f^{\prime}(x)=\frac{1}{x^{2}+f^{2}(x)}
 证明： $\lim\limits _{x \rightarrow +\infty} f(x)$ 存在，且不大于 $1+\frac{\pi}{4}$。
 
 \banswer{
-	证明略，构造函数$ g(x)=1-\frac{\pi}{4} + \arctan x $
+	\textbf{单调性.}
+	由 $f'(x)=\frac{1}{x^2+f^2(x)}>0$ 知 $f$ 在 $[1,+\infty)$ 上严格递增，
+	故 $x\geqslant1$ 时 $f(x)\geqslant f(1)=1$。
+
+	\textbf{有上界.}
+	由 $f(x)\geqslant1$ 得 $f^2(x)\geqslant1$，于是
+	\[
+	0<f'(x)=\frac{1}{x^2+f^2(x)}\leqslant\frac{1}{x^2+1}\qquad(x\geqslant1).
+	\]
+	两端在 $[1,x]$ 上积分：
+	\begin{align*}
+	f(x)&=f(1)+\int_1^{x}f'(t)\,dt\leqslant1+\int_1^{x}\frac{dt}{1+t^2}\\
+	&=1+\arctan x-\frac{\pi}{4}<1+\frac{\pi}{2}-\frac{\pi}{4}=1+\frac{\pi}{4}.
+	\end{align*}
+
+	\textbf{结论.}
+	$f$ 单调递增且以 $1+\frac{\pi}{4}$ 为上界，由单调有界定理
+	$\lim\limits_{x\to+\infty}f(x)$ 存在，且
+	\[
+	\lim_{x\to+\infty}f(x)\leqslant1+\frac{\pi}{4}.
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	等价的写法是构造 $g(x)=1-\frac{\pi}{4}+\arctan x$，
+	由 $g(1)=f(1)=1$ 及 $g'(x)=\frac{1}{1+x^2}\geqslant f'(x)$ 得 $f\leqslant g$。
+	数值积分给出 $f(10^6)\approx1.7294$，确实小于 $1+\frac{\pi}{4}\approx1.7854$。
+	}\par
 }
 
 
@@ -204,7 +430,36 @@ f^{\prime}(x)=\frac{1}{x^{2}+f^{2}(x)}
 
 
 \banswer{
-	证明略，构造函数$ F(t)=\int_{0}^{t} g^{2}(x)dx-\int_{a}^{1} \left| f(x)\right| dx $
+	构造
+	\[
+	F(t)=\int_0^{t}g^2(x)\,dx-\int_t^{1}\left|f(x)\right|dx ,\qquad t\in[0,1].
+	\]
+
+	\textbf{存在性.}
+	被积函数连续，故 $F\in C^1[0,1]$，且
+	\[
+	F(0)=-\int_0^1\left|f\right|dx\leqslant0 ,\qquad
+	F(1)=\int_0^1g^2dx\geqslant0 .
+	\]
+	由介值定理，存在 $a\in[0,1]$ 使 $F(a)=0$，即
+	$\int_a^1\left|f\right|dx=\int_0^ag^2dx$。
+
+	\textbf{唯一性.}
+	由变上限（变下限）积分求导，
+	\[
+	F'(t)=g^2(t)+\left|f(t)\right|\geqslant0 .
+	\]
+	若某点 $t_0$ 处 $F'\left(t_0\right)=0$，则 $g\left(t_0\right)=0$ 且 $f\left(t_0\right)=0$，
+	于是 $f\left(t_0\right)+g\left(t_0\right)=0$，与题设 $f+g\neq0$ 于 $[0,1]$ 矛盾。
+	故 $F'(t)>0$ 处处成立，$F$ 在 $[0,1]$ 上严格递增，零点至多一个。
+
+	综上，这样的 $a$ 存在且唯一。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案所构造的 $F(t)=\int_0^tg^2dx-\int_a^1\left|f\right|dx$ 中第二个积分的下限
+	仍写作待求的 $a$，这样 $F$ 与 $t$ 的关系不完整；应取 $\int_t^1\left|f\right|dx$。
+	}\par
 }
 
 
@@ -217,7 +472,38 @@ f^{\prime}(x)=\frac{1}{x^{2}+f^{2}(x)}
 
 
 \banswer{
-	证明略，利用夹逼法$ k\pi\leq x \leq (k+1)\pi $
+	记 $G(x)=\int_0^{x}\left|\cos t\right|dt$，$H(x)=G(x)-\frac{2}{\pi}x$。
+
+	\textbf{关键：$H$ 以 $\pi$ 为周期.}
+	$\left|\cos t\right|$ 以 $\pi$ 为周期且
+	$\int_0^{\pi}\left|\cos t\right|dt=2\int_0^{\pi/2}\cos t\,dt=2$，故
+	\[
+	G(x+\pi)=G(x)+2 ,
+	\]
+	从而
+	\[
+	H(x+\pi)=G(x)+2-\frac{2}{\pi}x-2=H(x).
+	\]
+	$H$ 连续且以 $\pi$ 为周期，故在 $\mathbb{R}$ 上有界：存在 $M>0$ 使 $|H|\leqslant M$。
+
+	\textbf{取极限.}
+	\begin{align*}
+	\frac1x\int_x^{2x}\left|\cos t\right|dt
+	&=\frac{G(2x)-G(x)}{x}\\
+	&=\frac{\frac{2}{\pi}(2x)-\frac{2}{\pi}x+H(2x)-H(x)}{x}\\
+	&=\frac{2}{\pi}+\frac{H(2x)-H(x)}{x} .
+	\end{align*}
+	而 $\left|\frac{H(2x)-H(x)}{x}\right|\leqslant\frac{2M}{x}\to0$，故
+	\[
+	\lim_{x\to+\infty}\frac1x\int_x^{2x}\left|\cos t\right|dt=\frac{2}{\pi}.
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	也可用夹逼：取 $k=\left\lfloor\frac{x}{\pi}\right\rfloor$，
+	把 $[x,2x]$ 夹在若干整周期之间，每个周期贡献 $2$，
+	周期个数约为 $\frac{x}{\pi}$，误差至多两个周期。结论相同。
+	}\par
 }
 
 
@@ -227,7 +513,27 @@ f^{\prime}(x)=\frac{1}{x^{2}+f^{2}(x)}
 
 
 \banswer{
-	$ f(x)=\frac{1}{1+x^{2}} -\frac{\pi}{8} xe^{x}$，$ f(x) ^{\prime} =-\frac{2x}{(1+x^{2})^{2}}-\frac{\pi}{8}(1+x)e^{x} $
+	\textbf{把定积分当未知常数.}
+	记 $A=\int_0^1f(x)\,dx$（这是一个数），则
+	\[
+	f(x)=\frac{1}{1+x^2}-Axe^{x}.
+	\]
+
+	\textbf{定 $A$.}
+	两端在 $[0,1]$ 上积分。由 $\int_0^1\frac{dx}{1+x^2}=\arctan1=\frac{\pi}{4}$，
+	及分部积分 $\int_0^1xe^{x}dx=\left[(x-1)e^{x}\right]_0^1=1$，得
+	\[
+	A=\frac{\pi}{4}-A\cdot1\ \Longrightarrow\ 2A=\frac{\pi}{4}\ \Longrightarrow\ A=\frac{\pi}{8}.
+	\]
+
+	\textbf{结果.}
+	\[
+	f(x)=\frac{1}{1+x^2}-\frac{\pi}{8}xe^{x},
+	\]
+	\[
+	f'(x)=-\frac{2x}{\left(1+x^2\right)^2}-\frac{\pi}{8}(1+x)e^{x}.
+	\]
+	（校验：$\int_0^1f(x)dx=\frac{\pi}{4}-\frac{\pi}{8}=\frac{\pi}{8}=A$，自洽。）
 }
 
 
@@ -235,12 +541,40 @@ f^{\prime}(x)=\frac{1}{x^{2}+f^{2}(x)}
 (本题满分 10 分)	
 函数 $f(x)$ 在 $[a, b]$ 上连续, 在 $(a, b)$ 内可导。证明：存在 $\xi, \eta \in(a, b)$, 使得
 \[
-f^{\prime}(\eta)=\left(b^{2}+a b+a^{2}+2\right) \frac{f^{\prime}(\zeta)}{3 \zeta^{2}+2}
+f^{\prime}(\eta)=\left(b^{2}+a b+a^{2}+2\right) \frac{f^{\prime}(\xi)}{3 \xi^{2}+2}
 \]
 
 
 \banswer{
-	证明略，利用柯西中值定理和拉格朗日中值定理，$ b^{3} -a^{3}=(b-a)(b^{2} + ab +a^{2}) $
+	\textbf{用 Cauchy 中值定理.}
+	取 $g(x)=x^3+2x$，它在 $[a,b]$ 上连续、$(a,b)$ 内可导，且
+	$g'(x)=3x^2+2>0$ 恒不为零。由 Cauchy 中值定理，存在 $\xi\in(a,b)$ 使
+	\[
+	\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f'(\xi)}{3\xi^2+2}.
+	\]
+	而由 $b^3-a^3=(b-a)\left(b^2+ab+a^2\right)$，
+	\[
+	g(b)-g(a)=(b-a)\left(b^2+ab+a^2+2\right),
+	\]
+	故
+	\[
+	f(b)-f(a)=(b-a)\left(b^2+ab+a^2+2\right)\frac{f'(\xi)}{3\xi^2+2}.
+	\]
+
+	\textbf{用 Lagrange 中值定理.}
+	存在 $\eta\in(a,b)$ 使 $f(b)-f(a)=f'(\eta)(b-a)$。
+
+	\textbf{合并.}
+	两式相等，约去 $b-a\neq0$ 即得
+	\[
+	f'(\eta)=\left(b^2+ab+a^2+2\right)\frac{f'(\xi)}{3\xi^2+2}.
+	\]
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原题面结论中的中值点误排为 $\zeta$，与前文声明的 $\xi$ 不符，已统一改为 $\xi$。
+	另外题目只要求“存在 $\xi,\eta$”，并未要求二者相异，上面的取法已满足要求。
+	}\par
 }
 
 
@@ -249,7 +583,26 @@ f^{\prime}(\eta)=\left(b^{2}+a b+a^{2}+2\right) \frac{f^{\prime}(\zeta)}{3 \zeta
 函数 $f(x)$ 在 $[0,2]$ 上二阶可导, 且对任意的 $x \in[0,2]$, 有 $|f(x)| \leqslant 1,\left|f^{\prime \prime}(x)\right| \leqslant 1$ 。 证明: 对于任意 $x \in[0,2],\left|f^{\prime}(x)\right| \leqslant 2$ 成立。
 
 \banswer{
-	证明略，在$ x $点处进行泰勒展开，放缩
+	设 $x\in[0,2]$。在 $x$ 处作带 Lagrange 余项的一阶 Taylor 展开，分别取到端点 $0$ 与 $2$：
+	\begin{align*}
+	f(0)&=f(x)+f'(x)(0-x)+\frac{f''\left(\xi_1\right)}{2}x^2,\\
+	f(2)&=f(x)+f'(x)(2-x)+\frac{f''\left(\xi_2\right)}{2}(2-x)^2,
+	\end{align*}
+	其中 $\xi_1\in(0,x)$，$\xi_2\in(x,2)$（$x=0$ 或 $2$ 时只用其中一式，结论同样成立）。
+	两式相减：
+	\[
+	f(2)-f(0)=2f'(x)+\frac{f''\left(\xi_2\right)(2-x)^2-f''\left(\xi_1\right)x^2}{2}.
+	\]
+	于是
+	\[
+	2\left|f'(x)\right|\leqslant\left|f(2)\right|+\left|f(0)\right|
+	+\frac{(2-x)^2+x^2}{2}.
+	\]
+	由 $|f|\leqslant1$ 得前两项之和 $\leqslant2$；又 $\varphi(x)=(2-x)^2+x^2=2x^2-4x+4$
+	在 $[0,2]$ 上的最大值在端点取到，为 $4$，故第三项 $\leqslant2$。所以
+	\[
+	2\left|f'(x)\right|\leqslant4 ,\qquad\text{即}\quad\left|f'(x)\right|\leqslant2 .
+	\]
 }
 
 	

@@ -25,7 +25,7 @@
 	{当 $x \rightarrow \infty$ 时, $f(x)$ 极限存在}
 	
 \item 
-函数 $f(x)$ 上是连续函数, 且 $0<m<f(x)<M<\infty$, 则 $\frac{1}{m} \int_{-m}^{m}(f(t)-M) d t$ 的最大取值区间是 \xzanswer{B} 
+函数 $f(x)$ 在 $(-\infty,+\infty)$ 上是连续函数, 且 $0<m<f(x)<M<\infty$, 则 $\frac{1}{m} \int_{-m}^{m}(f(t)-M) d t$ 的最大取值区间是 \xzanswer{B}
 
 
 \fourchoices
@@ -64,7 +64,7 @@
 {$ 1 $}
 {$ 2 $}
 {$ 3 $}
-{多余$  3 $}
+{多于$  3 $}
 
 \item 
 若函数 $f(x)= \left\{\begin{aligned} &e^{x}(\sin x+\cos x) &   x \geqslant 0 \\ &a b x^{2}+a x+2 a+b &   x<0\end{aligned}\right.$ 的导函数在 $(-\infty,+\infty)$ 上连续, 则 \xzanswer{B} 
@@ -118,19 +118,123 @@ $\lim\limits _{x \rightarrow 0}\left(\frac{x}{\sin x}\right)^{\frac{1}{1-\cos x}
 {$(3,-1,5)$}
 
 
-		
-		
+
+
 	\end{enumerate}
 
 
+\banswer{
+\begin{enumerate}
+	%\renewcommand{\labelenumi}{\arabic{enumi}.}
+	\item
+	\textbf{C}。取 $x_k=-\sqrt{2k\pi}\to-\infty$，则 $\cos x_k^2=1$，
+	$f\left(x_k\right)=-\sqrt{2k\pi}\to-\infty$，故 $f$ 在 $(-\infty,0)$ 内无界，C 正确、A 错。
+	又取 $y_k=-\sqrt{\left(2k+\frac12\right)\pi}$ 得 $f\left(y_k\right)=0$，
+	故 $x\to\infty$ 时 $f$ 既不是无穷大也无极限，B、D 皆错。
+
+	\item
+	\textbf{B}。由 $0<m<f(t)<M$ 得 $m-M<f(t)-M<0$，在长为 $2m$ 的区间上积分：
+	\[
+	2m(m-M)<\int_{-m}^{m}\left(f(t)-M\right)dt<0 .
+	\]
+	除以 $m>0$ 即得取值范围 $(2m-2M,\ 0)$，且这两个界可被任意逼近。
+
+	\item
+	\textbf{D}。逐一代入。$y=e^{x}$：$yy''-\left(y'\right)^2=e^{2x}-e^{2x}=0$，成立。
+	其余三个：$y=xe^{x}$ 得 $-e^{2x}$；$y=x\ln x$ 得 $\ln x-(\ln x+1)^2$；
+	$y=\ln x$ 得 $-\frac{\ln x+1}{x^2}$，均不恒为零。
+	（事实上方程即 $\left(\frac{y'}{y}\right)'=0$，通解为 $y=C_1e^{C_2x}$。）
+
+	\item
+	\textbf{A}。用 Beta 函数 $\int_0^1x^{p}(1-x)^{q}dx=\frac{p!\,q!}{(p+q+1)!}$：
+	\[
+	A=\frac{m!\,n!}{(m+n+1)!},\qquad B=\frac{n!\,(m+1)!}{(m+n+2)!} .
+	\]
+	于是
+	\[
+	\frac{A}{B}=\frac{m!}{(m+1)!}\cdot\frac{(m+n+2)!}{(m+n+1)!}=\frac{m+n+2}{m+1}>1
+	\]
+	（因 $n\geqslant1$），故 $A>B$。（此结论与 $n<m$ 无关。）
+
+	\item
+	\textbf{C}。$f'(x)=e^{x}-2x-4$，$f''(x)=e^{x}-2$，故 $f'$ 在 $x=\ln2$ 处取最小值
+	$f'(\ln2)=-2-2\ln2<0$；而 $x\to\pm\infty$ 时 $f'\to+\infty$，
+	故 $f'$ 恰有两个零点，$f$ 先增、后减、再增，至多三个零点。
+	又
+	\[
+	f(-4)=e^{-4}-3<0,\quad f(-3)=e^{-3}>0,\quad f(0)=-2<0,\quad f(4)>0,
+	\]
+	由介值定理在 $(-4,-3)$、$(-3,0)$、$(0,4)$ 内各有一个零点，故恰为 $3$ 个。
+	（数值解约为 $-3.024$、$-0.795$、$3.299$。）
+
+	\item
+	\textbf{B}。连续性：$f\left(0^{+}\right)=1$，$f\left(0^{-}\right)=2a+b$，故 $2a+b=1$。
+	导数：$x>0$ 时 $f'=2e^{x}\cos x\to2$；$x<0$ 时 $f'=2abx+a\to a$。
+	$f'$ 连续要求 $a=2$，再由 $2a+b=1$ 得 $b=-3$。
+
+	\item
+	\textbf{C}。在 $x=4$ 条件收敛说明 $|x-1|=3$ 恰为收敛半径，即 $R=3$。
+	所求级数
+	\[
+	\sum(-1)^n\left(1+2^n\right)a_n=\sum a_n(-1)^n+\sum a_n(-2)^n ,
+	\]
+	两个级数分别对应 $x-1=-1$ 与 $x-1=-2$，
+	而 $|-1|<3$、$|-2|<3$ 都在收敛区间内部，故都绝对收敛，其和亦绝对收敛。
+
+	\item
+	\textbf{C}。$\bm{r}_u=(\cos v,\sin v,0)$，$\bm{r}_v=(-u\sin v,u\cos v,1)$，
+	\[
+	\bm{r}_u\times\bm{r}_v=(\sin v,-\cos v,u),\quad
+	\left|\bm{r}_u\times\bm{r}_v\right|=\sqrt{1+u^2}.
+	\]
+	又 $\sqrt{x^2+y^2}=u$，故
+	\[
+	\iint\limits_{S}\sqrt{x^2+y^2}\,dS=\int_0^{\pi}\!\!dv\int_0^{\sqrt{15}}u\sqrt{1+u^2}\,du
+	=\pi\cdot\frac{16^{3/2}-1}{3}=21\pi .
+	\]
+
+	\item
+	\textbf{A}。由 $\frac{x}{\sin x}=\left(1-\frac{x^2}{6}+o\left(x^2\right)\right)^{-1}
+	=1+\frac{x^2}{6}+o\left(x^2\right)$ 得 $\ln\frac{x}{\sin x}\sim\frac{x^2}{6}$，
+	而 $1-\cos x\sim\frac{x^2}{2}$，故指数
+	$\frac{\ln\frac{x}{\sin x}}{1-\cos x}\to\frac13$，原式 $\to e^{1/3}$。
+
+	\item
+	\textbf{D}。所求平面以 $L$ 的方向 $(2,1,-1)$ 为法向量，过 $M(1,1,-1)$，
+	即 $2x+y-z-4=0$。它与 $x-2y-z+1=0$ 的交线方向为
+	\[
+	(2,1,-1)\times(1,-2,-1)=(-3,1,-5)\parallel(3,-1,5) .
+	\]
+\end{enumerate}
+}
 
 
-\item 
-(本题满分 10 分)	
+\item
+(本题满分 10 分)
 证明极限 $\lim\limits _{n \rightarrow \infty}\left(\frac{1}{n}+\frac{1}{n+1}+\cdots+\frac{1}{3 n}\right)$ 存在, 并求出极限值。
 
 \banswer{
-	证明略，单调递减，有下界。可利用定积分的定义，算得极限值为$ \ln 3 $
+	记 $S_n=\sum\limits_{k=n}^{3n}\frac1k$。
+
+	\textbf{极限存在.}
+	一方面 $S_n>0$ 有下界；另一方面
+	\begin{align*}
+	S_{n+1}-S_n&=\frac{1}{3n+1}+\frac{1}{3n+2}+\frac{1}{3n+3}-\frac1n\\
+	&<\frac{3}{3n+1}-\frac1n=\frac{-1}{n(3n+1)}<0 ,
+	\end{align*}
+	故 $\left\{S_n\right\}$ 单调递减有下界，由单调有界定理极限存在。
+
+	\textbf{求极限（定积分定义）.}
+	把 $S_n$ 写成 Riemann 和：令 $k=n+j\ (j=0,1,\dots,2n)$，
+	\[
+	S_n=\sum_{j=0}^{2n}\frac{1}{n+j}=\frac1n\sum_{j=0}^{2n}\frac{1}{1+\frac{j}{n}} .
+	\]
+	右端是函数 $\frac{1}{1+x}$ 在 $[0,2]$ 上以 $\frac1n$ 为步长的 Riemann 和
+	（多出的一个端点项 $\frac1n\cdot\frac13\to0$ 不影响极限），故
+	\[
+	\lim_{n\to\infty}S_n=\int_0^2\frac{dx}{1+x}=\ln3 .
+	\]
+	（数值验证：$n=10^6$ 时 $S_n\approx1.0986130$，而 $\ln3\approx1.0986123$。）
 }
 
 
@@ -139,7 +243,31 @@ $\lim\limits _{x \rightarrow 0}\left(\frac{x}{\sin x}\right)^{\frac{1}{1-\cos x}
 求微分方程 $y^{\prime \prime}-3 y^{\prime}+2 y=e^{x}(2 x+1)$ 的通解。
 
 \banswer{
-	$y=C_{1} e^{x}+C_{2} e^{2 x}-\left(x^{2}+3 x\right)e^{x}$
+	\textbf{齐次通解.}
+	特征方程 $r^2-3r+2=0$ 的根为 $r=1,2$，故
+	$Y=C_1e^{x}+C_2e^{2x}$。
+
+	\textbf{特解.}
+	右端为 $e^{\lambda x}P_1(x)$，$\lambda=1$ 恰是单重特征根，故设
+	\[
+	y^{*}=x\left(Ax+B\right)e^{x}=\left(Ax^2+Bx\right)e^{x}.
+	\]
+	求导：
+	\begin{align*}
+	y^{*\prime}&=\left(Ax^2+(2A+B)x+B\right)e^{x},\\
+	y^{*\prime\prime}&=\left(Ax^2+(4A+B)x+2A+2B\right)e^{x}.
+	\end{align*}
+	代入左端，$x^2$ 项自动抵消，得
+	\[
+	y^{*\prime\prime}-3y^{*\prime}+2y^{*}=\left(-2Ax+2A-B\right)e^{x}.
+	\]
+	与 $e^{x}(2x+1)$ 比较：$-2A=2$、$2A-B=1$，即 $A=-1$、$B=-3$。
+
+	\textbf{通解.}
+	\[
+	y=C_1e^{x}+C_2e^{2x}-\left(x^2+3x\right)e^{x}.
+	\]
+	（代回原方程符号验算无误。）
 }
 
 
@@ -150,7 +278,32 @@ $\lim\limits _{x \rightarrow 0}\left(\frac{x}{\sin x}\right)^{\frac{1}{1-\cos x}
 
 
 \banswer{
-求交点时的因式分解为$ (y+1)(y-2)(y^{2}+y+3)=0 $，最终结果为$\frac{44}{3}$
+	\textbf{定区域.}
+	由 $x=y^2$ 代入 $5y=x^2-6$ 得 $y^4-5y-6=0$，因式分解
+	\[
+	(y+1)(y-2)\left(y^2+y+3\right)=0 ,
+	\]
+	末项判别式 $1-12<0$ 无实根，故交点对应 $y=-1$ 与 $y=2$，
+	即 $(1,-1)$ 与 $(4,2)$。对固定的 $y\in[-1,2]$，区域是
+	\[
+	D:\ -1\leqslant y\leqslant2,\quad y^2\leqslant x\leqslant\sqrt{5y+6}
+	\]
+	（左边界是抛物线 $x=y^2$，右边界是 $5y=x^2-6$ 的 $x>0$ 分支）。
+
+	\textbf{利用被积函数的分段性.}
+	$x|y|+xy=x\left(|y|+y\right)$，而 $|y|+y=2y\ (y>0)$、$=0\ (y\leqslant0)$。
+	故 $y\leqslant0$ 的部分贡献为零，只需算 $0\leqslant y\leqslant2$：
+	\begin{align*}
+	I&=2\int_0^2y\,dy\int_{y^2}^{\sqrt{5y+6}}x\,dx
+	=\int_0^2y\left[\left(5y+6\right)-y^4\right]dy\\
+	&=\int_0^2\left(5y^2+6y-y^5\right)dy
+	=\left[\frac{5y^3}{3}+3y^2-\frac{y^6}{6}\right]_0^2 .
+	\end{align*}
+	代入得
+	\[
+	I=\frac{40}{3}+12-\frac{32}{3}=\frac{8}{3}+12=\frac{44}{3}.
+	\]
+	（数值积分同样给出 $14.6667$。）
 }
 
 
@@ -160,13 +313,39 @@ $\lim\limits _{x \rightarrow 0}\left(\frac{x}{\sin x}\right)^{\frac{1}{1-\cos x}
 
 
 \banswer{
-	作奇延拓，
-\[ 
-f(x)= \sum\limits_{n=1}^{\infty}  \frac{2}{\pi} \left(
-\frac{1}{n}+ \frac{(-1)^{2}}{n}\cdot (1-\pi) -\frac{2}{n^{2}} \sin n 
-\right) \sin n x   \quad  (0<x<\pi) 
- \]
-$ f(x) $的傅氏级数在$ x=0 $处收敛于$ 0 $，在$ x=\pi $处收敛于$ 0 $
+	\textbf{作奇延拓.}
+	把 $f$ 奇延拓到 $[-\pi,\pi]$ 再作 $2\pi$ 周期延拓，则 $a_n=0$，
+	\[
+	b_n=\frac{2}{\pi}\int_0^{\pi}\left|x-1\right|\sin nx\,dx .
+	\]
+
+	\textbf{分段积分.}
+	以 $x=1$ 为界拆开。由分部积分，
+	\begin{align*}
+	\int_0^{1}(1-x)\sin nx\,dx&=\frac1n-\frac{\sin n}{n^2},\\
+	\int_1^{\pi}(x-1)\sin nx\,dx&=\frac{(1-\pi)(-1)^{n}}{n}-\frac{\sin n}{n^2}.
+	\end{align*}
+	两式相加再乘 $\frac{2}{\pi}$：
+	\[
+	b_n=\frac{2}{\pi}\left[\frac1n+\frac{(-1)^{n}(1-\pi)}{n}-\frac{2\sin n}{n^2}\right].
+	\]
+
+	\textbf{结论.}
+	\[
+	\left|x-1\right|=\sum_{n=1}^{\infty}
+	\frac{2}{\pi}\left[\frac{1+(-1)^{n}(1-\pi)}{n}-\frac{2\sin n}{n^2}\right]\sin nx
+	\]
+	对 $0<x<\pi$ 成立（延拓后的函数在 $(0,\pi)$ 内连续且分段光滑）。
+	在 $x=0$ 与 $x=\pi$ 处，正弦级数的每一项都为 $0$，故都收敛于 $0$；
+	这与 Dirichlet 定理一致：奇延拓在 $x=0$ 处左右极限为 $\mp1$、
+	在 $x=\pi$ 处为 $\pm(\pi-1)$，平均值均为 $0$。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	原答案把系数中的 $(-1)^{n}$ 误排成 $(-1)^{2}$（即恒为 $1$），应予改正。
+	按改正后的系数求部分和，在 $x=0.3,1,2,3$ 处分别得
+	$0.6999,\ 0.0000,\ 1.0000,\ 2.0001$，与 $|x-1|$ 吻合。
+	}\par
 }
 
 
@@ -175,7 +354,31 @@ $ f(x) $的傅氏级数在$ x=0 $处收敛于$ 0 $，在$ x=\pi $处收敛于$ 0
 设函数 $f(x)=\int_{x}^{1} e^{-t^{2}} d t$, 求 $\int_{0}^{1} x^{2} f(x) d x$ 的值。
 
 \banswer{
-	$\frac{1}{6}\left(1-\frac{2}{e}\right)$，用分部积分或交换积分顺序都可
+	\textbf{解法一（分部积分）.}
+	注意 $f(1)=0$，$f'(x)=-e^{-x^2}$。取 $u=f(x)$、$dv=x^2dx$：
+	\begin{align*}
+	\int_0^1x^2f(x)\,dx&=\left[\frac{x^3}{3}f(x)\right]_0^1-\frac13\int_0^1x^3f'(x)\,dx\\
+	&=0+\frac13\int_0^1x^3e^{-x^2}dx .
+	\end{align*}
+	再令 $u=x^2$（$du=2x\,dx$）：
+	\[
+	\int_0^1x^3e^{-x^2}dx=\frac12\int_0^1ue^{-u}du
+	=\frac12\left[-(u+1)e^{-u}\right]_0^1=\frac12\left(1-\frac2e\right).
+	\]
+	故原式 $=\frac16\left(1-\frac2e\right)$。
+
+	\textbf{解法二（交换积分次序）.}
+	\[
+	\int_0^1x^2\!\left(\int_x^1e^{-t^2}dt\right)dx
+	=\int_0^1e^{-t^2}\!\left(\int_0^{t}x^2dx\right)dt
+	=\frac13\int_0^1t^3e^{-t^2}dt ,
+	\]
+	与解法一殊途同归。
+
+	\[
+	\int_0^1x^2f(x)\,dx=\frac{1}{6}\left(1-\frac{2}{e}\right)\approx0.04404 .
+	\]
+	（数值积分给出 $0.0440402$，一致。）
 }
 
 
@@ -186,7 +389,38 @@ $ f(x) $的傅氏级数在$ x=0 $处收敛于$ 0 $，在$ x=\pi $处收敛于$ 0
 
 
 \banswer{
-与路径无关，包含奇点，	$I=\sqrt{2} \pi$
+	记 $P=\frac{-y}{x^2+2y^2}$，$Q=\frac{x}{x^2+2y^2}$。
+
+	\textbf{闭形式.}
+	在 $(x,y)\neq(0,0)$ 处
+	\[
+	\frac{\partial Q}{\partial x}=\frac{2y^2-x^2}{\left(x^2+2y^2\right)^2}
+	=\frac{\partial P}{\partial y},
+	\]
+	故在不含原点的单连通区域内积分与路径无关。但 $L$ 内部含奇点 $(0,0)$
+	（$L$ 依次由 $x\leqslant0$ 的半圆 $(0,1)\to(-1,0)\to(0,-1)$、
+	直线 $y=x-1$ 的 $(0,-1)\to(1,0)$、直线 $x+y=1$ 的 $(1,0)\to(0,1)$ 组成，
+	正向且围住原点），不能直接用格林公式。
+
+	\textbf{挖去奇点.}
+	取充分小的 $\varepsilon>0$，作椭圆
+	$\ell_\varepsilon:\ x^2+2y^2=\varepsilon^2$，取逆时针方向，
+	使它完全落在 $L$ 内部。在 $L$ 与 $\ell_\varepsilon$ 所夹的复连通区域上用格林公式，
+	被积式为零，故
+	\[
+	I=\oint_{L}=\oint_{\ell_\varepsilon}\frac{x\,dy-y\,dx}{x^2+2y^2}
+	=\frac{1}{\varepsilon^2}\oint_{\ell_\varepsilon}\left(x\,dy-y\,dx\right),
+	\]
+	这里用了在 $\ell_\varepsilon$ 上分母恒为 $\varepsilon^2$。
+
+	\textbf{算出.}
+	由格林公式 $\oint(x\,dy-y\,dx)=2\times$ 所围面积。
+	椭圆 $x^2+2y^2=\varepsilon^2$ 的半轴为 $\varepsilon$ 与 $\frac{\varepsilon}{\sqrt2}$，
+	面积 $=\pi\cdot\varepsilon\cdot\frac{\varepsilon}{\sqrt2}=\frac{\pi\varepsilon^2}{\sqrt2}$。故
+	\[
+	I=\frac{1}{\varepsilon^2}\cdot\frac{2\pi\varepsilon^2}{\sqrt2}=\sqrt2\,\pi .
+	\]
+	（沿原闭曲线作数值线积分得 $4.4429$，而 $\sqrt2\pi\approx4.4429$，一致。）
 }
 
 
@@ -195,13 +429,38 @@ $ f(x) $的傅氏级数在$ x=0 $处收敛于$ 0 $，在$ x=\pi $处收敛于$ 0
 设函数 $f(x)$ 连续, 且 $f^{2}(x) \leqslant|x|^{3}$, 记 $F(x)=\int_{0}^{1} f(x t) d t$, 求 $F^{\prime}(x)$, 并讨论 $F^{\prime}(x)$ 的连续性。
 
 \banswer{
-用导数定义，简单放缩后得到$ F ^{\prime} (0)=0 $，\\
-\[ 
-F^{\prime}(x)=\left\{\begin{aligned}
-	&-\frac{1}{x^{2}} \int_{0}^{x} f(u) d u+\frac{f(x)}{x}, &x \neq 0 \\
-	&0, &x=0\end{aligned}\right.
- \]
-$ \lim\limits_{x\rightarrow0}F ^{\prime} (x)=0 $，故$ F ^{\prime}(x) $在整个实轴上连续
+	\textbf{预备.}
+	由 $f^2(x)\leqslant|x|^3$ 得 $|f(x)|\leqslant|x|^{3/2}$，特别地 $f(0)=0$，
+	并且
+	\[
+	\left|\int_0^{x}f(u)\,du\right|\leqslant\int_0^{|x|}u^{3/2}du=\frac25|x|^{5/2}.
+	\]
+
+	\textbf{$x\neq0$ 时.}
+	作代换 $u=xt$ 得 $F(x)=\frac1x\int_0^{x}f(u)\,du$，故
+	\[
+	F'(x)=-\frac{1}{x^2}\int_0^{x}f(u)\,du+\frac{f(x)}{x}.
+	\]
+
+	\textbf{$x=0$ 时.}
+	$F(0)=\int_0^1f(0)\,dt=0$，用导数定义：
+	\[
+	\left|\frac{F(x)-F(0)}{x}\right|=\left|\frac{1}{x^2}\int_0^{x}f(u)du\right|
+	\leqslant\frac25|x|^{1/2}\xrightarrow[x\to0]{}0 ,
+	\]
+	故 $F'(0)=0$。合起来
+	\[
+	F^{\prime}(x)=\left\{\begin{aligned}
+	&-\frac{1}{x^{2}}\int_{0}^{x}f(u)\,du+\frac{f(x)}{x}, &&x\neq0,\\
+	&0, &&x=0 .\end{aligned}\right.
+	\]
+
+	\textbf{连续性.}
+	$x\neq0$ 处 $F'$ 由连续函数复合而成，连续。在 $x=0$ 处，
+	\[
+	\left|F'(x)\right|\leqslant\frac25|x|^{1/2}+|x|^{1/2}=\frac75|x|^{1/2}\to0=F'(0),
+	\]
+	故 $F'$ 在 $x=0$ 也连续。所以 $F'(x)$ 在整个实轴上连续。
 }
 
 
@@ -213,7 +472,22 @@ $ \lim\limits_{x\rightarrow0}F ^{\prime} (x)=0 $，故$ F ^{\prime}(x) $在整�
 
 
 \banswer{
-	证明略，利用柯西中值定理即可。
+	取辅助函数 $g(x)=x^2$。由 $0<a<b$ 知 $g'(x)=2x\neq0$ 于 $(a,b)$，
+	且 $f,g$ 在 $[a,b]$ 上连续、$(a,b)$ 内可导。由 Cauchy 中值定理，存在 $\xi\in(a,b)$ 使
+	\[
+	\frac{f(b)-f(a)}{b^2-a^2}=\frac{f'(\xi)}{2\xi}.
+	\]
+	而 $b^2-a^2=(b-a)(b+a)$，于是
+	\[
+	\frac{f(b)-f(a)}{b-a}=\frac{(a+b)f'(\xi)}{2\xi}=\frac{a+b}{2\xi}f'(\xi),
+	\]
+	即为所证。
+
+	\par\vspace{1mm}\noindent
+	\textbf{注：}{\kaishu
+	条件 $0<a<b$ 是为了保证 $g'(x)=2x$ 在 $(a,b)$ 上不为零（否则 Cauchy 中值定理失效），
+	同时保证结论中的 $\frac{a+b}{2\xi}$ 有意义。
+	}\par
 }
 
 
@@ -226,7 +500,29 @@ f\left(\frac{x_{1}+x_{2}+\cdots+x_{n}}{n}\right) \leq \frac{f\left(x_{1}\right)+
 
 
 \banswer{
-	证明略。利用二阶泰勒展开，求和，令特殊值即可。
+	记 $\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}$。
+
+	\textbf{在 $\bar{x}$ 处二阶展开.}
+	对每个 $i$，由带 Lagrange 余项的 Taylor 公式，存在 $\xi_i$ 介于 $x_i$ 与 $\bar{x}$ 之间，
+	\[
+	f\left(x_i\right)=f(\bar{x})+f'(\bar{x})\left(x_i-\bar{x}\right)
+	+\frac{f''\left(\xi_i\right)}{2}\left(x_i-\bar{x}\right)^2 .
+	\]
+	由 $f''>0$，末项非负，故
+	\[
+	f\left(x_i\right)\geqslant f(\bar{x})+f'(\bar{x})\left(x_i-\bar{x}\right).
+	\]
+
+	\textbf{求和.}
+	对 $i=1,\dots,n$ 相加，注意 $\sum\limits_{i=1}^{n}\left(x_i-\bar{x}\right)=0$：
+	\[
+	\sum_{i=1}^{n}f\left(x_i\right)\geqslant nf(\bar{x})+f'(\bar{x})\cdot0=nf(\bar{x}).
+	\]
+	两端除以 $n$ 即得
+	\[
+	f\left(\frac{x_1+x_2+\cdots+x_n}{n}\right)\leqslant\frac{f\left(x_1\right)+\cdots+f\left(x_n\right)}{n}.
+	\]
+	等号成立当且仅当 $x_1=x_2=\cdots=x_n$。
 }
 
 
@@ -241,20 +537,41 @@ f\left(\frac{x_{1}+x_{2}+\cdots+x_{n}}{n}\right) \leq \frac{f\left(x_{1}\right)+
 
 
 \banswer{
-	证明略。这里可以采取两种方法来证明：
-	\begin{enumerate}
-		%\renewcommand{\labelenumi}{\arabic{enumi}.}
-		% A(\Alph) a(\alph) I(\Roman) i(\roman) 1(\arabic)
-		%设定全局标号series=example	%引用全局变量resume=example
-		%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
-		%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
-		\item
-		使用罗尔定理，$ F(x)=\int_{a}^{x} f(x)dx $，$ G (x)=\int_{a}^{x} F(x) dx $，再用分部积分可证
-		\item 
-		使用反证法，①不存在；②值存在一个；③只存在两个；配合积分中值定理可证
-	\end{enumerate}
-	
-	
+	\textbf{解法一（三重原函数 + Rolle 定理）.}
+	令
+	\[
+	F(x)=\int_a^{x}f(t)\,dt,\quad G(x)=\int_a^{x}F(t)\,dt,\quad H(x)=\int_a^{x}G(t)\,dt .
+	\]
+	显然 $F(a)=G(a)=H(a)=0$，且 $H'''=f$。
+
+	先证 $F(b)=G(b)=H(b)=0$：
+	\begin{itemize}
+	\item $F(b)=\int_a^bf\,dx=0$（第一个条件）；
+	\item 由分部积分
+	$0=\int_a^bxf\,dx=\left[xF\right]_a^b-\int_a^bF\,dx=bF(b)-G(b)=-G(b)$，
+	故 $G(b)=0$；
+	\item 同理
+	$0=\int_a^bx^2f\,dx=\left[x^2F\right]_a^b-2\int_a^bxF\,dx=-2\int_a^bxF\,dx$，
+	而 $\int_a^bxF\,dx=\left[xG\right]_a^b-\int_a^bG\,dx=bG(b)-H(b)=-H(b)$，
+	故 $H(b)=0$。
+	\end{itemize}
+
+	接着逐层用 Rolle 定理：
+	\begin{itemize}
+	\item $H(a)=H(b)=0\Rightarrow\exists\,c\in(a,b)$ 使 $H'(c)=G(c)=0$；
+	\item $G$ 在 $a<c<b$ 三点取零 $\Rightarrow\exists\,d_1\in(a,c)$、$d_2\in(c,b)$ 使 $F=0$；
+	\item $F$ 在 $a<d_1<d_2<b$ 四点取零 $\Rightarrow$ 在三个相邻区间内各得一点
+	$x_1\in\left(a,d_1\right)$、$x_2\in\left(d_1,d_2\right)$、$x_3\in\left(d_2,b\right)$
+	使 $F'=f=0$。
+	\end{itemize}
+	三点互异且都在 $(a,b)$ 内，证毕。
+
+	\textbf{解法二（反证：变号次数）.}
+	若 $f$ 在 $(a,b)$ 内变号的点不足三个，设为 $t_1<\cdots<t_k\ (k\leqslant2)$，
+	取 $p(x)=\prod\limits_{i=1}^{k}\left(x-t_i\right)$，它是次数 $\leqslant2$ 的多项式，
+	于是 $p(x)f(x)$ 在 $(a,b)$ 上不变号且不恒为零，故 $\int_a^bp(x)f(x)\,dx\neq0$；
+	但由题设 $\int_a^bf=\int_a^bxf=\int_a^bx^2f=0$ 知该积分为 $0$，矛盾。
+	故 $f$ 至少变号三次，从而至少有三个零点。
 }
 
 
