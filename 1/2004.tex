@@ -108,7 +108,7 @@
 	
 	
 	\item
-	曲线 $y=\sqrt{x^{2}+1}-x-1$ 的渐进线条数为 \xzanswer{C} 
+	曲线 $y=\sqrt{x^{2}+1}-x-1$ 的渐近线条数为 \xzanswer{C} 
 	
 	
 \fourchoices
@@ -284,7 +284,18 @@
 		%[topsep=-0.3em,parsep=-0.3em,itemsep=-0.3em,partopsep=-0.3em]
 		%可使用leftmargin调整列表环境左边的空白长度 [leftmargin=0em]
 		\item
-		$  \frac{ 1 }{ 6 }  $
+		按题面 $x\to0$ 是双侧极限，原极限不存在。事实上
+        \[
+        \int_0^{\tan x}t(\tan t-t)\,dt
+        \sim \frac{(\tan x)^5}{15}\sim\frac{x^5}{15},
+        \]
+        而上限 $\sin^2x$ 非负，故
+        \[
+        \int_0^{\sin^2x}\sin^{3/2}t\,dt
+        \sim\frac25(\sin^2x)^{5/2}\sim\frac25|x|^5.
+        \]
+        因此右极限为 $1/6$，左极限为 $-1/6$。只有将题面改为
+        $x\to0^+$ 时答案才是 $1/6$；现不擅自改变极限方向。
 		\item 
 		$ 2-\frac{\pi}{2} $		
 		\item 

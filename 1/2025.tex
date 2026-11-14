@@ -206,7 +206,7 @@ c=\int_0^{\sqrt{x}} t \sin t^2 d t .
 	故由低阶到高阶为 $a$，$c$，$b$。
 
 	\item
-	$y_1(x)+C\left(y_1(x)-y_2(x)\right)$。因 $y_1-y_2$ 是齐次方程 $y^{\prime}+P(x) y=0$ 的非零解，
+	$y_1(x)+C\left(y_1(x)-y_2(x)\right)$。这里需 $y_1\not\equiv y_2$。此时 $y_1-y_2$ 是齐次方程 $y^{\prime}+P(x) y=0$ 的非零解，
 	$y_1$ 是原非齐次方程的一个特解，由“非齐次特解 $+$ 齐次通解”即得。
 
 	\item
@@ -219,7 +219,7 @@ c=\int_0^{\sqrt{x}} t \sin t^2 d t .
 	B 中 $x \rightarrow 1$ 时 $\ln x \sim x-1$，$\frac{\ln x}{1-x^2} \rightarrow-\frac{1}{2}$ 为可去奇性，
 	$x \rightarrow 0^{+}$ 时 $\ln x$ 可积，$x \rightarrow+\infty$ 时 $\sim-\frac{\ln x}{x^2}$，故收敛。
 	D 中 $\sin x$ 在 $x>\pi$ 时变号（被积函数已无意义），
-	即便只在各 $\sin x>0$ 的区间上取值，每个 $[k \pi,(k+1) \pi]$ 上的积分为同一正常数
+	即便只在各 $\sin x>0$ 的区间上取值，每个 $[2k\pi,(2k+1)\pi]$（$k=0,1,\ldots$） 上的积分为同一正常数
 	$\int_0^\pi \frac{d x}{\sqrt{\sin x}}>0$，无穷多个相加必发散。
 \end{enumerate}
 }
@@ -462,18 +462,18 @@ $\int_0^{f(x)} g(t) d t=x^2 e^x$，$f(0)=0$，求 $f(x)$。
 	\[
 	x f^{\prime}(x)=x(2+x) e^x \Longrightarrow f^{\prime}(x)=(x+2) e^x \quad(x \neq 0),
 	\]
-	由 $f^{\prime}$ 连续（或取 $x \rightarrow 0$ 的极限）知该式在 $x=0$ 也成立。积分得
+	先在 $x>0$、$x<0$ 的相应区间分别积分（积分常数暂记为 $C_+$、$C_-$），得
 	\[
 	f(x)=\int(x+2) e^x d x=(x-1) e^x+2 e^x+C=(x+1) e^x+C .
 	\]
-	由 $f(0)=0$ 得 $1+C=0$，$C=-1$。所以
+	由 $f$ 在 $0$ 处连续且 $f(0)=0$，两侧积分常数均为 $-1$。所得显式函数在 $0$ 处也可导，且 $f^{\prime}(0)=2$。所以
 	\[
 	f(x)=(x+1) e^x-1 .
 	\]
 
 	\textbf{验证.} $f(0)=0$，$f^{\prime}(x)=(x+2) e^x$，
 	于是 $\frac{d}{d x} G(f(x))=x \cdot(x+2) e^x=\left(x^2+2 x\right) e^x=\frac{d}{d x}\left(x^2 e^x\right)$，
-	且两端在 $x=0$ 处同为 $0$，故 $G(f(x))=x^2 e^x$ 成立。
+	且两端在 $x=0$ 处同为 $0$，故在包含 $0$、使 $f$ 可逆的区间上 $G(f(x))=x^2 e^x$ 成立。例如可取 $x>-2$；该函数不能在整条实轴上定义单值反函数。
 }
 
 

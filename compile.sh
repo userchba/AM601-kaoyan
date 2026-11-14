@@ -8,11 +8,12 @@ set -euo pipefail
 #   1. Resolve and work from the script's own directory (repo root).
 #   2. Require xelatex; create a task-owned mktemp build directory
 #      with cleanup via trap.
-#   3. Compile twice.  Auxiliary files stay inside the temp build
+#   3. Compile three times.  Auxiliary files stay inside the temp build
 #      directory; only the finished PDF lands at repo-root 601.pdf.
 #   4. First attempt uses the exact project (fontset=windows).  If
 #      that fails (e.g. missing SimSun), automatically retry with
 #      temporary copies where fontset=windows → fontset=fandol.
+#      Set PORTABLE_FONTS=1 to select Fandol directly (for Linux/CI).
 #      No tracked .tex / .cls / .sty files are ever modified.
 #   5. Ensure \include{1/…} works by creating the temp 1/ directory
 #      and copying the source .tex files there.  Resource directories
@@ -58,14 +59,15 @@ done
 #    then the system default (the trailing colon preserves the system default).
 export TEXINPUTS=".:$SCRIPT_DIR:"
 
-# -- helper: compile a .tex file twice inside the build directory --------------
+# -- helper: compile a .tex file three times inside the build directory --------------
 # Arguments:   $1 – main tex filename (relative to BUILD_DIR)
-# Returns 0 on success, 1 if either xelatex pass fails.
+# Returns 0 on success, 1 if any xelatex pass fails.
 compile_xelatex() {
     local main_tex="$1"
     local xelatex_opts=(
         -interaction=nonstopmode
         -halt-on-error
+        -no-shell-escape
         -file-line-error
     )
 
@@ -73,16 +75,18 @@ compile_xelatex() {
     if ! ( cd "$BUILD_DIR" && xelatex "${xelatex_opts[@]}" "$main_tex" > /dev/null 2>&1 ); then
         return 1
     fi
-    # Second pass (resolves ToC, cross-references, etc.)
-    if ! ( cd "$BUILD_DIR" && xelatex "${xelatex_opts[@]}" "$main_tex" > /dev/null 2>&1 ); then
-        return 1
-    fi
+    # Repeat to settle per-paper totals and PDF bookmarks.
+    for pass in 2 3; do
+        if ! ( cd "$BUILD_DIR" && xelatex "${xelatex_opts[@]}" "$main_tex" > /dev/null 2>&1 ); then
+            return 1
+        fi
+    done
     return 0
 }
 
 # ======== Attempt 1: normal build – fontset=windows (original files) ==========
 echo "=== Attempt 1: Building with fontset=windows ==="
-if compile_xelatex "601.tex"; then
+if [ "${PORTABLE_FONTS:-0}" != "1" ] && compile_xelatex "601.tex"; then
     echo "Normal build (fontset=windows) succeeded."
     cp "$BUILD_DIR/601.pdf" "$SCRIPT_DIR/601.pdf"
     exit 0

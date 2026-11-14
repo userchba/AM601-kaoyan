@@ -76,7 +76,7 @@ $ \lim\limits _{x \rightarrow 0}\left(\frac{\sin x}{x}\right)^{\frac{1}{x^{2}}}=
 {多于 $ 4 $}
 
 \item
-设 $ \vv{a} ,  \vv{b} $ 为非零实向量, 且 $2  \vv{a} + \vv{b} $ 与 $ \vv{a} - \vv{b} $ 垂直，$  \vv{a}+2 \vv{b}   $与$  \vv{a} +  \vv{b}  $垂直。则 \xzanswer{A}
+设 $ \vv{a} ,  \vv{b} $ 为非零实向量, 且 $2  \vv{a} + \vv{b} $ 与 $ \vv{a} - \vv{b} $ 垂直，$  \vv{a}+2 \vv{b}   $与$  \vv{a} +  \vv{b}  $垂直。则 \xzanswer{\text{条件矛盾}}
 
 
 \fourchoices
@@ -97,7 +97,7 @@ $ \lim\limits _{x \rightarrow 0}\left(\frac{\sin x}{x}\right)^{\frac{1}{x^{2}}}=
 
 
 \item
-幂级数 $\sum\limits_{n=1}^{\infty} a_{n} x^{n}$ 与 $\sum\limits_{n=1}^{\infty} b_{n} x^{n}$ 的收敛半径分别为 $\frac{\sqrt{2}}{3}$ 与 $\frac{1}{3}$, 则幂级数 $\sum\limits_{n=1}^{\infty} \frac{a_{n}^{2}}{b_{n}^{2}} x^{n}$ 的 收敛半径为 \xzanswer{A}
+幂级数 $\sum\limits_{n=1}^{\infty} a_{n} x^{n}$ 与 $\sum\limits_{n=1}^{\infty} b_{n} x^{n}$ 的收敛半径分别为 $\frac{\sqrt{2}}{3}$ 与 $\frac{1}{3}$, 则幂级数 $\sum\limits_{n=1}^{\infty} \frac{a_{n}^{2}}{b_{n}^{2}} x^{n}$ 的 收敛半径为 \xzanswer{\text{条件不足}}
 
 
 \fourchoices
@@ -183,12 +183,16 @@ $ \lim\limits _{x \rightarrow 0}\left(\frac{\sin x}{x}\right)^{\frac{1}{x^{2}}}=
 	由零点定理每两个相邻点之间至少有一个零点，故零点多于 $4$ 个（实为无穷多个）。
 
 	\item
-	\textbf{A}。记 $A=|\vv{a}|^2$，$B=|\vv{b}|^2$，$c=\vv{a}\cdot\vv{b}$，则两个垂直条件给出
-	\begin{align*}
-	\left(2\vv{a}+\vv{b}\right)\cdot\left(\vv{a}-\vv{b}\right)&=2A-c-B=0,\\
-	\left(\vv{a}+2\vv{b}\right)\cdot\left(\vv{a}+\vv{b}\right)&=A+3c+2B=0 .
-	\end{align*}
-	由第一式 $c=2A-B$，代入第二式得 $7A-B=0$，即 $|\vv{b}|^2=7|\vv{a}|^2$。
+	\textbf{题设矛盾。} 记 $A=|\vv a|^2>0$，$B=|\vv b|^2>0$，$c=\vv a\cdot\vv b$。
+    两个垂直条件给出
+    \[
+    2A-c-B=0,\qquad A+3c+2B=0.
+    \]
+    代数消元确实得到 $B=7A$ 和 $c=-5A$，但实向量还必须满足
+    Cauchy--Schwarz 不等式 $c^2\le AB$。代入后要求
+    $25A^2\le7A^2$，与 $A>0$ 矛盾。
+    因而不存在符合题意的非零实向量，不能把选项 A 当作有效选择题答案；
+    原题某个符号或系数需要核对，现保留题面。
 
 	\item
 	\textbf{C}。$D$ 上 $t=x+y\in\left[\frac12,1\right]$，于是 $t^3\in\left[\frac18,1\right]$。
@@ -200,13 +204,22 @@ $ \lim\limits _{x \rightarrow 0}\left(\frac{\sin x}{x}\right)^{\frac{1}{x^{2}}}=
 	三个被积函数依次递增（且不恒等），积分域相同，所以 $I_1<I_3<I_2$。
 
 	\item
-	\textbf{A}。由收敛半径公式 $\frac1R=\lim\left|c_n\right|^{1/n}$ 得
-	$\lim\left|a_n\right|^{1/n}=\frac{3}{\sqrt2}$，$\lim\left|b_n\right|^{1/n}=3$，故
-	\[
-	\lim\left|\frac{a_n^2}{b_n^2}\right|^{1/n}
-	=\frac{\left(3/\sqrt2\right)^2}{3^2}=\frac12 ,
-	\]
-	所求收敛半径 $R=2$。
+	\textbf{条件不足。} 正确公式是 $R^{-1}=\limsup_{n\to\infty}|c_n|^{1/n}$，
+    题设并未保证对应的普通极限存在，也未保证 $b_n\ne0$。
+    即使额外要求所有 $b_n\ne0$，结论仍不唯一。例如令
+    \[
+    a_n=(3/\sqrt2)^n.
+    \]
+    若 $b_n=3^n$，系数商级数的半径为 $2$。但若
+    \[
+    b_n=\begin{cases}3^n,&n\text{ 为偶数},\\1,&n\text{ 为奇数},\end{cases}
+    \]
+    原两级数的半径仍分别为 $\sqrt2/3$ 和 $1/3$，而
+    \[
+    \limsup_{n\to\infty}|a_n^2/b_n^2|^{1/n}=9/2,
+    \]
+    所求半径变为 $2/9$。因此不能仅凭题设选择 A。
+    若确认原题另有两列根值的极限存在且 $b_n\ne0$ 的条件，则可得 $R=2$。
 
 	\item
 	\textbf{B}。曲面 $F=x^2+y^2+2z^2-5$ 在 $\left(x_0,y_0,z_0\right)$ 处的法向为
@@ -218,12 +231,6 @@ $ \lim\limits _{x \rightarrow 0}\left(\frac{\sin x}{x}\right)^{\frac{1}{x^{2}}}=
 	故 $x_0:y_0:z_0=\frac12:1:\frac14=2:4:1$。
 \end{enumerate}
 
-\par\vspace{1mm}\noindent
-\textbf{注：}{\kaishu
-第 9 小题严格说来只有当 $\left|a_n\right|^{1/n}$、$\left|b_n\right|^{1/n}$ 的极限
-（而不只是上极限）存在时上述做法才成立；
-按考研通常约定的“求收敛半径”取此解即可。
-}\par
 }
 
 

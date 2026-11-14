@@ -26,7 +26,7 @@
 {$a=-4 c$}
 
 \item 
-$y=y(x)$ 满足 $\Delta y=\frac{1-x}{\sqrt{2 x-x^{2}}} \Delta x+o(\Delta x), y(1)=1, \int_{0}^{1} y(x)=$ \xzanswer{D} 
+$y=y(x)$ 满足 $\Delta y=\frac{1-x}{\sqrt{2 x-x^{2}}} \Delta x+o(\Delta x), y(1)=1, \int_{0}^{1} y(x)\,dx=$ \xzanswer{D} 
 
 
 \fourchoices
@@ -267,37 +267,17 @@ y y^{\prime \prime}-\left(y^{\prime}\right)^{2}=y^{2} \ln y
 
 
 \banswer{
-	\textbf{降阶.} 方程不显含 $x$，令 $p=y'$ 并视 $p$ 为 $y$ 的函数，则
-	$y''=p\frac{dp}{dy}$，原方程化为
-	\[
-	yp\frac{dp}{dy}-p^{2}=y^{2}\ln y .
-	\]
-
-	\textbf{化为线性方程.} 这不是关于 $p$ 的线性方程，但令 $u=p^{2}$，
-	则 $\frac{du}{dy}=2p\frac{dp}{dy}$，上式变成
-	\[
-	\frac y2\frac{du}{dy}-u=y^{2}\ln y
-	\quad\Longrightarrow\quad
-	\frac{du}{dy}-\frac2yu=2y\ln y ,
-	\]
-	一阶线性。乘积分因子 $y^{-2}$ 得 $\left(uy^{-2}\right)'=\frac{2\ln y}{y}$，故
-	\[
-	u=y^{2}\left(\ln^{2}y+C_{1}\right),\qquad
-	p=y'=y\sqrt{\ln^{2}y+C_{1}} .
-	\]
-
-	\textbf{分离变量.} 令 $w=\ln y$，则 $\frac{dy}{y}=dw$，
-	\[
-	dx=\frac{dy}{y\sqrt{\ln^2y+C_1}}=\frac{dw}{\sqrt{w^{2}+C_{1}}} ,
-	\]
-	用题给公式积分即得通解
-	\[
-	\ln\left(\ln y+\sqrt{\ln^{2}y+C_{1}}\right)=x+C_{2}\qquad\left(C_{1}>0\right).
-	\]
-	（把该隐式解代回原方程，残差恒为 $0$，已用符号计算验证。）
-\begin{note}
-	作代换$ y ^{\prime} =P(x) $后，得到$ yPP ^{\prime} -P^{2}=y^{2}\ln y $，若直接运用特解加通解的方法，将得到错误答案$ P=y(\ln y + C_{1}) $，需利用$ u=P^{2} $将方程化成线性微分方程。
-\end{note}
+    原方程含 $\ln y$，故实解必须满足 $y>0$。令 $w=\ln y$，则
+    \[
+    w''=\frac{yy''-(y')^2}{y^2}=\ln y=w.
+    \]
+    所以 $w''-w=0$，其完整通解为 $w=C_1e^x+C_2e^{-x}$，从而
+    \[
+    \boxed{y(x)=\exp\!\left(C_1e^x+C_2e^{-x}\right)},\qquad C_1,C_2\in\mathbb R.
+    \]
+    回代可得 $yy''-(y')^2=y^2w''=y^2\ln y$。
+    该表达式包含常数解 $y\equiv1$，也包含 $y'$ 正、负以及改变符号的分支；
+    只取 $y'=y\sqrt{\ln^2y+C}$ 会漏掉解，不能称为完整通解。
 }
 
 

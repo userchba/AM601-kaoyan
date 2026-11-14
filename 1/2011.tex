@@ -181,7 +181,7 @@
 
 \item
 (本题满分 10 分)
-设函数 $f(x)$ 在 $[0,2 \pi]$ 上有连续导数, 且 $f^{\prime}(x) \geqslant 0$, 求证：对任何整数 $n$, 都有
+设函数 $f(x)$ 在 $[0,2 \pi]$ 上有连续导数, 且 $f^{\prime}(x) \geqslant 0$, 求证：对任何正整数 $n$, 都有
 \[
 \left|\int_{0}^{2 \pi} f(x) \sin (nx) d x\right| \leqslant \frac{2}{n} \left[ f(2 \pi)-f(0)\right]
 \]
@@ -208,12 +208,9 @@
 	\leqslant\frac{2}{|n|}\left[f(2\pi)-f(0)\right].
 	\]
 
-	\par\vspace{1mm}\noindent
-	\textbf{注：}{\kaishu
-	当 $n=0$ 时左端为 $0$ 而右端 $\frac2n$ 无意义；当 $n<0$ 时右端为负而左端非负，
-	不等式也不可能成立。故题面的“任何整数 $n$”应理解为任何正整数 $n$，
-	或把右端改写成 $\frac{2}{|n|}\left[f(2\pi)-f(0)\right]$（上面证的就是这个更强的形式）。
-	}\par
+\par
+上式实际对所有非零整数 $n$ 都成立，限制 $n>0$ 即得题设中的 $2/n$ 形式。
+
 }
 
 
@@ -384,7 +381,7 @@
 
 \item 
 (本题满分 10 分)
-设函数 $f(x)$ 在 $(-\infty,+\infty)$ 上有定义，在 $x=0$ 的某个领域内有一阶连续的导数, 且 $\lim\limits _{x \rightarrow 0} \frac{f(x)}{x}=a>0$, 证明:
+设函数 $f(x)$ 在 $(-\infty,+\infty)$ 上有定义，在 $x=0$ 的某个邻域内有一阶连续的导数, 且 $\lim\limits _{x \rightarrow 0} \frac{f(x)}{x}=a>0$, 证明:
 $\sum\limits_{n=1}^{\infty}(-1)^{n} f\left(\frac{1}{n}\right)$ 收敛，而 $\sum\limits_{n=1}^{\infty} f\left(\frac{1}{n}\right)$ 发散。
 
 

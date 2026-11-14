@@ -33,7 +33,7 @@ openright,zihao=5]{ctexbook}
 
 
 % 显示带圈数字符号
-\xeCJKsetcharclass{`①}{`⑩}{1}
+\xeCJKDeclareCharClass{CJK}{"2460 -> "2469}
 
 
 \newif\ifanswer %答案显示
@@ -104,14 +104,27 @@ openright,zihao=5]{ctexbook}
 %页脚
 \usepackage{fancyhdr}
 
-\usepackage{lastpage}%统计总页数
+% Per-paper totals: write each shipped page to the main aux file.
+% The last entry for each year is its final page count after the next pass.
+\makeatletter
+\def\currentvol{}
+\newcommand{\volend}[2]{\expandafter\gdef\csname volend@#1\endcsname{#2}}
+\newcommand{\volpages}[1]{\ifcsname volend@#1\endcsname\csname volend@#1\endcsname\else ?\fi}
+\AddToHook{shipout/before}{%
+  \ifx\currentvol\@empty\else
+    \immediate\write\@mainaux{\string\volend{\currentvol}{\thepage}}%
+  \fi
+}
+\makeatother
+\hypersetup{hypertexnames=false}
+
 \fancypagestyle{mypagestyle}{%
 	\fancyhf{}% Clear header/footer
 
 	%\fancyhead[O]{\protect\Headerodd}% Author on Odd page, Centred
 	%\fancyhead[E]{\protect\Headereven}% Title on Even page, Centred
-	\fancyfoot[OR]{第~\thepage~页，共~\pageref{LastPage}~页}%
-	\fancyfoot[EL]{第~\thepage~页，共~\pageref{LastPage}~页}%
+	\fancyfoot[OR]{第~\thepage~页，共~\volpages{\currentvol}~页}%
+	\fancyfoot[EL]{第~\thepage~页，共~\volpages{\currentvol}~页}%
 	\fancyfoot[OL]{科目名称：高等数学（甲）}%
 	\fancyfoot[ER]{科目名称：高等数学（甲）}%
 	%\renewcommand{\headrulewidth}{0pt}% Header rule of .4pt
@@ -119,18 +132,20 @@ openright,zihao=5]{ctexbook}
 }
 \fancypagestyle{plain}{%
 	\fancyhf{}% Clear header/footer
-	\fancyfoot[OR]{第~\thepage~页，共~\pageref{LastPage}~页}%
-	\fancyfoot[EL]{第~\thepage~页，共~\pageref{LastPage}~页}%
+	\fancyfoot[OR]{第~\thepage~页，共~\volpages{\currentvol}~页}%
+	\fancyfoot[EL]{第~\thepage~页，共~\volpages{\currentvol}~页}%
 	\fancyfoot[OL]{科目名称：高等数学（甲）}%
 	\fancyfoot[ER]{科目名称：高等数学（甲）}%
 }
 
 \newcommand{\bta}[1]{
+    \clearpage
+    \gdef\currentvol{#1}%
     \setcounter{page}{1}%设置页面计数器
     %\pagestyle{mypagestyle}
     %\chapter{#1}
 	%\chapter*{第\chinese{counter1}节 \qquad #1}
-	\addcontentsline{toc}{chapter}{#1 高等数学甲}
+	\phantomsection\addcontentsline{toc}{chapter}{#1 高等数学甲}
 	\chaptermark{#1 高等数学甲}
     %\renewcommand{\mypagenote}{#1}
 	%\songti

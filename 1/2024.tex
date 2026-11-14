@@ -112,7 +112,7 @@ $\sum\limits_{n=1}^{\infty}\left|\frac{1}{a_{n+1}}-\frac{1}{a_n}\right|$ 的敛�
 
 
 \item
-下列广义积分发散的是 \xzanswer{D}
+下列广义积分发散的是 \xzanswer{B、D}
 
 \fourchoices
 {$\int_0^1 \frac{\ln x}{1-x} d x$}
@@ -185,11 +185,13 @@ $\sum\limits_{n=1}^{\infty}\left|\frac{1}{a_{n+1}}-\frac{1}{a_n}\right|$ 的敛�
 	\item
 	\textbf{C}。由
 	$\left|\frac{1}{a_{n+1}}-\frac{1}{a_n}\right|=\frac{\left|a_{n+1}-a_n\right|}{\left|a_n a_{n+1}\right|}$
-	及 $a_n a_{n+1} \rightarrow a^2 \neq 0$，得
+	及 $a_n a_{n+1}\to a^2\ne0$，存在 $N$，使 $n\ge N$ 时
 	\[
-	\lim _{n \rightarrow \infty} \frac{\left|\frac{1}{a_{n+1}}-\frac{1}{a_n}\right|}{\left|a_{n+1}-a_n\right|}=\frac{1}{a^2} \in(0,+\infty).
+	 \frac{1}{2a^2}|a_{n+1}-a_n|
+	 \le \left|\frac1{a_{n+1}}-\frac1{a_n}\right|
+	 \le \frac{2}{a^2}|a_{n+1}-a_n|.
 	\]
-	由正项级数的比较判别法（极限形式），两级数同敛散。
+	由非负项级数的双向比较，两级数同敛散；即使 $a_{n+1}=a_n$，上述不等式也成立。
 
 	\item
 	\textbf{B}。$f$ 的全部原函数为 $F(x)=\int_0^x f(t) d t+C$。若 $f$ 为奇函数，
@@ -199,7 +201,7 @@ $\sum\limits_{n=1}^{\infty}\left|\frac{1}{a_{n+1}}-\frac{1}{a_n}\right|$ 的敛�
 	故 C 中“一定”不成立。D 的反例为 $f(x) \equiv 1$，其原函数 $x+C$ 非周期函数。
 
 	\item
-	\textbf{D}。A 中 $x \rightarrow 1$ 时 $\frac{\ln x}{1-x} \rightarrow-1$，$x \rightarrow 0^{+}$ 时 $\ln x$ 可积，收敛；
+	\textbf{B、D}。A 中 $x \rightarrow 1$ 时 $\frac{\ln x}{1-x} \rightarrow-1$，$x \rightarrow 0^{+}$ 时 $\ln x$ 可积，收敛；
 	C 中 $x \rightarrow 1$ 时 $\frac{\ln x}{1-x^2} \rightarrow-\frac{1}{2}$，同样收敛。
 	D 中 $x \rightarrow 1^{-}$ 时 $\ln x \sim-(1-x)$，故被积函数 $\sim-\frac{1}{1-x}$，
 	而 $\int_0^1 \frac{d x}{1-x}$ 发散，故 D 发散。
@@ -209,7 +211,7 @@ $\sum\limits_{n=1}^{\infty}\left|\frac{1}{a_{n+1}}-\frac{1}{a_n}\right|$ 的敛�
 	按题面，B 其实也发散：$x \rightarrow 0^{+}$ 时 $\cos x^2 \rightarrow 1$，被积函数 $\sim \frac{\ln x}{x}$，
 	而 $\int_\varepsilon^1 \frac{\ln x}{x} d x=-\frac{\ln ^2 \varepsilon}{2} \rightarrow-\infty$。
 	因此本题印制的四个选项中 B、D 均发散，试题本身有瑕疵；
-	若按 A、C、D 同族（考察 $x \rightarrow 1$ 处的奇性）的命题意图，应选 D。
+	不能凭猜测的命题意图排除 B；原选项需进一步核对。
 	}\par
 \end{enumerate}
 }
@@ -462,7 +464,7 @@ x_1 e^{x_2}-x_2 e^{x_1}=(1-\xi) e^{\xi}\left(x_1-x_2\right).
 	\[
 	x^2+(x+y-1)^2+(z-2)^2=9,
 	\]
-	这是球心 $(0,1,2)$（在 $(x, x+y-1, z-2)$ 坐标下）、半径 $3$ 的球面，
+	该二次曲面在原直角坐标中是中心为 $(0,1,2)$ 的椭球面，并非球面。由前两项均非负，
 	故 $z \in[-1,5]$，两端点分别在 $x=0$，$y=1$ 处取到。
 	}\par
 }

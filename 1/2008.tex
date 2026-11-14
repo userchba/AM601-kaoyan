@@ -249,20 +249,9 @@
 \item 
 (本题满分 10 分)
 设 $f(x)$ 在 $[0,1]$ 上可微, $f(1)=2 \int_{0}^{\frac{1}{2}} x f(x) d x$, 求证:
- 存在 $\xi \in(0,1)$, 使得 $\xi f(\xi)+f(\xi)=0$。
+ 存在 $\xi \in(0,1)$, 使得 $\xi f^{\prime}(\xi)+f(\xi)=0$。
 
 \banswer{
-本题印刷结论为 $\xi f(\xi)+f(\xi)=0$，即 $(1+\xi)f(\xi)=0$。该结论一般不成立。
-例如取 $f(x)=1-\frac{9}{11}x$，它在 $[0,1]$ 上恒正且满足条件
-\[
-f(1)=\frac{2}{11},\qquad
-2\int_{0}^{1/2}x f(x)dx
-=2\int_{0}^{1/2}x\Bigl(1-\frac{9}{11}x\Bigr)dx
-=2\Bigl(\frac18-\frac{3}{88}\Bigr)=\frac{2}{11}=f(1),
-\]
-但对任意 $\xi\in(0,1)$ 有 $\xi f(\xi)+f(\xi)=(1+\xi)f(\xi)>0$，不可能为零。
-故原题印刷有误，其本意应为 $\xi f'(\xi)+f(\xi)=0$。下按修正后的结论给出证明。
-
 由积分中值定理，存在 $\eta\in[0,\frac12]$ 使得
 $\int_0^{1/2}x f(x)dx=\frac12\eta f(\eta)$。
 代入条件得 $f(1)=2\cdot\frac12\eta f(\eta)=\eta f(\eta)$。
@@ -357,7 +346,7 @@ $F'(\xi)=0$，即 $\xi f'(\xi)+f(\xi)=0$。
 
 \item 
 (本题满分 10 分)
-求级数 $\sum\limits_{n=1}^{\infty}(-1)^{n-1} n(n+1) x^{n}$ 在收敛区间 $(-1,1)$ 内的核函数 $S(x)$, 并求数项级数 $\sum\limits_{n=1}^{\infty}(-1)^{n-1} \frac{n(n+1)}{3^{n}}$ 的和。
+求级数 $\sum\limits_{n=1}^{\infty}(-1)^{n-1} n(n+1) x^{n}$ 在收敛区间 $(-1,1)$ 内的和函数 $S(x)$, 并求数项级数 $\sum\limits_{n=1}^{\infty}(-1)^{n-1} \frac{n(n+1)}{3^{n}}$ 的和。
 
 \banswer{
 	先求辅助和。在 $|t|<1$ 内由 $\sum\limits_{n=0}^{\infty}t^{n}=\frac{1}{1-t}$ 逐项求导两次得
@@ -380,7 +369,7 @@ $F'(\xi)=0$，即 $\xi f'(\xi)+f(\xi)=0$。
 
 \item 
 (本题满分 10 分)
-已知函数 $f(x)$ 在 $[0,+\infty)$ 上可导, $f(0)=1$, 且满足不等式 $f^{\prime}(x)+f(x)-\frac{1}{1+x} \int_{0}^{x} f(t) d t=$ 0 , 求 $f^{\prime}(x)$ 的函数表达式, 并证明不等式:
+已知函数 $f(x)$ 在 $[0,+\infty)$ 上可导, $f(0)=1$, 且满足方程 $f^{\prime}(x)+f(x)-\frac{1}{1+x} \int_{0}^{x} f(t) d t=$ 0 , 求 $f^{\prime}(x)$ 的函数表达式, 并证明不等式:
 \[
 e^{-x} \leqslant f(x) \leqslant 1 \quad(x \geqslant 0)
 \]
